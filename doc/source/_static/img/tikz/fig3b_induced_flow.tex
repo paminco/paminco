@@ -1,0 +1,33 @@
+\input{preamble.tex}
+
+\begin{document}
+\pgfplotsset{xmin=-2}
+\begin{tikzpicture}
+	% IMAGE SIZE
+	\newcommand{\xMin}{-0.5} \newcommand{\xMax}{9.5}
+	\newcommand{\yMin}{-1.5} \newcommand{\yMax}{4.5}
+	
+	\newcommand{\fXoff}{0}
+	\newcommand{\fYoff}{0}
+	
+	% \useasboundingbox (\fXoff -.5, \fYoff - 2) -- (\fXoff + 7.5, \fYoff + 4);	
+	
+	
+	% FLOW FUNCTIONS
+	\draw[thick, ->] (\fXoff, \fYoff) -- (\fXoff, \fYoff+4);
+	\draw[thick, ->] (\fXoff, \fYoff) -- (\fXoff+7, \fYoff);
+	
+	\draw[thick] (\fXoff+3/2,\fYoff+0.1) -- (\fXoff+3/2,\fYoff-0.1) node[below] {\tiny $\lambda^{\min}_{\regionV^2}$};
+	\draw[thick] (\fXoff+15/4,\fYoff+0.1) -- (\fXoff+15/4,\fYoff-0.1) node[below] {\tiny $\lambda^{\min}_{\regionV^3}$};
+	\draw[thick] (\fXoff+23/4,\fYoff+0.1) -- (\fXoff+23/4,\fYoff-0.1) node[below] {\tiny $\lambda^{\min}_{\regionV^4}$};
+	
+	\draw[thick, dashed] (\fXoff+0,\fYoff+0) -- (\fXoff+3/2,\fYoff+1/2) -- (\fXoff+15/4,\fYoff+2) -- (\fXoff+23/4,\fYoff+3) -- ++(5/4,1/3*5/4);
+	\draw[thick, densely dotted] (\fXoff+0,\fYoff+0) -- (\fXoff+3/2,\fYoff+1) -- (\fXoff+15/4,\fYoff+7/4) -- (\fXoff+23/4,\fYoff+11/4) -- ++(5/4,2/3*5/4);
+	
+	
+	% flow function legend
+	\draw[thick, dashed] (\fXoff+0.5, \fYoff+3.5) --  (\fXoff+1.25, \fYoff+3.5) node[right] {\tiny $x_{e1} = x_{e_2}$};
+	\draw[thick, densely dotted] (\fXoff+0.5, \fYoff+3) --  (\fXoff+1.25, \fYoff+3) node[right] {\tiny $x_{e_3}$};
+\end{tikzpicture}
+	
+\end{document}

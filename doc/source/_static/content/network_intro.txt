@@ -1,0 +1,31 @@
+.. _shared-network-intro:
+
+In paminco, a network (or graph) essentially wraps the network elements
+:ref:`Edges <edges>`, 
+:ref:`Nodes <nodes>`, 
+:ref:`NetworkCost <api-network-cost-NetworkCost>` and
+:ref:`DemandFunction <demandfunc>`
+as illustrated in image below:
+
+.. image:: /_static/img/network.png
+  :width: 400
+  :alt: Network Structure
+  :align: center
+
+Therefore, the network does not hold much data itself but rather passes requests to the subcompontent
+that holds the data. For example, if an algorithm that operates on the network ask the network about 
+the cost of a flow :math:`\mathbf{x}`: ``network.C(x)``, the network passes this request to its cost 
+subcomponent and returns (a modified) value ``network.cost(x).sum()``. The main network elements can 
+be accessed via 
+``network.shared``,
+``network.nodes``,
+``network.edges``,
+``network.cost`` and
+``network.demand``.
+
+We developed this architecture to achieve modularization and separate of concerns while allowing for
+complex cost and demand functions. Note that all network components need access to certain network attributes
+such as the number of vertices and links :math:`n` and :math:`m`, as well as the the mappings of node labels 
+to internal node indices that specify the behaviour of graph representations and demand vectors. Therefore 
+all network elements have a ``reference`` to the :ref:`Shared <api-network-Shared>` network objects that in
+turn wraps nodes and edges.

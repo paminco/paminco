@@ -1,0 +1,18 @@
+\input{preamble.tex}
+\usepackage{amsmath}
+\begin{document}
+	
+\begin{tikzpicture}
+	\useasboundingbox
+	(-0.1,-1) rectangle (6.1,2);
+	
+	\draw (0,0) node[solid] (s) {} node [below left] {$s$};
+	\draw (3,1.5) node[solid] (v) {} node [above=.25em] {$v$};
+	\draw (6,0) node[solid] (t) {} node [below right] {$t$};
+	
+	\draw[->]	(s) edge node[midway, below, sloped,black!80] {$e_1$} node[midway, above=0.25em, sloped] {\tiny $\charf_{e_1} (x) = \begin{cases} x & x< 3 \\ 5x - 12 & x \geq 3\end{cases}$} (v) 
+	(v) edge node[midway, below, sloped,black!80] {$e_2$} node[midway, above=0.25em, sloped] {\tiny $\charf_{e_2} (x) = \begin{cases} x & x< 2 \\ 3x - 4 & x \geq 2 \end{cases}$} (t) 
+	(s) edge node[midway, above,black!80] {$e_3$}  node[midway, below=0.25em] {\tiny $\charf_{e_3} (x) = \begin{cases} x & x< 1 \\ 4x - 3 & x \geq 1\end{cases}$} (t);
+\end{tikzpicture}
+
+\end{document}
