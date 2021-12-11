@@ -1,9 +1,9 @@
 .. _index:
 
 paminco: Parametric Mincost Flows
-================================
+=================================
 
-The paminco package enables the parametric computation of minimum cost flows
+The *paminco* package enables the parametric computation of minimum cost flows
 for various network types.
 
 .. panels::
@@ -11,7 +11,7 @@ for various network types.
     :column: col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex
 
     ---
-    :img-top: _static/index_getting_started.svg
+    :img-top: _static/running.svg
     
     Getting started
     ^^^^^^^^^^^^^^^
@@ -27,12 +27,12 @@ for various network types.
         :classes: btn-block btn-secondary stretched-link
     
     ---
-    :img-top: _static/index_user_guide.svg
+    :img-top: _static/book.svg
     
-    User Guide
+    User guide
     ^^^^^^^^^^
 
-    Find examples on how to setup graphs with *paminco*, and calculate equilibira for 
+    Find examples on how to set up graphs with *paminco*, and calculate equilibria for 
     traffic and gas networks.
 
     +++
@@ -43,7 +43,7 @@ for various network types.
         :classes: btn-block btn-secondary stretched-link
     
     ---
-    :img-top: _static/index_api.svg
+    :img-top: _static/gear.svg
     
     API reference
     ^^^^^^^^^^^^^
@@ -58,9 +58,9 @@ for various network types.
         :classes: btn-block btn-secondary stretched-link
     
     ---
-    :img-top: _static/index_theory.svg
+    :img-top: _static/pi.svg
     
-    Theoretical Background
+    Theoretical background
     ^^^^^^^^^^^^^^^^^^^^^^
 
     You are unfamilar with *minimum cost flows* and want to learn more about the problem 

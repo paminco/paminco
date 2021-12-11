@@ -1,6 +1,6 @@
 .. _net-demand:
 
-:mod:`paminco.network.demand`
+:mod:`paminco.net.demand`
 
 ======
 Demand

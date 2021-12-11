@@ -43,7 +43,6 @@ extensions = [
     # 'sphinx_automodapi.automodapi',
     'numpydoc',
     'myst_nb',
-    'nbsphinx',
     'sphinx.ext.mathjax',
     'sphinx_copybutton',
     'sphinx_panels',

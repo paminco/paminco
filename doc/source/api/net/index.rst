@@ -1,6 +1,6 @@
 .. _net:
 
-:mod:`paminco.network`
+:mod:`paminco.net`
 
 =======
 Network

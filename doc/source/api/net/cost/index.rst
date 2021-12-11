@@ -1,6 +1,6 @@
 .. _net-cost:
 
-:mod:`paminco.network.cost`
+:mod:`paminco.net.cost`
 
 ====
 Cost

@@ -37,7 +37,7 @@ User Guide
 
     Adding capacity to a network might decrease network efficiency due to selfish participants.
     
-    .. link-button:: applications/traffic/braess_paradox.ipynb
+    .. link-button:: applications/traffic/braess_paradox.html
         :text: Go to user guide
         :classes: btn-outline-primary
     
@@ -45,7 +45,7 @@ User Guide
   
   .. dropdown:: *Pigou's Example*: An upper bound for the Price of Anarchy
 
-    .. link-button:: applications/traffic/pigou_example.ipynb
+    .. link-button:: applications/traffic/pigou_example.html
         :text: Go to user guide
         :classes: btn-outline-primary
     
@@ -53,7 +53,7 @@ User Guide
   
   .. dropdown:: *SiouxFalls*: calculating and plotting a fixed user equilibrium
 
-    .. link-button:: applications/traffic/sioux_fixed_ue.ipynb
+    .. link-button:: applications/traffic/sioux_fixed_ue.html
         :text: Go to user guide
         :classes: btn-outline-primary
     
@@ -61,7 +61,7 @@ User Guide
   
   .. dropdown:: *SiouxFalls*: parametric Price of Anarchy
 
-    .. link-button:: applications/traffic/sioux_par_poa.ipynb
+    .. link-button:: applications/traffic/sioux_par_poa.html
         :text: Go to user guide
         :classes: btn-outline-primary
     
@@ -69,7 +69,7 @@ User Guide
   
   .. dropdown:: *Barcelona*: Price of Anarchy
 
-    .. link-button:: applications/traffic/barcelona_poa.ipynb
+    .. link-button:: applications/traffic/barcelona_poa.html
         :text: Go to user guide
         :classes: btn-outline-primary
     
@@ -79,7 +79,7 @@ User Guide
 
   .. dropdown:: *SiouxFalls*: calculating and plotting a fixed user equilibrium
 
-    .. link-button:: applications/traffic/sioux_fixed_ue.ipynb
+    .. link-button:: applications/traffic/sioux_fixed_ue.html
         :text: Go to user guide
         :classes: btn-outline-primary
     
@@ -105,7 +105,7 @@ User Guide
       :width: 300
       :align: center
 
-    .. link-button:: network_setup/howto_graph_setup.ipynb
+    .. link-button:: network_setup/howto_graph_setup.html
         :text: Go to user guide
         :classes: btn-outline-primary
     
@@ -121,7 +121,7 @@ User Guide
       :width: 300
       :align: center
 
-    .. link-button:: network_setup/howto_set_cost.ipynb
+    .. link-button:: network_setup/howto_set_cost.html
         :text: Go to user guide
         :classes: btn-outline-primary
     
@@ -136,7 +136,7 @@ User Guide
     or an affine demand function that adds a base demand 
     :math:`\mathbf{h}_\text{affine}(\lambda) = \mathbf{b}_0  + \lambda \mathbf{b}`.
 
-    .. link-button:: /notebooks/howto_set_demand.ipynb
+    .. link-button:: /notebooks/howto_set_demand.html
         :text: Go to user guide
         :classes: btn-outline-primary
     
@@ -146,13 +146,13 @@ User Guide
     
   .. dropdown:: *Read-in from XML*: How to read in network from XML
     
-    .. link-button:: network_setup/howto_read_from_xml.ipynb
+    .. link-button:: network_setup/howto_read_from_xml.html
         :text: Go to user guide
         :classes: btn-outline-primary
     
     :link-badge:`network,"Network","ref",badge-info`
   
-  .. dropdown:: *Plotting*: How to specify node positions and plot with networkx
+  .. dropdown:: *Plotting*: How to specify node positions and plot with NetworkX
 
     We specify node positions and used them to plot a network
     with `NetworkX <https://networkx.org/>`_.
@@ -161,7 +161,7 @@ User Guide
       :width: 400
       :align: center
     
-    .. link-button:: network_setup/howto_plot_network.ipynb
+    .. link-button:: network_setup/howto_plot_network.html
         :text: Go to user guide
         :classes: btn-outline-primary
     

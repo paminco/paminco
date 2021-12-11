@@ -89,7 +89,24 @@ class FWBreakFlag(IntEnum2):
 
 
 class FWMode(IntEnum2):
-    """Enum defining the update mode of the FW solver.
+    r"""Enum defining the update mode of the FW solver.
+    
+    Possible modes:
+    
+    ``STEP_SIZE_DETERIATION``
+        solution is updated as
+        :math:`\mathbf{x}_{i+1}
+        = (1-\eta)*\mathbf{x}_{i} + \eta * \mathbf{s}_i` where
+        :math:`\eta = \frac{2}{2+i}`.
+        
+    ``LINESEARCH``
+        solution is updated as
+        :math:`\mathbf{x}_{i+1} = (1-\eta)*\mathbf{x}_{i} + \eta * \mathbf{s}_i`
+        where :math:`\eta` is found by minimizing :math:`f` on a line between
+        :math:`\mathbf{x}_i` and :math:`\mathbf{s}_i`.
+    
+    ``PARTAN``
+        bla
     
     References
     ----------
@@ -100,22 +117,8 @@ class FWMode(IntEnum2):
     """
     
     STEP_SIZE_DETERIATION = 0
-    r"""Solution is updated as
-    :math:`\mathbf{x}_{i+1}
-    = (1-\eta)*\mathbf{x}_{i} + \eta * \mathbf{s}_i` where
-    :math:`\eta = \frac{2}{2+i}`.
-    """
-    
     LINESEARCH = 1
-    r"""Solution is updated as
-    :math:`\mathbf{x}_{i+1} = (1-\eta)*\mathbf{x}_{i} + \eta * \mathbf{s}_i`
-    where :math:`\eta` is found by minimizing :math:`f` on a line between
-    :math:`\mathbf{x}_i` and :math:`\mathbf{s}_i`.
-    """
-    
     PARTAN = 2
-    """TODO-PJ"""
-
 
 class FWX:
     """Class that keep tracks of (intermediate) best x in Frank-Wolfe."""
@@ -218,13 +221,6 @@ class FW:
         is the number of independent variables.
     kwargs : keyword arguments
         Further options, see FWConfig.
-    
-    Attributes
-    ----------
-    xes : FWX
-        Object keeping track of intermediate solutions.
-    x
-    config
     
     See Also
     --------
