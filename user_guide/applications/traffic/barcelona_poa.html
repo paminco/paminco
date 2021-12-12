@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Price of Anarchy - Barcelona &#8212; paminco 0.1 documentation</title>
     
@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/contentui.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/paminco.css" />
@@ -47,7 +47,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/contentui.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -357,38 +357,38 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
 FileNotFoundError                         Traceback (most recent call last)
-~\AppData\Local\Temp/ipykernel_8532/2419181191.py in &lt;module&gt;
+/tmp/ipykernel_2223/2419181191.py in &lt;module&gt;
 ----&gt; 1 barcelona = paminco.net.Network.from_xml(REL_DIR + &quot;data/traffic/Barcelona.xml&quot;)
 
-~\git\paminco\paminco\net\network.py in from_xml(cls, file, return_dict, **kwargs)
+~/work/paminco/paminco/docs/source/user_guide/applications/traffic/../../../../../paminco/net/network.py in from_xml(cls, file, return_dict, **kwargs)
    1584             ``from_xml`` method of NetworkCost class
    1585         &quot;&quot;&quot;
 -&gt; 1586         edge_data = Edges.from_xml(file, return_data=True)
    1587         node_data = Nodes.from_xml(file, return_data=True)
    1588         demand_data = file
 
-~\git\paminco\paminco\net\shared.py in from_xml(cls, data, return_data, **kwargs)
-    436             **kwargs
-    437             ):
---&gt; 438         data = xml_find_root(data)
-    439         edges = data.find(&quot;edges&quot;)
-    440         if edges is None:
+~/work/paminco/paminco/docs/source/user_guide/applications/traffic/../../../../../paminco/net/shared.py in from_xml(cls, data, return_data, **kwargs)
+    423             **kwargs
+    424             ):
+--&gt; 425         data = xml_find_root(data)
+    426         edges = data.find(&quot;edges&quot;)
+    427         if edges is None:
 
-~\git\paminco\paminco\utils\readin.py in xml_find_root(data, root_tag)
+~/work/paminco/paminco/docs/source/user_guide/applications/traffic/../../../../../paminco/utils/readin.py in xml_find_root(data, root_tag)
     157     if isinstance(data, str):
     158         if data.endswith(&quot;.xml&quot;):
 --&gt; 159             data = et.parse(data)
     160         else:
     161             data = et.fromstring(data)
 
-c:\users\pj\anaconda3\envs\flowing\lib\xml\etree\ElementTree.py in parse(source, parser)
+/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/xml/etree/ElementTree.py in parse(source, parser)
    1200     &quot;&quot;&quot;
    1201     tree = ElementTree()
 -&gt; 1202     tree.parse(source, parser)
    1203     return tree
    1204 
 
-c:\users\pj\anaconda3\envs\flowing\lib\xml\etree\ElementTree.py in parse(self, source, parser)
+/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/xml/etree/ElementTree.py in parse(self, source, parser)
     582         close_source = False
     583         if not hasattr(source, &quot;read&quot;):
 --&gt; 584             source = open(source, &quot;rb&quot;)
@@ -609,7 +609,7 @@ costfuncs_f
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br>
 </p>
     </div>
     

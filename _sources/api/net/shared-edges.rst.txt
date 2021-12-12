@@ -1,8 +1,0 @@
-paminco.net.Shared.edges
-========================
-
-Get edges.
-
-See also
---------
-:class:`paminco.net.Edges`

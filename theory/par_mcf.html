@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Parametric Minimum Cost Flows &#8212; paminco 0.1 documentation</title>
     
@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/contentui.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/paminco.css" />
@@ -47,7 +47,7 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/contentui.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -252,7 +252,7 @@
 </ul>
 </div>
 <p>There exists a variety of solutions to the <a class="reference internal" href="min_cost_flow.html#theory-mcf"><span class="std std-ref">minimum cost flow problem</span></a>.
-<em>parcmf</em> provides solutions to a slighly different problem.</p>
+<em>paminco</em> provides solutions to a slighly different problem.</p>
 <section id="minimum-cost-flow-functions">
 <span id="theory-mcf-func"></span><h2><a class="toc-backref" href="#id5">1. Minimum cost flow functions</a><a class="headerlink" href="#minimum-cost-flow-functions" title="Permalink to this headline">¶</a></h2>
 <p>The goal is to find a minimum cost flow <strong>function</strong> that maps a demand factor <span class="math notranslate nohighlight">\(\lambda\)</span> to
@@ -356,18 +356,18 @@ The objective function simplifies to <span class="math notranslate nohighlight">
 <p>The assumption of linear marginal cost restricts the applicability of the algorithm.
 We now discuss problems with <em>piecewise linear marginal costs</em>:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="a150b4c8-5517-4bf1-9b91-75b93eb48cb3" name="9c6abfa8-e9ba-4c10-a789-a9601520f561" type="radio">
-</input><label class="tabbed-label" for="a150b4c8-5517-4bf1-9b91-75b93eb48cb3">
+<input checked="checked" id="35ee3db9-61d0-4bb7-85b6-b54e8df50e6a" name="5dae4584-0c73-4602-b44b-b2665eb2f789" type="radio">
+</input><label class="tabbed-label" for="35ee3db9-61d0-4bb7-85b6-b54e8df50e6a">
 Graph</label><div class="tabbed-content docutils">
 <a class="reference internal image-reference" href="../_images/fig2a_graph_with_marginal_cost.png"><img alt="../_images/fig2a_graph_with_marginal_cost.png" class="align-center" src="../_images/fig2a_graph_with_marginal_cost.png" style="height: 250px;" /></a>
 </div>
-<input id="a0a4af0e-faaa-4cfe-811a-736363ca65c6" name="9c6abfa8-e9ba-4c10-a789-a9601520f561" type="radio">
-</input><label class="tabbed-label" for="a0a4af0e-faaa-4cfe-811a-736363ca65c6">
+<input id="de0dad56-c8b6-4519-bac0-b6bc34ca5860" name="5dae4584-0c73-4602-b44b-b2665eb2f789" type="radio">
+</input><label class="tabbed-label" for="de0dad56-c8b6-4519-bac0-b6bc34ca5860">
 Regions in <span class="math notranslate nohighlight">\(\Pi\)</span> and solution curve</label><div class="tabbed-content docutils">
 <a class="reference internal image-reference" href="../_images/fig3a_potential_space_and_solution_curve.png"><img alt="../_images/fig3a_potential_space_and_solution_curve.png" class="align-center" src="../_images/fig3a_potential_space_and_solution_curve.png" style="height: 250px;" /></a>
 </div>
-<input id="393bae95-4259-47b7-923f-941e1fdd5c8d" name="9c6abfa8-e9ba-4c10-a789-a9601520f561" type="radio">
-</input><label class="tabbed-label" for="393bae95-4259-47b7-923f-941e1fdd5c8d">
+<input id="6d3e9043-2a6f-4cb5-be1f-8fb13734b868" name="5dae4584-0c73-4602-b44b-b2665eb2f789" type="radio">
+</input><label class="tabbed-label" for="6d3e9043-2a6f-4cb5-be1f-8fb13734b868">
 Induced edge flows</label><div class="tabbed-content docutils">
 <a class="reference internal image-reference" href="../_images/fig3b_induced_flow.png"><img alt="../_images/fig3b_induced_flow.png" class="align-center" src="../_images/fig3b_induced_flow.png" style="height: 250px;" /></a>
 </div>
@@ -455,7 +455,7 @@ Research</em>. Available at <a class="reference external" href="https://www3.mat
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br>
 </p>
     </div>
     

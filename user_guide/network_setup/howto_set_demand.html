@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Setting up a Demand Function &#8212; paminco 0.1 documentation</title>
     
@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/contentui.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/paminco.css" />
@@ -47,7 +47,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/contentui.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -448,21 +448,21 @@ We want to send 10 units from vertex <span class="math notranslate nohighlight">
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_21848</span><span class="o">/</span><span class="mf">2378728165.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2386</span><span class="o">/</span><span class="mf">2378728165.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">demand_vector</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">demand</span><span class="o">.</span><span class="n">demand_vector</span><span class="p">(</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">graph</span><span class="o">.</span><span class="n">shared</span><span class="p">,</span>  <span class="c1"># each network element must know about shared data ...</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># send 10 units from A to D</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">demand_vector</span><span class="o">.</span><span class="n">map_node_label_to_id</span><span class="p">()</span>
 
-<span class="nn">~\git\paminco\paminco\net\demand.py</span> in <span class="ni">demand_vector</span><span class="nt">(data, shared, dtype_int, dtype_float, single_pairs, **kwargs)</span>
+<span class="nn">~/work/paminco/paminco/docs/source/user_guide/network_setup/../../../../paminco/net/demand.py</span> in <span class="ni">demand_vector</span><span class="nt">(data, shared, dtype_int, dtype_float, single_pairs, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1693</span>             <span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1694</span>         <span class="k">else</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">1695</span>             <span class="k">return</span> <span class="n">DemandVector</span><span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">1696</span>                 <span class="n">data</span><span class="p">,</span>
 <span class="g g-Whitespace">   </span><span class="mi">1697</span>                 <span class="n">shared</span><span class="o">=</span><span class="n">shared</span><span class="p">,</span>
 
-<span class="nn">~\git\paminco\paminco\net\demand.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, shared, dtype_int, dtype_float, copy, is_label)</span>
+<span class="nn">~/work/paminco/paminco/docs/source/user_guide/network_setup/../../../../paminco/net/demand.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, shared, dtype_int, dtype_float, copy, is_label)</span>
 <span class="g g-Whitespace">    </span><span class="mi">965</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_comm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CommodityMultiSourceSink</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">is_label</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 <span class="g g-Whitespace">    </span><span class="mi">966</span>         <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">967</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_comm</span> <span class="o">=</span> <span class="p">[</span><span class="n">Commodity</span><span class="o">.</span><span class="n">from_data</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">is_label</span><span class="o">=</span><span class="n">is_label</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
@@ -884,7 +884,7 @@ Using the data from the above example, we can setup an affine demand function as
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br>
 </p>
     </div>
     
