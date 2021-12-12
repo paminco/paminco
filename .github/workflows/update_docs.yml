@@ -38,4 +38,4 @@ jobs:
           
       - name: push to gh-pages branch
         run: |
-          ./scripts/run.py    
+          ./scripts/docs_to_pages.py    
