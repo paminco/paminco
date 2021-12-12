@@ -30,7 +30,7 @@ User Guide
 
   .. dropdown:: *Braess Paradox*: Adding capacity to a network might decrease network efficiency due to selfish participants.
     
-    .. image:: /_static/img/Braess_paradox_road_example.svg
+    .. image:: applications/traffic/img/braess.jpg
         :width: 700
         :alt: Parametric User Equilibria for Sioux Falls
         :align: center
@@ -90,13 +90,13 @@ User Guide
 
   .. admonition:: Motivation
 
-    You want to setup a custom graph with *paminco*? Learn how to specify graphs, 
+    You want to set up a custom graph with *paminco*? Learn how to specify graphs, 
     how to allow for negative flows (we treat all graphs as directed), and how to 
     specify cost and demand functions.
 
   .. dropdown:: *Graph Setup*: directed graphs (with negative flows)
 
-    We setup directed graphs,
+    We set up directed graphs,
     learn about graph representations and how to set lower
     and upper boundaries for the edge flows in order to allow for negative edge flows 
     (thus creating undirected graphs).
@@ -109,8 +109,8 @@ User Guide
         :text: Go to user guide
         :classes: btn-outline-primary
     
-    :link-badge:`edges,Edges,"ref",badge-info`
-    :link-badge:`nodes,Nodes,"ref",badge-info`
+    :link-badge:`~edges,Edges,"ref",badge-info`
+    :link-badge:`~nodes,Nodes,"ref",badge-info`
 
   .. dropdown:: *Edge Cost*: polynomial, piecewise quadratic, or symbolic
     
@@ -125,8 +125,10 @@ User Guide
         :text: Go to user guide
         :classes: btn-outline-primary
     
-    :link-badge:`api-network-cost-NetworkCost,"NetworkCost (abstract)",ref,badge-light`
-    :link-badge:`api-network-cost-PolynomialCost,"PolynomialCost",ref,badge-info`
+    :link-badge:`cost-abstract,"NetworkCost (abstract)",ref,badge-light`
+    :link-badge:`cost-poly,"PolynomialCost",ref,badge-info`
+    :link-badge:`cost-piecewise,"PiecewiseQuadraticCost",ref,badge-info`
+    :link-badge:`cost-symbolic,"SymbolicCost",ref,badge-info`
   
   .. dropdown:: *Demand Function*: linear and affine demand functions
     
@@ -150,7 +152,7 @@ User Guide
         :text: Go to user guide
         :classes: btn-outline-primary
     
-    :link-badge:`network,"Network","ref",badge-info`
+    :link-badge:`~network,"Network",ref,badge-info`
   
   .. dropdown:: *Plotting*: How to specify node positions and plot with NetworkX
 
@@ -165,8 +167,8 @@ User Guide
         :text: Go to user guide
         :classes: btn-outline-primary
     
-    :link-badge:`network,"Network","ref",badge-info`
-    :link-badge:`nodes,"Nodes","ref",badge-info`
+    :link-badge:`~network,"Network",ref,badge-info`
+    :link-badge:`~nodes,"Nodes",ref,badge-info`
   
 
 

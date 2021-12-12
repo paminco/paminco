@@ -12,6 +12,7 @@ Network
    :maxdepth: 2
 
    network
+   shared
    edges
    nodes
    demand/index

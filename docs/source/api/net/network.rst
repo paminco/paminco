@@ -1,4 +1,4 @@
-.. _network:
+.. _~network:
 
 =======
 Network

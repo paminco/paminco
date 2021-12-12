@@ -92,13 +92,13 @@ exclude_patterns = []
 #
 # html_theme = 'alabaster'
 html_theme = "pydata_sphinx_theme"
-html_logo = "_static/logo0.svg"
+html_logo = "_static/logo1.svg"
 html_theme_options = {
     "logo_link": "index",
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/pjoachims/flow_worker",
+            "url": "https://github.com/paminco/paminco",
             "icon": "fab fa-github-square",
         },
     ],

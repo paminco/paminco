@@ -89,19 +89,6 @@ class Edges:
         Ndarray of shape (m, ). A ``-1`` denotes an edge with lb < 0 and
         ub <= 0. A ``0`` denotes an edge with lb < 0 and ub > 0.
         A ``1`` denotes an edge with lb >=0 and ub > 0.
-    flow_forward
-    flow_backward
-    flow_undirected
-    flow_dir : FlowDirection
-        Direction of flow on edges.
-    lb
-    ub
-    s
-    t
-    source_lbl
-    target_lbl
-    dtype_int
-    dtype_float
     """
     
     def __init__(
@@ -935,17 +922,6 @@ class Shared:
         Datatype for all float ndarray.
     dtype_int : dtype, default=int
         Datatype for all int ndarray.
-    
-    Attributes
-    ----------
-    edges
-    nodes
-    n
-    m
-    nodes2edge
-    node2id
-    dtype_float
-    dtype_int
     
     See Also
     --------
