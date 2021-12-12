@@ -38,7 +38,4 @@ jobs:
           
       - name: push to gh-pages branch
         run: |
-          python3
-          from ghp_import import ghp_import
-          ghp_import('docs/build/html', push=True, nojekyll=True)        
-          
+          ./scripts/run.py    
