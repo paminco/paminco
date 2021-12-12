@@ -9,7 +9,7 @@ Parametric Minimum Cost Flows
   :depth: 2
 
 There exists a variety of solutions to the :ref:`minimum cost flow problem <theory-mcf>`. 
-*parcmf* provides solutions to a slighly different problem.
+*paminco* provides solutions to a slighly different problem.
 
 .. _theory-mcf-func:
 

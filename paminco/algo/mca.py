@@ -60,7 +60,7 @@ class MCAInterpolationRule(InterpolationRule):
 
     See also
     --------
-    parcmf.network.cost.NetworkCostInterpolation
+    paminco.network.cost.NetworkCostInterpolation
     """
 
     def __init__(

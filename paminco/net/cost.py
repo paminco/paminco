@@ -183,7 +183,7 @@ class NetworkCost(abc.ABC):
 
         See also
         --------
-        parcmf.network.network.Network.L : Laplacian matrix.
+        paminco.network.network.Network.L : Laplacian matrix.
         """
         weights = self.value(x, d=2)
         finite_vals = np.isfinite(weights)
@@ -1901,7 +1901,7 @@ class PiecewiseQuadraticCost(NetworkCost):
         paminco.net.cost.NetworkCost.laplace_weights :
             Use second derivative of cost functions to determine
             Laplace weights.
-        parcmf.network.network.Network.L : Laplacian matrix.
+        paminco.network.network.Network.L : Laplacian matrix.
         c : Alias for this function.
         """
         if region is None:
