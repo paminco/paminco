@@ -28,7 +28,8 @@ jobs:
           pip3 install sphinx_copybutton
           pip3 install sphinx-panels
           pip3 install sphinx-togglebutton
-          pip3 install sphinxcontrib-contentui          
+          pip3 install sphinxcontrib-contentui
+          pip3 install pydata-sphinx-theme
         
       - name: build docs
         run: |
