@@ -17,11 +17,18 @@ jobs:
         with:
           python-version: 3.8
       
-      - name: install dependecies and ghp-import
+      - name: install dependecies, ghp-import and all sphinx packages
         run: |
           python3 -m pip install --upgrade pip
           pip3 install -r requirements.txt
           pip3 install ghp-import
+          pip3 install -U sphinx
+          pip3 install numpydoc
+          pip3 install myst_nb
+          pip3 install sphinx_copybutton
+          pip3 install sphinx-panels
+          pip3 install sphinx-togglebutton
+          pip3 install sphinxcontrib-contentui          
         
       - name: build docs
         run: |
