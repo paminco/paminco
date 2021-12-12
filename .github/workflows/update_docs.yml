@@ -1,0 +1,36 @@
+name: update_docs
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build documentation and push to gh-pages branch
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      
+      - name: install dependecies and ghp-import
+        run: |
+          python3 -m pip install --upgrade pip
+          pip3 install -r requirements.txt
+          pip3 install ghp-import
+        
+      - name: build docs
+        run: |
+          cd docs
+          make html
+          
+      - name: push to gh-pages branch
+        run: |
+          python3
+          from ghp_import import ghp_import
+          ghp_import('docs/build/html', push=True, nojekyll=True)        
+          
