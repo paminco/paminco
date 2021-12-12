@@ -1,6 +1,0 @@
-﻿paminco.utils.math.np\_divide\_a\_by\_b
-=======================================
-
-.. currentmodule:: paminco.utils.math
-
-.. autofunction:: np_divide_a_by_b
