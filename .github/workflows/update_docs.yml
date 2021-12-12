@@ -31,6 +31,10 @@ jobs:
           pip3 install sphinxcontrib-contentui
           pip3 install pydata-sphinx-theme
         
+      - name: push to gh-pages branch
+        run: |
+          python3 scripts/docs_to_pages.py    
+
       - name: build docs
         run: |
           cd docs
@@ -38,4 +42,4 @@ jobs:
           
       - name: push to gh-pages branch
         run: |
-          ./scripts/docs_to_pages.py    
+          python3 scripts/docs_to_pages.py    
