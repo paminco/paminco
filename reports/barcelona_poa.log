@@ -22,7 +22,7 @@ barcelona = paminco.net.Network.from_xml(REL_DIR + "data/traffic/Barcelona.xml")
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2223/2419181191.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_2112/2419181191.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mbarcelona[0m [0;34m=[0m [0mpaminco[0m[0;34m.[0m[0mnet[0m[0;34m.[0m[0mNetwork[0m[0;34m.[0m[0mfrom_xml[0m[0;34m([0m[0mREL_DIR[0m [0;34m+[0m [0;34m"data/traffic/Barcelona.xml"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m~/work/paminco/paminco/docs/source/user_guide/applications/traffic/../../../../../paminco/net/network.py[0m in [0;36mfrom_xml[0;34m(cls, file, return_dict, **kwargs)[0m
