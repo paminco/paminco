@@ -1,0 +1,6 @@
+﻿paminco.\_base.AlphaBetaApproximativeSolver.all\_params
+=======================================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: AlphaBetaApproximativeSolver.all_params

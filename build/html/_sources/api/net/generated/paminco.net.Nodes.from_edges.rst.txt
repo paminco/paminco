@@ -1,0 +1,6 @@
+﻿paminco.net.Nodes.from\_edges
+=============================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Nodes.from_edges

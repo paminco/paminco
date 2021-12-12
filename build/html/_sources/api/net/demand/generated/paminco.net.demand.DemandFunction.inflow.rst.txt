@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandFunction.inflow
+========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandFunction.inflow

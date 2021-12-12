@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommodityMultiSourceSink.from\_label\_and\_id
+================================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: CommodityMultiSourceSink.from_label_and_id

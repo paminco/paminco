@@ -1,0 +1,6 @@
+﻿paminco.algo.mcfi.MCFI.param\_solution
+======================================
+
+.. currentmodule:: paminco.algo.mcfi
+
+.. autoproperty:: MCFI.param_solution

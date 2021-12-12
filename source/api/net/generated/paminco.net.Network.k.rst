@@ -1,0 +1,6 @@
+﻿paminco.net.Network.k
+=====================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Network.k

@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Graph Setup and Representations &#8212; paminco 0.1 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/contentui.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="STUB" href="howto_set_cost.html" />
+    <link rel="prev" title="How to Set Up a Network" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo1.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../theory/index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../applications/traffic/index.html">
+     Traffic Networks
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/background.html">
+       Background
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/braess_paradox.html">
+       Braess Paradox
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/pigou_example.html">
+       Pigou's Example
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/sioux_fixed_ue.html">
+       SiouxFalls - User Eqiulibrium
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/sioux_par_poa.html">
+       SiouxFalls - Parametric Price of Anarchy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/barcelona_poa.html">
+       Barcelona - Price of Anarchy
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../applications/gas/index.html">
+     Gaslib
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/gas/stub.html">
+       Stub
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   How to Set Up a Network
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     How to set up directed and undirected graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto_set_cost.html">
+     How to equip a network with cost functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto_set_demand.html">
+     How to specify the demand function for a network
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto_read_from_xml.html">
+     How to readin network data from XML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto_shortest_path.html">
+     How to calculate shortest path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto_plot_network.html">
+     How to plot a network
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#directed-graphs">
+   1 Directed graphs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setup">
+     1.1 Setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representations">
+     1.2 Representations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adjacency-matrix">
+       1.2.1 Adjacency matrix
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#incidence-matrix">
+       1.2.2 Incidence matrix
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#laplacian-matrix">
+       1.2.3 Laplacian matrix
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edge-bounds">
+     1.3 Edge bounds
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#undirected-graphs">
+   2 Undirected graphs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.1 Setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     2.2 Representations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       2.2.1 Adjacency matrix
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       2.2.2 Incidence matrix
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       2.2.3 Laplacian matrix
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     2.3 Edge bounds
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labels-to-indices-mapping">
+   3. Labels to indices mapping
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pass-indices-in-node-data">
+     3.1 Pass indices in node data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specifing-label-mapping-in-edges">
+     3.2 Specifing label mapping in edges
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="graph-setup-and-representations">
+<h1>Graph Setup and Representations<a class="headerlink" href="#graph-setup-and-representations" title="Permalink to this headline">¶</a></h1>
+<p>Denote <span class="math notranslate nohighlight">\(G = (V, E)\)</span> a <code class="docutils literal notranslate"><span class="pre">graph</span></code>, where <span class="math notranslate nohighlight">\(V\)</span> are the vertices or nodes and <span class="math notranslate nohighlight">\(E\)</span> are the links or edges.
+This notebook shows how to setup directed and undirected graphs, how to access different graph respresentations
+and how to specify labels to indices mappings.</p>
+<section id="directed-graphs">
+<h2>1 Directed graphs<a class="headerlink" href="#directed-graphs" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">directed</span> <span class="pre">graph</span></code> is characterized by the direction of the edge flow, i.e., units can only travel along the edge in one direction.
+Consider the following directed graph:</p>
+<center> 
+<img src="img/dir_graph.jpg" width="500">
+</center>
+<p>that connectects the four vertices <span class="math notranslate nohighlight">\(A, B, C, D\)</span> with the five directed links <span class="math notranslate nohighlight">\(e_1, e_2, e_3, e_4\)</span> and  <span class="math notranslate nohighlight">\(e_5\)</span>.</p>
+<section id="setup">
+<h3>1.1 Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>We can setup the above graph with paminco:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">REL_DIR</span>  <span class="o">=</span> <span class="s2">&quot;../../../..&quot;</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">REL_DIR</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">paminco</span>
+
+<span class="n">edge_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
+<span class="p">])</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="n">edge_data</span><span class="p">,</span> <span class="n">kw_edge</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;directed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>source_lbl</th>
+      <th>target_lbl</th>
+      <th>s</th>
+      <th>t</th>
+      <th>lb</th>
+      <th>ub</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>B</td>
+      <td>0</td>
+      <td>1</td>
+      <td>-inf</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A</td>
+      <td>C</td>
+      <td>0</td>
+      <td>2</td>
+      <td>-inf</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B</td>
+      <td>C</td>
+      <td>1</td>
+      <td>2</td>
+      <td>-inf</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>B</td>
+      <td>D</td>
+      <td>1</td>
+      <td>3</td>
+      <td>-inf</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>C</td>
+      <td>D</td>
+      <td>2</td>
+      <td>3</td>
+      <td>-inf</td>
+      <td>inf</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="representations">
+<h3>1.2 Representations<a class="headerlink" href="#representations" title="Permalink to this headline">¶</a></h3>
+<p>A graph can be represented by its <span class="math notranslate nohighlight">\(n \times n\)</span> adjacency matrix, which store as a sparse matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">adjacency_matrix</span><span class="p">()</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 1., 1., 0.],
+       [0., 0., 1., 1.],
+       [0., 0., 0., 1.],
+       [0., 0., 0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>or its <span class="math notranslate nohighlight">\(n \times m\)</span> incidence matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">incidence_matrix</span><span class="p">()</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1, -1,  0,  0,  0],
+       [ 1,  0, -1, -1,  0],
+       [ 0,  1,  1,  0, -1],
+       [ 0,  0,  0,  1,  1]], dtype=int32)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="adjacency-matrix">
+<h4>1.2.1 Adjacency matrix<a class="headerlink" href="#adjacency-matrix" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="incidence-matrix">
+<h4>1.2.2 Incidence matrix<a class="headerlink" href="#incidence-matrix" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="laplacian-matrix">
+<h4>1.2.3 Laplacian matrix<a class="headerlink" href="#laplacian-matrix" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="edge-bounds">
+<h3>1.3 Edge bounds<a class="headerlink" href="#edge-bounds" title="Permalink to this headline">¶</a></h3>
+<p>Depending on the specific problem, each edge may only allow a certain maximum of flow on the edge, i.e., it has an <code class="docutils literal notranslate"><span class="pre">upper</span> <span class="pre">bound</span></code>. By default these bounds are <span class="math notranslate nohighlight">\((0, \infty)\)</span> for directed edges. However, it is possible to pass individual flow bounds for each edge:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
+<span class="p">])</span>
+<span class="n">edge_bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">80000</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mf">12.1</span><span class="p">],</span>
+<span class="p">])</span>
+<span class="n">edge_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">edge_labels</span><span class="p">,</span> <span class="n">edge_bounds</span><span class="p">)</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="n">edge_data</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>source_lbl</th>
+      <th>target_lbl</th>
+      <th>s</th>
+      <th>t</th>
+      <th>lb</th>
+      <th>ub</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>B</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A</td>
+      <td>C</td>
+      <td>0</td>
+      <td>2</td>
+      <td>4.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B</td>
+      <td>C</td>
+      <td>1</td>
+      <td>2</td>
+      <td>300.0</td>
+      <td>400.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>B</td>
+      <td>D</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.0</td>
+      <td>80000.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>C</td>
+      <td>D</td>
+      <td>2</td>
+      <td>3</td>
+      <td>12.0</td>
+      <td>12.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="undirected-graphs">
+<h2>2 Undirected graphs<a class="headerlink" href="#undirected-graphs" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h3>2.1 Setup<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>2.2 Representations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<section id="id3">
+<h4>2.2.1 Adjacency matrix<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id4">
+<h4>2.2.2 Incidence matrix<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id5">
+<h4>2.2.3 Laplacian matrix<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id6">
+<h3>2.3 Edge bounds<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">csgraph</span><span class="p">(</span><span class="n">respect_bounds</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 1., 1., 0.],
+       [0., 0., 1., 1.],
+       [0., 0., 0., 1.],
+       [0., 0., 0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">csgraph</span><span class="p">(</span><span class="n">respect_bounds</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 1., 1., 0.],
+       [0., 0., 1., 1.],
+       [0., 0., 0., 1.],
+       [0., 0., 0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="labels-to-indices-mapping">
+<h2>3. Labels to indices mapping<a class="headerlink" href="#labels-to-indices-mapping" title="Permalink to this headline">¶</a></h2>
+<p>In a network, the <code class="docutils literal notranslate"><span class="pre">nodes</span></code> objects handles the mapping of labels to indices, which influences the graph representation.
+The mapping is accessed by:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">lbl2id</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: 0, &#39;B&#39;: 1, &#39;C&#39;: 2, &#39;D&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is possible to set a mapping in two ways:</p>
+<ol class="simple">
+<li><p>pass in indices in node data</p></li>
+<li><p>specfiy mapping for edge constructor</p></li>
+</ol>
+<section id="pass-indices-in-node-data">
+<h3>3.1 Pass indices in node data<a class="headerlink" href="#pass-indices-in-node-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">]</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">zone</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">xy</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)]</span>
+<span class="n">node_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">zone</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="n">edge_data</span><span class="p">,</span> <span class="n">node_data</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">lbl2id</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;C&#39;: 0, &#39;B&#39;: 1, &#39;D&#39;: 2, &#39;A&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+<p>E.g., compare the indicence matrices, where the specified mapping changes to row order:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">incidence_matrix</span><span class="p">()</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  1,  1,  0, -1],
+       [ 1,  0, -1, -1,  0],
+       [ 0,  0,  0,  1,  1],
+       [-1, -1,  0,  0,  0]], dtype=int32)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">incidence_matrix</span><span class="p">()</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1, -1,  0,  0,  0],
+       [ 1,  0, -1, -1,  0],
+       [ 0,  1,  1,  0, -1],
+       [ 0,  0,  0,  1,  1]], dtype=int32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>For more information see documentation of Nodes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">paminco</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">Nodes</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">[:</span><span class="mi">1010</span><span class="p">])</span>  <span class="c1"># smaller version of paminco.net.Nodes?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Class that contains the nodes/vertices of a network.
+    
+    A Nodes object can be instantiated in several ways:
+        Nodes(n)
+            where ``n`` is a Nodes object.
+        Nodes(nodes)
+            where ``nodes`` is array_like and contains either node
+            labels or node indices. If no indices are given, they
+            are set automatically.
+        Nodes(nodes, zone)
+            where ``nodes`` and ``zone`` are array_like of shape (n, ).
+            ``zone`` must be boolean array denoting if a node is a
+            zone, mostly used for traffic networks.
+        Nodes(nodes, xy, zone)
+            where ``nodes`` and ``zone`` are array_like of shape (n, )
+            and ``xy`` is array_like of shape (n, 2) and contains the
+            coordinates of the nodes.
+        Nodes(node_labels, node_indices, xy, zone)
+            where ``node_labels`` and ``node_indices`` and ``zone``
+            are are array_like of shape (n, ) and ``xy`` is array_like
+            of shape (n, 2).
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="specifing-label-mapping-in-edges">
+<h3>3.2 Specifing label mapping in edges<a class="headerlink" href="#specifing-label-mapping-in-edges" title="Permalink to this headline">¶</a></h3>
+<p>We can achieve the same by specfying a <code class="docutils literal notranslate"><span class="pre">map_labels_to_indices</span></code> mapping in edges:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
+<span class="p">])</span>
+<span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="n">edge_data</span><span class="p">,</span> <span class="n">kw_edge</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;map_labels_to_indices&quot;</span><span class="p">:</span> <span class="n">mapping</span><span class="p">},</span> <span class="n">dtype_int</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<span class="n">g2</span><span class="o">.</span><span class="n">incidence_matrix</span><span class="p">()</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span> <span class="o">-</span> <span class="n">g</span><span class="o">.</span><span class="n">incidence_matrix</span><span class="p">()</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0]], dtype=int32)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

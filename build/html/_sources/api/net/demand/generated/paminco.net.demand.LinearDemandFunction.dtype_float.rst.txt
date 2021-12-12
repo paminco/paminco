@@ -1,0 +1,6 @@
+﻿paminco.net.demand.LinearDemandFunction.dtype\_float
+====================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: LinearDemandFunction.dtype_float

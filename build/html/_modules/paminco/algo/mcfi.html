@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>paminco.algo.mcfi &#8212; paminco 0.1 documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/contentui.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo1.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../theory/index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for paminco.algo.mcfi</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span> <span class="nn">copy</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">scopt</span>
+
+<span class="kn">from</span> <span class="nn">paminco._base</span> <span class="kn">import</span> <span class="n">AlphaBetaApproximativeSolver</span><span class="p">,</span> <span class="n">Config</span><span class="p">,</span> <span class="n">ParametricSolution</span>
+<span class="kn">from</span> <span class="nn">paminco.callback</span> <span class="kn">import</span> <span class="n">CallBackFlag</span>
+<span class="kn">from</span> <span class="nn">paminco.net.demand</span> <span class="kn">import</span> <span class="n">AffineDemandFunction</span>
+<span class="kn">from</span> <span class="nn">paminco.net.network</span> <span class="kn">import</span> <span class="n">Support</span><span class="p">,</span> <span class="n">Network</span>
+<span class="kn">from</span> <span class="nn">paminco.utils.misc</span> <span class="kn">import</span> <span class="n">callback_to_list</span>
+<span class="kn">from</span> <span class="nn">paminco.utils.bisec</span> <span class="kn">import</span> <span class="n">bisec_method</span>
+<span class="kn">from</span> <span class="nn">paminco.utils.typing</span> <span class="kn">import</span> <span class="n">is_iterable</span><span class="p">,</span> <span class="n">IntEnum2</span>
+<span class="kn">from</span> <span class="nn">paminco.optim</span> <span class="kn">import</span> <span class="n">LinearWarmstart</span><span class="p">,</span> <span class="n">NetworkFW</span>
+
+
+<div class="viewcode-block" id="AdaptiveMethod"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.mcfi.AdaptiveMethod.html#paminco.algo.mcfi.AdaptiveMethod">[docs]</a><span class="k">class</span> <span class="nc">AdaptiveMethod</span><span class="p">(</span><span class="n">IntEnum2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Enum defining the step rule used in the MCFI algorithm.&quot;&quot;&quot;</span>
+    <span class="n">BASIC</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="sd">&quot;&quot;&quot;Basic step size rule.</span>
+<span class="sd">    </span>
+<span class="sd">    Assumes that the objective function is non-decreasing.&quot;&quot;&quot;</span>
+
+    <span class="n">CONSTANT_SUPPORT</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="sd">&quot;&quot;&quot;Extended step size rule.</span>
+<span class="sd">    </span>
+<span class="sd">    Assumes that all marginal cost functions are differentiable</span>
+<span class="sd">    with f&#39;(x) &gt; 0, all marginal cost functions are convex</span>
+<span class="sd">    for x &gt; 0 and concave for x &lt; 0, and that the support</span>
+<span class="sd">    does not change between any two breakpoints.&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="MCFIConfig"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.mcfi.MCFIConfig.html#paminco.algo.mcfi.MCFIConfig">[docs]</a><span class="k">class</span> <span class="nc">MCFIConfig</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Settings for the Marginal Cost Flow Interpolator.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    lambda_min : float</span>
+<span class="sd">        Minimum demand factor to find mincost flow for.</span>
+<span class="sd">    lambda_max : float</span>
+<span class="sd">        Maximum demand factor to find mincost flow for.</span>
+<span class="sd">    adaptive_method : AdaptiveMethod</span>
+<span class="sd">        Enum defining he step rule used in the MCFI algorithm.</span>
+<span class="sd">    alpha : float</span>
+<span class="sd">        Relative tolerance for alpha-beta-approximation.</span>
+<span class="sd">    beta : float</span>
+<span class="sd">        Absolute tolerance for alpha-beta-approximation.</span>
+<span class="sd">    epsilon : float</span>
+<span class="sd">        Convergence threshold for optimizer.</span>
+<span class="sd">    warmstart : bool</span>
+<span class="sd">        If True and feasible, optimizer is warmstarted.</span>
+<span class="sd">    print : bool</span>
+<span class="sd">        if True, an interation summary is printed after each iteration.</span>
+<span class="sd">        </span>
+<span class="sd">    See also</span>
+<span class="sd">    --------</span>
+<span class="sd">    AdaptiveMethod</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">paras</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;lambda_min&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lambda_max&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;adaptive_method&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;beta&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;epsilon&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;warmstart&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;print&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    
+<div class="viewcode-block" id="MCFIConfig.__init__"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.mcfi.MCFIConfig.html#paminco.algo.mcfi.MCFIConfig.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_adaptive_method</span> <span class="o">=</span> <span class="n">AdaptiveMethod</span><span class="o">.</span><span class="n">BASIC</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">1e-2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">warmstart</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">print</span> <span class="o">=</span> <span class="kc">False</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">map_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">map_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">kw</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">paras</span><span class="p">:</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> is not a valid MCFI setting.&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">adaptive_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adaptive_method</span>
+    
+    <span class="nd">@adaptive_method</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">adaptive_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_adaptive_method</span> <span class="o">=</span> <span class="n">AdaptiveMethod</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    
+    <span class="n">adaptive_method</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">AdaptiveMethod</span><span class="o">.</span><span class="vm">__doc__</span></div>
+
+
+<div class="viewcode-block" id="MCFI"><a class="viewcode-back" href="../../../api/algo/mcfi.html#paminco.algo.mcfi.MCFI">[docs]</a><span class="k">class</span> <span class="nc">MCFI</span><span class="p">(</span><span class="n">AlphaBetaApproximativeSolver</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Minimum Cost Flow Interpolation.</span>
+<span class="sd">    </span>
+<span class="sd">    Computes min costs flows for breakpoints. For parameters</span>
+<span class="sd">    in-between the breakpoints, a min cost flow is then interpolated.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    net : Network</span>
+<span class="sd">        Network to find min cost flows for. A min cost flow ``f`` for</span>
+<span class="sd">        some ``param`` is found by::</span>
+<span class="sd">        </span>
+<span class="sd">            minimize net.cost(f)</span>
+<span class="sd">            s.t. net.Gamma.dot(f) = net.demand(param).</span>
+<span class="sd">    </span>
+<span class="sd">    name : str, optional</span>
+<span class="sd">        Name of solver.</span>
+<span class="sd">    callback : callable, or list of callable, optional</span>
+<span class="sd">        Callbacks called during initialization and run method. Can be</span>
+<span class="sd">        used for debugging and timing.</span>
+<span class="sd">    use_simple_timer : bool, default=True</span>
+<span class="sd">        Whether to time MCFI. If ``True``, timestamps for intializtion</span>
+<span class="sd">        and every iteration will be saved to attribute ``timer``.</span>
+<span class="sd">    kw_optim : keyword arguments, optional</span>
+<span class="sd">        Further arguments passed to min cost flow optimizer.</span>
+<span class="sd">    kwargs : keyword arguments, optional</span>
+<span class="sd">        Further parameters for MCFI, see MCFIConfig.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    config : MCFIConfig</span>
+<span class="sd">        Settings for MCFI.</span>
+<span class="sd">    network : Network</span>
+<span class="sd">        Network associated with MCFI.</span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of solver.</span>
+<span class="sd">    param_solution : ParametricSolution</span>
+<span class="sd">        List that stores min cost flows found for some parameters.</span>
+<span class="sd">        Handles interpolation of flows.</span>
+<span class="sd">    </span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    MCFIConfig : All settings for MCFI.</span>
+<span class="sd">    paminco.optim.fw_net.NetworkFW :</span>
+<span class="sd">        Optimizer to find min cost flows for a given parameter.</span>
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Find user equilibrium (UE) for various specified demand factors:</span>
+<span class="sd">    </span>
+<span class="sd">        &gt;&gt;&gt; import paminco</span>
+<span class="sd">        &gt;&gt;&gt; net = paminco.net.load_sioux()</span>
+<span class="sd">        &gt;&gt;&gt; net.integrate_cost()  # integrate to calc UE</span>
+<span class="sd">        &gt;&gt;&gt; mcfi = MCFI(net)</span>
+<span class="sd">        &gt;&gt;&gt; demand_fac = [0.2, 0.5, 0.6]</span>
+<span class="sd">        &gt;&gt;&gt; mcfi.run(param=demand_fac)</span>
+<span class="sd">        &gt;&gt;&gt; mcfi.cost_at(demand_fac).round(2)</span>
+<span class="sd">        array([ 638722.63, 1673514.68, 2062773.13])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MCFI.__init__"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.mcfi.MCFI.__init__.html#paminco.algo.mcfi.MCFI.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">net</span><span class="p">:</span> <span class="n">Network</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">use_simple_timer</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="n">optim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">kw_optim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">net</span><span class="p">,</span>
+                         <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                         <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span>
+                         <span class="n">use_simple_timer</span><span class="o">=</span><span class="n">use_simple_timer</span><span class="p">)</span>
+        <span class="c1"># Map kwargs to config object</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_c</span> <span class="o">=</span> <span class="n">MCFIConfig</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        
+        <span class="c1"># Initialize optimizer -&gt; find MCF for some param</span>
+        <span class="k">if</span> <span class="n">kw_optim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">kw_optim</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="c1"># Pass epsilon to optimizer (if not specifically given in kw_optim)</span>
+        <span class="k">if</span> <span class="s1">&#39;epsilon&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kw_optim</span><span class="p">:</span>
+            <span class="n">kw_optim</span><span class="p">[</span><span class="s1">&#39;epsilon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">epsilon</span>
+        
+        <span class="k">if</span> <span class="n">optim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">optim</span> <span class="o">=</span> <span class="n">NetworkFW</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optim</span> <span class="o">=</span> <span class="n">optim</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_optim</span><span class="p">)</span>
+        
+        <span class="c1"># Storing breakpoint solutions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_param_solution</span> <span class="o">=</span> <span class="n">ParametricSolution</span><span class="p">()</span>
+        
+        <span class="c1"># Flag end of iteration to listeners</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">INIT_END</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_preprocess</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="MCFI.run"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.mcfi.MCFI.run.html#paminco.algo.mcfi.MCFI.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">param</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">kw_optim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Run MCFI.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        param: iterable, optional</span>
+<span class="sd">            Parameters for which to find *minimum cost flow*. If None,</span>
+<span class="sd">            adaptive method is used to determine parameters.</span>
+<span class="sd">        callback : callable / list of callables, optional</span>
+<span class="sd">            Callables are called with signature ``cb(self, CallBackFlag)``</span>
+<span class="sd">            Full callables consist of those defined in initialization plus</span>
+<span class="sd">            those passed here::</span>
+<span class="sd">            </span>
+<span class="sd">                Start of run       -&gt; cb(self, CallBackFlag.RUN_START)</span>
+<span class="sd">            </span>
+<span class="sd">                Start of iteration -&gt; cb(self, CallBackFlag.ITER_START)</span>
+<span class="sd">            </span>
+<span class="sd">                End of iteration   -&gt; cb(self, CallBackFlag.ITER_END)</span>
+<span class="sd">            </span>
+<span class="sd">                End of run         -&gt; cb(self, CallBackFlag.End_RUN)</span>
+<span class="sd">        </span>
+<span class="sd">        kwargs : keyword arguments</span>
+<span class="sd">            Further options for solver, see :class:`MCFIConfig`.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        AdaptiveMethod</span>
+<span class="sd">        MCFIConfig</span>
+<span class="sd">        paminco.callback</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">kw_optim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">kw_optim</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">map_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">map_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kw_optim</span><span class="p">)</span>
+        
+        <span class="c1"># disable warmstarting if affine problem</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">,</span> <span class="n">AffineDemandFunction</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">warmstart</span> <span class="o">=</span> <span class="kc">False</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">param</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_run_adaptive</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">is_iterable</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_run_with_params</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">callback</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;param&#39; must be None or Iterable.&quot;</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_run_single_fw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">warmstart</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">warmstart</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">param</span><span class="o">=</span><span class="n">param</span><span class="p">,</span> <span class="n">warmstart</span><span class="o">=</span><span class="n">warmstart</span><span class="p">)</span>
+            <span class="n">warmstart</span> <span class="o">=</span> <span class="n">LinearWarmstart</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">flow</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">flow</span><span class="p">,</span> <span class="n">warmstart</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">param</span><span class="o">=</span><span class="n">param</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">flow</span><span class="p">,</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_run_with_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Handle callback</span>
+        <span class="n">run_cb</span> <span class="o">=</span> <span class="n">callback_to_list</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">RUN_START</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">ITER_PRE</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+        
+        <span class="n">warmstart</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">ITER_START</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+            
+            <span class="c1"># Run instance of FW for param</span>
+            <span class="n">flow</span><span class="p">,</span> <span class="n">warmstart</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_single_fw</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">warmstart</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_param_solution</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">flow</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">ITER_END</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_print_iteration</span><span class="p">()</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">RUN_END</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_run</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_run_adaptive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># handle callback</span>
+        <span class="n">run_cb</span> <span class="o">=</span> <span class="n">callback_to_list</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">RUN_START</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+        
+        <span class="n">param</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">lambda_min</span>  <span class="c1"># first parameter to find MCF for</span>
+        <span class="n">warmstart</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">supp</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">flow</span> <span class="o">=</span> <span class="kc">None</span>
+        
+        <span class="c1"># Find an s-t-pair decomposition of the demand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">demand_decomposed</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">demand_decomposed</span><span class="o">.</span><span class="n">to_single_pairs</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">demand_decomposed</span><span class="o">.</span><span class="n">reset_cache</span><span class="p">()</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">ITER_PRE</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+        
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">ITER_START</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+            
+            <span class="c1"># STEP 1): find next param, not needed in first iteration</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">adaptive_method</span> <span class="o">==</span> <span class="n">AdaptiveMethod</span><span class="o">.</span><span class="n">BASIC</span><span class="p">:</span>
+                    <span class="c1"># Use only support free steps</span>
+                    <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_support_free_step</span><span class="p">(</span><span class="n">param</span><span class="p">,</span>
+                                                    <span class="n">flow</span><span class="p">,</span>
+                                                    <span class="n">last_delta</span><span class="o">=</span><span class="n">delta</span><span class="p">)</span>
+                    <span class="n">param</span> <span class="o">+=</span> <span class="n">delta</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># Try support step</span>
+                    <span class="n">tmp_delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_support_step</span><span class="p">(</span><span class="n">param</span><span class="p">,</span>
+                                                   <span class="n">flow</span><span class="p">,</span>
+                                                   <span class="n">supp</span><span class="p">,</span>
+                                                   <span class="n">last_delta</span><span class="o">=</span><span class="n">delta</span><span class="p">)</span>
+                    <span class="n">flow_tmp</span><span class="p">,</span> <span class="n">warmstart_tmp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_single_fw</span><span class="p">(</span><span class="n">param</span> <span class="o">+</span> <span class="n">tmp_delta</span><span class="p">,</span>
+                                                                  <span class="n">warmstart</span><span class="p">)</span>
+                    
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">support_of</span><span class="p">(</span><span class="n">flow_tmp</span><span class="p">)</span> <span class="o">==</span> <span class="n">supp</span><span class="p">:</span>
+                        <span class="c1"># Solution compliant with the previous support,</span>
+                        <span class="c1"># i.e., flow_tmp is valid for next param</span>
+                        <span class="n">param</span> <span class="o">+=</span> <span class="n">tmp_delta</span>
+                        <span class="n">warmstart</span> <span class="o">=</span> <span class="n">warmstart_tmp</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="c1"># Use support free step to recalc flow for param</span>
+                        <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_support_free_step</span><span class="p">(</span><span class="n">param</span><span class="p">,</span>
+                                                        <span class="n">flow</span><span class="p">,</span>
+                                                        <span class="n">last_delta</span><span class="o">=</span><span class="n">delta</span><span class="p">)</span>
+                        <span class="n">param</span> <span class="o">+=</span> <span class="n">delta</span>
+                        <span class="n">flow_tmp</span> <span class="o">=</span> <span class="kc">None</span>
+            
+            <span class="c1"># STEP 2): find min cost flow for param</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">adaptive_method</span> <span class="o">==</span> <span class="n">AdaptiveMethod</span><span class="o">.</span><span class="n">CONSTANT_SUPPORT</span>
+                    <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">flow_tmp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="c1"># Reuse fw_tmp from AdaptiveMethod.EXTENDED</span>
+                <span class="n">flow</span> <span class="o">=</span> <span class="n">flow_tmp</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Run instance of FW for param</span>
+                <span class="n">flow</span><span class="p">,</span> <span class="n">warmstart</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_single_fw</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">warmstart</span><span class="p">)</span>
+                
+                <span class="c1"># Calc support for extended method</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">adaptive_method</span> <span class="o">==</span> <span class="n">AdaptiveMethod</span><span class="o">.</span><span class="n">CONSTANT_SUPPORT</span><span class="p">:</span>
+                    <span class="n">supp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">support_of</span><span class="p">(</span><span class="n">flow</span><span class="p">)</span>
+            
+            <span class="c1"># Store solution</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_param_solution</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">flow</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">ITER_END</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_print_iteration</span><span class="p">()</span>
+            
+            <span class="c1"># Stop if param exceeds lambda_max</span>
+            <span class="k">if</span> <span class="n">param</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">lambda_max</span><span class="p">:</span>
+                <span class="k">break</span>
+            
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">RUN_END</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_run</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_support_free_step</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">param</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">flow</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+            <span class="n">last_delta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">use_bisec</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="c1"># reference for convenience</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span>
+        
+        <span class="c1"># decompose demand -&gt; find source/target/rate triples</span>
+        <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">demand_decomposed</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">get_source_sink_rate</span><span class="p">()</span>
+        <span class="n">unique_s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">demand_decomposed</span><span class="o">.</span><span class="n">unique_sources</span>
+        <span class="n">source_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique_s</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_s</span><span class="p">))))</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        
+        <span class="c1"># compute rhs</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">cost</span><span class="p">(</span><span class="n">flow</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">rhs</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">alpha</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">c</span><span class="o">.</span><span class="n">epsilon</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">c</span><span class="o">.</span><span class="n">epsilon</span><span class="p">)</span> <span class="o">*</span> <span class="n">cost</span>
+        <span class="n">rhs</span> <span class="o">+=</span> <span class="n">c</span><span class="o">.</span><span class="n">beta</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">c</span><span class="o">.</span><span class="n">epsilon</span><span class="p">)</span>
+        
+        <span class="k">def</span> <span class="nf">error_fct</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+                <span class="n">delta</span> <span class="o">=</span> <span class="n">delta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">flow_estimate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">flow</span><span class="p">)</span> <span class="o">*</span> <span class="n">R</span> <span class="o">*</span> <span class="p">(</span><span class="n">param</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">ddx</span><span class="p">(</span><span class="n">flow_estimate</span><span class="p">)</span>
+            <span class="n">D</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span>
+                                              <span class="n">s</span><span class="o">=</span><span class="n">unique_s</span><span class="p">,</span>
+                                              <span class="n">backward_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                              <span class="n">backward_positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">path_cost</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">D</span><span class="p">[</span><span class="n">source_map</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+                                   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))])</span>
+                         <span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">delta</span> <span class="o">*</span> <span class="n">path_cost</span> <span class="o">-</span> <span class="n">rhs</span>
+        
+        <span class="c1"># solve the (in)equality</span>
+        <span class="c1"># use last step size as initial guess for the solution</span>
+        <span class="k">if</span> <span class="n">last_delta</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">x0</span> <span class="o">=</span> <span class="mf">1e-2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x0</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">last_delta</span>
+        
+        <span class="c1"># use custom made bisection method</span>
+        <span class="k">if</span> <span class="n">use_bisec</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">bisec_method</span><span class="p">(</span><span class="n">error_fct</span><span class="p">,</span>
+                               <span class="n">tol</span><span class="o">=.</span><span class="mi">01</span><span class="p">,</span>
+                               <span class="n">lo</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                               <span class="n">up</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span>
+                               <span class="n">flex_up</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">res</span>
+        
+        <span class="c1"># use scipy fsolve</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">scopt</span><span class="o">.</span><span class="n">fsolve</span><span class="p">(</span><span class="n">error_fct</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Function solve did not converge&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_support_step</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">param</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">flow</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+            <span class="n">sup</span><span class="p">:</span> <span class="n">Support</span><span class="p">,</span>
+            <span class="n">last_delta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">use_bisec</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="c1"># reference for convenience</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span>
+        <span class="n">net</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span>
+        
+        <span class="n">b</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">demand</span><span class="o">.</span><span class="n">ddx</span><span class="p">(</span><span class="n">param</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+        
+        <span class="c1"># compute rhs</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">cost</span><span class="p">(</span><span class="n">flow</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">rhs</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">alpha</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">c</span><span class="o">.</span><span class="n">epsilon</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">c</span><span class="o">.</span><span class="n">epsilon</span><span class="p">)</span> <span class="o">*</span> <span class="n">cost</span>
+        <span class="n">rhs</span> <span class="o">+=</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">c</span><span class="o">.</span><span class="n">beta</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">c</span><span class="o">.</span><span class="n">epsilon</span><span class="p">)</span>
+        
+        <span class="c1"># Define error function = lhs - rhs of the inequality</span>
+        <span class="k">def</span> <span class="nf">error_fct</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+                <span class="n">delta</span> <span class="o">=</span> <span class="n">delta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="c1"># In case of delta == 0, the lhs is zero -&gt; return only rhs</span>
+            <span class="k">if</span> <span class="n">delta</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="o">-</span><span class="n">rhs</span>
+            <span class="c1"># Compute norm of b wrt. inverse of Laplacian matrix</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">demand</span><span class="o">.</span><span class="n">max_inflow</span><span class="p">(</span><span class="n">min_param</span><span class="o">=</span><span class="n">param</span><span class="p">,</span>
+                                      <span class="n">max_param</span><span class="o">=</span><span class="n">param</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
+            <span class="c1"># print(R, f&quot;min = {param}, max = {param + delta}&quot;)</span>
+            <span class="n">flow_estimate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">flow</span><span class="p">)</span> <span class="o">*</span> <span class="n">R</span>
+            <span class="c1"># print(&quot;fest&quot;, flow_estimate)</span>
+            <span class="n">ddx2</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">cost</span><span class="p">(</span><span class="n">flow_estimate</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="c1"># print(&quot;ddx2&quot;, ddx2)</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">flow</span><span class="p">)</span>
+            <span class="n">weight</span><span class="p">[</span><span class="n">sup</span><span class="o">.</span><span class="n">active</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">ddx2</span><span class="p">[</span><span class="n">sup</span><span class="o">.</span><span class="n">active</span><span class="p">]</span>
+            <span class="n">norm2</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">Lstar</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">delta</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">norm2</span> <span class="o">-</span> <span class="n">rhs</span>
+        
+        <span class="c1"># solve the (in)equality</span>
+        <span class="c1"># use last step size as initial guess for the solution</span>
+        <span class="k">if</span> <span class="n">last_delta</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">x0</span> <span class="o">=</span> <span class="mf">1e-2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x0</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">last_delta</span>
+        
+        <span class="c1"># use custom made bisection method</span>
+        <span class="k">if</span> <span class="n">use_bisec</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">bisec_method</span><span class="p">(</span><span class="n">error_fct</span><span class="p">,</span>
+                               <span class="n">tol</span><span class="o">=.</span><span class="mi">01</span><span class="p">,</span>
+                               <span class="n">lo</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                               <span class="n">up</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span>
+                               <span class="n">flex_up</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">res</span>
+        
+        <span class="c1"># use scipy fsolve</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">scopt</span><span class="o">.</span><span class="n">fsolve</span><span class="p">(</span><span class="n">error_fct</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Function solve did not converge&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_print_iteration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># TODO</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">print</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param_solution</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">param</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MCFIConfig</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Settings of MCFI.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        MCFIConfig</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span></div>
+</pre></div>
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+﻿paminco.net.demand.LinearDemandFunction.value\_at\_1
+====================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: LinearDemandFunction.value_at_1

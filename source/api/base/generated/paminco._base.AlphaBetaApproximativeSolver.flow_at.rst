@@ -1,0 +1,6 @@
+﻿paminco.\_base.AlphaBetaApproximativeSolver.flow\_at
+====================================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: AlphaBetaApproximativeSolver.flow_at

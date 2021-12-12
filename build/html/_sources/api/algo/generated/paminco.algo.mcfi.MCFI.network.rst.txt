@@ -1,0 +1,6 @@
+﻿paminco.algo.mcfi.MCFI.network
+==============================
+
+.. currentmodule:: paminco.algo.mcfi
+
+.. autoproperty:: MCFI.network

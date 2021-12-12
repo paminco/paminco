@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolution.dflow
+=======================================
+
+.. currentmodule:: paminco._base
+
+.. autoproperty:: ParametricSolution.dflow

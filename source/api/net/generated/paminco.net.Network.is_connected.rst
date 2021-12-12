@@ -1,0 +1,6 @@
+﻿paminco.net.Network.is\_connected
+=================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.is_connected

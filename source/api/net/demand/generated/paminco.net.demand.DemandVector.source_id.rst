@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVector.source\_id
+==========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandVector.source_id

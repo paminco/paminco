@@ -1,0 +1,2778 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Nodes &#8212; paminco 0.1 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/contentui.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="paminco.net.Nodes.__init__" href="generated/paminco.net.Nodes.__init__.html" />
+    <link rel="prev" title="paminco.net.Edges.flow_undirected" href="generated/paminco.net.Edges.flow_undirected.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo1.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../theory/index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../algo/index.html">
+   Algorithms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../algo/efa.html">
+     EFA: Electrical Flow Algorithm
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFAConfig.html">
+       paminco.algo.efa.EFAConfig
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.NodePotentials.html">
+       paminco.algo.efa.NodePotentials
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFAEdges.html">
+       paminco.algo.efa.EFAEdges
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFABreakFlag.html">
+       paminco.algo.efa.EFABreakFlag
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.PivotStepMode.html">
+       paminco.algo.efa.PivotStepMode
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFA.network.html">
+       paminco.algo.efa.EFA.network
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFA.name.html">
+       paminco.algo.efa.EFA.name
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFA.config.html">
+       paminco.algo.efa.EFA.config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFA.region.html">
+       paminco.algo.efa.EFA.region
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFA.edges.html">
+       paminco.algo.efa.EFA.edges
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFA.edge_coeffs.html">
+       paminco.algo.efa.EFA.edge_coeffs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFA.node_potentials.html">
+       paminco.algo.efa.EFA.node_potentials
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFA.L0.html">
+       paminco.algo.efa.EFA.L0
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFA.region_zero.html">
+       paminco.algo.efa.EFA.region_zero
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFA.__init__.html">
+       paminco.algo.efa.EFA.__init__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.efa.EFA.run.html">
+       paminco.algo.efa.EFA.run
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../algo/mca.html">
+     MCA: Marginal Cost Approximation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCAConfig.html">
+       paminco.algo.mca.MCAConfig
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCAInterpolationRule.html">
+       paminco.algo.mca.MCAInterpolationRule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.network.html">
+       paminco.algo.mca.MCA.network
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.name.html">
+       paminco.algo.mca.MCA.name
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.config.html">
+       paminco.algo.mca.MCA.config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.i.html">
+       paminco.algo.mca.MCA.i
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.lambda_min.html">
+       paminco.algo.mca.MCA.lambda_min
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.lambda_max.html">
+       paminco.algo.mca.MCA.lambda_max
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.breakflag.html">
+       paminco.algo.mca.MCA.breakflag
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.region.html">
+       paminco.algo.mca.MCA.region
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.edges.html">
+       paminco.algo.mca.MCA.edges
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.edge_coeffs.html">
+       paminco.algo.mca.MCA.edge_coeffs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.node_potentials.html">
+       paminco.algo.mca.MCA.node_potentials
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.param_solution.html">
+       paminco.algo.mca.MCA.param_solution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.L0.html">
+       paminco.algo.mca.MCA.L0
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.region_zero.html">
+       paminco.algo.mca.MCA.region_zero
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.__init__.html">
+       paminco.algo.mca.MCA.__init__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mca.MCA.run.html">
+       paminco.algo.mca.MCA.run
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../algo/mcfi.html">
+     MCFI: Minimum Cost Flow Interpolation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mcfi.MCFIConfig.html">
+       paminco.algo.mcfi.MCFIConfig
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mcfi.AdaptiveMethod.html">
+       paminco.algo.mcfi.AdaptiveMethod
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mcfi.MCFI.network.html">
+       paminco.algo.mcfi.MCFI.network
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mcfi.MCFI.name.html">
+       paminco.algo.mcfi.MCFI.name
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mcfi.MCFI.config.html">
+       paminco.algo.mcfi.MCFI.config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mcfi.MCFI.param_solution.html">
+       paminco.algo.mcfi.MCFI.param_solution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mcfi.MCFI.__init__.html">
+       paminco.algo.mcfi.MCFI.__init__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algo/generated/paminco.algo.mcfi.MCFI.run.html">
+       paminco.algo.mcfi.MCFI.run
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Network
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="network.html">
+     Network
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.__init__.html">
+       paminco.net.Network.__init__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.from_xml.html">
+       paminco.net.Network.from_xml
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.from_npz.html">
+       paminco.net.Network.from_npz
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.set_demand.html">
+       paminco.net.Network.set_demand
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.set_cost.html">
+       paminco.net.Network.set_cost
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.integrate_cost.html">
+       paminco.net.Network.integrate_cost
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.derivate_cost.html">
+       paminco.net.Network.derivate_cost
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.adjacency_matrix.html">
+       paminco.net.Network.adjacency_matrix
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.csgraph.html">
+       paminco.net.Network.csgraph
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.incidence_matrix.html">
+       paminco.net.Network.incidence_matrix
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.Gamma.html">
+       paminco.net.Network.Gamma
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.gamma_times.html">
+       paminco.net.Network.gamma_times
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.times_gamma.html">
+       paminco.net.Network.times_gamma
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.laplacian.html">
+       paminco.net.Network.laplacian
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.L.html">
+       paminco.net.Network.L
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.Lstar.html">
+       paminco.net.Network.Lstar
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.Lstar_update.html">
+       paminco.net.Network.Lstar_update
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.potential.html">
+       paminco.net.Network.potential
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.shortest_path.html">
+       paminco.net.Network.shortest_path
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.flow_on_shortest.html">
+       paminco.net.Network.flow_on_shortest
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.connected_components.html">
+       paminco.net.Network.connected_components
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.is_connected.html">
+       paminco.net.Network.is_connected
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.support_of.html">
+       paminco.net.Network.support_of
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.delete_edges.html">
+       paminco.net.Network.delete_edges
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.delete_nodes.html">
+       paminco.net.Network.delete_nodes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.clean.html">
+       paminco.net.Network.clean
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.cost.html">
+       paminco.net.Network.cost
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.demand.html">
+       paminco.net.Network.demand
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.shared.html">
+       paminco.net.Network.shared
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.edges.html">
+       paminco.net.Network.edges
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.flow_direction.html">
+       paminco.net.Network.flow_direction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.is_directed.html">
+       paminco.net.Network.is_directed
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.is_single_commodity.html">
+       paminco.net.Network.is_single_commodity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.is_multi_commodity.html">
+       paminco.net.Network.is_multi_commodity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.nodes.html">
+       paminco.net.Network.nodes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.n.html">
+       paminco.net.Network.n
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.m.html">
+       paminco.net.Network.m
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.k.html">
+       paminco.net.Network.k
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.size.html">
+       paminco.net.Network.size
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.dtype_int.html">
+       paminco.net.Network.dtype_int
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Network.dtype_float.html">
+       paminco.net.Network.dtype_float
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="shared.html">
+     Shared
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.__init__.html">
+       paminco.net.Shared.__init__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.update.html">
+       paminco.net.Shared.update
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.reset_cache.html">
+       paminco.net.Shared.reset_cache
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.delete_edges.html">
+       paminco.net.Shared.delete_edges
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.delete_nodes.html">
+       paminco.net.Shared.delete_nodes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.delete_nodes_in_edges.html">
+       paminco.net.Shared.delete_nodes_in_edges
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.incidence_matrix.html">
+       paminco.net.Shared.incidence_matrix
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.Gamma.html">
+       paminco.net.Shared.Gamma
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.adjacency_matrix.html">
+       paminco.net.Shared.adjacency_matrix
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.csgraph.html">
+       paminco.net.Shared.csgraph
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.get_edge_id.html">
+       paminco.net.Shared.get_edge_id
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.get_node_id.html">
+       paminco.net.Shared.get_node_id
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.get_node_label.html">
+       paminco.net.Shared.get_node_label
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.from_xml.html">
+       paminco.net.Shared.from_xml
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.make_save_dict.html">
+       paminco.net.Shared.make_save_dict
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.save_to_numpy.html">
+       paminco.net.Shared.save_to_numpy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Shared.from_npz.html">
+       paminco.net.Shared.from_npz
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="edges.html">
+     Edges
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.__init__.html">
+       paminco.net.Edges.__init__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.from_xml.html">
+       paminco.net.Edges.from_xml
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.from_npz.html">
+       paminco.net.Edges.from_npz
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.to_df.html">
+       paminco.net.Edges.to_df
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.get_flow_df.html">
+       paminco.net.Edges.get_flow_df
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.get_directed.html">
+       paminco.net.Edges.get_directed
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.get_duplicate_edges.html">
+       paminco.net.Edges.get_duplicate_edges
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.map_labels.html">
+       paminco.net.Edges.map_labels
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.add_to_etree.html">
+       paminco.net.Edges.add_to_etree
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.make_save_dict.html">
+       paminco.net.Edges.make_save_dict
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.save_to_numpy.html">
+       paminco.net.Edges.save_to_numpy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.lb.html">
+       paminco.net.Edges.lb
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.ub.html">
+       paminco.net.Edges.ub
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.s.html">
+       paminco.net.Edges.s
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.t.html">
+       paminco.net.Edges.t
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.source_lbl.html">
+       paminco.net.Edges.source_lbl
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.target_lbl.html">
+       paminco.net.Edges.target_lbl
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.dtype_int.html">
+       paminco.net.Edges.dtype_int
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.dtype_float.html">
+       paminco.net.Edges.dtype_float
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.flow_forward.html">
+       paminco.net.Edges.flow_forward
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.flow_forward.html">
+       paminco.net.Edges.flow_forward
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Edges.flow_undirected.html">
+       paminco.net.Edges.flow_undirected
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     Nodes
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Nodes.__init__.html">
+       paminco.net.Nodes.__init__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Nodes.from_edges.html">
+       paminco.net.Nodes.from_edges
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Nodes.from_xml.html">
+       paminco.net.Nodes.from_xml
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Nodes.from_npz.html">
+       paminco.net.Nodes.from_npz
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Nodes.set_mappings.html">
+       paminco.net.Nodes.set_mappings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Nodes.get_pos.html">
+       paminco.net.Nodes.get_pos
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Nodes.delete_nodes.html">
+       paminco.net.Nodes.delete_nodes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Nodes.to_df.html">
+       paminco.net.Nodes.to_df
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Nodes.add_to_etree.html">
+       paminco.net.Nodes.add_to_etree
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Nodes.make_save_dict.html">
+       paminco.net.Nodes.make_save_dict
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="generated/paminco.net.Nodes.save_to_numpy.html">
+       paminco.net.Nodes.save_to_numpy
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="demand/index.html">
+     Demand
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="demand/commodity.html">
+       Commodity (Abstract)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.Commodity.from_data.html">
+         paminco.net.demand.Commodity.from_data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="demand/commodity-singlest.html">
+       CommoditySingleSourceSink (Abstract)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.from_tuple.html">
+         paminco.net.demand.CommoditySingleSourceSink.from_tuple
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.from_labels_and_id.html">
+         paminco.net.demand.CommoditySingleSourceSink.from_labels_and_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.get_scaled_copy.html">
+         paminco.net.demand.CommoditySingleSourceSink.get_scaled_copy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.get_sparse_elements.html">
+         paminco.net.demand.CommoditySingleSourceSink.get_sparse_elements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.map_node_labels.html">
+         paminco.net.demand.CommoditySingleSourceSink.map_node_labels
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.map_node_ids.html">
+         paminco.net.demand.CommoditySingleSourceSink.map_node_ids
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.node_in_comm.html">
+         paminco.net.demand.CommoditySingleSourceSink.node_in_comm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.to_tuple.html">
+         paminco.net.demand.CommoditySingleSourceSink.to_tuple
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.has_valid_indices.html">
+         paminco.net.demand.CommoditySingleSourceSink.has_valid_indices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.has_valid_labels.html">
+         paminco.net.demand.CommoditySingleSourceSink.has_valid_labels
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.source_lbl.html">
+         paminco.net.demand.CommoditySingleSourceSink.source_lbl
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.source_id.html">
+         paminco.net.demand.CommoditySingleSourceSink.source_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.sink_lbl.html">
+         paminco.net.demand.CommoditySingleSourceSink.sink_lbl
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.sink_id.html">
+         paminco.net.demand.CommoditySingleSourceSink.sink_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.rate.html">
+         paminco.net.demand.CommoditySingleSourceSink.rate
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommoditySingleSourceSink.total_rate.html">
+         paminco.net.demand.CommoditySingleSourceSink.total_rate
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="demand/commodity-multist.html">
+       CommodityMultiSourceSink
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.from_data.html">
+         paminco.net.demand.CommodityMultiSourceSink.from_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.decompose.html">
+         paminco.net.demand.CommodityMultiSourceSink.decompose
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.node_in_comm.html">
+         paminco.net.demand.CommodityMultiSourceSink.node_in_comm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.to_dict.html">
+         paminco.net.demand.CommodityMultiSourceSink.to_dict
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.get_scaled_copy.html">
+         paminco.net.demand.CommodityMultiSourceSink.get_scaled_copy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.get_sparse_elements.html">
+         paminco.net.demand.CommodityMultiSourceSink.get_sparse_elements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.map_node_labels.html">
+         paminco.net.demand.CommodityMultiSourceSink.map_node_labels
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.map_node_ids.html">
+         paminco.net.demand.CommodityMultiSourceSink.map_node_ids
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.from_label_and_id.html">
+         paminco.net.demand.CommodityMultiSourceSink.from_label_and_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.N_tot.html">
+         paminco.net.demand.CommodityMultiSourceSink.N_tot
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.N_in.html">
+         paminco.net.demand.CommodityMultiSourceSink.N_in
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.N_out.html">
+         paminco.net.demand.CommodityMultiSourceSink.N_out
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.is_sink.html">
+         paminco.net.demand.CommodityMultiSourceSink.is_sink
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.has_valid_indices.html">
+         paminco.net.demand.CommodityMultiSourceSink.has_valid_indices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.has_valid_labels.html">
+         paminco.net.demand.CommodityMultiSourceSink.has_valid_labels
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.is_single.html">
+         paminco.net.demand.CommodityMultiSourceSink.is_single
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.node_ids.html">
+         paminco.net.demand.CommodityMultiSourceSink.node_ids
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.node_labels.html">
+         paminco.net.demand.CommodityMultiSourceSink.node_labels
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.source_lbl.html">
+         paminco.net.demand.CommodityMultiSourceSink.source_lbl
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.source_id.html">
+         paminco.net.demand.CommodityMultiSourceSink.source_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.sink_lbl.html">
+         paminco.net.demand.CommodityMultiSourceSink.sink_lbl
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.sink_id.html">
+         paminco.net.demand.CommodityMultiSourceSink.sink_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.rate.html">
+         paminco.net.demand.CommodityMultiSourceSink.rate
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.CommodityMultiSourceSink.total_rate.html">
+         paminco.net.demand.CommodityMultiSourceSink.total_rate
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="demand/dv.html">
+       Demand Vector (Abstract)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand._DV.get_source_sink_rate.html">
+         paminco.net.demand._DV.get_source_sink_rate
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand._DV.add_to_etree.html">
+         paminco.net.demand._DV.add_to_etree
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand._DV.from_npz.html">
+         paminco.net.demand._DV.from_npz
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand._DV.k.html">
+         paminco.net.demand._DV.k
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand._DV.n.html">
+         paminco.net.demand._DV.n
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand._DV.shared.html">
+         paminco.net.demand._DV.shared
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand._DV.dtype_int.html">
+         paminco.net.demand._DV.dtype_int
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand._DV.dtype_float.html">
+         paminco.net.demand._DV.dtype_float
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="demand/dv-std.html">
+       DemandVector
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.__call__.html">
+         paminco.net.demand.DemandVector.__call__
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.sparse.html">
+         paminco.net.demand.DemandVector.sparse
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.make_save_dict.html">
+         paminco.net.demand.DemandVector.make_save_dict
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.save_to_numpy.html">
+         paminco.net.demand.DemandVector.save_to_numpy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.from_npz.html">
+         paminco.net.demand.DemandVector.from_npz
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.add_to_etree.html">
+         paminco.net.demand.DemandVector.add_to_etree
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.from_xml.html">
+         paminco.net.demand.DemandVector.from_xml
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.delete_nodes.html">
+         paminco.net.demand.DemandVector.delete_nodes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.to_single_pairs.html">
+         paminco.net.demand.DemandVector.to_single_pairs
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.reset_cache.html">
+         paminco.net.demand.DemandVector.reset_cache
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.map_node_label_to_id.html">
+         paminco.net.demand.DemandVector.map_node_label_to_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.map_node_id_to_label.html">
+         paminco.net.demand.DemandVector.map_node_id_to_label
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.scaled_copy.html">
+         paminco.net.demand.DemandVector.scaled_copy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.k.html">
+         paminco.net.demand.DemandVector.k
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.n.html">
+         paminco.net.demand.DemandVector.n
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.shared.html">
+         paminco.net.demand.DemandVector.shared
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.dtype_int.html">
+         paminco.net.demand.DemandVector.dtype_int
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.dtype_float.html">
+         paminco.net.demand.DemandVector.dtype_float
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.all_single.html">
+         paminco.net.demand.DemandVector.all_single
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.rate.html">
+         paminco.net.demand.DemandVector.rate
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.source_lbl.html">
+         paminco.net.demand.DemandVector.source_lbl
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.sink_lbl.html">
+         paminco.net.demand.DemandVector.sink_lbl
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.source_id.html">
+         paminco.net.demand.DemandVector.source_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.sink_id.html">
+         paminco.net.demand.DemandVector.sink_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVector.total_rate.html">
+         paminco.net.demand.DemandVector.total_rate
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="demand/dv-sp.html">
+       DemandVectorSP
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.__call__.html">
+         paminco.net.demand.DemandVectorSP.__call__
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.sparse.html">
+         paminco.net.demand.DemandVectorSP.sparse
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.make_save_dict.html">
+         paminco.net.demand.DemandVectorSP.make_save_dict
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.save_to_numpy.html">
+         paminco.net.demand.DemandVectorSP.save_to_numpy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.from_npz.html">
+         paminco.net.demand.DemandVectorSP.from_npz
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.add_to_etree.html">
+         paminco.net.demand.DemandVectorSP.add_to_etree
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.from_xml.html">
+         paminco.net.demand.DemandVectorSP.from_xml
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.delete_nodes.html">
+         paminco.net.demand.DemandVectorSP.delete_nodes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.to_single_pairs.html">
+         paminco.net.demand.DemandVectorSP.to_single_pairs
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.reset_cache.html">
+         paminco.net.demand.DemandVectorSP.reset_cache
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.map_node_label_to_id.html">
+         paminco.net.demand.DemandVectorSP.map_node_label_to_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.map_node_id_to_label.html">
+         paminco.net.demand.DemandVectorSP.map_node_id_to_label
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.scaled_copy.html">
+         paminco.net.demand.DemandVectorSP.scaled_copy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.k.html">
+         paminco.net.demand.DemandVectorSP.k
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.n.html">
+         paminco.net.demand.DemandVectorSP.n
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.shared.html">
+         paminco.net.demand.DemandVectorSP.shared
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.dtype_int.html">
+         paminco.net.demand.DemandVectorSP.dtype_int
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.dtype_float.html">
+         paminco.net.demand.DemandVectorSP.dtype_float
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.all_single.html">
+         paminco.net.demand.DemandVectorSP.all_single
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.rate.html">
+         paminco.net.demand.DemandVectorSP.rate
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.source_lbl.html">
+         paminco.net.demand.DemandVectorSP.source_lbl
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.sink_lbl.html">
+         paminco.net.demand.DemandVectorSP.sink_lbl
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.source_id.html">
+         paminco.net.demand.DemandVectorSP.source_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.sink_id.html">
+         paminco.net.demand.DemandVectorSP.sink_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandVectorSP.total_rate.html">
+         paminco.net.demand.DemandVectorSP.total_rate
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="demand/func.html">
+       Demand Function (Abstract)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+      <label for="toctree-checkbox-17">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction._dv0.html">
+         paminco.net.demand.DemandFunction._dv0
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.all_single_pairs.html">
+         paminco.net.demand.DemandFunction.all_single_pairs
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.n.html">
+         paminco.net.demand.DemandFunction.n
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.shared.html">
+         paminco.net.demand.DemandFunction.shared
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.dtype_int.html">
+         paminco.net.demand.DemandFunction.dtype_int
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.dtype_float.html">
+         paminco.net.demand.DemandFunction.dtype_float
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.demand_vectors.html">
+         paminco.net.demand.DemandFunction.demand_vectors
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.is_single_commodity.html">
+         paminco.net.demand.DemandFunction.is_single_commodity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.is_multi_commodity.html">
+         paminco.net.demand.DemandFunction.is_multi_commodity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.value_at_1.html">
+         paminco.net.demand.DemandFunction.value_at_1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.unique_sources.html">
+         paminco.net.demand.DemandFunction.unique_sources
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.reset_cache.html">
+         paminco.net.demand.DemandFunction.reset_cache
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.inflow.html">
+         paminco.net.demand.DemandFunction.inflow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.ddx_inflow.html">
+         paminco.net.demand.DemandFunction.ddx_inflow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.max_inflow.html">
+         paminco.net.demand.DemandFunction.max_inflow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.delete_nodes.html">
+         paminco.net.demand.DemandFunction.delete_nodes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.map_node_label_to_id.html">
+         paminco.net.demand.DemandFunction.map_node_label_to_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.map_node_id_to_label.html">
+         paminco.net.demand.DemandFunction.map_node_id_to_label
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.to_single_pairs.html">
+         paminco.net.demand.DemandFunction.to_single_pairs
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.add_to_etree.html">
+         paminco.net.demand.DemandFunction.add_to_etree
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.from_xml.html">
+         paminco.net.demand.DemandFunction.from_xml
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.make_save_dict.html">
+         paminco.net.demand.DemandFunction.make_save_dict
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.save_to_numpy.html">
+         paminco.net.demand.DemandFunction.save_to_numpy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.DemandFunction.from_npz.html">
+         paminco.net.demand.DemandFunction.from_npz
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="demand/func-lin.html">
+       LinearDemandFunction
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+      <label for="toctree-checkbox-18">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction._dv0.html">
+         paminco.net.demand.LinearDemandFunction._dv0
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.all_single_pairs.html">
+         paminco.net.demand.LinearDemandFunction.all_single_pairs
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.n.html">
+         paminco.net.demand.LinearDemandFunction.n
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.shared.html">
+         paminco.net.demand.LinearDemandFunction.shared
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.dtype_int.html">
+         paminco.net.demand.LinearDemandFunction.dtype_int
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.dtype_float.html">
+         paminco.net.demand.LinearDemandFunction.dtype_float
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.demand_vectors.html">
+         paminco.net.demand.LinearDemandFunction.demand_vectors
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.is_single_commodity.html">
+         paminco.net.demand.LinearDemandFunction.is_single_commodity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.is_multi_commodity.html">
+         paminco.net.demand.LinearDemandFunction.is_multi_commodity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.value_at_1.html">
+         paminco.net.demand.LinearDemandFunction.value_at_1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.unique_sources.html">
+         paminco.net.demand.LinearDemandFunction.unique_sources
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.value.html">
+         paminco.net.demand.LinearDemandFunction.value
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.ddx.html">
+         paminco.net.demand.LinearDemandFunction.ddx
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.get_source_sink_rate.html">
+         paminco.net.demand.LinearDemandFunction.get_source_sink_rate
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.max_inflow.html">
+         paminco.net.demand.LinearDemandFunction.max_inflow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.ddx_inflow.html">
+         paminco.net.demand.LinearDemandFunction.ddx_inflow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.reset_cache.html">
+         paminco.net.demand.LinearDemandFunction.reset_cache
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.inflow.html">
+         paminco.net.demand.LinearDemandFunction.inflow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.delete_nodes.html">
+         paminco.net.demand.LinearDemandFunction.delete_nodes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.map_node_label_to_id.html">
+         paminco.net.demand.LinearDemandFunction.map_node_label_to_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.map_node_id_to_label.html">
+         paminco.net.demand.LinearDemandFunction.map_node_id_to_label
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.to_single_pairs.html">
+         paminco.net.demand.LinearDemandFunction.to_single_pairs
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.add_to_etree.html">
+         paminco.net.demand.LinearDemandFunction.add_to_etree
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.from_xml.html">
+         paminco.net.demand.LinearDemandFunction.from_xml
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.make_save_dict.html">
+         paminco.net.demand.LinearDemandFunction.make_save_dict
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.save_to_numpy.html">
+         paminco.net.demand.LinearDemandFunction.save_to_numpy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.from_npz.html">
+         paminco.net.demand.LinearDemandFunction.from_npz
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.LinearDemandFunction.max_inflow.html">
+         paminco.net.demand.LinearDemandFunction.max_inflow
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="demand/func-aff.html">
+       AffineDemandFunction
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+      <label for="toctree-checkbox-19">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction._dv0.html">
+         paminco.net.demand.AffineDemandFunction._dv0
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.all_single_pairs.html">
+         paminco.net.demand.AffineDemandFunction.all_single_pairs
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.n.html">
+         paminco.net.demand.AffineDemandFunction.n
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.shared.html">
+         paminco.net.demand.AffineDemandFunction.shared
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.dtype_int.html">
+         paminco.net.demand.AffineDemandFunction.dtype_int
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.dtype_float.html">
+         paminco.net.demand.AffineDemandFunction.dtype_float
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.demand_vectors.html">
+         paminco.net.demand.AffineDemandFunction.demand_vectors
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.is_single_commodity.html">
+         paminco.net.demand.AffineDemandFunction.is_single_commodity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.is_multi_commodity.html">
+         paminco.net.demand.AffineDemandFunction.is_multi_commodity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.value_at_1.html">
+         paminco.net.demand.AffineDemandFunction.value_at_1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.unique_sources.html">
+         paminco.net.demand.AffineDemandFunction.unique_sources
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.value.html">
+         paminco.net.demand.AffineDemandFunction.value
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.ddx.html">
+         paminco.net.demand.AffineDemandFunction.ddx
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.get_source_sink_rate.html">
+         paminco.net.demand.AffineDemandFunction.get_source_sink_rate
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.max_inflow.html">
+         paminco.net.demand.AffineDemandFunction.max_inflow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.reset_cache.html">
+         paminco.net.demand.AffineDemandFunction.reset_cache
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.inflow.html">
+         paminco.net.demand.AffineDemandFunction.inflow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.ddx_inflow.html">
+         paminco.net.demand.AffineDemandFunction.ddx_inflow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.delete_nodes.html">
+         paminco.net.demand.AffineDemandFunction.delete_nodes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.map_node_label_to_id.html">
+         paminco.net.demand.AffineDemandFunction.map_node_label_to_id
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.map_node_id_to_label.html">
+         paminco.net.demand.AffineDemandFunction.map_node_id_to_label
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.to_single_pairs.html">
+         paminco.net.demand.AffineDemandFunction.to_single_pairs
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.add_to_etree.html">
+         paminco.net.demand.AffineDemandFunction.add_to_etree
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.from_xml.html">
+         paminco.net.demand.AffineDemandFunction.from_xml
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.make_save_dict.html">
+         paminco.net.demand.AffineDemandFunction.make_save_dict
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.save_to_numpy.html">
+         paminco.net.demand.AffineDemandFunction.save_to_numpy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.from_npz.html">
+         paminco.net.demand.AffineDemandFunction.from_npz
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="demand/generated/paminco.net.demand.AffineDemandFunction.max_inflow.html">
+         paminco.net.demand.AffineDemandFunction.max_inflow
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="cost/index.html">
+     Cost
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.NetworkCost.html">
+       paminco.net.cost.NetworkCost
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.EdgeCost.html">
+       paminco.net.cost.EdgeCost
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.PolynomialCost.html">
+       paminco.net.cost.PolynomialCost
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.SimplePolynomial.html">
+       paminco.net.cost.SimplePolynomial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.PiecewiseQuadraticCost.html">
+       paminco.net.cost.PiecewiseQuadraticCost
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.PiecewiseQuadraticCoefficients.html">
+       paminco.net.cost.PiecewiseQuadraticCoefficients
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.PiecewiseQuadraticFunction.html">
+       paminco.net.cost.PiecewiseQuadraticFunction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.SymbolicCost.html">
+       paminco.net.cost.SymbolicCost
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.NetworkCostInterpolation.html">
+       paminco.net.cost.NetworkCostInterpolation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.EdgeCostInterpolation.html">
+       paminco.net.cost.EdgeCostInterpolation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.InterpolationRule.html">
+       paminco.net.cost.InterpolationRule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.BreakpointsInterpolationRule.html">
+       paminco.net.cost.BreakpointsInterpolationRule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cost/generated/paminco.net.cost.EquidistantInterpolationRule.html">
+       paminco.net.cost.EquidistantInterpolationRule
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../optim/index.html">
+   Optimizer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+  <label for="toctree-checkbox-21">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../optim/fw.html">
+     Frank-Wolfe Algorithm
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw.FWConfig.html">
+       paminco.optim.fw.FWConfig
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw.FWMode.html">
+       paminco.optim.fw.FWMode
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw.FWBreakFlag.html">
+       paminco.optim.fw.FWBreakFlag
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw.FWX.html">
+       paminco.optim.fw.FWX
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw.FW.config.html">
+       paminco.optim.fw.FW.config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw.FW.x.html">
+       paminco.optim.fw.FW.x
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw.FW.__init__.html">
+       paminco.optim.fw.FW.__init__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw.FW.run.html">
+       paminco.optim.fw.FW.run
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../optim/fw_net.html">
+     Network Frank-Wolfe
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw_net.NetworkFWConfig.html">
+       paminco.optim.fw_net.NetworkFWConfig
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw_net.NetworkFW.config.html">
+       paminco.optim.fw_net.NetworkFW.config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw_net.NetworkFW.x.html">
+       paminco.optim.fw_net.NetworkFW.x
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw_net.NetworkFW.breakflag.html">
+       paminco.optim.fw_net.NetworkFW.breakflag
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw_net.NetworkFW.flow.html">
+       paminco.optim.fw_net.NetworkFW.flow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw_net.NetworkFW.cost.html">
+       paminco.optim.fw_net.NetworkFW.cost
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw_net.NetworkFW.lb.html">
+       paminco.optim.fw_net.NetworkFW.lb
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw_net.NetworkFW.blb.html">
+       paminco.optim.fw_net.NetworkFW.blb
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw_net.NetworkFW.flows.html">
+       paminco.optim.fw_net.NetworkFW.flows
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw_net.NetworkFW.__init__.html">
+       paminco.optim.fw_net.NetworkFW.__init__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.fw_net.NetworkFW.run.html">
+       paminco.optim.fw_net.NetworkFW.run
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../optim/subproblem.html">
+     Subproblem
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.subproblem.SubproblemMethod.html">
+       paminco.optim.subproblem.SubproblemMethod
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.subproblem.subproblem_solver.html">
+       paminco.optim.subproblem.subproblem_solver
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.subproblem.SubproblemSolver.html">
+       paminco.optim.subproblem.SubproblemSolver
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.subproblem.SPSubproblemSolver.html">
+       paminco.optim.subproblem.SPSubproblemSolver
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../optim/generated/paminco.optim.subproblem.LPSubproblemSolver.html">
+       paminco.optim.subproblem.LPSubproblemSolver
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../base/index.html">
+   Base Classes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+  <label for="toctree-checkbox-25">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../base/generated/paminco._base.Base.html">
+     paminco._base.Base
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../base/generated/paminco._base.Config.html">
+     paminco._base.Config
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../base/generated/paminco._base.BreakpointSolution.html">
+     paminco._base.BreakpointSolution
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../base/solution.html">
+     ParametricSolution
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.has_potentials.html">
+       paminco._base.ParametricSolution.has_potentials
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.has_costs.html">
+       paminco._base.ParametricSolution.has_costs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.arr_param.html">
+       paminco._base.ParametricSolution.arr_param
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.arr_flow.html">
+       paminco._base.ParametricSolution.arr_flow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.arr_cost.html">
+       paminco._base.ParametricSolution.arr_cost
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.arr_potential.html">
+       paminco._base.ParametricSolution.arr_potential
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.dflow.html">
+       paminco._base.ParametricSolution.dflow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.dpi.html">
+       paminco._base.ParametricSolution.dpi
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.flow_at.html">
+       paminco._base.ParametricSolution.flow_at
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.potential_at.html">
+       paminco._base.ParametricSolution.potential_at
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.all_params.html">
+       paminco._base.ParametricSolution.all_params
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.plot_flow_on_edge.html">
+       paminco._base.ParametricSolution.plot_flow_on_edge
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.from_arrays.html">
+       paminco._base.ParametricSolution.from_arrays
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.to_df.html">
+       paminco._base.ParametricSolution.to_df
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.from_df.html">
+       paminco._base.ParametricSolution.from_df
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.to_csv.html">
+       paminco._base.ParametricSolution.to_csv
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.from_csv.html">
+       paminco._base.ParametricSolution.from_csv
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.make_save_dict.html">
+       paminco._base.ParametricSolution.make_save_dict
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.save_to_numpy.html">
+       paminco._base.ParametricSolution.save_to_numpy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolution.from_npz.html">
+       paminco._base.ParametricSolution.from_npz
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../base/solver.html">
+     ParametricSolver
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolver.network.html">
+       paminco._base.ParametricSolver.network
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolver.name.html">
+       paminco._base.ParametricSolver.name
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolver.config.html">
+       paminco._base.ParametricSolver.config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolver.param_solution.html">
+       paminco._base.ParametricSolver.param_solution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolver.__call__.html">
+       paminco._base.ParametricSolver.__call__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolver.flow_at.html">
+       paminco._base.ParametricSolver.flow_at
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolver.cost_at.html">
+       paminco._base.ParametricSolver.cost_at
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolver.potential_at.html">
+       paminco._base.ParametricSolver.potential_at
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolver.all_params.html">
+       paminco._base.ParametricSolver.all_params
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.ParametricSolver.plot_flow_on_edge.html">
+       paminco._base.ParametricSolver.plot_flow_on_edge
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../base/abapprox.html">
+     AlphaBetaApproximativeSolver
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.AlphaBetaApproximativeSolver.network.html">
+       paminco._base.AlphaBetaApproximativeSolver.network
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.AlphaBetaApproximativeSolver.name.html">
+       paminco._base.AlphaBetaApproximativeSolver.name
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.AlphaBetaApproximativeSolver.config.html">
+       paminco._base.AlphaBetaApproximativeSolver.config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.AlphaBetaApproximativeSolver.param_solution.html">
+       paminco._base.AlphaBetaApproximativeSolver.param_solution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.AlphaBetaApproximativeSolver.__call__.html">
+       paminco._base.AlphaBetaApproximativeSolver.__call__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.AlphaBetaApproximativeSolver.flow_at.html">
+       paminco._base.AlphaBetaApproximativeSolver.flow_at
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.AlphaBetaApproximativeSolver.cost_at.html">
+       paminco._base.AlphaBetaApproximativeSolver.cost_at
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.AlphaBetaApproximativeSolver.potential_at.html">
+       paminco._base.AlphaBetaApproximativeSolver.potential_at
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.AlphaBetaApproximativeSolver.all_params.html">
+       paminco._base.AlphaBetaApproximativeSolver.all_params
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../base/generated/paminco._base.AlphaBetaApproximativeSolver.plot_flow_on_edge.html">
+       paminco._base.AlphaBetaApproximativeSolver.plot_flow_on_edge
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../utils.html">
+   Utils
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+  <label for="toctree-checkbox-29">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.misc.Cache.html">
+     paminco.utils.misc.Cache
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.misc.callback_to_list.html">
+     paminco.utils.misc.callback_to_list
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.typing.IntEnum2.html">
+     paminco.utils.typing.IntEnum2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.typing.is_int.html">
+     paminco.utils.typing.is_int
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.typing.is_iterable.html">
+     paminco.utils.typing.is_iterable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.typing.sparse_format.html">
+     paminco.utils.typing.sparse_format
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.linalg.SingularLaplaceError.html">
+     paminco.linalg.SingularLaplaceError
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.linalg.InverseMethod.html">
+     paminco.linalg.InverseMethod
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.linalg.CholeskyInverse.html">
+     paminco.linalg.CholeskyInverse
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.linalg.star_inv.html">
+     paminco.linalg.star_inv
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.linalg.star_update_by_edge.html">
+     paminco.linalg.star_update_by_edge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.math.np_divide_a_by_b.html">
+     paminco.utils.math.np_divide_a_by_b
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.math.find_min_col_lex.html">
+     paminco.utils.math.find_min_col_lex
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.bisec.bisec_fast.html">
+     paminco.utils.bisec.bisec_fast
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.bisec.bisec_method.html">
+     paminco.utils.bisec.bisec_method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.readin.parse_polynomial.html">
+     paminco.utils.readin.parse_polynomial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.readin.parse_number.html">
+     paminco.utils.readin.parse_number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.readin.xml_find_root.html">
+     paminco.utils.readin.xml_find_root
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.readin.xml_add_element.html">
+     paminco.utils.readin.xml_add_element
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.callback.CallBackFlag.html">
+     paminco.callback.CallBackFlag
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.callback.SimpleTimer.html">
+     paminco.callback.SimpleTimer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.callback.SimpleDebuggerIterativeModel.html">
+     paminco.callback.SimpleDebuggerIterativeModel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.io.save_object.html">
+     paminco.utils.io.save_object
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.io.load_object.html">
+     paminco.utils.io.load_object
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/paminco.utils.io.prettify_xml.html">
+     paminco.utils.io.prettify_xml
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#class-description">
+   Class Description
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methods">
+   Methods
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="nodes">
+<span id="id1"></span><h1>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h1>
+<section id="class-description">
+<h2>Class Description<a class="headerlink" href="#class-description" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="paminco.net.Nodes">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paminco.net.</span></span><span class="sig-name descname"><span class="pre">Nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype_float</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype_int</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/paminco/net/shared.html#Nodes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paminco.net.Nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that contains the nodes/vertices of a network.</p>
+<dl class="simple">
+<dt>A Nodes object can be instantiated in several ways:</dt><dd><dl class="simple">
+<dt>Nodes(n)</dt><dd><p>where <code class="docutils literal notranslate"><span class="pre">n</span></code> is a Nodes object.</p>
+</dd>
+<dt>Nodes(nodes)</dt><dd><p>where <code class="docutils literal notranslate"><span class="pre">nodes</span></code> is array_like and contains either node
+labels or node indices. If no indices are given, they
+are set automatically.</p>
+</dd>
+<dt>Nodes(nodes, zone)</dt><dd><p>where <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and <code class="docutils literal notranslate"><span class="pre">zone</span></code> are array_like of shape (n, ).
+<code class="docutils literal notranslate"><span class="pre">zone</span></code> must be boolean array denoting if a node is a
+zone, mostly used for traffic networks.</p>
+</dd>
+<dt>Nodes(nodes, xy, zone)</dt><dd><p>where <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and <code class="docutils literal notranslate"><span class="pre">zone</span></code> are array_like of shape (n, )
+and <code class="docutils literal notranslate"><span class="pre">xy</span></code> is array_like of shape (n, 2) and contains the
+coordinates of the nodes.</p>
+</dd>
+<dt>Nodes(node_labels, node_indices, xy, zone)</dt><dd><p>where <code class="docutils literal notranslate"><span class="pre">node_labels</span></code> and <code class="docutils literal notranslate"><span class="pre">node_indices</span></code> and <code class="docutils literal notranslate"><span class="pre">zone</span></code>
+are are array_like of shape (n, ) and <code class="docutils literal notranslate"><span class="pre">xy</span></code> is array_like
+of shape (n, 2).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">node_data</span></dt><dd><p>Input data.</p>
+</dd>
+<dt><strong>dtype_float</strong><span class="classifier">dtype, default=numpy.float_</span></dt><dd><p>Datatype for X and Y coordinates.</p>
+</dd>
+<dt><strong>dtype_int</strong><span class="classifier">dtype, default=int</span></dt><dd><p>Datatype for node indices.</p>
+</dd>
+<dt><strong>map_labels: None, bool, dict, or callable, default=True</strong></dt><dd><p>Determines mapping of labels to indices if no indices are
+given or vice versa. If <code class="docutils literal notranslate"><span class="pre">None</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, indices / labels
+are set to -9999 / ‘invalid’. If <code class="docutils literal notranslate"><span class="pre">dict</span></code>, mapping by this
+dict. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, indices are set to 0, 1, …, n-1, labels to
+indices as str. If <code class="docutils literal notranslate"><span class="pre">callable</span></code>, use callable with
+signature <code class="docutils literal notranslate"><span class="pre">indices</span> <span class="pre">=</span> <span class="pre">callable(labels)</span></code> or
+<code class="docutils literal notranslate"><span class="pre">labels</span> <span class="pre">=</span> <span class="pre">callable(indices)</span></code>.</p>
+</dd>
+<dt><strong>copy</strong><span class="classifier">bool, default=False</span></dt><dd><p>Whether to create a copy of the inputs in data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>index</strong></dt><dd></dd>
+<dt><strong>node</strong></dt><dd></dd>
+<dt><strong>zone</strong></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_zones</span></code></dt><dd><p>bool: Whether Nodes object has any zone.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">x</span></code></dt><dd><p>ndarray (m, ) of floats: X coordinates.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">y</span></code></dt><dd><p>ndarray (m, ) of floats: Y coordinates.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.Nodes.__init__.html#paminco.net.Nodes.__init__" title="paminco.net.Nodes.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nodes.__init__</span></code></a>(data[, dtype_float, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/paminco.net.Nodes.from_edges.html#paminco.net.Nodes.from_edges" title="paminco.net.Nodes.from_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nodes.from_edges</span></code></a>(edges, **kw)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.Nodes.from_xml.html#paminco.net.Nodes.from_xml" title="paminco.net.Nodes.from_xml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nodes.from_xml</span></code></a>(data[, return_data])</p></td>
+<td><p>Load object from <code class="docutils literal notranslate"><span class="pre">.xml</span></code> data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/paminco.net.Nodes.from_npz.html#paminco.net.Nodes.from_npz" title="paminco.net.Nodes.from_npz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nodes.from_npz</span></code></a>(data[, prefix])</p></td>
+<td><p>Construct object from <code class="docutils literal notranslate"><span class="pre">.npz</span></code> file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.Nodes.set_mappings.html#paminco.net.Nodes.set_mappings" title="paminco.net.Nodes.set_mappings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nodes.set_mappings</span></code></a>()</p></td>
+<td><p>(Re)-set labels &lt;-&gt; indices mappings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/paminco.net.Nodes.get_pos.html#paminco.net.Nodes.get_pos" title="paminco.net.Nodes.get_pos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nodes.get_pos</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.Nodes.delete_nodes.html#paminco.net.Nodes.delete_nodes" title="paminco.net.Nodes.delete_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nodes.delete_nodes</span></code></a>(nodes[, return_indices])</p></td>
+<td><p>Delete nodes from Nodes object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/paminco.net.Nodes.to_df.html#paminco.net.Nodes.to_df" title="paminco.net.Nodes.to_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nodes.to_df</span></code></a>(**kwargs)</p></td>
+<td><p>Get object as pandas DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.Nodes.add_to_etree.html#paminco.net.Nodes.add_to_etree" title="paminco.net.Nodes.add_to_etree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nodes.add_to_etree</span></code></a>(root[, overwrite])</p></td>
+<td><p>Add node data to xml.etree.ElementTree.Element.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/paminco.net.Nodes.make_save_dict.html#paminco.net.Nodes.make_save_dict" title="paminco.net.Nodes.make_save_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nodes.make_save_dict</span></code></a>([prefix, save_dict])</p></td>
+<td><p>Generate dict to save object with numpy.savez.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.Nodes.save_to_numpy.html#paminco.net.Nodes.save_to_numpy" title="paminco.net.Nodes.save_to_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nodes.save_to_numpy</span></code></a>(file, **kwargs)</p></td>
+<td><p>Save object into a single file in uncompressed <code class="docutils literal notranslate"><span class="pre">.npz</span></code> format.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

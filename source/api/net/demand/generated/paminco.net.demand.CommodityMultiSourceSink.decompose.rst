@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommodityMultiSourceSink.decompose
+=====================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: CommodityMultiSourceSink.decompose

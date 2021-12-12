@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Parametric Minimum Cost Flows &#8212; paminco 0.1 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/contentui.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Minimum Cost Flow Problem" href="min_cost_flow.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo1.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="min_cost_flow.html">
+   Minimum Cost Flow Problem
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Parametric Minimum Cost Flows
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minimum-cost-flow-functions">
+   1. Minimum cost flow functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alpha-beta-approximate-minimum-cost-flow-functions">
+     1.1 Alpha-beta-approximate minimum cost flow functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametric-electrial-flows">
+   2. Parametric electrial flows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-marginal-cost">
+     2.1 Linear marginal cost
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#piecewise-linear-marginal-costs">
+     2.2 Piecewise linear marginal costs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpolation-of-cost-functions">
+     2.3 Interpolation of cost functions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="parametric-minimum-cost-flows">
+<span id="theory-paminco"></span><h1>Parametric Minimum Cost Flows<a class="headerlink" href="#parametric-minimum-cost-flows" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#minimum-cost-flow-functions" id="id5">1. Minimum cost flow functions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#alpha-beta-approximate-minimum-cost-flow-functions" id="id6">1.1 Alpha-beta-approximate minimum cost flow functions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#parametric-electrial-flows" id="id7">2. Parametric electrial flows</a></p>
+<ul>
+<li><p><a class="reference internal" href="#linear-marginal-cost" id="id8">2.1 Linear marginal cost</a></p></li>
+<li><p><a class="reference internal" href="#piecewise-linear-marginal-costs" id="id9">2.2 Piecewise linear marginal costs</a></p></li>
+<li><p><a class="reference internal" href="#interpolation-of-cost-functions" id="id10">2.3 Interpolation of cost functions</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>There exists a variety of solutions to the <a class="reference internal" href="min_cost_flow.html#theory-mcf"><span class="std std-ref">minimum cost flow problem</span></a>.
+<em>parcmf</em> provides solutions to a slighly different problem.</p>
+<section id="minimum-cost-flow-functions">
+<span id="theory-mcf-func"></span><h2><a class="toc-backref" href="#id5">1. Minimum cost flow functions</a><a class="headerlink" href="#minimum-cost-flow-functions" title="Permalink to this headline">¶</a></h2>
+<p>The goal is to find a minimum cost flow <strong>function</strong> that maps a demand factor <span class="math notranslate nohighlight">\(\lambda\)</span> to
+a minimum cost flow:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\min \text { } &amp; C(\mathbf{x}) \\
+\text {s.t.} \quad \mathbf{\Gamma} \mathbf{x} &amp;= \mathbf{h}(\lambda), \\
+\mathbf{x} &amp;\geq \mathbf{0},
+\end{align*}\end{split}\]</div>
+<div class="toggle-header docutils container">
+<p>where <strong>show definitions</strong>:</p>
+</div>
+<div class="toggle-content docutils container">
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{\Gamma}\)</span> is the incidence matrix and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{h}(\lambda): \mathbb{R} \rightarrow \mathbf{b}_{\lambda}\)</span> a demand function.</p></li>
+</ul>
+</div>
+<p>For notational simplicity, we only discuss linear demand functions
+<span class="math notranslate nohighlight">\(\mathbf{h}(\lambda) = \lambda \mathbf{b}\)</span>.</p>
+<section id="alpha-beta-approximate-minimum-cost-flow-functions">
+<span id="theory-mcf-abapprox"></span><h3><a class="toc-backref" href="#id6">1.1 Alpha-beta-approximate minimum cost flow functions</a><a class="headerlink" href="#alpha-beta-approximate-minimum-cost-flow-functions" title="Permalink to this headline">¶</a></h3>
+<div class="toggle docutils container">
+<p>It may not always be (computationally) feasible to compute an exact minimum cost flow function and
+the function has to be approximated.</p>
+<p>Consider an interval <span class="math notranslate nohighlight">\(\left[0, \lambda^{\max }\right]\)</span>, for which we want to find an
+<span class="math notranslate nohighlight">\((\alpha, \beta)\)</span>-approximate minimum cost flow function.
+A function is an <span class="math notranslate nohighlight">\((\alpha, \beta)\)</span>-approximate minimum cost flow function if the cost of the
+flow <span class="math notranslate nohighlight">\(\mathbf{x}(\lambda)\)</span> exceed the optimal cost at most by a relative factor of
+<span class="math notranslate nohighlight">\(\alpha\)</span> and an absolute error of <span class="math notranslate nohighlight">\(\beta\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\tilde{C}(\lambda) \leq \alpha C(\lambda)+\beta \quad
+\text { for all } \lambda \in\left[0, \lambda^{\max }\right],\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tilde{C}(\lambda) = \tilde{C}(\mathbf{x}(\lambda)) = \sum_{e \in E} F_e(x_e(\lambda))\)</span>
+denotes the cost of the flow <span class="math notranslate nohighlight">\(\mathbf{x}(\lambda)\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="parametric-electrial-flows">
+<span id="theory-par-eflow"></span><h2><a class="toc-backref" href="#id7">2. Parametric electrial flows</a><a class="headerlink" href="#parametric-electrial-flows" title="Permalink to this headline">¶</a></h2>
+<p>Instead of computing a minimum cost flow <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> (for a fixed demand) directly,
+we can compute an <a class="reference internal" href="min_cost_flow.html#theory-mcf-characterization-optpot"><span class="std std-ref">optimal potential</span></a> <span class="math notranslate nohighlight">\(\mathbf{\pi}\)</span> which <em>induces</em> a flow:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+\mathbf{x} = \mathbf{f}^{-1} (\mathbf{\Gamma}^T \mathbf{\pi}),
+\end{equation*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{f}^{-1}\)</span> maps an optimal potential to an <em>electrial flow</em>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+\mathbf{f}^{-1} : \Pi \rightarrow \mathbb{R}^m \quad
+\mathbf{\pi} \rightarrow \mathbf{f}^{-1}(\mathbf{\pi}) := (f_e^{-1}(\pi_w - \pi_v))_{e \in E}.
+\end{equation*}\]</div>
+<section id="linear-marginal-cost">
+<span id="theory-par-eflow-linear"></span><h3><a class="toc-backref" href="#id8">2.1 Linear marginal cost</a><a class="headerlink" href="#linear-marginal-cost" title="Permalink to this headline">¶</a></h3>
+<p>Assume that the marginal cost for all edges are linear and of the following form:
+<span class="math notranslate nohighlight">\(f_e(x) = 2ax + b\)</span>.
+Then we find a <em>linear</em> function <span class="math notranslate nohighlight">\(\mathbf{\pi}(\lambda)\)</span> and its induced
+linear electrical flow <span class="math notranslate nohighlight">\(\mathbf{x}(\lambda)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\mathbf{\pi}(\lambda) &amp;= \mathbf{L}^{\ast}(\lambda \mathbf{b} + \mathbf{\Gamma} \mathbf{d}) \quad \text{and}\\
+\mathbf{x}(\lambda) &amp;= \mathbf{C} \mathbf{\Gamma}^T \mathbf{\pi}(\lambda) - \mathbf{d}
+= \mathbf{C} \mathbf{\Gamma}^T \mathbf{L}^{\ast}(\lambda \mathbf{b} + \mathbf{\Gamma} \mathbf{d}) - \mathbf{d}
+,
+\end{align*}\end{split}\]</div>
+<div class="toggle-header docutils container">
+<p>where <strong>show definitions</strong>:</p>
+</div>
+<div class="toggle-content docutils container">
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{C} = \text{diag}(1/2a_1, 1/2a_2, ..., 1/2a_m)\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{d} = (b_1/2a_1, b_2/2a_2, ..., b_m/2a_m)^T\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{L} = \mathbf{\Gamma} \mathbf{C} \mathbf{\Gamma}^T\)</span> the weighted Laplacian of the graph, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{L}^{\ast}\)</span> the generalized inverse of <span class="math notranslate nohighlight">\(\mathbf{L}\)</span>.</p></li>
+</ul>
+</div>
+<div class="admonition-at-a-glance admonition">
+<p class="admonition-title">At a glance</p>
+<p>Linear marginal cost result in a linear minimum cost flow function.</p>
+</div>
+<div class="toggle-header docutils container">
+<p><em>Example</em>: linear resistances <strong>show / hide</strong></p>
+</div>
+<div class="toggle-content docutils container">
+<p>Consider an electrical network with linear resistances, i.e., <span class="math notranslate nohighlight">\(f_e(x) = r_e \cdot x\)</span>.
+The objective function simplifies to <span class="math notranslate nohighlight">\(C(\mathbf{x}) = \frac{1}{2} \mathbf{x}^T \mathbf{R} \mathbf{x}\)</span> with
+<span class="math notranslate nohighlight">\(\mathbf{R} = \text{diag}(r_{e_1}, r_{e_e}, ..., r_{e_m})\)</span>.</p>
+<p>Then we find the optimal potential and minimum cost flow as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  \mathbf{\pi}(\lambda) &amp;= \mathbf{L}^{\ast} \mathbf{h}(\lambda) \\
+  \mathbf{x}(\lambda) &amp;= \mathbf{C} \mathbf{\Gamma}^T \mathbf{L}^{\ast} \mathbf{h}(\lambda),
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{R}^{-1}\)</span>.</p>
+<p>Thus, the parametric electrial flow is just a linear transformation of the demand function <span class="math notranslate nohighlight">\(\mathbf{h}(\lambda)\)</span>.</p>
+</div>
+</section>
+<section id="piecewise-linear-marginal-costs">
+<span id="theory-par-eflow-linear-piecewise"></span><h3><a class="toc-backref" href="#id9">2.2 Piecewise linear marginal costs</a><a class="headerlink" href="#piecewise-linear-marginal-costs" title="Permalink to this headline">¶</a></h3>
+<p>The assumption of linear marginal cost restricts the applicability of the algorithm.
+We now discuss problems with <em>piecewise linear marginal costs</em>:</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="a150b4c8-5517-4bf1-9b91-75b93eb48cb3" name="9c6abfa8-e9ba-4c10-a789-a9601520f561" type="radio">
+</input><label class="tabbed-label" for="a150b4c8-5517-4bf1-9b91-75b93eb48cb3">
+Graph</label><div class="tabbed-content docutils">
+<a class="reference internal image-reference" href="../_images/fig2a_graph_with_marginal_cost.png"><img alt="../_images/fig2a_graph_with_marginal_cost.png" class="align-center" src="../_images/fig2a_graph_with_marginal_cost.png" style="height: 250px;" /></a>
+</div>
+<input id="a0a4af0e-faaa-4cfe-811a-736363ca65c6" name="9c6abfa8-e9ba-4c10-a789-a9601520f561" type="radio">
+</input><label class="tabbed-label" for="a0a4af0e-faaa-4cfe-811a-736363ca65c6">
+Regions in <span class="math notranslate nohighlight">\(\Pi\)</span> and solution curve</label><div class="tabbed-content docutils">
+<a class="reference internal image-reference" href="../_images/fig3a_potential_space_and_solution_curve.png"><img alt="../_images/fig3a_potential_space_and_solution_curve.png" class="align-center" src="../_images/fig3a_potential_space_and_solution_curve.png" style="height: 250px;" /></a>
+</div>
+<input id="393bae95-4259-47b7-923f-941e1fdd5c8d" name="9c6abfa8-e9ba-4c10-a789-a9601520f561" type="radio">
+</input><label class="tabbed-label" for="393bae95-4259-47b7-923f-941e1fdd5c8d">
+Induced edge flows</label><div class="tabbed-content docutils">
+<a class="reference internal image-reference" href="../_images/fig3b_induced_flow.png"><img alt="../_images/fig3b_induced_flow.png" class="align-center" src="../_images/fig3b_induced_flow.png" style="height: 250px;" /></a>
+</div>
+</div>
+<p>The piecewise linear marginal edge cost subdivide the potential space <span class="math notranslate nohighlight">\(\Pi\)</span> into
+regions.
+We denote <span class="math notranslate nohighlight">\(\mathbf{t} = (t_{e_1}, t_{e_2}, ..., t_{e_m})^T\)</span> the vector of the indices
+per edge cost function.
+Given an optimal potential <span class="math notranslate nohighlight">\(\mathbf{\pi}\)</span>, the electrical flow is then:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}
+= \mathbf{C}_{\mathbf{t}} \mathbf{\Gamma}^T \mathbf{\pi} - \mathbf{d}_{\mathbf{t}}
+= \mathbf{C}_{\mathbf{t}} \mathbf{\Gamma}^T \mathbf{L}_{\mathbf{t}}^{\ast}(\mathbf{b}
+  + \mathbf{\Gamma} \mathbf{d}_{\mathbf{t}}) - \mathbf{d}_{\mathbf{t}}\]</div>
+<p>In a region <span class="math notranslate nohighlight">\(R_{\mathbf{t}}\)</span> the solution curve is linear.
+The full solution curve is union of the solution segments <span class="math notranslate nohighlight">\(\Pi_{\mathbf{t}}\)</span> and
+thus a piecewise linear function:</p>
+<div class="math notranslate nohighlight">
+\[\pi\left(\mathbb{R}_{\geq 0}\right):=\{\pi(\lambda) \mid \lambda \geq 0\}=\bigcup_{t \in \bar{T}} \Pi_{t}.\]</div>
+<p>Furhter, for all regions, there exist numbers <span class="math notranslate nohighlight">\(\lambda_t^{\text{min}}\)</span> and <span class="math notranslate nohighlight">\(\lambda_t^{\text{max}}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\Pi_{\mathbf{t}} =
+\left\{
+  \mathbf{\pi}_{\mathbf{t}} + \lambda \Delta \mathbf{\pi}_{\mathbf{t}}
+  \mid \lambda \in [\lambda_t^{\text{min}}, \lambda_t^{\text{max}}]
+\right\}
+.\]</div>
+<p>Hence, the main challenge lies in finding the correct regions <span class="math notranslate nohighlight">\(R_{\mathbf{t}}\)</span>.
+The <a class="reference internal" href="../api/algo/efa.html#efa"><span class="std std-ref">Electrial Flow Algorithm (EFA)</span></a> <a class="footnote-reference brackets" href="#id3" id="id1">1</a> provides a solution for this problem.</p>
+<div class="admonition-idea-behind-the-electrial-flow-algorithm admonition">
+<p class="admonition-title">Idea behind the Electrial Flow Algorithm</p>
+<p><em>Piecewise linear</em> marginal cost result in a subdivision of the potential space <span class="math notranslate nohighlight">\(\Pi\)</span>.
+For every region <span class="math notranslate nohighlight">\(R_{\mathbf{t}} \in \Pi\)</span>, the solution curve is linear. Thus the full
+solution curve is <em>piecewise linear</em>.
+The difficulty thus lies in finding the correct sequence of regions.</p>
+</div>
+</section>
+<section id="interpolation-of-cost-functions">
+<h3><a class="toc-backref" href="#id10">2.3 Interpolation of cost functions</a><a class="headerlink" href="#interpolation-of-cost-functions" title="Permalink to this headline">¶</a></h3>
+<p>The EFA algorithm is restricted to piecewise linear marginal cost functions <span class="math notranslate nohighlight">\(f_e\)</span> and thus
+minimum cost flow problems with piecewise quadratic cost functions.
+However, it is possible to approximate continous convex cost functions <span class="math notranslate nohighlight">\(F_e\)</span> with
+piecewise quadratic convex cost functions <span class="math notranslate nohighlight">\(\tilde{F}_e\)</span> <a class="footnote-reference brackets" href="#id4" id="id2">2</a>.
+The <a class="reference internal" href="../api/algo/mca.html#mca"><span class="std std-ref">Marginal Cost Approximation (MCA)</span></a> algorithm builds on that idea and “feeds”
+the EFA with approximated piecewise linear marginal cost.
+Hence, MCA calculates an <a class="reference internal" href="#theory-mcf-abapprox"><span class="std std-ref">alpha-beta-approximate</span></a> minimum cost flow function.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../api/algo/generated/paminco.algo.mca.MCAInterpolationRule.html#paminco.algo.mca.MCAInterpolationRule" title="paminco.algo.mca.MCAInterpolationRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">MCAInterpolationRule</span></code></a> : Criteria for proper approximation of cost functions.</p>
+</div>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Klimm M, Warode P (2021) Parametric Computation of Minimum Cost
+Flows with Piecewise Quadratic Costs. <em>Mathematics of Operations
+Research</em>. Available at <a class="reference external" href="https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf">https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf</a></p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Rockafellar, RT (1984) <em>Network Flows and Monotropic Optimization</em> (John Wiley and Sons, Hoboken, NJ)</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

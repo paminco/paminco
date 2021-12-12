@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVectorSP.from\_npz
+===========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandVectorSP.from_npz

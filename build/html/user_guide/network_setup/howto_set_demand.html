@@ -1,0 +1,894 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Setting up a Demand Function &#8212; paminco 0.1 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/contentui.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to read data from XML" href="howto_read_from_xml.html" />
+    <link rel="prev" title="STUB" href="howto_set_cost.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo1.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../theory/index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../applications/traffic/index.html">
+     Traffic Networks
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/background.html">
+       Background
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/braess_paradox.html">
+       Braess Paradox
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/pigou_example.html">
+       Pigou's Example
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/sioux_fixed_ue.html">
+       SiouxFalls - User Eqiulibrium
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/sioux_par_poa.html">
+       SiouxFalls - Parametric Price of Anarchy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/traffic/barcelona_poa.html">
+       Barcelona - Price of Anarchy
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../applications/gas/index.html">
+     Gaslib
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../applications/gas/stub.html">
+       Stub
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   How to Set Up a Network
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto_graph_setup.html">
+     How to set up directed and undirected graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto_set_cost.html">
+     How to equip a network with cost functions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     How to specify the demand function for a network
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto_read_from_xml.html">
+     How to readin network data from XML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto_shortest_path.html">
+     How to calculate shortest path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto_plot_network.html">
+     How to plot a network
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-do-we-need-it">
+   1. Why do we need it?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demand-vectors-and-matrices">
+   2. Demand vectors and matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demand-vector">
+     2.1. Demand vector
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#network-setup">
+       Network setup
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#building-demand-vector">
+       Building demand vector
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#retrieving-sparse-representation">
+       Retrieving sparse representation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#setting-demand-function">
+       Setting demand function
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#all-in-one-go">
+       All in one go
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demand-matrix">
+     2.2. Demand matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commodity-with-multiple-sinks-and-sources">
+     2.3. Commodity with multiple sinks and sources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-types">
+   3. Function types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-demand-function">
+     3.1. Linear demand function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#affine-demand-function">
+     3.2. Affine demand function
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">REL_DIR</span>  <span class="o">=</span> <span class="s2">&quot;../../../..&quot;</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">REL_DIR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="setting-up-a-demand-function">
+<h1>Setting up a Demand Function<a class="headerlink" href="#setting-up-a-demand-function" title="Permalink to this headline">¶</a></h1>
+<section id="why-do-we-need-it">
+<h2>1. Why do we need it?<a class="headerlink" href="#why-do-we-need-it" title="Permalink to this headline">¶</a></h2>
+<p>paminco allows to compute parametric minimum cost flows (MCF) w.r.t. to demand multiplier <span class="math notranslate nohighlight">\(\lambda\)</span>. I.e., the goal is to find a MCF for all values of <span class="math notranslate nohighlight">\(\lambda\)</span> in the interval <span class="math notranslate nohighlight">\(\left[0, \lambda^{\max }\right]\)</span>:</p>
+<p>\begin{align*}
+\min \text { } &amp; C(\mathbf{x}) \
+\text {s.t.} \quad \mathbf{\Gamma} \mathbf{x} &amp;= \mathbf{h}(\lambda), \
+\mathbf{x} &amp;\geq \mathbf{0},
+\end{align*}</p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{h}(\lambda)\)</span> is a <code class="docutils literal notranslate"><span class="pre">demand</span> <span class="pre">function</span></code> that maps <span class="math notranslate nohighlight">\(\lambda\)</span> to a <code class="docutils literal notranslate"><span class="pre">demand</span> <span class="pre">vector</span></code> <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>.</p>
+</section>
+<section id="demand-vectors-and-matrices">
+<h2>2. Demand vectors and matrices<a class="headerlink" href="#demand-vectors-and-matrices" title="Permalink to this headline">¶</a></h2>
+<section id="demand-vector">
+<h3>2.1. Demand vector<a class="headerlink" href="#demand-vector" title="Permalink to this headline">¶</a></h3>
+<p>For single commodity problems a demand vector is a (n, ) array that encodes the inflow and outflow rate per node, negative values indicating <em>sources</em> and positive values <em>sinks</em>.</p>
+<p>Consider the following example.
+The network consists of four vertices and five edges.
+We want to send 10 units from vertex <span class="math notranslate nohighlight">\(A\)</span> to vertex <span class="math notranslate nohighlight">\(D\)</span>, indicated by the wiggly green arrow</p>
+<center> 
+<img src="img/graph_demand.jpg" width="400">
+</center><section id="network-setup">
+<h4>Network setup<a class="headerlink" href="#network-setup" title="Permalink to this headline">¶</a></h4>
+<p>We setup this network (without demand) as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">paminco</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">edge_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
+<span class="p">])</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="n">edge_data</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">lbl2id</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: 0, &#39;B&#39;: 1, &#39;C&#39;: 2, &#39;D&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="building-demand-vector">
+<h4>Building demand vector<a class="headerlink" href="#building-demand-vector" title="Permalink to this headline">¶</a></h4>
+<p>We now build a demand vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demand_vector</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">demand</span><span class="o">.</span><span class="n">demand_vector</span><span class="p">(</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">shared</span><span class="p">,</span>  <span class="c1"># each network element must know about shared data ...</span>
+    <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># send 10 units from A to D</span>
+<span class="p">)</span>
+<span class="n">demand_vector</span><span class="o">.</span><span class="n">map_node_label_to_id</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_21848</span><span class="o">/</span><span class="mf">2378728165.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">demand_vector</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">demand</span><span class="o">.</span><span class="n">demand_vector</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">graph</span><span class="o">.</span><span class="n">shared</span><span class="p">,</span>  <span class="c1"># each network element must know about shared data ...</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># send 10 units from A to D</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">demand_vector</span><span class="o">.</span><span class="n">map_node_label_to_id</span><span class="p">()</span>
+
+<span class="nn">~\git\paminco\paminco\net\demand.py</span> in <span class="ni">demand_vector</span><span class="nt">(data, shared, dtype_int, dtype_float, single_pairs, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1693</span>             <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1694</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1695</span>             <span class="k">return</span> <span class="n">DemandVector</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1696</span>                 <span class="n">data</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1697</span>                 <span class="n">shared</span><span class="o">=</span><span class="n">shared</span><span class="p">,</span>
+
+<span class="nn">~\git\paminco\paminco\net\demand.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, shared, dtype_int, dtype_float, copy, is_label)</span>
+<span class="g g-Whitespace">    </span><span class="mi">965</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_comm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CommodityMultiSourceSink</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">is_label</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">966</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">967</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_comm</span> <span class="o">=</span> <span class="p">[</span><span class="n">Commodity</span><span class="o">.</span><span class="n">from_data</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">is_label</span><span class="o">=</span><span class="n">is_label</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">968</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_comm</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comm</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">969</span> 
+
+<span class="ne">TypeError</span>: &#39;Shared&#39; object is not iterable
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="retrieving-sparse-representation">
+<h4>Retrieving sparse representation<a class="headerlink" href="#retrieving-sparse-representation" title="Permalink to this headline">¶</a></h4>
+<p>This demand vector consists of one CommoditySingleSourceSink:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demand_vector</span><span class="o">.</span><span class="n">commodities</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[CommoditySingleSourceSink &#39;A&#39; (0) → &#39;D&#39; (3) | 10 @ 0x20c926791c0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Algorithms in paminco expect the demand vector to be sparse matrix, which can be accessed by:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demand_vector</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;4x1 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;
+	with 2 stored elements in Compressed Sparse Column format&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demand_vector</span><span class="p">()</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-10.],
+       [  0.],
+       [  0.],
+       [ 10.]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="setting-demand-function">
+<h4>Setting demand function<a class="headerlink" href="#setting-demand-function" title="Permalink to this headline">¶</a></h4>
+<p>We equip the network with a linear demand function that scales this demand vector by the demand multiplier <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">set_demand</span><span class="p">(</span><span class="n">demand_vector</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">demand</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;paminco.net.demand.LinearDemandFunction at 0x20c95fe1b20&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a linear demand function with <span class="math notranslate nohighlight">\(\lambda = 1\)</span> (no scaling), we expect to retrieve the specified demand vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">demand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-10.],
+       [  0.],
+       [  0.],
+       [ 10.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>For other values of <span class="math notranslate nohighlight">\(\lambda\)</span>, the input demand vector is scaled:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">demand</span><span class="p">(</span><span class="mf">0.32</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-3.2],
+       [ 0. ],
+       [ 0. ],
+       [ 3.2]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">demand</span><span class="p">(</span><span class="mf">1.63</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-16.3],
+       [  0. ],
+       [  0. ],
+       [ 16.3]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="all-in-one-go">
+<h4>All in one go<a class="headerlink" href="#all-in-one-go" title="Permalink to this headline">¶</a></h4>
+<p>By default, the network constructor builds a linear demand function from the <code class="docutils literal notranslate"><span class="pre">demand_data</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">set_demand</span><span class="p">((</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">demand</span><span class="p">(</span><span class="mf">1.63</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-16.3],
+       [  0. ],
+       [  0. ],
+       [ 16.3]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="demand-matrix">
+<h3>2.2. Demand matrix<a class="headerlink" href="#demand-matrix" title="Permalink to this headline">¶</a></h3>
+<p>For certain problems, the demand may consist of multiple commodities.
+E.g., in a traffic network some drivers want to go from one location to another, and others vice versa.
+Consider an adaption of the graph above:</p>
+<center> 
+<img src="img/graph_demand_multi.jpg" width="400">
+</center>
+<p>Here, we set five commodities
+\begin{align*}
+A &amp; \overset{2}{\rightarrow} B \quad (\text{blue}), \
+A &amp; \overset{5}{\rightarrow} D \quad (\text{orange}), \
+B &amp; \overset{7}{\rightarrow} A \quad (\text{light green}), \
+C &amp; \overset{5}{\rightarrow} B \quad (\text{dark green}), \
+D &amp; \overset{5}{\rightarrow} C \quad (\text{red}).
+\end{align*}</p>
+<!-- A \rightarrow B $ (blue), $A \rightarrow D $ (orange), $B \rightarrow A $ (light green), $C \rightarrow B $ (dark green), $D \rightarrow C $ (red). -->
+<!-- $A \overset{2}{\rightarrow} B $ (blue),
+$A \overset{5}{\rightarrow} D $ (orange),
+$B \overset{7}{\rightarrow} A $ (light green),
+$C \overset{5}{\rightarrow} B $ (dark green),
+$D \overset{5}{\rightarrow} C $ (red). --><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">commodities</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">demand_matrix</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">demand_vector</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">shared</span><span class="p">,</span> <span class="n">commodities</span><span class="p">)</span>
+<span class="n">demand_matrix</span><span class="o">.</span><span class="n">map_node_label_to_id</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We encoded the commodites in a demand matrix, where each column is a demand vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">demand_matrix</span><span class="p">()</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
+<span class="n">d</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">labels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>-2.0</td>
+      <td>-5.0</td>
+      <td>7.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>-7.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-5.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="commodity-with-multiple-sinks-and-sources">
+<h3>2.3. Commodity with multiple sinks and sources<a class="headerlink" href="#commodity-with-multiple-sinks-and-sources" title="Permalink to this headline">¶</a></h3>
+<p>So far, we considered only commodities that have a single source and single sink.
+However, for certain applications – such as a gas network – a commodity may consits of <code class="docutils literal notranslate"><span class="pre">multiple</span> <span class="pre">sources</span> <span class="pre">and/or</span> <span class="pre">multiple</span> <span class="pre">sinks</span></code>.
+This CommodityMultiSourceSink is encoded as a vector or dictionary that specfiies in and outflow rate of each node:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">com</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="n">demand_vector</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">demand_vector</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">shared</span><span class="p">,</span> <span class="n">com</span><span class="p">)</span>
+<span class="n">demand_vector</span><span class="o">.</span><span class="n">commodities</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[CommodityMultiSourceSink @ 0x20c95fe1ac0
+ &#39;A&#39; : -5.0
+ &#39;B&#39; : -2.0
+ &#39;C&#39; : 1.0
+ &#39;D&#39; : 6.0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In a sense, hhis commodity specifies that we input 5 units at <span class="math notranslate nohighlight">\(A\)</span> and 2 at <span class="math notranslate nohighlight">\(B\)</span>, which are consumed by <span class="math notranslate nohighlight">\(D (6)\)</span> and <span class="math notranslate nohighlight">\(C (1)\)</span>, i.e., <span class="math notranslate nohighlight">\((A, B) \overset{7}{\rightarrow} (C, D)\)</span>.’</p>
+</section>
+</section>
+<section id="function-types">
+<h2>3. Function types<a class="headerlink" href="#function-types" title="Permalink to this headline">¶</a></h2>
+<p>paminco has allows for two demand function types (other can be implemented by inheritance of paminco.demand.DemandFunction): linear demand functions and affine demand functions.
+For notational simplicity, we only consider demands that consists of a single commodity for the rest of this section.</p>
+<section id="linear-demand-function">
+<h3>3.1. Linear demand function<a class="headerlink" href="#linear-demand-function" title="Permalink to this headline">¶</a></h3>
+<p>A linear demand function is of the form:
+\begin{equation}
+\mathbf{h}_{\text{lin}}(\lambda) = \lambda \mathbf{b},
+\end{equation}</p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> is a demand vector (see 1.1). In a sense, the demand is simply scaled by the parameter <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">paminco</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">edge_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
+<span class="p">])</span>
+<span class="n">demand_data</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="n">edge_data</span><span class="p">,</span> <span class="n">demand_data</span><span class="o">=</span><span class="n">demand_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The demand function of the network for <span class="math notranslate nohighlight">\(\lambda = 2.5\)</span> – i.e., sending 2.5 times the original demand (1) from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(D\)</span> – is called by:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;4x1 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;
+	with 2 stored elements in Compressed Sparse Column format&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>which is a <span class="math notranslate nohighlight">\(n \times k\)</span> sparse matrix. This matrix encodes the in and outflow rates for all nodes (row) for all commodities (column). It is easily converted to a numpy.ndarray:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-2.5],
+       [ 0. ],
+       [ 0. ],
+       [ 2.5]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>For example, the -2.5 indicates that the node at index 0 (node <span class="math notranslate nohighlight">\(A\)</span>) has a total inflow of -2.5 units, negative rates thus marking <em>source</em>. All the inflow in node <span class="math notranslate nohighlight">\(A\)</span> is then “consumed” by the node at index 3 (node <span class="math notranslate nohighlight">\(D\)</span>, a <em>sink</em>).</p>
+</section>
+<section id="affine-demand-function">
+<h3>3.2. Affine demand function<a class="headerlink" href="#affine-demand-function" title="Permalink to this headline">¶</a></h3>
+<p>In contrast, an <em>affine demand function</em> consists of two parts: a base demand <span class="math notranslate nohighlight">\(\mathbf{b}_0\)</span> that is invariant of <span class="math notranslate nohighlight">\(\lambda\)</span> and a part that scales linearly with the demand multiplier:
+\begin{equation}
+\mathbf{h}_{\text{affine}}(\lambda) = \mathbf{b}_0 + \lambda \mathbf{b}.
+\end{equation}</p>
+<p>This is of interest for problems where there exsists a trivial solution to problems with linearly scaled demands.
+Using the data from the above example, we can setup an affine demand function as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b0</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">demand_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">b0</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">graph2</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span>
+    <span class="n">edge_data</span><span class="p">,</span> 
+    <span class="n">demand_data</span><span class="o">=</span><span class="n">demand_data</span><span class="p">,</span> 
+    <span class="n">kw_demand</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;affine&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This graph now has a demand part that is independent of the demand multiplier:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph2</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.],
+       [-1.],
+       [ 0.],
+       [ 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>and one that scales linearly with it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph2</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-7.],
+       [-1.],
+       [ 0.],
+       [ 8.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can think of calling this affine demand function with <span class="math notranslate nohighlight">\(\lambda = 7\)</span> as sending 7 units from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(D\)</span> and 1 unit from <span class="math notranslate nohighlight">\(B\)</span> to <span class="math notranslate nohighlight">\(D\)</span>, resuilting in total 8 units in the sink <span class="math notranslate nohighlight">\(D\)</span>.</p>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

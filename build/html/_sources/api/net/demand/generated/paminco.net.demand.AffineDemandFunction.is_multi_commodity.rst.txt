@@ -1,0 +1,6 @@
+﻿paminco.net.demand.AffineDemandFunction.is\_multi\_commodity
+============================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: AffineDemandFunction.is_multi_commodity

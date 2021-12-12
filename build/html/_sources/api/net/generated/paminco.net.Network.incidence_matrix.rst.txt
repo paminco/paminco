@@ -1,0 +1,6 @@
+﻿paminco.net.Network.incidence\_matrix
+=====================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.incidence_matrix

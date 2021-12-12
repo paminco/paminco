@@ -1,0 +1,6 @@
+﻿paminco.net.Edges.to\_df
+========================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Edges.to_df

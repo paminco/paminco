@@ -1,0 +1,6 @@
+﻿paminco.net.Network.demand
+==========================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Network.demand

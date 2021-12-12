@@ -1,0 +1,6 @@
+﻿paminco.net.demand.LinearDemandFunction.ddx
+===========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: LinearDemandFunction.ddx

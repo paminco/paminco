@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVectorSP.make\_save\_dict
+==================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandVectorSP.make_save_dict

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="566.88pt" height="255.12pt" viewBox="0 0 566.88 255.12">
+<g enable-background="new">
+<g>
+<g id="Layer-1" data-name="Artifact">
+<clipPath id="cp0">
+<path transform="matrix(1,0,0,-1,0,255.12)" d="M 0 .000061035 L 566.88 .000061035 L 566.88 255.12006 L 0 255.12006 Z " fill-rule="evenodd"/>
+</clipPath>
+<g clip-path="url(#cp0)">
+<path transform="matrix(1,0,0,-1,0,255.12)" d="M 0 .000015259 L 566.88 .000015259 L 566.88 255.12001 L 0 255.12001 Z " fill="#ffffff" fill-rule="evenodd"/>
+</g>
+</g>
+<g id="Layer-1" data-name="P">
+<path transform="matrix(1,0,0,-1,0,255.12)" d="M 528 118.95 L 79.56 119.4 L 120.35 116.53 L 179.59 104.88 L 219.41 107.6 L 245.39 104.73 L 268.94 95.349 L 326 62.373 L 349.55 55.566 L 386.45 51.634 L 429.18 50.877 L 527.51 40.44 C 527.19 66.609 526.87 92.777 528 118.95 Z " fill="#fff2cc" fill-rule="evenodd"/>
+</g>
+<g id="Layer-1" data-name="Span">
+<clipPath id="cp1">
+<path transform="matrix(1,0,0,-1,0,255.12)" d="M .000008447 0 L 566.88 0 L 566.88 255.12 L .000008447 255.12 Z " fill-rule="evenodd"/>
+</clipPath>
+<g clip-path="url(#cp1)">
+<text xml:space="preserve" transform="matrix(1 0 -0 1 0 255.12)" font-size="120.05" font-family="Roboto Medium"><tspan y="-130.58" x="30.48 97.948108 162.65506 205.15276 269.8597 374.42329 405.03605 467.70216">paramico</tspan></text>
+</g>
+</g>
+<g id="Layer-1" data-name="P">
+<path transform="matrix(1,0,0,-1,0,255.12)" stroke-width="3" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#2f528f" d="M 63.18 119.58 C 82.647 119.08 102.11 118.59 121.09 116.17 C 140.07 113.76 155.72 107.16 177.05 105.1 C 198.38 103.04 222.05 111.7 249.05 103.82 C 276.05 95.938 307.35 66.83 339.05 57.813 C 370.75 48.796 409.62 52.488 439.22 49.719 C 468.83 46.951 502.22 42.62 516.7 41.2 C 531.18 39.78 528.64 40.49 526.09 41.2 "/>
+</g>
+</g>
+</g>
+</svg>

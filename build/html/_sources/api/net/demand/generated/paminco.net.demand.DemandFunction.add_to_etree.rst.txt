@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandFunction.add\_to\_etree
+================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandFunction.add_to_etree

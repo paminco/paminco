@@ -1,0 +1,6 @@
+﻿paminco.algo.efa.EFA.config
+===========================
+
+.. currentmodule:: paminco.algo.efa
+
+.. autoproperty:: EFA.config

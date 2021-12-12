@@ -1,0 +1,53 @@
+﻿paminco.net.cost.PolynomialCost
+===============================
+
+.. currentmodule:: paminco.net.cost
+
+.. autoclass:: PolynomialCost
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PolynomialCost.F
+      ~PolynomialCost.__init__
+      ~PolynomialCost.add_to_etree
+      ~PolynomialCost.ddx
+      ~PolynomialCost.delete_edges
+      ~PolynomialCost.derivate
+      ~PolynomialCost.edge_cost
+      ~PolynomialCost.edge_value
+      ~PolynomialCost.f
+      ~PolynomialCost.f1
+      ~PolynomialCost.f2
+      ~PolynomialCost.from_npz
+      ~PolynomialCost.from_xml
+      ~PolynomialCost.integrate
+      ~PolynomialCost.interpolate
+      ~PolynomialCost.is_continuous
+      ~PolynomialCost.is_smooth
+      ~PolynomialCost.laplace_weights
+      ~PolynomialCost.make_save_dict
+      ~PolynomialCost.save_to_numpy
+      ~PolynomialCost.times_x
+      ~PolynomialCost.value
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PolynomialCost.degree
+      ~PolynomialCost.dtype_float
+      ~PolynomialCost.dtype_int
+      ~PolynomialCost.m
+      ~PolynomialCost.shared
+   
+   

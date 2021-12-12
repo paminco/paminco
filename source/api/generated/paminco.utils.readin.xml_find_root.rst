@@ -1,0 +1,6 @@
+﻿paminco.utils.readin.xml\_find\_root
+====================================
+
+.. currentmodule:: paminco.utils.readin
+
+.. autofunction:: xml_find_root

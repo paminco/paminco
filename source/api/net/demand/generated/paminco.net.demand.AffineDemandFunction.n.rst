@@ -1,0 +1,6 @@
+﻿paminco.net.demand.AffineDemandFunction.n
+=========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: AffineDemandFunction.n

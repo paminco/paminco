@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVectorSP.sink\_id
+==========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandVectorSP.sink_id

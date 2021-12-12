@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolution.has\_costs
+============================================
+
+.. currentmodule:: paminco._base
+
+.. autoproperty:: ParametricSolution.has_costs

@@ -1,0 +1,6 @@
+﻿paminco.\_base.AlphaBetaApproximativeSolver.plot\_flow\_on\_edge
+================================================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: AlphaBetaApproximativeSolver.plot_flow_on_edge

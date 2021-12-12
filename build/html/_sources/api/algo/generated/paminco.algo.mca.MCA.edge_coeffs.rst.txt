@@ -1,0 +1,6 @@
+﻿paminco.algo.mca.MCA.edge\_coeffs
+=================================
+
+.. currentmodule:: paminco.algo.mca
+
+.. autoproperty:: MCA.edge_coeffs

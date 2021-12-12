@@ -1,0 +1,6 @@
+﻿paminco.net.demand.AffineDemandFunction.reset\_cache
+====================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: AffineDemandFunction.reset_cache

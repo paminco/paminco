@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolution.dpi
+=====================================
+
+.. currentmodule:: paminco._base
+
+.. autoproperty:: ParametricSolution.dpi

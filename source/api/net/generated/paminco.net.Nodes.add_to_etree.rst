@@ -1,0 +1,6 @@
+﻿paminco.net.Nodes.add\_to\_etree
+================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Nodes.add_to_etree

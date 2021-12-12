@@ -1,0 +1,6 @@
+﻿paminco.net.demand.\_DV.dtype\_int
+==================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: _DV.dtype_int

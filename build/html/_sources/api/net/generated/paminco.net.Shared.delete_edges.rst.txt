@@ -1,0 +1,6 @@
+﻿paminco.net.Shared.delete\_edges
+================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Shared.delete_edges

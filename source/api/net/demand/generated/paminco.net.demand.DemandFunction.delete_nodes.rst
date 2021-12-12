@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandFunction.delete\_nodes
+===============================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandFunction.delete_nodes

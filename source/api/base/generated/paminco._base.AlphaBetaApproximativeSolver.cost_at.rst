@@ -1,0 +1,6 @@
+﻿paminco.\_base.AlphaBetaApproximativeSolver.cost\_at
+====================================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: AlphaBetaApproximativeSolver.cost_at

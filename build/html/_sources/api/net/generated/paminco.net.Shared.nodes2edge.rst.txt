@@ -1,0 +1,6 @@
+﻿paminco.net.Shared.nodes2edge
+=============================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Shared.nodes2edge

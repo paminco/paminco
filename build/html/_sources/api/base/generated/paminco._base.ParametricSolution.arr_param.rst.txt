@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolution.arr\_param
+============================================
+
+.. currentmodule:: paminco._base
+
+.. autoproperty:: ParametricSolution.arr_param

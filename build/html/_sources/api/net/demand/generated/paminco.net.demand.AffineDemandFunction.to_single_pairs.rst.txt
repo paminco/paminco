@@ -1,0 +1,6 @@
+﻿paminco.net.demand.AffineDemandFunction.to\_single\_pairs
+=========================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: AffineDemandFunction.to_single_pairs

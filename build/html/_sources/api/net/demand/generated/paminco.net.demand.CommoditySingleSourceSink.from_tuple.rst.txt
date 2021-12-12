@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommoditySingleSourceSink.from\_tuple
+========================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: CommoditySingleSourceSink.from_tuple

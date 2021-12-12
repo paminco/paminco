@@ -1,0 +1,6 @@
+﻿paminco.net.demand.LinearDemandFunction.unique\_sources
+=======================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: LinearDemandFunction.unique_sources

@@ -1,0 +1,1157 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>paminco.algo.efa &#8212; paminco 0.1 documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/contentui.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo1.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../theory/index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for paminco.algo.efa</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">scipy.sparse</span> <span class="k">as</span> <span class="nn">sps</span>
+
+<span class="kn">from</span> <span class="nn">paminco._base</span> <span class="kn">import</span> <span class="n">ParametricSolver</span><span class="p">,</span> <span class="n">Config</span><span class="p">,</span> <span class="n">ParametricSolution</span>
+<span class="kn">from</span> <span class="nn">paminco.callback</span> <span class="kn">import</span> <span class="n">CallBackFlag</span>
+<span class="kn">from</span> <span class="nn">paminco.linalg</span> <span class="kn">import</span> <span class="n">InverseMethod</span><span class="p">,</span> <span class="n">SingularLaplaceError</span>
+<span class="kn">from</span> <span class="nn">paminco.net.network</span> <span class="kn">import</span> <span class="n">Network</span>
+<span class="kn">from</span> <span class="nn">paminco.net.demand</span> <span class="kn">import</span> <span class="n">LinearDemandFunction</span><span class="p">,</span> <span class="n">AffineDemandFunction</span>
+<span class="kn">from</span> <span class="nn">paminco.net.cost</span> <span class="kn">import</span> <span class="n">PiecewiseQuadraticCoefficients</span><span class="p">,</span> <span class="n">PiecewiseQuadraticCost</span>
+<span class="kn">from</span> <span class="nn">paminco.utils</span> <span class="kn">import</span> <span class="n">callback_to_list</span>
+<span class="kn">from</span> <span class="nn">paminco.utils.math</span> <span class="kn">import</span> <span class="n">np_divide_a_by_b</span><span class="p">,</span> <span class="n">find_min_col_lex</span>
+<span class="kn">from</span> <span class="nn">paminco.utils.typing</span> <span class="kn">import</span> <span class="n">IntEnum2</span>
+
+
+<div class="viewcode-block" id="PivotStepMode"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.PivotStepMode.html#paminco.algo.efa.PivotStepMode">[docs]</a><span class="k">class</span> <span class="nc">PivotStepMode</span><span class="p">(</span><span class="n">IntEnum2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Enum defining the pivot step mode.</span>
+
+<span class="sd">    The pivot step mode determines how to select a single minimum edge</span>
+<span class="sd">    from a set of boundary edges.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    paminco.utils.math.find_min_col_lex</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] https://www3.math.tu-berlin.de/Vorlesungen/WS07/ADM2/lectures/2007-11-14/handout141107.pdf</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">LEX</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="sd">&quot;&quot;&quot;Find min edge according to lexicographic rule.&quot;&quot;&quot;</span>
+
+    <span class="n">RANDOM</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="sd">&quot;&quot;&quot;Choose min edge randomly.&quot;&quot;&quot;</span>
+
+    <span class="n">FIRST</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="sd">&quot;&quot;&quot;Select first edge in boundary edges.&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="EFAEdges"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.EFAEdges.html#paminco.algo.efa.EFAEdges">[docs]</a><span class="k">class</span> <span class="nc">EFAEdges</span><span class="p">:</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Object that stores edge values during EFA run.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    source_target : ndarray</span>
+<span class="sd">        Ndarray of shape (m, 2) containing indices of sources and targets.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    s</span>
+<span class="sd">    t</span>
+<span class="sd">    region : ndarray (m, )</span>
+<span class="sd">        Region of edges, ndarray of int.</span>
+<span class="sd">    flow : ndarray (m, )</span>
+<span class="sd">        Induced edge flow, ndarray of float.</span>
+<span class="sd">    gamma_pi_t : ndarray (m, )</span>
+<span class="sd">        Gamma times potential offset::</span>
+<span class="sd">        </span>
+<span class="sd">            Gamma @ pi_t</span>
+<span class="sd">    </span>
+<span class="sd">    gamma_dpi : ndarray (m, )</span>
+<span class="sd">        Gamma times potential direction::</span>
+<span class="sd">        </span>
+<span class="sd">            Gamma @ dpi_t</span>
+<span class="sd">        </span>
+<span class="sd">    round_gamma_dpi : ndarray (m, )</span>
+<span class="sd">        Rounding factor for ``gamma_dpi``.</span>
+<span class="sd">    ll : ndarray (m, )</span>
+<span class="sd">        .. math::</span>
+<span class="sd">        </span>
+<span class="sd">            \underline{\lambda}_{\mathbf{t}}(e) :=</span>
+<span class="sd">            \frac</span>
+<span class="sd">                {</span>
+<span class="sd">                    \sigma_{e, t_e}-\mathbf{\gamma}_{e}^{\top}</span>
+<span class="sd">                    \mathbf{\pi}_{\mathbf{t}}</span>
+<span class="sd">                }</span>
+<span class="sd">                {</span>
+<span class="sd">                    \mathbf{\gamma}_{e}^{\top}</span>
+<span class="sd">                    \Delta \mathbf{\pi}_{\mathbf{t}}</span>
+<span class="sd">                }</span>
+<span class="sd">    lu : ndarray (m, )</span>
+<span class="sd">        .. math::</span>
+<span class="sd">        </span>
+<span class="sd">            \overline{\lambda}_{\mathbf{t}}(e) :=</span>
+<span class="sd">            \frac</span>
+<span class="sd">                {</span>
+<span class="sd">                    \sigma_{e, t_e + 1}-\mathbf{\gamma}_{e}^{\top}</span>
+<span class="sd">                    \mathbf{\pi}_{\mathbf{t}}</span>
+<span class="sd">                }</span>
+<span class="sd">                {</span>
+<span class="sd">                    \mathbf{\gamma}_{e}^{\top}</span>
+<span class="sd">                    \Delta \mathbf{\pi}_{\mathbf{t}}</span>
+<span class="sd">                }</span>
+<span class="sd">    </span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    NodePotentials : Definition of pi_t and dpi_t.</span>
+<span class="sd">    paminco.net.network.Network.Gamma : Definition of Gamma.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="EFAEdges.__init__"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.EFAEdges.html#paminco.algo.efa.EFAEdges.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_target</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source_target</span> <span class="o">=</span> <span class="n">source_target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flow</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ll</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lu</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gamma_pi_t</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gamma_dpi</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">round_gamma_dpi</span> <span class="o">=</span> <span class="kc">None</span></div>
+        
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_target</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">to_df</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;region&quot;</span><span class="p">,</span> <span class="s2">&quot;flow&quot;</span><span class="p">,</span> <span class="s2">&quot;gamma_dpi&quot;</span><span class="p">,</span> <span class="s2">&quot;gamma_pi_t&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;round_gamma_dpi&quot;</span><span class="p">,</span> <span class="s2">&quot;ll&quot;</span><span class="p">,</span> <span class="s2">&quot;lu&quot;</span><span class="p">]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">}</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">s</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;ndarray (m, ) of int: sources.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_target</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">t</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;ndarray (m, ) of int: targets.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_target</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="NodePotentials"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.NodePotentials.html#paminco.algo.efa.NodePotentials">[docs]</a><span class="k">class</span> <span class="nc">NodePotentials</span><span class="p">:</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class that stores values that relate to the potential in some region.</span>
+<span class="sd">    </span>
+<span class="sd">    The potential :math:`\mathbf{\pi}` for some region :math:`R_{\mathbf{t}}`</span>
+<span class="sd">    is given by:</span>
+<span class="sd">    </span>
+<span class="sd">    .. math::</span>
+<span class="sd">        \mathbf{\pi} = \mathbf{\pi}_{\mathbf{t}}</span>
+<span class="sd">        + \lambda_{\mathbf{t}}^{\text{max}} \Delta</span>
+<span class="sd">        \mathbf{\pi}_{\mathbf{t}} = \mathbf{L}_{\mathbf{t}}^{\ast}</span>
+<span class="sd">        (\mathbf{\Gamma}\mathbf{d}_{\mathbf{t}})</span>
+<span class="sd">        + \lambda_{\mathbf{t}}^{\text{max}}</span>
+<span class="sd">        (\mathbf{L}_{\mathbf{t}}^{\ast} \mathbf{b}),</span>
+<span class="sd">        </span>
+<span class="sd">    where :math:`\mathbf{L}_{\mathbf{t}}^{\ast}` is the generalized inverse</span>
+<span class="sd">    of the weighted Laplacian, :math:`\Gamma` the incidence matrix and</span>
+<span class="sd">    :math:`\mathbf{d} _{\mathbf{t}} = \frac{\mathbf{b} _{\mathbf{t}}}{\mathbf{a} _{\mathbf{t}}}`.</span>
+<span class="sd">    Here, :math:`\mathbf{b} _{\mathbf{t}}` is the vector of offsets and</span>
+<span class="sd">    :math:`\mathbf{a} _{\mathbf{t}}` the vector of slopes of the linear marginal</span>
+<span class="sd">    cost functions :math:`\tilde{f}_e` for the region :math:`R_{\mathbf{t}}`.</span>
+<span class="sd">    </span>
+<span class="sd">    A node potential :math:`\mathbf{\pi}` induces a flow</span>
+<span class="sd">    :math:`\mathbf{f}^{-1}(\mathbf{\pi})` by:</span>
+<span class="sd">    </span>
+<span class="sd">    .. math::</span>
+<span class="sd">        \mathbf{f}^{-1}(\mathbf{\pi}) = \mathbf{C}_{\mathbf{t}}</span>
+<span class="sd">        \Gamma^T\mathbf{\pi} - \mathbf{d}_{\mathbf{t}}. </span>
+<span class="sd">        </span>
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    node_idx : ndarray (n, )</span>
+<span class="sd">        Node indices, ndarray of int.</span>
+<span class="sd">    node_lbl : ndarray (n, )</span>
+<span class="sd">        Node labels, ndarray of str.</span>
+<span class="sd">    pi : ndarray (n, )</span>
+<span class="sd">        Node potential :math:`\mathbf{\pi}`.</span>
+<span class="sd">    pi_t : ndarray (n, )</span>
+<span class="sd">        Potential offset of the current region</span>
+<span class="sd">        :math:`\mathbf{\pi}_{\mathbf{t}}`.</span>
+<span class="sd">    dpi_t : ndarray (n, )</span>
+<span class="sd">        Potential direction of the current region</span>
+<span class="sd">        :math:`\Delta \mathbf{\pi}_{\mathbf{t}}`.</span>
+<span class="sd">    d_tilde : ndarray (n, )</span>
+<span class="sd">        :math:`\tilde{\mathbf{d}}_{\mathbf{t}} = \mathbf{\Gamma}\mathbf{d}_{\mathbf{t}}`,</span>
+<span class="sd">        </span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    paminco.net.cost.PiecewiseQuadraticCoefficients</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="NodePotentials.__init__"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.NodePotentials.html#paminco.algo.efa.NodePotentials.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">net_nodes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">node_idx</span> <span class="o">=</span> <span class="n">net_nodes</span><span class="o">.</span><span class="n">indices</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">node_lbl</span> <span class="o">=</span> <span class="n">net_nodes</span><span class="o">.</span><span class="n">labels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dtilde</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pi_t</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dpi_t</span> <span class="o">=</span> <span class="kc">None</span></div>
+    
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node_idx</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">to_df</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;node_idx&quot;</span><span class="p">,</span> <span class="s2">&quot;node_lbl&quot;</span><span class="p">,</span> <span class="s2">&quot;pi&quot;</span><span class="p">,</span> <span class="s2">&quot;pi_t&quot;</span><span class="p">,</span> <span class="s2">&quot;dpi_t&quot;</span><span class="p">,</span> <span class="s2">&quot;dtilde&quot;</span><span class="p">]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">}</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="EFABreakFlag"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.EFABreakFlag.html#paminco.algo.efa.EFABreakFlag">[docs]</a><span class="k">class</span> <span class="nc">EFABreakFlag</span><span class="p">(</span><span class="n">IntEnum2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class that defines breakflags for the EFA algorithm.&quot;&quot;&quot;</span>
+
+    <span class="n">NOT_SET</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="sd">&quot;&quot;&quot;Undefined breakflag.&quot;&quot;&quot;</span>
+
+    <span class="n">LAMBDA_LARGER_MAX</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="sd">&quot;&quot;&quot;Lambda exceeds maximal value set for lambda.&quot;&quot;&quot;</span>
+
+    <span class="n">LAMBDA_INF</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="sd">&quot;&quot;&quot;Lambda equals infinity.&quot;&quot;&quot;</span>
+
+    <span class="n">MAX_ITER</span> <span class="o">=</span> <span class="mi">80</span>
+    <span class="sd">&quot;&quot;&quot;Algorithm has reached specified maximum number of iterations.&quot;&quot;&quot;</span>
+
+    <span class="n">NO_BOUNDS</span> <span class="o">=</span> <span class="mi">90</span>
+    <span class="sd">&quot;&quot;&quot;No bounds have been identifed.&quot;&quot;&quot;</span>
+
+    <span class="n">NO_BOUNDARY_EDGES</span> <span class="o">=</span> <span class="mi">91</span>
+    <span class="sd">&quot;&quot;&quot;No boundary edge to select min edge from.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_execute_pivot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="c1"># Returns whether to do a pivot step for the current breakflag</span>
+        <span class="k">if</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">LAMBDA_INF</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">NO_BOUNDS</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">NO_BOUNDARY_EDGES</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="EFAConfig"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.EFAConfig.html#paminco.algo.efa.EFAConfig">[docs]</a><span class="k">class</span> <span class="nc">EFAConfig</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Settings for running the electrical flow algorithm (EFA).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    lambda_max : float, default=1</span>
+<span class="sd">        Maxmimum parameter (lambda) to find *minimum cost flow* for.</span>
+<span class="sd">    inverse_method : str, int or InverseMethod, default=InverseMethod.CHOLESKY</span>
+<span class="sd">        Method to find the inverse of the laplacian.</span>
+<span class="sd">    pivot_mode : int, str or PivotStepMode, default=PivotStepMode.LEX</span>
+<span class="sd">        Method to choose min edge if more than one boundary edge is</span>
+<span class="sd">        identified.</span>
+<span class="sd">    max_iter : int, default=99999</span>
+<span class="sd">        Maximum number of iterations for solver.</span>
+<span class="sd">    print : bool, default=False</span>
+<span class="sd">        Whether to print a summary of each iteration.</span>
+<span class="sd">    recomp_interval : int, default=1</span>
+<span class="sd">        If &lt;= 1, recompute inverse laplacian in every iteration. Else</span>
+<span class="sd">        update and recompute every `recomp_interval`. The higher the</span>
+<span class="sd">        value, the less accurate the inverse laplacian.</span>
+<span class="sd">    round_lambda : int, default=3</span>
+<span class="sd">        Round lambda value for edges to ``round_lambda`` after decimal.</span>
+<span class="sd">        Used to determine boundary edges.</span>
+<span class="sd">    rounding_margins_base : int, default=-16</span>
+<span class="sd">        Set gamma_dpi with low exponent (in `IEEE754 &lt;https://en.wikipedia.org/wiki/IEEE_754&gt;`_) to zero.</span>
+<span class="sd">    rounding_margins_fac : int, default=-5</span>
+<span class="sd">        Set gamma_dpi with low exponent (in `IEEE754 &lt;https://en.wikipedia.org/wiki/IEEE_754&gt;`_) to zero.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">all_options</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;inverse_method&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lambda_max&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pivot_mode&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_iter&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;print&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;recomp_interval&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;round_lambda&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rounding_margins_base&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rounding_margins_fac&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="sd">&quot;&quot;&quot;All available settings for EFA.&quot;&quot;&quot;</span>
+
+    <span class="n">kw_init</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;lambda_max&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="sd">&quot;&quot;&quot;Settings for EFA that can be passed only during initialization.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EFAConfig.__init__"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.EFAConfig.html#paminco.algo.efa.EFAConfig.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">_inverse_method</span> <span class="o">=</span> <span class="n">InverseMethod</span><span class="o">.</span><span class="n">CHOLESKY</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pivot_mode</span> <span class="o">=</span> <span class="n">PivotStepMode</span><span class="o">.</span><span class="n">LEX</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_iter</span> <span class="o">=</span> <span class="mi">99999</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">print</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recomp_interval</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">round_lambda</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rounding_margins_base</span> <span class="o">=</span> <span class="o">-</span><span class="mi">16</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rounding_margins_fac</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">map_kwargs</span><span class="p">(</span><span class="n">run</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">map_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">run</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kw_init</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&#39; is not a valid parameter to be set in run() &quot;</span>
+                        <span class="s2">&quot;method.&quot;</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">):</span>
+                    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+                    
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&#39; is not a valid parameter.&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">inverse_method</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InverseMethod</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Method to calculate inverse Laplacian.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        paminco.linalg.InverseMethod</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inverse_method</span>
+    
+    <span class="nd">@inverse_method</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">inverse_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_inverse_method</span> <span class="o">=</span> <span class="n">InverseMethod</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pivot_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PivotStepMode</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Method to perform pivot step.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        PivotStepMode</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pivot_mode</span>
+    
+    <span class="nd">@pivot_mode</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">pivot_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pivot_mode</span> <span class="o">=</span> <span class="n">PivotStepMode</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EFA"><a class="viewcode-back" href="../../../api/algo/efa.html#paminco.algo.efa.EFA">[docs]</a><span class="k">class</span> <span class="nc">EFA</span><span class="p">(</span><span class="n">ParametricSolver</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Electrical flow algorithm.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    net : Network</span>
+<span class="sd">        Network to find parametric min cost flows for.</span>
+<span class="sd">    name : str, optional</span>
+<span class="sd">        Name of solver.</span>
+<span class="sd">    callback : callable, or list of callable, optional</span>
+<span class="sd">        Callbacks called during initialization and run method. Can be</span>
+<span class="sd">        used for debugging and timing.</span>
+<span class="sd">    use_simple_timer : bool, default=True</span>
+<span class="sd">        Whether to time EFA. If ``True``, timestamps for intializtion</span>
+<span class="sd">        and every iteration will be saved to attribute ``timer``.</span>
+<span class="sd">    kwargs : keyword arguments, optional</span>
+<span class="sd">        Further options for EFA, see MCFIConfig.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    region</span>
+<span class="sd">    edges</span>
+<span class="sd">    edge_coeffs</span>
+<span class="sd">    node_potentials</span>
+<span class="sd">    </span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    EFAConfig : Settings for EFA.</span>
+<span class="sd">    </span>
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] Klimm, Max, and P. Warode. &quot;Parametric Computation of Minimum Cost</span>
+<span class="sd">           Flows with Piecewise Quadratic Costs.&quot; Mathematics of Operations</span>
+<span class="sd">           Research (2021). Available 10/25/2021 at https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf   </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EFA.__init__"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.EFA.__init__.html#paminco.algo.efa.EFA.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">network</span><span class="p">:</span> <span class="n">Network</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">use_simple_timer</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="n">preprocess_network</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="n">copy_network</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># init network and configs</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">network</span><span class="p">,</span>
+                         <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                         <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span>
+                         <span class="n">copy_network</span><span class="o">=</span><span class="n">copy_network</span><span class="p">,</span>
+                         <span class="n">use_simple_timer</span><span class="o">=</span><span class="n">use_simple_timer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_c</span> <span class="o">=</span> <span class="n">EFAConfig</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        
+        <span class="c1"># prepare network for run</span>
+        <span class="k">if</span> <span class="n">preprocess_network</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_preprocess_net</span><span class="p">()</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_consistency</span><span class="p">()</span>
+        
+        <span class="c1"># setup nodes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_np</span> <span class="o">=</span> <span class="n">NodePotentials</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+        
+        <span class="c1"># setup edges(st, rounding margins and inital region)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span> <span class="o">=</span> <span class="n">EFAEdges</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span>
+
+        <span class="c1"># setup properites</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span> <span class="o">=</span> <span class="kc">None</span>
+        
+        <span class="c1"># Storing breakpoint solutions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_param_solution</span> <span class="o">=</span> <span class="n">ParametricSolution</span><span class="p">()</span>
+        
+        <span class="c1"># Flag end of iteration if someone &quot;listenes&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">INIT_END</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">EFA</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">att</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;_np&quot;</span><span class="p">,</span> <span class="s2">&quot;_e&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">att</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">att</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_preprocess_net</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># make network compatible with solver</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">remove_zones</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">remove_parallel_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">remove_zero_cost_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">remove_isolated_nodes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">remove_unreachable_nodes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">remove_commodities</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_set_rounding_margins</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">margins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">rounding_margins</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">margins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">margins</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">rounding_margins_fac</span><span class="p">,</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">rounding_margins_base</span><span class="p">,</span>
+                             <span class="n">out</span><span class="o">=</span><span class="n">margins</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">round_gamma_dpi</span> <span class="o">=</span> <span class="n">margins</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_check_consistency</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">is_single_commodity</span> <span class="ow">is</span> <span class="kc">False</span>
+                <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Network must have demand function that consists of single &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;demand. Network demand is: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">)</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;consisting of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">)</span><span class="si">}</span><span class="s2"> commodities.&quot;</span>
+            <span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span> <span class="n">PiecewiseQuadraticCost</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Network cost must be piecewise quadatric, is: &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="EFA.run"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.EFA.run.html#paminco.algo.efa.EFA.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Run the EFA algorithm for given network.</span>
+<span class="sd">        </span>
+<span class="sd">        You may pass further parameters that will be mapped to the</span>
+<span class="sd">        configs of the solver, see EFAConfig.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        callback : callable / list of callables, optional</span>
+<span class="sd">            Callables are called with signature:</span>
+<span class="sd">            </span>
+<span class="sd">            ``cb(self, CallBackFlag)``</span>
+<span class="sd">            </span>
+<span class="sd">            Full callables consist of those defined in initialization</span>
+<span class="sd">            plus those passed here.</span>
+<span class="sd">            </span>
+<span class="sd">                Start of run       -&gt; ``cb(self, CallBackFlag.RUN_START)``</span>
+<span class="sd">                </span>
+<span class="sd">                Start of iteration -&gt; ``cb(self, CallBackFlag.ITER_START)``</span>
+<span class="sd">                </span>
+<span class="sd">                End of iteration   -&gt; ``cb(self, CallBackFlag.ITER_END)``</span>
+<span class="sd">                </span>
+<span class="sd">                End of run         -&gt; ``cb(self, CallBackFlag.End_RUN)``</span>
+<span class="sd">        </span>
+<span class="sd">        kwargs : keyword arguments</span>
+<span class="sd">            Further options for solver, see EFAConfig.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        EFAConfig</span>
+<span class="sd">        paminco.callback</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># map kwargs of run to config object</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">map_kwargs</span><span class="p">(</span><span class="n">run</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        
+        <span class="n">run_cb</span> <span class="o">=</span> <span class="n">callback_to_list</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">RUN_START</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+        
+        <span class="c1"># Set initial values for run</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span> <span class="o">=</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">NOT_SET</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_rounding_margins</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_initial_region</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_inv</span><span class="p">(</span><span class="n">force_recomputation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">ITER_PRE</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+        
+        <span class="c1"># loop through algorithm until some break condition is met</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span> <span class="o">==</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">NOT_SET</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">ITER_START</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+            
+            <span class="c1"># Set to None to avoid misuse</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span> <span class="o">=</span> <span class="kc">None</span>
+            
+            <span class="c1"># Compute potentials, flows and save solution</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_compute_potentials</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_compute_flows</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_param_solution</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span><span class="p">,</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">flow</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+                                     <span class="n">potential</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pivot_step</span><span class="p">()</span>
+            
+            <span class="c1"># Iteration cleanup</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">ITER_END</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">max_iter</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span> <span class="o">=</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">MAX_ITER</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+        <span class="c1"># Find flow for lambda_max if pivot step would follow</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span><span class="o">.</span><span class="n">_execute_pivot</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_compute_potentials</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_compute_flows</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_param_solution</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span><span class="p">,</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">flow</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+                                     <span class="n">potential</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">RUN_END</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
+        
+        <span class="c1"># Allow flow interpolation with slope of flow if last</span>
+        <span class="c1"># breakpoint was infinity</span>
+        <span class="n">dflow</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">dpi_</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span> <span class="o">==</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">LAMBDA_INF</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_print_iteration_summary</span><span class="p">()</span>
+            <span class="n">dflow</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ec</span><span class="o">.</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">dpi_t</span><span class="p">))</span>
+            <span class="n">dpi_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">dpi_t</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_run</span><span class="p">(</span><span class="n">dflow</span><span class="o">=</span><span class="n">dflow</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi_</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_pivot_step</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_compute_boundary</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span><span class="o">.</span><span class="n">_execute_pivot</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_select_boundary</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_update_region</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_print_iteration_summary</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_inv</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_initial_region</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Determine inital region for linear or affine demands</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">,</span> <span class="n">LinearDemandFunction</span><span class="p">):</span>
+            <span class="c1"># If the demand function is linear, find the initial region directly</span>
+            <span class="n">r0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_initial_region_linear</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">,</span> <span class="n">AffineDemandFunction</span><span class="p">):</span>
+            <span class="c1"># For the affine demand case, use Phase I run to determine initial region</span>
+            <span class="n">r0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_initial_region_affine</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Demand function must be linear or affine, is: &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+        
+        <span class="c1"># Get edge cost coefficients for initial region</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_b0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_region_zero</span> <span class="o">=</span> <span class="n">r0</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">r0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_cost_coeffs</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_initial_region_linear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Find a region that is compliant with the flow</span>
+        <span class="n">init_region</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">region_of</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">m</span><span class="p">))</span>
+        
+        <span class="c1"># If the piecewise quadratic cost have no jumps (== infinite slopes a)</span>
+        <span class="c1"># then this region is compliant with the potentials as well</span>
+        <span class="c1"># and can be returned immediately</span>
+        <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">coefficients</span><span class="o">.</span><span class="n">a</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">init_region</span>
+        
+        <span class="c1"># Compute potential for the zero flow</span>
+        <span class="n">cost_of_zero_flow</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">ddx</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">m</span><span class="p">))</span>
+        
+        <span class="c1"># Compute shortest path potential starting from a random source</span>
+        <span class="n">first_source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">source_id</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">pot</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span><span class="n">weight</span><span class="o">=</span><span class="n">cost_of_zero_flow</span><span class="p">,</span>
+                                            <span class="n">s</span><span class="o">=</span><span class="n">first_source</span><span class="p">,</span>
+                                            <span class="n">backward_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">pot_offset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span> <span class="o">-</span> <span class="n">cost_of_zero_flow</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="n">pot</span>
+        
+        <span class="c1"># Go to previous function part if potential difference does not match cost</span>
+        <span class="n">init_region</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pot_offset</span><span class="p">)]</span> <span class="o">-=</span> <span class="mi">1</span>
+        
+        <span class="k">return</span> <span class="n">init_region</span>
+    
+    <span class="k">def</span> <span class="nf">_initial_region_affine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">network</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="p">)</span>
+        <span class="n">network</span><span class="o">.</span><span class="n">_d</span> <span class="o">=</span> <span class="n">LinearDemandFunction</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="o">.</span><span class="n">b0</span><span class="p">,</span> <span class="n">shared</span><span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">shared</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span> <span class="o">=</span> <span class="n">EFA</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">preprocess_network</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">lambda_max</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">print</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">11</span> <span class="o">+</span> <span class="s2">&quot; START OF PHASE 1 &quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">11</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="nb">print</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">print</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">print</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">12</span> <span class="o">+</span> <span class="s2">&quot; END OF PHASE 1 &quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
+        
+        <span class="n">r0</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span><span class="o">.</span><span class="n">breakflag</span><span class="o">.</span><span class="n">_execute_pivot</span><span class="p">():</span>
+            <span class="c1"># If phase 1 did end with a normal pivoting step,</span>
+            <span class="c1"># revert to the previous region that contains the</span>
+            <span class="c1"># flow for lambda = 1</span>
+            <span class="n">r0</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span><span class="o">.</span><span class="n">min_edge</span><span class="p">]</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span><span class="o">.</span><span class="n">region_activate</span>
+            
+        <span class="k">return</span> <span class="n">r0</span>
+
+    <span class="k">def</span> <span class="nf">_update_region</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># update region values</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">region</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">region_activate</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;no min edge found.&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_cost_coeffs</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_update_cost_coeffs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Update cost coefficients for edges by current region</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">get_coefficients</span><span class="p">(</span><span class="n">at</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">region</span><span class="p">,</span>
+                                                   <span class="n">is_region</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">d_tilde</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">gamma_times</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ec</span><span class="o">.</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_calculate_inv</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">force_recomputation</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">force_recomputation</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">recomp_interval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># recompute inverse</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">Lstar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">Lstar</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="p">,</span>
+                                             <span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">inverse_method</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Update inverse</span>
+                <span class="c1"># calculate diff in c as if region has not been updated</span>
+                <span class="n">edge_region</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_activate</span>
+                <span class="n">dc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">delta_c</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">edge_region</span><span class="p">,</span>
+                                            <span class="n">step</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">region_activate</span><span class="p">,</span>
+                                            <span class="n">edge</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">Lstar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">Lstar_update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Lstar</span><span class="p">,</span>
+                                                    <span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span><span class="p">,</span>
+                                                    <span class="n">dc</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">SingularLaplaceError</span> <span class="k">as</span> <span class="n">sle</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fix_region</span><span class="p">(</span><span class="n">sle</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_inv</span><span class="p">(</span><span class="n">force_recomputation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_fix_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">laplace_error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">n_cc</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">laplace_error</span><span class="o">.</span><span class="n">n_cc</span><span class="p">,</span> <span class="n">laplace_error</span><span class="o">.</span><span class="n">cc</span>
+        <span class="k">if</span> <span class="n">n_cc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;Trying to enter ambiguous region while &quot;</span>
+                <span class="s2">&quot;the active graph is connected.&quot;</span>
+            <span class="p">)</span>
+        
+        <span class="c1"># Get demand direction</span>
+        <span class="n">demand</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">ddx</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+        
+        <span class="c1"># Find nodes for which to increase potential</span>
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">demand</span><span class="p">[</span><span class="n">cc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">nodes_pot_inc</span> <span class="o">=</span> <span class="p">(</span><span class="n">cc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">nodes_pot_inc</span> <span class="o">=</span> <span class="p">(</span><span class="n">cc</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        
+        <span class="c1"># If no potential pi_t is given (because we are in the first region)</span>
+        <span class="c1"># try to find some meaningful potential satisfying the demands</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi_t</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># solve the (underdefined) system L = d_tile + b_0</span>
+            <span class="n">pi</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">L</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="p">,</span> <span class="n">return_as</span><span class="o">=</span><span class="s1">&#39;array&#39;</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">d_tilde</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b0</span><span class="p">,</span>
+                <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># For lambda = 0 the last term is not needed</span>
+            <span class="c1"># (also avoids problems with unset dpi_t if multiple initial</span>
+            <span class="c1">#  regions are ambiguous)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">pi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi_t</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pi</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi_t</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">dpi_t</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+        <span class="n">dpi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">dpi</span><span class="p">[</span><span class="n">nodes_pot_inc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">gamma_pi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+        <span class="n">gamma_dpi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="n">dpi</span><span class="p">)</span>
+        
+        <span class="c1"># Calculate lower and upper lambda</span>
+        <span class="n">ll</span> <span class="o">=</span> <span class="n">np_divide_a_by_b</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ec</span><span class="o">.</span><span class="n">sig_l</span> <span class="o">-</span> <span class="n">gamma_pi</span><span class="p">,</span>
+                              <span class="n">gamma_dpi</span><span class="p">)</span>
+        <span class="n">lu</span> <span class="o">=</span> <span class="n">np_divide_a_by_b</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ec</span><span class="o">.</span><span class="n">sig_u</span> <span class="o">-</span> <span class="n">gamma_pi</span><span class="p">,</span>
+                              <span class="n">gamma_dpi</span><span class="p">)</span>
+        
+        <span class="c1"># Round bounds for lex mode</span>
+        <span class="n">ll</span> <span class="o">=</span> <span class="n">ll</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">round_lambda</span><span class="p">)</span>
+        <span class="n">lu</span> <span class="o">=</span> <span class="n">lu</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">round_lambda</span><span class="p">)</span>
+        
+        <span class="n">bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">union1d</span><span class="p">(</span><span class="n">ll</span><span class="p">[</span><span class="n">gamma_dpi</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">],</span>
+                            <span class="n">lu</span><span class="p">[</span><span class="n">gamma_dpi</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
+        <span class="n">lower_bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">gamma_dpi</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+                                      <span class="n">ll</span> <span class="o">==</span> <span class="n">mu</span><span class="p">)</span>
+        <span class="n">upper_bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">gamma_dpi</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+                                      <span class="n">lu</span> <span class="o">==</span> <span class="n">mu</span><span class="p">)</span>
+        <span class="n">bound_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">lower_bounds</span><span class="p">,</span> <span class="n">upper_bounds</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">min_edge</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">bound_edges</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span> <span class="o">=</span> <span class="n">min_edge</span>
+        
+        <span class="n">gamma_dpi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="n">dpi</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="n">min_edge</span><span class="p">)</span>
+        <span class="n">region_activate</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">gamma_dpi</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">region_activate</span> <span class="o">=</span> <span class="n">region_activate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">region</span><span class="p">[</span><span class="n">min_edge</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">region_activate</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_cost_coeffs</span><span class="p">()</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">print</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Iteration </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">i</span><span class="si">:</span><span class="s2">4d</span><span class="si">}</span><span class="s2">a| * AMBIGUOUS REGION * | &quot;</span>
+            <span class="n">out</span> <span class="o">+=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u2191</span><span class="s2"> &quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u2193</span><span class="s2"> &quot;</span><span class="p">}[</span><span class="n">region_activate</span><span class="p">]</span>
+            <span class="n">out</span> <span class="o">+=</span> <span class="s2">&quot;e* = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">min_edge</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bound_edges</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">out</span> <span class="o">+=</span> <span class="s2">&quot; ∈ E* = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">bound_edges</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="n">pi</span>
+        <span class="c1"># Ambiguous region has no well-defined offset potential,</span>
+        <span class="c1"># so we just use pi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi_t</span> <span class="o">=</span> <span class="n">pi</span>
+
+    <span class="k">def</span> <span class="nf">_compute_potentials</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Lstar</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">d_tilde</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b0</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">_d</span><span class="o">.</span><span class="n">ddx</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">dpi_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Lstar</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi_t</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">dpi_t</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_pi_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi_t</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_dpi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">dpi_t</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_compute_flows</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">flow</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ec</span><span class="o">.</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+                        <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ec</span><span class="o">.</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_compute_boundary</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Get lower and upper lambda bounds and set boundary edges</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_lambda_lower_and_upper</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">union1d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">ll</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_dpi</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">],</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">lu</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_dpi</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
+        
+        <span class="c1"># check if boundary edges are found</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span> <span class="o">=</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">NO_BOUNDS</span>
+            <span class="k">return</span>
+        
+        <span class="c1"># Get new lambda max as min of bounds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
+        
+        <span class="c1"># set boundary edges</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_all_boundary_edges</span><span class="p">()</span>
+        
+        <span class="c1"># check for various break conditions</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boundary_edges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span> <span class="o">=</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">NO_BOUNDARY_EDGES</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span> <span class="o">=</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">LAMBDA_INF</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">lambda_max</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span> <span class="o">=</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">LAMBDA_LARGER_MAX</span>
+
+    <span class="k">def</span> <span class="nf">_set_lambda_lower_and_upper</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># set gamma_dpi with low exponennt (in IEEE754) to zero</span>
+        <span class="n">exp_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frexp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_dpi</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_dpi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">exp_</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">round_gamma_dpi</span><span class="p">,</span>
+                                     <span class="mi">0</span><span class="p">,</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_dpi</span><span class="p">)</span>
+        
+        <span class="c1"># get lower and upper bounds for lambda</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">ll</span> <span class="o">=</span> <span class="n">np_divide_a_by_b</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ec</span><span class="o">.</span><span class="n">sig_l</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_pi_t</span><span class="p">,</span>
+                                      <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_dpi</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">lu</span> <span class="o">=</span> <span class="n">np_divide_a_by_b</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ec</span><span class="o">.</span><span class="n">sig_u</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_pi_t</span><span class="p">,</span>
+                                      <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_dpi</span><span class="p">)</span>
+        
+        <span class="c1"># round bounds for lex mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">ll</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">ll</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">round_lambda</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">lu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">lu</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">round_lambda</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_all_boundary_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Select all edges that fulfill boundary conditions.</span>
+<span class="sd">        </span>
+<span class="sd">        (a) gamma_dpi &gt; 0 &amp;&amp; (lambda_lower == lambda_max) or</span>
+<span class="sd">        (b) gamma_dpi &lt; 0 &amp;&amp; (lambda_upper == lambda_max)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lower_bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_dpi</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+                                      <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">ll</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span><span class="p">)</span>
+        <span class="n">upper_bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">gamma_dpi</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+                                      <span class="bp">self</span><span class="o">.</span><span class="n">_e</span><span class="o">.</span><span class="n">lu</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span><span class="p">)</span>
+        <span class="n">bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">lower_bounds</span><span class="p">,</span> <span class="n">upper_bounds</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">boundary_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">bounds</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_select_boundary</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># TODO: is das hier sinnvoll abzubrechen wenn some break conditions gefunden wurden? Wenn ja welche?</span>
+        <span class="c1"># -&gt; logik der validen szenarios auslagern an breakflag</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">NOT_SET</span><span class="p">,</span>
+                                  <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">LAMBDA_LARGER_MAX</span><span class="p">]:</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boundary_edges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">pivot_mode</span> <span class="o">==</span> <span class="n">PivotStepMode</span><span class="o">.</span><span class="n">FIRST</span><span class="p">):</span>
+            <span class="c1"># choose only existent or first</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary_edges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">pivot_mode</span> <span class="o">==</span> <span class="n">PivotStepMode</span><span class="o">.</span><span class="n">RANDOM</span><span class="p">:</span>
+            <span class="c1"># choose edge randomly</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boundary_edges</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># lexicographic mode</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boundary_edges</span><span class="p">)))</span>
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">Lstar_cache</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Lstar</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+            
+            <span class="c1"># loop through boundary edges, compute vector and update M</span>
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">edge</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boundary_edges</span><span class="p">):</span>
+                <span class="c1"># self._lex_rule_compute_m_vec(edge, j)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_lex_rule_compute_m_vec2</span><span class="p">(</span><span class="n">edge</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+                
+            <span class="c1"># find smallest column (lexicographically) in M matrix -&gt; min edge</span>
+            <span class="n">min_m</span> <span class="o">=</span> <span class="n">find_min_col_lex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">M</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary_edges</span><span class="p">[</span><span class="n">min_m</span><span class="p">]</span>
+        
+        <span class="c1"># check whether edge region was incremented or decremented</span>
+        <span class="n">gamma_dpi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">dpi_t</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">region_activate</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">gamma_dpi</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_lex_rule_compute_m_vec</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">edge</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+            <span class="n">j</span><span class="p">:</span> <span class="nb">int</span>
+            <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># compute gamma_e * delta_pi</span>
+        <span class="n">gdpi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">dpi_t</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="n">edge</span><span class="p">)</span>
+        
+        <span class="c1"># compute gamma_e * L_star * L0</span>
+        <span class="c1"># First, compute L_star * gamma_e efficiently</span>
+        <span class="n">w_i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span>
+        <span class="n">v_i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">s</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span>
+        
+        <span class="c1"># TODO-opt -&gt; optimization potential</span>
+        <span class="n">lstar_w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Lstar</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="n">w_i</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">lstar_v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Lstar</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="n">v_i</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">lstar_gam</span> <span class="o">=</span> <span class="n">lstar_w</span> <span class="o">-</span> <span class="n">lstar_v</span>
+        
+        <span class="c1"># Compute L0 * (L_star * gamma_e) and add to M matrix</span>
+        <span class="n">glstarl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">L0</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">lstar_gam</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">M</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="n">gdpi</span><span class="p">)</span> <span class="o">*</span> <span class="n">glstarl</span>
+
+    <span class="k">def</span> <span class="nf">_lex_rule_compute_m_vec2</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">edge</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+            <span class="n">j</span><span class="p">:</span> <span class="nb">int</span>
+            <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># compute gamma_e * delta_pi</span>
+        <span class="n">gdpi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_np</span><span class="o">.</span><span class="n">dpi_t</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="n">edge</span><span class="p">)</span>
+        
+        <span class="c1"># compute gamma_e * L_star * L0</span>
+        <span class="c1"># First, compute L_star * gamma_e efficiently</span>
+        <span class="n">w_i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span>
+        <span class="n">v_i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">s</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span>
+        
+        <span class="c1"># TODO-opt -&gt; optimization potential</span>
+        <span class="n">lstar_w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Lstar_cache</span><span class="p">[:,</span> <span class="n">w_i</span><span class="p">]</span>
+        <span class="n">lstar_v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Lstar_cache</span><span class="p">[:,</span> <span class="n">v_i</span><span class="p">]</span>
+        <span class="n">lstar_gam</span> <span class="o">=</span> <span class="n">lstar_w</span> <span class="o">-</span> <span class="n">lstar_v</span>
+        
+        <span class="c1"># Compute L0 * (L_star * gamma_e) and add to M matrix</span>
+        <span class="n">glstarl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">L0</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">lstar_gam</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">M</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="n">gdpi</span><span class="p">)</span> <span class="o">*</span> <span class="n">glstarl</span>
+
+    <span class="k">def</span> <span class="nf">_print_iteration_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># print summary of iteration (if enabled)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">print</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="s2">&quot;Iteration </span><span class="si">{:4d}</span><span class="s2"> | &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">lam_str</span> <span class="o">=</span> <span class="s2">&quot;λ ∈ [</span><span class="si">{:.3f}</span><span class="s2">, </span><span class="si">{:.3f}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param_solution</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">param</span><span class="p">,</span>
+                                                    <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span><span class="p">)</span>
+            <span class="n">out</span> <span class="o">+=</span> <span class="n">lam_str</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">out</span> <span class="o">+=</span> <span class="s2">&quot; | &quot;</span>
+                <span class="n">out</span> <span class="o">+=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u2191</span><span class="s2"> &quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u2193</span><span class="s2"> &quot;</span><span class="p">}[</span><span class="bp">self</span><span class="o">.</span><span class="n">region_activate</span><span class="p">]</span>
+                <span class="n">out</span> <span class="o">+=</span> <span class="s2">&quot;e* = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boundary_edges</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">out</span> <span class="o">+=</span> <span class="s2">&quot; ∈ E* = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boundary_edges</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">out</span> <span class="o">+=</span> <span class="s2">&quot; | E* = ∅&quot;</span>
+            
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span> <span class="o">!=</span> <span class="n">EFABreakFlag</span><span class="o">.</span><span class="n">NOT_SET</span><span class="p">:</span>
+                <span class="n">out</span> <span class="o">+=</span> <span class="s2">&quot; | &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">breakflag</span><span class="p">)</span>
+            
+            <span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">region</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;ndarray of int: piecewise cost region of edges.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">region</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EFAEdges</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Object that keeps track of edge values for current region.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        EFAEdges</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_e</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">edge_coeffs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PiecewiseQuadraticCoefficients</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Edge coefficients for current region.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        paminco.net.cost.sPiecewiseQuadraticCoefficients</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ec</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">node_potentials</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NodePotentials</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Object that keeps track of node potentials of current region.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        NodePotentials</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_np</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">L0</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sps</span><span class="o">.</span><span class="n">spmatrix</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;spmatrix: Laplacian for initial region.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_L0&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_L0</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_L0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">L</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">region_zero</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_L0</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">region_zero</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;ndarray of int: initial region in piecewise cost funcs.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_region_zero</span></div>
+</pre></div>
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

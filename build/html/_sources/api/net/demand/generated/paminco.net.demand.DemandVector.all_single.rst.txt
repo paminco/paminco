@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVector.all\_single
+===========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandVector.all_single

@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandFunction.save\_to\_numpy
+=================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandFunction.save_to_numpy

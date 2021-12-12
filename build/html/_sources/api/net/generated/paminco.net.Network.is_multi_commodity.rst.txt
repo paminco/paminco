@@ -1,0 +1,6 @@
+﻿paminco.net.Network.is\_multi\_commodity
+========================================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Network.is_multi_commodity

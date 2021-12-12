@@ -1,0 +1,6 @@
+﻿paminco.net.demand.LinearDemandFunction.map\_node\_id\_to\_label
+================================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: LinearDemandFunction.map_node_id_to_label

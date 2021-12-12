@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommodityMultiSourceSink.source\_lbl
+=======================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: CommodityMultiSourceSink.source_lbl

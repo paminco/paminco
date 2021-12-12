@@ -1,0 +1,6 @@
+﻿paminco.net.demand.\_DV.n
+=========================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: _DV.n

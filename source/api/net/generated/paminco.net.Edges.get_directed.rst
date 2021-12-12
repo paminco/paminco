@@ -1,0 +1,6 @@
+﻿paminco.net.Edges.get\_directed
+===============================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Edges.get_directed

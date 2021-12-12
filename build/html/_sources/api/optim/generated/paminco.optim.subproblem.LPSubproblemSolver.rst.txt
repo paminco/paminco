@@ -1,0 +1,24 @@
+﻿paminco.optim.subproblem.LPSubproblemSolver
+===========================================
+
+.. currentmodule:: paminco.optim.subproblem
+
+.. autoclass:: LPSubproblemSolver
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~LPSubproblemSolver.__init__
+      ~LPSubproblemSolver.reset_cache
+      ~LPSubproblemSolver.solve
+   
+   
+
+   
+   
+   

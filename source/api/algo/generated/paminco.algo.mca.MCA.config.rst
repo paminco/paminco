@@ -1,0 +1,6 @@
+﻿paminco.algo.mca.MCA.config
+===========================
+
+.. currentmodule:: paminco.algo.mca
+
+.. autoproperty:: MCA.config

@@ -1,0 +1,6 @@
+﻿paminco.utils.io.prettify\_xml
+==============================
+
+.. currentmodule:: paminco.utils.io
+
+.. autofunction:: prettify_xml

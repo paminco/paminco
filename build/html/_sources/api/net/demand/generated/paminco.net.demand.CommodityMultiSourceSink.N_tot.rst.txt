@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommodityMultiSourceSink.N\_tot
+==================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: CommodityMultiSourceSink.N_tot

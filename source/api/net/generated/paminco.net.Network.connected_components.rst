@@ -1,0 +1,6 @@
+﻿paminco.net.Network.connected\_components
+=========================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.connected_components

@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommodityMultiSourceSink.is\_single
+======================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: CommodityMultiSourceSink.is_single

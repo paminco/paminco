@@ -1,0 +1,6 @@
+﻿paminco.net.Edges.save\_to\_numpy
+=================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Edges.save_to_numpy

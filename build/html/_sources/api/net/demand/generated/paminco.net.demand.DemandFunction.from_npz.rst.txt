@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandFunction.from\_npz
+===========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandFunction.from_npz

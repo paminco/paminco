@@ -1,0 +1,6 @@
+﻿paminco.net.demand.\_DV.from\_npz
+=================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: _DV.from_npz

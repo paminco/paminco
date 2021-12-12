@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolution.to\_df
+========================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: ParametricSolution.to_df

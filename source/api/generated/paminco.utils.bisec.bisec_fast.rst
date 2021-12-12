@@ -1,0 +1,6 @@
+﻿paminco.utils.bisec.bisec\_fast
+===============================
+
+.. currentmodule:: paminco.utils.bisec
+
+.. autofunction:: bisec_fast

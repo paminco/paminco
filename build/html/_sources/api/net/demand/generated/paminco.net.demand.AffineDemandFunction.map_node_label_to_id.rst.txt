@@ -1,0 +1,6 @@
+﻿paminco.net.demand.AffineDemandFunction.map\_node\_label\_to\_id
+================================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: AffineDemandFunction.map_node_label_to_id

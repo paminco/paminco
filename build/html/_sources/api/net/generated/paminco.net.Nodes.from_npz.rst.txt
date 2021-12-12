@@ -1,0 +1,6 @@
+﻿paminco.net.Nodes.from\_npz
+===========================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Nodes.from_npz

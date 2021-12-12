@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVectorSP.add\_to\_etree
+================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandVectorSP.add_to_etree

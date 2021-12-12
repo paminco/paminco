@@ -1,0 +1,6 @@
+﻿paminco.net.demand.LinearDemandFunction.from\_xml
+=================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: LinearDemandFunction.from_xml

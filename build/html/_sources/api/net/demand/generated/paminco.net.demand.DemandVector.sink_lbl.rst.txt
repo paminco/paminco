@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVector.sink\_lbl
+=========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandVector.sink_lbl

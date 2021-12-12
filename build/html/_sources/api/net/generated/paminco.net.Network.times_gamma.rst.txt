@@ -1,0 +1,6 @@
+﻿paminco.net.Network.times\_gamma
+================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.times_gamma

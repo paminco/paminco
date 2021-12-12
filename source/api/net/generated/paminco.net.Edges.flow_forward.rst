@@ -1,0 +1,6 @@
+﻿paminco.net.Edges.flow\_forward
+===============================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Edges.flow_forward

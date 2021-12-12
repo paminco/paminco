@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommodityMultiSourceSink.to\_dict
+====================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: CommodityMultiSourceSink.to_dict

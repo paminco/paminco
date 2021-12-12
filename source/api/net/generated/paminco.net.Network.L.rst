@@ -1,0 +1,6 @@
+﻿paminco.net.Network.L
+=====================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.L

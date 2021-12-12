@@ -1,0 +1,6 @@
+﻿paminco.net.demand.LinearDemandFunction.is\_multi\_commodity
+============================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: LinearDemandFunction.is_multi_commodity

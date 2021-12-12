@@ -1,0 +1,6 @@
+﻿paminco.net.Network.csgraph
+===========================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.csgraph

@@ -1,0 +1,23 @@
+﻿paminco.utils.typing.IntEnum2
+=============================
+
+.. currentmodule:: paminco.utils.typing
+
+.. autoclass:: IntEnum2
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~IntEnum2.from_str
+      ~IntEnum2.make
+   
+   
+
+   
+   
+   

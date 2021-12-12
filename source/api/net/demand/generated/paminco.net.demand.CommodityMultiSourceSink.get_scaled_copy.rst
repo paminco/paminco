@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommodityMultiSourceSink.get\_scaled\_copy
+=============================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: CommodityMultiSourceSink.get_scaled_copy

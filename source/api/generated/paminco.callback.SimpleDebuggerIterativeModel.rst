@@ -1,0 +1,23 @@
+﻿paminco.callback.SimpleDebuggerIterativeModel
+=============================================
+
+.. currentmodule:: paminco.callback
+
+.. autoclass:: SimpleDebuggerIterativeModel
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SimpleDebuggerIterativeModel.__init__
+      ~SimpleDebuggerIterativeModel.get
+   
+   
+
+   
+   
+   

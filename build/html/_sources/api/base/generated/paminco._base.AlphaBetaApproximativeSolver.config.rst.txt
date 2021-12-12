@@ -1,0 +1,6 @@
+﻿paminco.\_base.AlphaBetaApproximativeSolver.config
+==================================================
+
+.. currentmodule:: paminco._base
+
+.. autoproperty:: AlphaBetaApproximativeSolver.config

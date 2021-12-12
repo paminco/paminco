@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommodityMultiSourceSink.sink\_id
+====================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: CommodityMultiSourceSink.sink_id

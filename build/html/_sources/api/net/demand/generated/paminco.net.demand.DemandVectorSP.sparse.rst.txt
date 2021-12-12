@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVectorSP.sparse
+========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandVectorSP.sparse

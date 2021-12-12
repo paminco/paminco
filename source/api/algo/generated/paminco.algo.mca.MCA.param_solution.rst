@@ -1,0 +1,6 @@
+﻿paminco.algo.mca.MCA.param\_solution
+====================================
+
+.. currentmodule:: paminco.algo.mca
+
+.. autoproperty:: MCA.param_solution

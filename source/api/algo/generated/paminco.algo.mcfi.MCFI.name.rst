@@ -1,0 +1,6 @@
+﻿paminco.algo.mcfi.MCFI.name
+===========================
+
+.. currentmodule:: paminco.algo.mcfi
+
+.. autoproperty:: MCFI.name

@@ -1,0 +1,6 @@
+﻿paminco.net.Edges.map\_labels
+=============================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Edges.map_labels

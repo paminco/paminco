@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVectorSP.total\_rate
+=============================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandVectorSP.total_rate

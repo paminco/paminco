@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>SiouxFalls - (Parametric) Price of Anarchy &#8212; paminco 0.1 documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/contentui.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Price of Anarchy - Barcelona" href="barcelona_poa.html" />
+    <link rel="prev" title="Sioux Falls - User Equilibrium" href="sioux_fixed_ue.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo1.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../theory/index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Applications
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     Traffic Networks
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="background.html">
+       Background
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="braess_paradox.html">
+       Braess Paradox
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pigou_example.html">
+       Pigou's Example
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="sioux_fixed_ue.html">
+       SiouxFalls - User Eqiulibrium
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       SiouxFalls - Parametric Price of Anarchy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="barcelona_poa.html">
+       Barcelona - Price of Anarchy
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../gas/index.html">
+     Gaslib
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../gas/stub.html">
+       Stub
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../network_setup/index.html">
+   How to Set Up a Network
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../network_setup/howto_graph_setup.html">
+     How to set up directed and undirected graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../network_setup/howto_set_cost.html">
+     How to equip a network with cost functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../network_setup/howto_set_demand.html">
+     How to specify the demand function for a network
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../network_setup/howto_read_from_xml.html">
+     How to readin network data from XML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../network_setup/howto_shortest_path.html">
+     How to calculate shortest path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../network_setup/howto_plot_network.html">
+     How to plot a network
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports-and-data-readin">
+   1. Imports and data readin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fixed-price-of-anarchy-with-frank-wolfe">
+   2. Fixed Price of Anarchy with Frank-Wolfe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#paramtric-price-of-anarchy-with-mca">
+   3. Paramtric Price of Anarchy with MCA
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">REL_DIR</span>  <span class="o">=</span> <span class="s2">&quot;../../../../&quot;</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">REL_DIR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="siouxfalls-parametric-price-of-anarchy">
+<h1>SiouxFalls - (Parametric) Price of Anarchy<a class="headerlink" href="#siouxfalls-parametric-price-of-anarchy" title="Permalink to this headline">¶</a></h1>
+<section id="imports-and-data-readin">
+<h2>1. Imports and data readin<a class="headerlink" href="#imports-and-data-readin" title="Permalink to this headline">¶</a></h2>
+<p>First we load the paminco package and read the SiouxFalls data.
+The data was taken from <a class="reference external" href="https://github.com/bstabler/TransportationNetworks">here</a> and converted to our format of choice: <code class="docutils literal notranslate"><span class="pre">XML</span></code>.
+The data for SiouxFalls comes with paminco and can be easily loaded:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">paminco</span>
+
+<span class="n">sioux</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">load_sioux</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_6212</span><span class="o">/</span><span class="mf">3569338817.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">paminco</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sioux</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">load_sioux</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;paminco&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default the edge cost equal the link travel time: <span class="math notranslate nohighlight">\(F_e = l_e\)</span>.
+The link travel time is defined as
+\begin{equation*}
+l_e(x_e) = \text{fft}_e \cdot \left( 1 + B_e \cdot \left(\frac{x}{\text{cap}_e}\right) ^ {p_e} \right)
+\end{equation*}</p>
+</section>
+<section id="fixed-price-of-anarchy-with-frank-wolfe">
+<h2>2. Fixed Price of Anarchy with Frank-Wolfe<a class="headerlink" href="#fixed-price-of-anarchy-with-frank-wolfe" title="Permalink to this headline">¶</a></h2>
+<p>We find minimum cost flows that coincide with user equilibrium and system optimum if we transform the edge cost by:
+\begin{align}
+\text{User equilibrium:} \quad F_e &amp;= \int_0^{x_e} l_e(s) ds \
+\text{System optimum:} \quad F_e &amp;= x_e \cdot l_e \
+\end{align}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span>
+
+<span class="c1"># Calculate user equilibrium -&gt; F_e = integral_0^(x_e) l_e(s)ds</span>
+<span class="n">sioux_ue</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">sioux</span><span class="p">)</span>
+<span class="n">sioux_ue</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fw_ue</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">NetworkFW</span><span class="p">(</span><span class="n">sioux_ue</span><span class="p">)</span>
+<span class="n">fw_ue</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># Calculate system optimum -&gt; F_e = x_e * l_e</span>
+<span class="n">sioux_so</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">sioux</span><span class="p">)</span> 
+<span class="n">sioux_so</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">times_x</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fw_so</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">NetworkFW</span><span class="p">(</span><span class="n">sioux_so</span><span class="p">)</span>
+<span class="n">fw_so</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Price_of_anarchy">Price of Annarchy</a> (PoA) measures the inefficency of the network utilization due to selfish behaviour of the participants.
+It is calculated as the ratio of the total (or equivalently average) travel time for all particpants in the user equilbrium to that of the system optimum:</p>
+<p>\begin{equation*}
+\text{PoA} = \frac{C(\text{UE})}{C(\text{SO})},
+\end{equation*}</p>
+<p>where <span class="math notranslate nohighlight">\(C\)</span> is the total system travel time (TSTT):
+\begin{equation*}
+\text{TTST}(\mathbf{x}) = x_e \cdot l_e,
+\end{equation*}
+i.e., the objective function of the system optimal minimum cost flow.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">TTST</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">sioux_so</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">F</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The Price of Anarchy for SiouxFalls is about <code class="docutils literal notranslate"><span class="pre">3.8</span> <span class="pre">percent</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poa</span> <span class="o">=</span> <span class="n">TTST</span><span class="p">(</span><span class="n">fw_ue</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">TTST</span><span class="p">(</span><span class="n">fw_so</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="n">poa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0388035864499006
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paramtric-price-of-anarchy-with-mca">
+<h2>3. Paramtric Price of Anarchy with MCA<a class="headerlink" href="#paramtric-price-of-anarchy-with-mca" title="Permalink to this headline">¶</a></h2>
+<p>The above example allowed to compute system inefficiency for a fixed demand <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>.</p>
+<p>However, it is of interest how the POA varies by the demand multiplier <span class="math notranslate nohighlight">\(\lambda\)</span>.
+We can achieve this with the <code class="docutils literal notranslate"><span class="pre">MCA</span></code> algorithm by calculating parametric user equilibira flows and parametric system optima:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sioux2</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">sioux</span><span class="p">)</span>
+<span class="n">sioux2</span><span class="o">.</span><span class="n">set_demand</span><span class="p">((</span><span class="s2">&quot;20&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="mi">100000</span><span class="p">))</span>
+
+<span class="n">sioux_ue</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">sioux2</span><span class="p">)</span>
+<span class="n">sioux_ue</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mca_ue</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">MCA</span><span class="p">(</span><span class="n">sioux_ue</span><span class="p">)</span>
+<span class="n">mca_ue</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="n">sioux_so</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">sioux2</span><span class="p">)</span> 
+<span class="n">sioux_so</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">times_x</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mca_so</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">MCA</span><span class="p">(</span><span class="n">sioux_so</span><span class="p">)</span>
+<span class="n">mca_so</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For any demand multiplier in <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span>, we can now compute a price of anarchy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">lambdas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1e-5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">cost_user_equilibira</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">TTST</span><span class="p">(</span><span class="n">mca_ue</span><span class="o">.</span><span class="n">flow_at</span><span class="p">(</span><span class="n">l</span><span class="p">))</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lambdas</span><span class="p">])</span>
+<span class="n">cost_system_optima</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">TTST</span><span class="p">(</span><span class="n">mca_so</span><span class="o">.</span><span class="n">flow_at</span><span class="p">(</span><span class="n">l</span><span class="p">))</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lambdas</span><span class="p">])</span>
+<span class="n">paramtric_poa</span> <span class="o">=</span> <span class="n">cost_user_equilibira</span> <span class="o">/</span> <span class="n">cost_system_optima</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">paramtric_poa</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$\lambda$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PoA&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Parametric Price of Anarchy&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Parametric Price of Anarchy&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/sioux_par_poa_18_1.png" src="../../../_images/sioux_par_poa_18_1.png" />
+</div>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+﻿paminco.optim.subproblem.subproblem\_solver
+===========================================
+
+.. currentmodule:: paminco.optim.subproblem
+
+.. autofunction:: subproblem_solver

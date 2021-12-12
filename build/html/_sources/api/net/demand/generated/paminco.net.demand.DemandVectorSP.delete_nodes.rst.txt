@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVectorSP.delete\_nodes
+===============================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandVectorSP.delete_nodes

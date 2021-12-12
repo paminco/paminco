@@ -1,0 +1,6 @@
+﻿paminco.net.demand.AffineDemandFunction.unique\_sources
+=======================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: AffineDemandFunction.unique_sources

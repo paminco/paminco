@@ -1,0 +1,6 @@
+﻿paminco.net.demand.LinearDemandFunction.ddx\_inflow
+===================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: LinearDemandFunction.ddx_inflow

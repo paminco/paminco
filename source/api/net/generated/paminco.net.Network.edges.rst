@@ -1,0 +1,6 @@
+﻿paminco.net.Network.edges
+=========================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Network.edges

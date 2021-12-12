@@ -1,0 +1,6 @@
+﻿paminco.net.Shared.delete\_nodes\_in\_edges
+===========================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Shared.delete_nodes_in_edges

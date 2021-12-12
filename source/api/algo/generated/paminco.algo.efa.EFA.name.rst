@@ -1,0 +1,6 @@
+﻿paminco.algo.efa.EFA.name
+=========================
+
+.. currentmodule:: paminco.algo.efa
+
+.. autoproperty:: EFA.name

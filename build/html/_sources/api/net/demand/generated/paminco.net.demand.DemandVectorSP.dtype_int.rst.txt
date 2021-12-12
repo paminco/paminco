@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVectorSP.dtype\_int
+============================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandVectorSP.dtype_int

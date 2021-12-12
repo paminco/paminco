@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVector.from\_xml
+=========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandVector.from_xml

@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolution.potential\_at
+===============================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: ParametricSolution.potential_at

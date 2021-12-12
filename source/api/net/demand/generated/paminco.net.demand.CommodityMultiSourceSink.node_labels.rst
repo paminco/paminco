@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommodityMultiSourceSink.node\_labels
+========================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: CommodityMultiSourceSink.node_labels

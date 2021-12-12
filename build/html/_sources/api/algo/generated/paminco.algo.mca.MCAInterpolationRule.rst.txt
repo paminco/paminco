@@ -1,0 +1,23 @@
+﻿paminco.algo.mca.MCAInterpolationRule
+=====================================
+
+.. currentmodule:: paminco.algo.mca
+
+.. autoclass:: MCAInterpolationRule
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MCAInterpolationRule.__init__
+      ~MCAInterpolationRule.step
+   
+   
+
+   
+   
+   

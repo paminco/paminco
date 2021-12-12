@@ -1,0 +1,6 @@
+﻿paminco.net.Shared.\_\_init\_\_
+===============================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Shared.__init__

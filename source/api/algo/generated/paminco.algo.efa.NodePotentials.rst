@@ -1,0 +1,23 @@
+﻿paminco.algo.efa.NodePotentials
+===============================
+
+.. currentmodule:: paminco.algo.efa
+
+.. autoclass:: NodePotentials
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NodePotentials.__init__
+      ~NodePotentials.to_df
+   
+   
+
+   
+   
+   

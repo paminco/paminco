@@ -1,0 +1,6 @@
+﻿paminco.net.Shared.update
+=========================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Shared.update

@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandFunction.\_dv0
+=======================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandFunction._dv0

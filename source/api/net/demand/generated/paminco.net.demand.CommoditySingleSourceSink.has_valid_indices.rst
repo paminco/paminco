@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommoditySingleSourceSink.has\_valid\_indices
+================================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: CommoditySingleSourceSink.has_valid_indices

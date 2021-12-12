@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandFunction.dtype\_int
+============================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandFunction.dtype_int

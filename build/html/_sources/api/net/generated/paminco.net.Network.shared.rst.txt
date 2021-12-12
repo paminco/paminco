@@ -1,0 +1,6 @@
+﻿paminco.net.Network.shared
+==========================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Network.shared

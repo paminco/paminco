@@ -1,0 +1,6 @@
+﻿paminco.net.Edges.\_\_init\_\_
+==============================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Edges.__init__

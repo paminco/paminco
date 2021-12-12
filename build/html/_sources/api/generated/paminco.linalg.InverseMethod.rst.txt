@@ -1,0 +1,23 @@
+﻿paminco.linalg.InverseMethod
+============================
+
+.. currentmodule:: paminco.linalg
+
+.. autoclass:: InverseMethod
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~InverseMethod.INVERSE
+      ~InverseMethod.CHOLESKY
+   
+   

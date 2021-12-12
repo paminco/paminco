@@ -1,0 +1,6 @@
+﻿paminco.net.demand.AffineDemandFunction.ddx
+===========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: AffineDemandFunction.ddx

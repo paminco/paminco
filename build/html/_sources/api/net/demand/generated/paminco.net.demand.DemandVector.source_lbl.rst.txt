@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVector.source\_lbl
+===========================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandVector.source_lbl

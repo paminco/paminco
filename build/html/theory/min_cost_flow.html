@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Minimum Cost Flow Problem &#8212; paminco 0.1 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/contentui.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parametric Minimum Cost Flows" href="par_mcf.html" />
+    <link rel="prev" title="Theoretical Background" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo1.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Minimum Cost Flow Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="par_mcf.html">
+   Parametric Minimum Cost Flows
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#undirected-minimum-cost-flow-problem">
+   1. Undirected minimum cost flow problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multi-commodity-minimum-cost-flow-problem">
+   2. Multi-commodity minimum cost flow problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#characterization-of-minimum-cost-flows">
+   3. Characterization of minimum cost flows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optimal-potentials">
+     3.1 Optimal potentials
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shortest-path-potentials">
+     3.2 Shortest path potentials
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#support-of-minimum-cost-flows">
+     3.3 Support of minimum cost flows
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="minimum-cost-flow-problem">
+<span id="theory-mcf"></span><h1>Minimum Cost Flow Problem<a class="headerlink" href="#minimum-cost-flow-problem" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#undirected-minimum-cost-flow-problem" id="id2">1. Undirected minimum cost flow problem</a></p></li>
+<li><p><a class="reference internal" href="#multi-commodity-minimum-cost-flow-problem" id="id3">2. Multi-commodity minimum cost flow problem</a></p></li>
+<li><p><a class="reference internal" href="#characterization-of-minimum-cost-flows" id="id4">3. Characterization of minimum cost flows</a></p>
+<ul>
+<li><p><a class="reference internal" href="#optimal-potentials" id="id5">3.1 Optimal potentials</a></p></li>
+<li><p><a class="reference internal" href="#shortest-path-potentials" id="id6">3.2 Shortest path potentials</a></p></li>
+<li><p><a class="reference internal" href="#support-of-minimum-cost-flows" id="id7">3.3 Support of minimum cost flows</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Minimum-cost_flow_problem">minimum cost flow problem</a> is
+related to many real world applications such as finding Wardrop equilibria in
+<a class="reference internal" href="../user_guide/applications/traffic/index.html#ug-traffic-index"><span class="std std-ref">traffic networks</span></a>.</p>
+<p>Consider a strongly connected graph <span class="math notranslate nohighlight">\(G = (V, E)\)</span> without self loops and parallel edges.
+We denote <span class="math notranslate nohighlight">\(n = |V|\)</span> the number of vertices or nodes and <span class="math notranslate nohighlight">\(m = |E|\)</span> the number of links
+or edges.
+We want to find a flow <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> – a vector of shape (m, ) – that minimizes some
+objective cost function <span class="math notranslate nohighlight">\(C\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\min \text { } &amp; C(\mathbf{x}) \\
+\text {s.t.} \quad \mathbf{\Gamma} \mathbf{x} &amp;= \mathbf{b}, \\
+\mathbf{x} &amp;\geq \mathbf{0},
+\end{align*}\end{split}\]</div>
+<div class="toggle-header docutils container">
+<p>where <strong>show definitions</strong>:</p>
+</div>
+<div class="toggle-content docutils container">
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{\Gamma}\)</span> is the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Incidence_matrix">incidence matrix</a> of <span class="math notranslate nohighlight">\(G\)</span> and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{b}\)</span> a demand vector of shape (n, ) that encodes the demand values for each node,
+negative values representing sources.</p></li>
+</ul>
+</div>
+<p>Given a demand <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>, many flows <span class="math notranslate nohighlight">\(\tilde{\mathbf{x}} \in \mathcal{X}\)</span> are
+feasible solutions.
+The minimum cost flow has lower cost compared to all other feasible flows:
+<span class="math notranslate nohighlight">\(C(\mathbf{x}) \leq C(\tilde{\mathbf{x}})\)</span>.</p>
+<section id="undirected-minimum-cost-flow-problem">
+<span id="theory-mcf-undirected"></span><h2><a class="toc-backref" href="#id2">1. Undirected minimum cost flow problem</a><a class="headerlink" href="#undirected-minimum-cost-flow-problem" title="Permalink to this headline">¶</a></h2>
+<p>The classic minimum cost flow restricts quantities to traverse edges in one direction only.
+However, in many applications – physical networks such as gas, electrical or water networks –
+units may flow along the same edge in different directions.
+Solving the above optimization problem without the restriction <span class="math notranslate nohighlight">\(\mathbf{x} &gt; 0\)</span> thus yields the
+<em>undirected minimum cost flow</em>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\min \text { } &amp; C(\mathbf{x}) \\
+\text {s.t.} \quad \mathbf{\Gamma} \mathbf{x} &amp;= \mathbf{b}.
+\end{align*}\end{split}\]</div>
+</section>
+<section id="multi-commodity-minimum-cost-flow-problem">
+<span id="theory-mcf-multicommodity"></span><h2><a class="toc-backref" href="#id3">2. Multi-commodity minimum cost flow problem</a><a class="headerlink" href="#multi-commodity-minimum-cost-flow-problem" title="Permalink to this headline">¶</a></h2>
+<p>Consider a <span class="math notranslate nohighlight">\(n \times k\)</span> demand matrix <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> where each column represents a
+demand vector. Here, we want to find a <span class="math notranslate nohighlight">\(n \times k\)</span> flow matrix <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>, where
+each column <span class="math notranslate nohighlight">\(\mathbf{X}_{:j}\)</span> is the minimum cost flow associated with the demand vector
+<span class="math notranslate nohighlight">\(\mathbf{B}_{:j}\)</span>. A minimum cost flow matrix is the solution to the following optimization
+problem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\min \text { } &amp; C(\mathbf{X}) \\
+\text {s.t.} \quad \mathbf{\Gamma} \mathbf{X} &amp;= \mathbf{B}, \\
+\mathbf{X} &amp;\geq \mathbf{0}
+\end{align*}\end{split}\]</div>
+</section>
+<section id="characterization-of-minimum-cost-flows">
+<span id="theory-mcf-characterization"></span><h2><a class="toc-backref" href="#id4">3. Characterization of minimum cost flows</a><a class="headerlink" href="#characterization-of-minimum-cost-flows" title="Permalink to this headline">¶</a></h2>
+<section id="optimal-potentials">
+<span id="theory-mcf-characterization-optpot"></span><h3><a class="toc-backref" href="#id5">3.1 Optimal potentials</a><a class="headerlink" href="#optimal-potentials" title="Permalink to this headline">¶</a></h3>
+<p>A vector <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^m\)</span> is a minimum cost flow that solves the above optimization problem iff
+there is a vector <span class="math notranslate nohighlight">\(\mathbf{\pi} \in \mathbb{R}^n\)</span> of vertex potentials so that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+f_{e}^{-}\left(x_{e}\right) \leq \pi_{w}-\pi_{v} &amp; \leq f_{e}^{+}\left(x_{e}\right) \text { for all } e=(v, w) \in E \text { with } x_{e}&gt;0, \\
+\pi_{w}-\pi_{v} &amp; \leq f_{e}^{+}\left(x_{e}\right) \text { for all } e=(v, w) \in E \text { with } x_{e}=0
+,
+\end{aligned}\end{split}\]</div>
+<div class="toggle-header docutils container">
+<p>where <strong>show definitions</strong>:</p>
+</div>
+<div class="toggle-content docutils container">
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f_e\)</span> is piecewise linear marginal cost function,</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_{e}^{-}\left(x_{e}\right)\)</span> denotes the left-hand limit of <span class="math notranslate nohighlight">\(f_e\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_{e}^{-}\left(x_{e}\right)\)</span> the right-hand limit of <span class="math notranslate nohighlight">\(f_e\)</span>.</p></li>
+</ul>
+</div>
+<p>The vector <span class="math notranslate nohighlight">\(\mathbf{\pi}\)</span> is then termed <em>optimal potential (vector)</em>.
+Optimal potentials can thus be used to <em>verify</em> if a flow <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is indeed a minimum cost flow.
+If we can compute an optimal potential, <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is a minimum cost flow;
+if no such potential exsits, it is not.</p>
+<div class="admonition-potentials-and-direction-of-flow admonition">
+<p class="admonition-title">Potentials and direction of flow</p>
+<p>Due to our convention for demand vectors <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> to encode sources with negative values and sinks
+with positive values, we define the potential difference <span class="math notranslate nohighlight">\(\pi_w - \pi_v\)</span>, i.e., the
+potential increases in the direction of flow. This may not be intuitive for physical applications where
+quantities usually “flow” from higher to lower potential.</p>
+</div>
+</section>
+<section id="shortest-path-potentials">
+<span id="theory-mcf-characterization-sppot"></span><h3><a class="toc-backref" href="#id6">3.2 Shortest path potentials</a><a class="headerlink" href="#shortest-path-potentials" title="Permalink to this headline">¶</a></h3>
+<p>The above verification of minimial cost flows can be carried out by calculating <em>shortest paths</em>.</p>
+</section>
+<section id="support-of-minimum-cost-flows">
+<span id="theory-mcf-characterization-supp"></span><h3><a class="toc-backref" href="#id7">3.3 Support of minimum cost flows</a><a class="headerlink" href="#support-of-minimum-cost-flows" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+﻿paminco.net.Shared.adjacency\_matrix
+====================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Shared.adjacency_matrix

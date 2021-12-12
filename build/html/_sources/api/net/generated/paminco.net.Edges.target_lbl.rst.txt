@@ -1,0 +1,6 @@
+﻿paminco.net.Edges.target\_lbl
+=============================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Edges.target_lbl

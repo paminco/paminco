@@ -1,0 +1,30 @@
+﻿paminco.\_base.Base
+===================
+
+.. currentmodule:: paminco._base
+
+.. autoclass:: Base
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Base.__init__
+      ~Base.callback
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Base.name
+      ~Base.network
+   
+   

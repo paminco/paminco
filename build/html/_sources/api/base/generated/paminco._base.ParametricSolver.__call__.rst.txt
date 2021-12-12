@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolver.\_\_call\_\_
+============================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: ParametricSolver.__call__

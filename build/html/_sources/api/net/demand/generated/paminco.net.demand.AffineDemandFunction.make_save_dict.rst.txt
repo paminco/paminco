@@ -1,0 +1,6 @@
+﻿paminco.net.demand.AffineDemandFunction.make\_save\_dict
+========================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: AffineDemandFunction.make_save_dict

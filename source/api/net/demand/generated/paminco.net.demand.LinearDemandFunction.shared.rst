@@ -1,0 +1,6 @@
+﻿paminco.net.demand.LinearDemandFunction.shared
+==============================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: LinearDemandFunction.shared

@@ -1,0 +1,6 @@
+﻿paminco.algo.mca.MCA.breakflag
+==============================
+
+.. currentmodule:: paminco.algo.mca
+
+.. autoproperty:: MCA.breakflag

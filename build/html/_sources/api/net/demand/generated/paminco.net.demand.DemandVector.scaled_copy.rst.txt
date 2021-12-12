@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVector.scaled\_copy
+============================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandVector.scaled_copy

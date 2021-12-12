@@ -1,0 +1,6 @@
+﻿paminco.net.Edges.ub
+====================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Edges.ub

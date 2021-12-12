@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVector.dtype\_float
+============================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandVector.dtype_float

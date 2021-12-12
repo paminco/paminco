@@ -1,0 +1,6 @@
+﻿paminco.net.Nodes.from\_xml
+===========================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Nodes.from_xml

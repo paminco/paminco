@@ -1,0 +1,6 @@
+﻿paminco.algo.mca.MCA.region\_zero
+=================================
+
+.. currentmodule:: paminco.algo.mca
+
+.. autoproperty:: MCA.region_zero

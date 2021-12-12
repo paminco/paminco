@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandFunction.demand\_vectors
+=================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandFunction.demand_vectors

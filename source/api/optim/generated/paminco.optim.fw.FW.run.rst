@@ -1,0 +1,6 @@
+﻿paminco.optim.fw.FW.run
+=======================
+
+.. currentmodule:: paminco.optim.fw
+
+.. automethod:: FW.run

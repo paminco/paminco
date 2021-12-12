@@ -1,0 +1,6 @@
+﻿paminco.net.Network.shortest\_path
+==================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.shortest_path

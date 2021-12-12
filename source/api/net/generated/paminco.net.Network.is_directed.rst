@@ -1,0 +1,6 @@
+﻿paminco.net.Network.is\_directed
+================================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Network.is_directed

@@ -1,0 +1,6 @@
+﻿paminco.optim.fw\_net.NetworkFW.lb
+==================================
+
+.. currentmodule:: paminco.optim.fw_net
+
+.. autoproperty:: NetworkFW.lb

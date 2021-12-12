@@ -1,0 +1,31 @@
+﻿paminco.linalg.CholeskyInverse
+==============================
+
+.. currentmodule:: paminco.linalg
+
+.. autoclass:: CholeskyInverse
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CholeskyInverse.__init__
+      ~CholeskyInverse.dot
+      ~CholeskyInverse.toarray
+      ~CholeskyInverse.update_by_edge
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CholeskyInverse.shape
+   
+   

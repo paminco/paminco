@@ -1,0 +1,6 @@
+﻿paminco.net.Shared.get\_edge\_id
+================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Shared.get_edge_id

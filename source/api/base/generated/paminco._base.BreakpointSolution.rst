@@ -1,0 +1,22 @@
+﻿paminco.\_base.BreakpointSolution
+=================================
+
+.. currentmodule:: paminco._base
+
+.. autoclass:: BreakpointSolution
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BreakpointSolution.__init__
+   
+   
+
+   
+   
+   

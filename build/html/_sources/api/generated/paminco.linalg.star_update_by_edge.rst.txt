@@ -1,0 +1,6 @@
+﻿paminco.linalg.star\_update\_by\_edge
+=====================================
+
+.. currentmodule:: paminco.linalg
+
+.. autofunction:: star_update_by_edge

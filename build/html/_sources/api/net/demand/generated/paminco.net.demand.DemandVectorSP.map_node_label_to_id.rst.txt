@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVectorSP.map\_node\_label\_to\_id
+==========================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandVectorSP.map_node_label_to_id

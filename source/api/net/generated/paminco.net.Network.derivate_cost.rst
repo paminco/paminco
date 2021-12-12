@@ -1,0 +1,6 @@
+﻿paminco.net.Network.derivate\_cost
+==================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.derivate_cost

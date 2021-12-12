@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>paminco.linalg &#8212; paminco 0.1 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/contentui.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo1.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../theory/index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for paminco.linalg</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">copy</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">splinalg</span>
+
+<span class="kn">from</span> <span class="nn">paminco.utils.typing</span> <span class="kn">import</span> <span class="n">IntEnum2</span>
+
+
+<div class="viewcode-block" id="SingularLaplaceError"><a class="viewcode-back" href="../../api/generated/paminco.linalg.SingularLaplaceError.html#paminco.linalg.SingularLaplaceError">[docs]</a><span class="k">class</span> <span class="nc">SingularLaplaceError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Error that occured while computing the Laplace matrix.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">network</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">n_cc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">cc</span><span class="o">=</span><span class="kc">None</span>
+            <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">msg</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Submatrix of Laplace matrix is singular.&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">net</span> <span class="o">=</span> <span class="n">network</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_cc</span> <span class="o">=</span> <span class="n">n_cc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cc</span> <span class="o">=</span> <span class="n">cc</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_cc</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">cc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_info_from_network</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_info_from_network</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">non_zero_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">n_cc</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span><span class="n">edges</span><span class="o">=</span><span class="n">non_zero_edges</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">non_zero_edges</span> <span class="o">=</span> <span class="n">non_zero_edges</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_cc</span> <span class="o">=</span> <span class="n">n_cc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cc</span> <span class="o">=</span> <span class="n">cc</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;cc&#39;</span><span class="p">)):</span>
+            <span class="n">out</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+            <span class="n">out</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Graph decomposes into </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_cc</span><span class="si">}</span><span class="s2"> components&quot;</span>
+        <span class="k">return</span> <span class="n">out</span></div>
+
+
+<div class="viewcode-block" id="InverseMethod"><a class="viewcode-back" href="../../api/generated/paminco.linalg.InverseMethod.html#paminco.linalg.InverseMethod">[docs]</a><span class="k">class</span> <span class="nc">InverseMethod</span><span class="p">(</span><span class="n">IntEnum2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Enum defining the method to invert a matrix.&quot;&quot;&quot;</span>
+
+    <span class="n">INVERSE</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="sd">&quot;&quot;&quot;Calculate the inverse via :func:`numpy.linalg.inv`.&quot;&quot;&quot;</span>
+
+    <span class="n">CHOLESKY</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="sd">&quot;&quot;&quot;Calculate the inverse via Cholesky decomposition.</span>
+<span class="sd">    </span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    CholeskyInverse</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="CholeskyInverse"><a class="viewcode-back" href="../../api/generated/paminco.linalg.CholeskyInverse.html#paminco.linalg.CholeskyInverse">[docs]</a><span class="k">class</span> <span class="nc">CholeskyInverse</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;A class representing the inverse of some matrix based on the cho decomp.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cho_fac : tuple</span>
+<span class="sd">        The cholesky decomposition as returned by scipy.linalg.cho_factor</span>
+<span class="sd">    return_reduced : bool, default=False</span>
+<span class="sd">        If true, this represents the reduced matrix (w/o zero row/column)</span>
+<span class="sd">        </span>
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cho: TODO</span>
+<span class="sd">    return_redcued: TODO</span>
+<span class="sd">    array: TODO</span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    A cholesky inverse works in part like a ndarray. It implements the</span>
+<span class="sd">    dotproduct (dot), returns the shape of the inverse (shape), supports</span>
+<span class="sd">    slicing and can be converted in an ndarray using toarray().</span>
+<span class="sd">    </span>
+<span class="sd">    Using ``toarray()`` or ``slicing`` will result in an explicit computation</span>
+<span class="sd">    of the inverse. The actual inverse will then be cached and make future</span>
+<span class="sd">    calls of toarray, dot, and slicing faster.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CholeskyInverse.__init__"><a class="viewcode-back" href="../../api/generated/paminco.linalg.CholeskyInverse.html#paminco.linalg.CholeskyInverse.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cho_fac</span><span class="p">,</span> <span class="n">return_reduced</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>  <span class="c1"># noqa D107</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cho</span> <span class="o">=</span> <span class="n">cho_fac</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_return_reduced</span> <span class="o">=</span> <span class="n">return_reduced</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_array</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Magic method for slicing.</span>
+
+<span class="sd">        Maps to the corresponding function of the ndarray representation of</span>
+<span class="sd">        this object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">reduced</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute the dot product of self and other.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : array-like or sparse.spmatrix</span>
+<span class="sd">            Vector or matrix to multiply with.</span>
+<span class="sd">        reduced : bool</span>
+<span class="sd">            Flag, if other is already in reduced form (i.e., has n-1 rows)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ndarray</span>
+<span class="sd">            The result of self&lt;dot&gt;other</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">reduced</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_array</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+        <span class="c1"># Cast to numpy array if necessary</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">other</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">other</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">reduced</span><span class="p">:</span>
+            <span class="n">other</span> <span class="o">=</span> <span class="n">other</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">red</span> <span class="o">=</span> <span class="n">splinalg</span><span class="o">.</span><span class="n">cho_solve</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cho</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_return_reduced</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">red</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">splinalg</span><span class="o">.</span><span class="n">cho_solve</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cho</span><span class="p">,</span> <span class="n">other</span><span class="p">[:,</span> <span class="n">c</span><span class="p">])</span>
+                <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+        <span class="n">red</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_return_reduced</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">red</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">red</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">red</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">out</span>
+
+    <span class="k">def</span> <span class="nf">toarray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">caching</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Return the inverse as ndarray.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        caching : bool</span>
+<span class="sd">            If true (default) the ndarray is stored internally, this object</span>
+<span class="sd">            will use the ndarray for all subsequent computations (dotproduct</span>
+<span class="sd">            or slicing)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ndarray</span>
+<span class="sd">            The inverse represented by this object as array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_array</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cho</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_return_reduced</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">out</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">out</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">caching</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_array</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span>
+
+    <span class="k">def</span> <span class="nf">update_by_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">delta_c</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Update inverse accoding to edgeweight change delta_c on edge.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">delta_c</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">downdate</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">delta_c</span> <span class="o">=</span> <span class="o">-</span> <span class="n">delta_c</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">downdate</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cho</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+        <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">x</span><span class="p">[</span><span class="n">v</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span> <span class="n">delta_c</span> <span class="o">**</span> <span class="mf">0.5</span>
+        <span class="k">if</span> <span class="n">w</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">x</span><span class="p">[</span><span class="n">w</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">delta_c</span> <span class="o">**</span> <span class="mf">0.5</span>
+        <span class="n">new_cho</span> <span class="o">=</span> <span class="n">_cholupdate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cho</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">downdate</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">CholeskyInverse</span><span class="p">(</span><span class="n">new_cho</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_return_reduced</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the shape of the matrix represented by this object.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_return_reduced</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cho</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cho</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cho</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a string representation.&quot;&quot;&quot;</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="s2">&quot;Cholesky Inverse Wrapper with shape &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span></div>
+
+
+<span class="k">def</span> <span class="nf">_cholupdate</span><span class="p">(</span><span class="n">cho_fac</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">downdate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Perform a rank-1-update on the cholesky decomposition cho_fac.</span>
+
+<span class="sd">    If L in chol_fac is the cholesky decomposition of A, this returns the</span>
+<span class="sd">    cholesky decomposition of</span>
+<span class="sd">     .. math::</span>
+<span class="sd">        \begin{align*}</span>
+<span class="sd">            &amp; A + x x^T \quad \text{(update) or }  \\</span>
+<span class="sd">            &amp; A - x x^T \quad \text{(downdate)}</span>
+<span class="sd">        \end{align*}</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cho_fac : tuple</span>
+<span class="sd">        Tuple (L, lower) where L is the cholesky decomposition and</span>
+<span class="sd">        lower a boolean indicating whether L is a lower or upper</span>
+<span class="sd">        triangular matrix.</span>
+<span class="sd">    x : array_like</span>
+<span class="sd">        The array used for the update formula.</span>
+<span class="sd">    downdate : bool, default=False</span>
+<span class="sd">        Indicates if downdate (-) or an update (+) formula is used.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    scipy.linalg.cho_factor</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sgn</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">downdate</span> <span class="k">else</span> <span class="o">+</span><span class="mi">1</span>
+    <span class="n">L</span><span class="p">,</span> <span class="n">lower</span> <span class="o">=</span> <span class="n">cho_fac</span>
+    <span class="c1"># Create a copy of the cholesky factorization -&gt; L will be overwritten</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="c1"># ensure lower triangular matrix</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">lower</span><span class="p">:</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="c1"># Update formula</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">sgn</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">r</span> <span class="o">/</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">/</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Cholesky update failed: new matrix is not positive definite.&quot;</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">L</span><span class="p">[(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span><span class="p">[(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">sgn</span> <span class="o">*</span> <span class="n">s</span> <span class="o">*</span> <span class="n">x</span><span class="p">[(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span><span class="n">n</span><span class="p">])</span> <span class="o">/</span> <span class="n">c</span>
+            <span class="n">x</span><span class="p">[(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">x</span><span class="p">[(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">s</span> <span class="o">*</span> <span class="n">L</span><span class="p">[(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="star_inv"><a class="viewcode-back" href="../../api/generated/paminco.linalg.star_inv.html#paminco.linalg.star_inv">[docs]</a><span class="k">def</span> <span class="nf">star_inv</span><span class="p">(</span>
+        <span class="n">matrix</span><span class="p">,</span>
+        <span class="n">method</span><span class="p">:</span> <span class="n">InverseMethod</span> <span class="o">=</span> <span class="n">InverseMethod</span><span class="o">.</span><span class="n">INVERSE</span><span class="p">,</span>
+        <span class="n">reduced</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">return_reduced</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">sparse</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compute the pseudo inverse of ``matrix`` mapping into subspace with v_1=0.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    matrix : ndarray or sparse matrix</span>
+<span class="sd">        The matrix.</span>
+<span class="sd">    method : InverseMethod = InverseMethod.INVERSE</span>
+<span class="sd">        Method to use to compute inverse.</span>
+
+<span class="sd">        InverseMethod.INVERSE  - Use scipy.linalg.inv, return ndarray.</span>
+
+<span class="sd">        InverseMethod.CHOLESKY  - Use scipy.linalg.cho_factor, return</span>
+<span class="sd">        :class:`~paminco.linalg.CholeskyInverse`.</span>
+
+<span class="sd">    reduced : bool, default=False</span>
+<span class="sd">        Whether ``matrix`` is in reduced form, i.e., w/o first row and</span>
+<span class="sd">        column</span>
+<span class="sd">    return_reduced : bool, default=False</span>
+<span class="sd">        Whether to return reduced inverse (i.e. w/o first row/column)</span>
+<span class="sd">        only.</span>
+<span class="sd">    sparse : bool, default=False</span>
+<span class="sd">        Flag to use scipy.sparse.linalg.inv method, if applicable. Has</span>
+<span class="sd">        effect only if ``method == InverseMethod.INVERSE`` and ``matrix``</span>
+<span class="sd">        is sparse. Maybe considerably slower than normal use, even if</span>
+<span class="sd">        matrix is sparse.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray or CholeskyInverse</span>
+<span class="sd">        The pseudo inverse of matrix.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">sparse</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="ow">and</span>
+            <span class="n">method</span> <span class="o">==</span> <span class="n">InverseMethod</span><span class="o">.</span><span class="n">INVERSE</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">_star_inv_sparse</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span>
+                                <span class="n">reduced</span><span class="o">=</span><span class="n">reduced</span><span class="p">,</span>
+                                <span class="n">return_reduced</span><span class="o">=</span><span class="n">return_reduced</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="n">InverseMethod</span><span class="o">.</span><span class="n">INVERSE</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_star_inv_arr</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span>
+                             <span class="n">reduced</span><span class="o">=</span><span class="n">reduced</span><span class="p">,</span>
+                             <span class="n">return_reduced</span><span class="o">=</span><span class="n">return_reduced</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="n">InverseMethod</span><span class="o">.</span><span class="n">CHOLESKY</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_star_cho_arr</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span>
+                             <span class="n">reduced</span><span class="o">=</span><span class="n">reduced</span><span class="p">,</span>
+                             <span class="n">return_reduced</span><span class="o">=</span><span class="n">return_reduced</span><span class="p">)</span>
+
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> is not a valid inverse method.&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_star_inv_arr</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">reduced</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">return_reduced</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="n">sub_mat</span> <span class="o">=</span> <span class="n">matrix</span> <span class="k">if</span> <span class="n">reduced</span> <span class="k">else</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:]</span>
+    <span class="n">sub_inv</span> <span class="o">=</span> <span class="n">splinalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">sub_mat</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">return_reduced</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sub_inv</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">reduced</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">sub_inv</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="k">def</span> <span class="nf">_star_cho_arr</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">reduced</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">return_reduced</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="n">sub_mat</span> <span class="o">=</span> <span class="n">matrix</span> <span class="k">if</span> <span class="n">reduced</span> <span class="k">else</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:]</span>
+    <span class="n">chof</span> <span class="o">=</span> <span class="n">splinalg</span><span class="o">.</span><span class="n">cho_factor</span><span class="p">(</span><span class="n">sub_mat</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">CholeskyInverse</span><span class="p">(</span><span class="n">chof</span><span class="p">,</span> <span class="n">return_reduced</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_star_inv_sparse</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">reduced</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">return_reduced</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="n">sub_mat</span> <span class="o">=</span> <span class="n">matrix</span> <span class="k">if</span> <span class="n">reduced</span> <span class="k">else</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:]</span>
+    <span class="n">sub_mat</span> <span class="o">=</span> <span class="n">sub_mat</span><span class="o">.</span><span class="n">tocsc</span><span class="p">()</span>
+    <span class="n">sub_inv</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">sub_mat</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">return_reduced</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sub_inv</span>
+    <span class="n">add_row</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">(([],</span> <span class="p">([],</span> <span class="p">[])),</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">sub_inv</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">add_row</span><span class="p">,</span> <span class="n">sub_inv</span><span class="p">])</span>
+    <span class="n">add_col</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csc_matrix</span><span class="p">(([],</span> <span class="p">([],</span> <span class="p">[])),</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">add_col</span><span class="p">,</span> <span class="n">out</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<div class="viewcode-block" id="star_update_by_edge"><a class="viewcode-back" href="../../api/generated/paminco.linalg.star_update_by_edge.html#paminco.linalg.star_update_by_edge">[docs]</a><span class="k">def</span> <span class="nf">star_update_by_edge</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">lstar</span><span class="p">,</span> <span class="n">edge</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">delta_c</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Update the Laplace pseudoinverse ``lstar`` when edge weight changes.</span>
+
+<span class="sd">    .. math::</span>
+<span class="sd">        \mathbf{L}^{\ast}_{t^{i+1}} =</span>
+<span class="sd">        (</span>
+<span class="sd">            \mathbf{I}_n - \frac</span>
+<span class="sd">                {\Delta c_e}</span>
+<span class="sd">                {1 + \Delta c_e \gamma_e^T \mathbf{L}^{\ast}_{t^{i}} \gamma_e}</span>
+<span class="sd">            \mathbf{L}^{\ast}_{t^{i}} \gamma_e \gamma_e^T</span>
+<span class="sd">        )</span>
+<span class="sd">        \mathbf{L}^{\ast}_{t^{i}}</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    net : Network</span>
+<span class="sd">        The network to which ``lstar`` belongs.</span>
+<span class="sd">    lstar : ndarray, scipy.sparse.spmatrix, or CholeskyInverse</span>
+<span class="sd">        The current lstar inverse.</span>
+<span class="sd">    edge : int</span>
+<span class="sd">        The index of the edge.</span>
+<span class="sd">    delta_c : float</span>
+<span class="sd">        The amount of change in the edge weight.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray or CholeskyInverse</span>
+<span class="sd">        The updated inverse.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">lstar</span><span class="p">,</span> <span class="n">sparse</span><span class="o">.</span><span class="n">spmatrix</span><span class="p">):</span>
+        <span class="n">lstar</span> <span class="o">=</span> <span class="n">lstar</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">lstar</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_star_update_arr</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">lstar</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">delta_c</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">lstar</span><span class="p">)</span> <span class="o">==</span> <span class="n">CholeskyInverse</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">lstar</span><span class="o">.</span><span class="n">update_by_edge</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">delta_c</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_star_update_arr</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">lstar</span><span class="p">,</span> <span class="n">edge</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">delta_c</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="n">lstar_gamma</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="n">lstar</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="n">edge</span><span class="p">)</span>
+    <span class="n">denominator</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">delta_c</span> <span class="o">*</span> <span class="n">net</span><span class="o">.</span><span class="n">times_gamma</span><span class="p">(</span><span class="n">lstar_gamma</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="n">edge</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">denominator</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">LinAlgError</span><span class="p">(</span>
+            <span class="s2">&quot;Discriminant of the Sherman-Morrison-&quot;</span>
+            <span class="s2">&quot;update formula is 0. Updated matrix is &quot;</span>
+            <span class="s2">&quot;singular!&quot;</span>
+        <span class="p">)</span>
+    <span class="n">fac</span> <span class="o">=</span> <span class="n">delta_c</span> <span class="o">/</span> <span class="n">denominator</span>
+    <span class="n">outer_product</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">lstar_gamma</span><span class="p">,</span> <span class="n">lstar_gamma</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lstar</span> <span class="o">-</span> <span class="n">fac</span> <span class="o">*</span> <span class="n">outer_product</span>
+</pre></div>
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

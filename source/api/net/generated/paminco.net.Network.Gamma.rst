@@ -1,0 +1,6 @@
+﻿paminco.net.Network.Gamma
+=========================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.Gamma

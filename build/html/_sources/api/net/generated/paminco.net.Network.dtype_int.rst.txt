@@ -1,0 +1,6 @@
+﻿paminco.net.Network.dtype\_int
+==============================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Network.dtype_int

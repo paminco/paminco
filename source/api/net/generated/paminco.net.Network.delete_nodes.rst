@@ -1,0 +1,6 @@
+﻿paminco.net.Network.delete\_nodes
+=================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.delete_nodes

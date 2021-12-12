@@ -1,0 +1,6 @@
+﻿paminco.net.Network.potential
+=============================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.potential

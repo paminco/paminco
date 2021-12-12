@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommodityMultiSourceSink.total\_rate
+=======================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: CommodityMultiSourceSink.total_rate

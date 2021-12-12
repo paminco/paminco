@@ -1,0 +1,6 @@
+﻿paminco.net.Network.Lstar
+=========================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.Lstar

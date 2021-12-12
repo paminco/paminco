@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolution.from\_npz
+===========================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: ParametricSolution.from_npz

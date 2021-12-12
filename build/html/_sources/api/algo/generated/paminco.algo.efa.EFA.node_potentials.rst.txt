@@ -1,0 +1,6 @@
+﻿paminco.algo.efa.EFA.node\_potentials
+=====================================
+
+.. currentmodule:: paminco.algo.efa
+
+.. autoproperty:: EFA.node_potentials

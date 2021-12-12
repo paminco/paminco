@@ -1,0 +1,6 @@
+﻿paminco.net.demand.AffineDemandFunction.inflow
+==============================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: AffineDemandFunction.inflow

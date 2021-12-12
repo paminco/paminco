@@ -1,0 +1,6 @@
+﻿paminco.net.Nodes.save\_to\_numpy
+=================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Nodes.save_to_numpy

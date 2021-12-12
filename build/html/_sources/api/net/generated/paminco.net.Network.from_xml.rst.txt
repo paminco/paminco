@@ -1,0 +1,6 @@
+﻿paminco.net.Network.from\_xml
+=============================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.from_xml

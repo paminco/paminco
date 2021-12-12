@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandFunction.is\_single\_commodity
+=======================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandFunction.is_single_commodity

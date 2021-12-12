@@ -1,0 +1,32 @@
+﻿paminco.optim.fw\_net.NetworkFWConfig
+=====================================
+
+.. currentmodule:: paminco.optim.fw_net
+
+.. autoclass:: NetworkFWConfig
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NetworkFWConfig.__init__
+      ~NetworkFWConfig.get_fw_kwargs
+      ~NetworkFWConfig.map_kwargs
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NetworkFWConfig.mode
+      ~NetworkFWConfig.options
+      ~NetworkFWConfig.subproblem_method
+   
+   

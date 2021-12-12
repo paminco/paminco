@@ -1,0 +1,6 @@
+﻿paminco.net.Edges.from\_npz
+===========================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Edges.from_npz

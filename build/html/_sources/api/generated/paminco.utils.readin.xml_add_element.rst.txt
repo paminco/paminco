@@ -1,0 +1,6 @@
+﻿paminco.utils.readin.xml\_add\_element
+======================================
+
+.. currentmodule:: paminco.utils.readin
+
+.. autofunction:: xml_add_element

@@ -1,0 +1,6 @@
+﻿paminco.algo.mcfi.MCFI.\_\_init\_\_
+===================================
+
+.. currentmodule:: paminco.algo.mcfi
+
+.. automethod:: MCFI.__init__

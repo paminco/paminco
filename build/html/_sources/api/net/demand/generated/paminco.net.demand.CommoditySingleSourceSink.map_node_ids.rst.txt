@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommoditySingleSourceSink.map\_node\_ids
+===========================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: CommoditySingleSourceSink.map_node_ids

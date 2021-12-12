@@ -1,0 +1,6 @@
+﻿paminco.net.demand.LinearDemandFunction.get\_source\_sink\_rate
+===============================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: LinearDemandFunction.get_source_sink_rate

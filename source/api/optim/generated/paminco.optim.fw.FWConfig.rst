@@ -1,0 +1,30 @@
+﻿paminco.optim.fw.FWConfig
+=========================
+
+.. currentmodule:: paminco.optim.fw
+
+.. autoclass:: FWConfig
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FWConfig.__init__
+      ~FWConfig.map_kwargs
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FWConfig.mode
+      ~FWConfig.options
+   
+   

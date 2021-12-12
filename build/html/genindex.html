@@ -1,0 +1,1520 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; paminco 0.1 documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/contentui.js"></script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="index.html">
+  <img src="_static/logo1.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="theory/index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#X"><strong>X</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/base/generated/paminco._base.AlphaBetaApproximativeSolver.__call__.html#paminco._base.AlphaBetaApproximativeSolver.__call__">__call__() (paminco._base.AlphaBetaApproximativeSolver method)</a>
+
+      <ul>
+        <li><a href="api/base/generated/paminco._base.ParametricSolver.__call__.html#paminco._base.ParametricSolver.__call__">(paminco._base.ParametricSolver method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.__call__.html#paminco.net.demand.DemandVector.__call__">(paminco.net.demand.DemandVector method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.__call__.html#paminco.net.demand.DemandVectorSP.__call__">(paminco.net.demand.DemandVectorSP method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/base/generated/paminco._base.Base.html#paminco._base.Base.__init__">__init__() (paminco._base.Base method)</a>
+
+      <ul>
+        <li><a href="api/base/generated/paminco._base.BreakpointSolution.html#paminco._base.BreakpointSolution.__init__">(paminco._base.BreakpointSolution method)</a>
+</li>
+        <li><a href="api/base/generated/paminco._base.Config.html#paminco._base.Config.__init__">(paminco._base.Config method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.efa.EFA.__init__.html#paminco.algo.efa.EFA.__init__">(paminco.algo.efa.EFA method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.efa.EFABreakFlag.html#paminco.algo.efa.EFABreakFlag.__init__">(paminco.algo.efa.EFABreakFlag method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.efa.EFAConfig.html#paminco.algo.efa.EFAConfig.__init__">(paminco.algo.efa.EFAConfig method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.efa.EFAEdges.html#paminco.algo.efa.EFAEdges.__init__">(paminco.algo.efa.EFAEdges method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.efa.NodePotentials.html#paminco.algo.efa.NodePotentials.__init__">(paminco.algo.efa.NodePotentials method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.efa.PivotStepMode.html#paminco.algo.efa.PivotStepMode.__init__">(paminco.algo.efa.PivotStepMode method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.__init__.html#paminco.algo.mca.MCA.__init__">(paminco.algo.mca.MCA method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCAConfig.html#paminco.algo.mca.MCAConfig.__init__">(paminco.algo.mca.MCAConfig method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCAInterpolationRule.html#paminco.algo.mca.MCAInterpolationRule.__init__">(paminco.algo.mca.MCAInterpolationRule method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mcfi.AdaptiveMethod.html#paminco.algo.mcfi.AdaptiveMethod.__init__">(paminco.algo.mcfi.AdaptiveMethod method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mcfi.MCFI.__init__.html#paminco.algo.mcfi.MCFI.__init__">(paminco.algo.mcfi.MCFI method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mcfi.MCFIConfig.html#paminco.algo.mcfi.MCFIConfig.__init__">(paminco.algo.mcfi.MCFIConfig method)</a>
+</li>
+        <li><a href="api/generated/paminco.callback.CallBackFlag.html#paminco.callback.CallBackFlag.__init__">(paminco.callback.CallBackFlag method)</a>
+</li>
+        <li><a href="api/generated/paminco.callback.SimpleDebuggerIterativeModel.html#paminco.callback.SimpleDebuggerIterativeModel.__init__">(paminco.callback.SimpleDebuggerIterativeModel method)</a>
+</li>
+        <li><a href="api/generated/paminco.callback.SimpleTimer.html#paminco.callback.SimpleTimer.__init__">(paminco.callback.SimpleTimer method)</a>
+</li>
+        <li><a href="api/generated/paminco.linalg.CholeskyInverse.html#paminco.linalg.CholeskyInverse.__init__">(paminco.linalg.CholeskyInverse method)</a>
+</li>
+        <li><a href="api/generated/paminco.linalg.InverseMethod.html#paminco.linalg.InverseMethod.__init__">(paminco.linalg.InverseMethod method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.BreakpointsInterpolationRule.html#paminco.net.cost.BreakpointsInterpolationRule.__init__">(paminco.net.cost.BreakpointsInterpolationRule method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.EdgeCost.html#paminco.net.cost.EdgeCost.__init__">(paminco.net.cost.EdgeCost method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.EdgeCostInterpolation.html#paminco.net.cost.EdgeCostInterpolation.__init__">(paminco.net.cost.EdgeCostInterpolation method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.EquidistantInterpolationRule.html#paminco.net.cost.EquidistantInterpolationRule.__init__">(paminco.net.cost.EquidistantInterpolationRule method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.InterpolationRule.html#paminco.net.cost.InterpolationRule.__init__">(paminco.net.cost.InterpolationRule method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.NetworkCost.html#paminco.net.cost.NetworkCost.__init__">(paminco.net.cost.NetworkCost method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.NetworkCostInterpolation.html#paminco.net.cost.NetworkCostInterpolation.__init__">(paminco.net.cost.NetworkCostInterpolation method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.PiecewiseQuadraticCoefficients.html#paminco.net.cost.PiecewiseQuadraticCoefficients.__init__">(paminco.net.cost.PiecewiseQuadraticCoefficients method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.PiecewiseQuadraticCost.html#paminco.net.cost.PiecewiseQuadraticCost.__init__">(paminco.net.cost.PiecewiseQuadraticCost method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.PiecewiseQuadraticFunction.html#paminco.net.cost.PiecewiseQuadraticFunction.__init__">(paminco.net.cost.PiecewiseQuadraticFunction method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.PolynomialCost.html#paminco.net.cost.PolynomialCost.__init__">(paminco.net.cost.PolynomialCost method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.SimplePolynomial.html#paminco.net.cost.SimplePolynomial.__init__">(paminco.net.cost.SimplePolynomial method)</a>
+</li>
+        <li><a href="api/net/cost/generated/paminco.net.cost.SymbolicCost.html#paminco.net.cost.SymbolicCost.__init__">(paminco.net.cost.SymbolicCost method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Edges.__init__.html#paminco.net.Edges.__init__">(paminco.net.Edges method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.__init__.html#paminco.net.Network.__init__">(paminco.net.Network method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Nodes.__init__.html#paminco.net.Nodes.__init__">(paminco.net.Nodes method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Shared.__init__.html#paminco.net.Shared.__init__">(paminco.net.Shared method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.fw.FW.__init__.html#paminco.optim.fw.FW.__init__">(paminco.optim.fw.FW method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.fw.FWBreakFlag.html#paminco.optim.fw.FWBreakFlag.__init__">(paminco.optim.fw.FWBreakFlag method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.fw.FWConfig.html#paminco.optim.fw.FWConfig.__init__">(paminco.optim.fw.FWConfig method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.fw.FWMode.html#paminco.optim.fw.FWMode.__init__">(paminco.optim.fw.FWMode method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.fw.FWX.html#paminco.optim.fw.FWX.__init__">(paminco.optim.fw.FWX method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFW.__init__.html#paminco.optim.fw_net.NetworkFW.__init__">(paminco.optim.fw_net.NetworkFW method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFWConfig.html#paminco.optim.fw_net.NetworkFWConfig.__init__">(paminco.optim.fw_net.NetworkFWConfig method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.subproblem.LPSubproblemSolver.html#paminco.optim.subproblem.LPSubproblemSolver.__init__">(paminco.optim.subproblem.LPSubproblemSolver method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.subproblem.SPSubproblemSolver.html#paminco.optim.subproblem.SPSubproblemSolver.__init__">(paminco.optim.subproblem.SPSubproblemSolver method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.subproblem.SubproblemMethod.html#paminco.optim.subproblem.SubproblemMethod.__init__">(paminco.optim.subproblem.SubproblemMethod method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.subproblem.SubproblemSolver.html#paminco.optim.subproblem.SubproblemSolver.__init__">(paminco.optim.subproblem.SubproblemSolver method)</a>
+</li>
+        <li><a href="api/generated/paminco.utils.misc.Cache.html#paminco.utils.misc.Cache.__init__">(paminco.utils.misc.Cache method)</a>
+</li>
+        <li><a href="api/generated/paminco.utils.typing.IntEnum2.html#paminco.utils.typing.IntEnum2.__init__">(paminco.utils.typing.IntEnum2 method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/dv.html#paminco.net.demand._DV">_DV (class in paminco.net.demand)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction._dv0.html#paminco.net.demand.AffineDemandFunction._dv0">_dv0 (paminco.net.demand.AffineDemandFunction property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction._dv0.html#paminco.net.demand.DemandFunction._dv0">(paminco.net.demand.DemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction._dv0.html#paminco.net.demand.LinearDemandFunction._dv0">(paminco.net.demand.LinearDemandFunction property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/algo/generated/paminco.algo.mcfi.AdaptiveMethod.html#paminco.algo.mcfi.AdaptiveMethod">AdaptiveMethod (class in paminco.algo.mcfi)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand._DV.add_to_etree.html#paminco.net.demand._DV.add_to_etree">add_to_etree() (paminco.net.demand._DV method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.add_to_etree.html#paminco.net.demand.AffineDemandFunction.add_to_etree">(paminco.net.demand.AffineDemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.add_to_etree.html#paminco.net.demand.DemandFunction.add_to_etree">(paminco.net.demand.DemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.add_to_etree.html#paminco.net.demand.DemandVector.add_to_etree">(paminco.net.demand.DemandVector method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.add_to_etree.html#paminco.net.demand.DemandVectorSP.add_to_etree">(paminco.net.demand.DemandVectorSP method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.add_to_etree.html#paminco.net.demand.LinearDemandFunction.add_to_etree">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Edges.add_to_etree.html#paminco.net.Edges.add_to_etree">(paminco.net.Edges method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Nodes.add_to_etree.html#paminco.net.Nodes.add_to_etree">(paminco.net.Nodes method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/generated/paminco.net.Network.adjacency_matrix.html#paminco.net.Network.adjacency_matrix">adjacency_matrix() (paminco.net.Network method)</a>
+
+      <ul>
+        <li><a href="api/net/generated/paminco.net.Shared.adjacency_matrix.html#paminco.net.Shared.adjacency_matrix">(paminco.net.Shared method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/func-aff.html#paminco.net.demand.AffineDemandFunction">AffineDemandFunction (class in paminco.net.demand)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/base/generated/paminco._base.AlphaBetaApproximativeSolver.all_params.html#paminco._base.AlphaBetaApproximativeSolver.all_params">all_params() (paminco._base.AlphaBetaApproximativeSolver method)</a>
+
+      <ul>
+        <li><a href="api/base/generated/paminco._base.ParametricSolution.all_params.html#paminco._base.ParametricSolution.all_params">(paminco._base.ParametricSolution method)</a>
+</li>
+        <li><a href="api/base/generated/paminco._base.ParametricSolver.all_params.html#paminco._base.ParametricSolver.all_params">(paminco._base.ParametricSolver method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.all_single.html#paminco.net.demand.DemandVector.all_single">all_single (paminco.net.demand.DemandVector property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.all_single.html#paminco.net.demand.DemandVectorSP.all_single">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.all_single_pairs.html#paminco.net.demand.AffineDemandFunction.all_single_pairs">all_single_pairs (paminco.net.demand.AffineDemandFunction property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.all_single_pairs.html#paminco.net.demand.DemandFunction.all_single_pairs">(paminco.net.demand.DemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.all_single_pairs.html#paminco.net.demand.LinearDemandFunction.all_single_pairs">(paminco.net.demand.LinearDemandFunction property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/base/abapprox.html#paminco._base.AlphaBetaApproximativeSolver">AlphaBetaApproximativeSolver (class in paminco._base)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.arr_cost.html#paminco._base.ParametricSolution.arr_cost">arr_cost (paminco._base.ParametricSolution property)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.arr_flow.html#paminco._base.ParametricSolution.arr_flow">arr_flow (paminco._base.ParametricSolution property)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.arr_param.html#paminco._base.ParametricSolution.arr_param">arr_param (paminco._base.ParametricSolution property)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.arr_potential.html#paminco._base.ParametricSolution.arr_potential">arr_potential (paminco._base.ParametricSolution property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/base/generated/paminco._base.Base.html#paminco._base.Base">Base (class in paminco._base)</a>
+</li>
+      <li><a href="api/generated/paminco.utils.bisec.bisec_fast.html#paminco.utils.bisec.bisec_fast">bisec_fast() (in module paminco.utils.bisec)</a>
+</li>
+      <li><a href="api/generated/paminco.utils.bisec.bisec_method.html#paminco.utils.bisec.bisec_method">bisec_method() (in module paminco.utils.bisec)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFW.blb.html#paminco.optim.fw_net.NetworkFW.blb">blb (paminco.optim.fw_net.NetworkFW property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/algo/generated/paminco.algo.mca.MCA.breakflag.html#paminco.algo.mca.MCA.breakflag">breakflag (paminco.algo.mca.MCA property)</a>
+
+      <ul>
+        <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFW.breakflag.html#paminco.optim.fw_net.NetworkFW.breakflag">(paminco.optim.fw_net.NetworkFW property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/cost/generated/paminco.net.cost.BreakpointsInterpolationRule.html#paminco.net.cost.BreakpointsInterpolationRule">BreakpointsInterpolationRule (class in paminco.net.cost)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.BreakpointSolution.html#paminco._base.BreakpointSolution">BreakpointSolution (class in paminco._base)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/paminco.utils.misc.Cache.html#paminco.utils.misc.Cache">Cache (class in paminco.utils.misc)</a>
+</li>
+      <li><a href="api/generated/paminco.utils.misc.callback_to_list.html#paminco.utils.misc.callback_to_list">callback_to_list() (in module paminco.utils.misc)</a>
+</li>
+      <li><a href="api/generated/paminco.callback.CallBackFlag.html#paminco.callback.CallBackFlag">CallBackFlag (class in paminco.callback)</a>
+</li>
+      <li><a href="api/generated/paminco.linalg.CholeskyInverse.html#paminco.linalg.CholeskyInverse">CholeskyInverse (class in paminco.linalg)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.clean.html#paminco.net.Network.clean">clean() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/net/demand/commodity.html#paminco.net.demand.Commodity">Commodity (class in paminco.net.demand)</a>
+</li>
+      <li><a href="api/net/demand/commodity-multist.html#paminco.net.demand.CommodityMultiSourceSink">CommodityMultiSourceSink (class in paminco.net.demand)</a>
+</li>
+      <li><a href="api/net/demand/commodity-singlest.html#paminco.net.demand.CommoditySingleSourceSink">CommoditySingleSourceSink (class in paminco.net.demand)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.Config.html#paminco._base.Config">Config (class in paminco._base)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.AlphaBetaApproximativeSolver.config.html#paminco._base.AlphaBetaApproximativeSolver.config">config (paminco._base.AlphaBetaApproximativeSolver property)</a>
+
+      <ul>
+        <li><a href="api/base/generated/paminco._base.ParametricSolver.config.html#paminco._base.ParametricSolver.config">(paminco._base.ParametricSolver property)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.efa.EFA.config.html#paminco.algo.efa.EFA.config">(paminco.algo.efa.EFA property)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.config.html#paminco.algo.mca.MCA.config">(paminco.algo.mca.MCA property)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mcfi.MCFI.config.html#paminco.algo.mcfi.MCFI.config">(paminco.algo.mcfi.MCFI property)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.fw.FW.config.html#paminco.optim.fw.FW.config">(paminco.optim.fw.FW property)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFW.config.html#paminco.optim.fw_net.NetworkFW.config">(paminco.optim.fw_net.NetworkFW property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/generated/paminco.net.Network.connected_components.html#paminco.net.Network.connected_components">connected_components() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.cost.html#paminco.net.Network.cost">cost (paminco.net.Network property)</a>
+
+      <ul>
+        <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFW.cost.html#paminco.optim.fw_net.NetworkFW.cost">(paminco.optim.fw_net.NetworkFW property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/base/generated/paminco._base.AlphaBetaApproximativeSolver.cost_at.html#paminco._base.AlphaBetaApproximativeSolver.cost_at">cost_at() (paminco._base.AlphaBetaApproximativeSolver method)</a>
+
+      <ul>
+        <li><a href="api/base/generated/paminco._base.ParametricSolver.cost_at.html#paminco._base.ParametricSolver.cost_at">(paminco._base.ParametricSolver method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/generated/paminco.net.Network.csgraph.html#paminco.net.Network.csgraph">csgraph() (paminco.net.Network method)</a>
+
+      <ul>
+        <li><a href="api/net/generated/paminco.net.Shared.csgraph.html#paminco.net.Shared.csgraph">(paminco.net.Shared method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.ddx.html#paminco.net.demand.AffineDemandFunction.ddx">ddx() (paminco.net.demand.AffineDemandFunction method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.ddx.html#paminco.net.demand.LinearDemandFunction.ddx">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.ddx_inflow.html#paminco.net.demand.AffineDemandFunction.ddx_inflow">ddx_inflow() (paminco.net.demand.AffineDemandFunction method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.ddx_inflow.html#paminco.net.demand.DemandFunction.ddx_inflow">(paminco.net.demand.DemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.ddx_inflow.html#paminco.net.demand.LinearDemandFunction.ddx_inflow">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.decompose.html#paminco.net.demand.CommodityMultiSourceSink.decompose">decompose() (paminco.net.demand.CommodityMultiSourceSink method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.delete_edges.html#paminco.net.Network.delete_edges">delete_edges() (paminco.net.Network method)</a>
+
+      <ul>
+        <li><a href="api/net/generated/paminco.net.Shared.delete_edges.html#paminco.net.Shared.delete_edges">(paminco.net.Shared method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.delete_nodes.html#paminco.net.demand.AffineDemandFunction.delete_nodes">delete_nodes() (paminco.net.demand.AffineDemandFunction method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.delete_nodes.html#paminco.net.demand.DemandFunction.delete_nodes">(paminco.net.demand.DemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.delete_nodes.html#paminco.net.demand.DemandVector.delete_nodes">(paminco.net.demand.DemandVector method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.delete_nodes.html#paminco.net.demand.DemandVectorSP.delete_nodes">(paminco.net.demand.DemandVectorSP method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.delete_nodes.html#paminco.net.demand.LinearDemandFunction.delete_nodes">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.delete_nodes.html#paminco.net.Network.delete_nodes">(paminco.net.Network method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Nodes.delete_nodes.html#paminco.net.Nodes.delete_nodes">(paminco.net.Nodes method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Shared.delete_nodes.html#paminco.net.Shared.delete_nodes">(paminco.net.Shared method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/generated/paminco.net.Shared.delete_nodes_in_edges.html#paminco.net.Shared.delete_nodes_in_edges">delete_nodes_in_edges() (paminco.net.Shared method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.demand.html#paminco.net.Network.demand">demand (paminco.net.Network property)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.demand_vectors.html#paminco.net.demand.AffineDemandFunction.demand_vectors">demand_vectors (paminco.net.demand.AffineDemandFunction property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.demand_vectors.html#paminco.net.demand.DemandFunction.demand_vectors">(paminco.net.demand.DemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.demand_vectors.html#paminco.net.demand.LinearDemandFunction.demand_vectors">(paminco.net.demand.LinearDemandFunction property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/func.html#paminco.net.demand.DemandFunction">DemandFunction (class in paminco.net.demand)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/dv-std.html#paminco.net.demand.DemandVector">DemandVector (class in paminco.net.demand)</a>
+</li>
+      <li><a href="api/net/demand/dv-sp.html#paminco.net.demand.DemandVectorSP">DemandVectorSP (class in paminco.net.demand)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.derivate_cost.html#paminco.net.Network.derivate_cost">derivate_cost() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.dflow.html#paminco._base.ParametricSolution.dflow">dflow (paminco._base.ParametricSolution property)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.dpi.html#paminco._base.ParametricSolution.dpi">dpi (paminco._base.ParametricSolution property)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand._DV.dtype_float.html#paminco.net.demand._DV.dtype_float">dtype_float (paminco.net.demand._DV property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.dtype_float.html#paminco.net.demand.AffineDemandFunction.dtype_float">(paminco.net.demand.AffineDemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.dtype_float.html#paminco.net.demand.DemandFunction.dtype_float">(paminco.net.demand.DemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.dtype_float.html#paminco.net.demand.DemandVector.dtype_float">(paminco.net.demand.DemandVector property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.dtype_float.html#paminco.net.demand.DemandVectorSP.dtype_float">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.dtype_float.html#paminco.net.demand.LinearDemandFunction.dtype_float">(paminco.net.demand.LinearDemandFunction property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Edges.dtype_float.html#paminco.net.Edges.dtype_float">(paminco.net.Edges property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.dtype_float.html#paminco.net.Network.dtype_float">(paminco.net.Network property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Shared.dtype_float.html#paminco.net.Shared.dtype_float">(paminco.net.Shared property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand._DV.dtype_int.html#paminco.net.demand._DV.dtype_int">dtype_int (paminco.net.demand._DV property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.dtype_int.html#paminco.net.demand.AffineDemandFunction.dtype_int">(paminco.net.demand.AffineDemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.dtype_int.html#paminco.net.demand.DemandFunction.dtype_int">(paminco.net.demand.DemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.dtype_int.html#paminco.net.demand.DemandVector.dtype_int">(paminco.net.demand.DemandVector property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.dtype_int.html#paminco.net.demand.DemandVectorSP.dtype_int">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.dtype_int.html#paminco.net.demand.LinearDemandFunction.dtype_int">(paminco.net.demand.LinearDemandFunction property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Edges.dtype_int.html#paminco.net.Edges.dtype_int">(paminco.net.Edges property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.dtype_int.html#paminco.net.Network.dtype_int">(paminco.net.Network property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Shared.dtype_int.html#paminco.net.Shared.dtype_int">(paminco.net.Shared property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/algo/generated/paminco.algo.efa.EFA.edge_coeffs.html#paminco.algo.efa.EFA.edge_coeffs">edge_coeffs (paminco.algo.efa.EFA property)</a>
+
+      <ul>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.edge_coeffs.html#paminco.algo.mca.MCA.edge_coeffs">(paminco.algo.mca.MCA property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/cost/generated/paminco.net.cost.EdgeCost.html#paminco.net.cost.EdgeCost">EdgeCost (class in paminco.net.cost)</a>
+</li>
+      <li><a href="api/net/cost/generated/paminco.net.cost.EdgeCostInterpolation.html#paminco.net.cost.EdgeCostInterpolation">EdgeCostInterpolation (class in paminco.net.cost)</a>
+</li>
+      <li><a href="api/net/edges.html#paminco.net.Edges">Edges (class in paminco.net)</a>
+</li>
+      <li><a href="api/algo/generated/paminco.algo.efa.EFA.edges.html#paminco.algo.efa.EFA.edges">edges (paminco.algo.efa.EFA property)</a>
+
+      <ul>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.edges.html#paminco.algo.mca.MCA.edges">(paminco.algo.mca.MCA property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.edges.html#paminco.net.Network.edges">(paminco.net.Network property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/algo/efa.html#paminco.algo.efa.EFA">EFA (class in paminco.algo.efa)</a>
+</li>
+      <li><a href="api/algo/generated/paminco.algo.efa.EFABreakFlag.html#paminco.algo.efa.EFABreakFlag">EFABreakFlag (class in paminco.algo.efa)</a>
+</li>
+      <li><a href="api/algo/generated/paminco.algo.efa.EFAConfig.html#paminco.algo.efa.EFAConfig">EFAConfig (class in paminco.algo.efa)</a>
+</li>
+      <li><a href="api/algo/generated/paminco.algo.efa.EFAEdges.html#paminco.algo.efa.EFAEdges">EFAEdges (class in paminco.algo.efa)</a>
+</li>
+      <li><a href="api/net/cost/generated/paminco.net.cost.EquidistantInterpolationRule.html#paminco.net.cost.EquidistantInterpolationRule">EquidistantInterpolationRule (class in paminco.net.cost)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/paminco.utils.math.find_min_col_lex.html#paminco.utils.math.find_min_col_lex">find_min_col_lex() (in module paminco.utils.math)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFW.flow.html#paminco.optim.fw_net.NetworkFW.flow">flow (paminco.optim.fw_net.NetworkFW property)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.AlphaBetaApproximativeSolver.flow_at.html#paminco._base.AlphaBetaApproximativeSolver.flow_at">flow_at() (paminco._base.AlphaBetaApproximativeSolver method)</a>
+
+      <ul>
+        <li><a href="api/base/generated/paminco._base.ParametricSolution.flow_at.html#paminco._base.ParametricSolution.flow_at">(paminco._base.ParametricSolution method)</a>
+</li>
+        <li><a href="api/base/generated/paminco._base.ParametricSolver.flow_at.html#paminco._base.ParametricSolver.flow_at">(paminco._base.ParametricSolver method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/generated/paminco.net.Network.flow_direction.html#paminco.net.Network.flow_direction">flow_direction (paminco.net.Network property)</a>
+
+      <ul>
+        <li><a href="api/net/generated/paminco.net.Shared.flow_direction.html#paminco.net.Shared.flow_direction">(paminco.net.Shared property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/generated/paminco.net.Edges.flow_forward.html#paminco.net.Edges.flow_forward">flow_forward (paminco.net.Edges property)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.flow_on_shortest.html#paminco.net.Network.flow_on_shortest">flow_on_shortest() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Edges.flow_undirected.html#paminco.net.Edges.flow_undirected">flow_undirected (paminco.net.Edges property)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFW.flows.html#paminco.optim.fw_net.NetworkFW.flows">flows (paminco.optim.fw_net.NetworkFW property)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.from_arrays.html#paminco._base.ParametricSolution.from_arrays">from_arrays() (paminco._base.ParametricSolution class method)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.from_csv.html#paminco._base.ParametricSolution.from_csv">from_csv() (paminco._base.ParametricSolution class method)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.Commodity.from_data.html#paminco.net.demand.Commodity.from_data">from_data() (paminco.net.demand.Commodity static method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.from_data.html#paminco.net.demand.CommodityMultiSourceSink.from_data">(paminco.net.demand.CommodityMultiSourceSink static method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.from_df.html#paminco._base.ParametricSolution.from_df">from_df() (paminco._base.ParametricSolution class method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Nodes.from_edges.html#paminco.net.Nodes.from_edges">from_edges() (paminco.net.Nodes class method)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.from_label_and_id.html#paminco.net.demand.CommodityMultiSourceSink.from_label_and_id">from_label_and_id() (paminco.net.demand.CommodityMultiSourceSink class method)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.from_labels_and_id.html#paminco.net.demand.CommoditySingleSourceSink.from_labels_and_id">from_labels_and_id() (paminco.net.demand.CommoditySingleSourceSink class method)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.from_npz.html#paminco._base.ParametricSolution.from_npz">from_npz() (paminco._base.ParametricSolution class method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand._DV.from_npz.html#paminco.net.demand._DV.from_npz">(paminco.net.demand._DV class method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.from_npz.html#paminco.net.demand.AffineDemandFunction.from_npz">(paminco.net.demand.AffineDemandFunction class method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.from_npz.html#paminco.net.demand.DemandFunction.from_npz">(paminco.net.demand.DemandFunction class method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.from_npz.html#paminco.net.demand.DemandVector.from_npz">(paminco.net.demand.DemandVector class method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.from_npz.html#paminco.net.demand.DemandVectorSP.from_npz">(paminco.net.demand.DemandVectorSP class method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.from_npz.html#paminco.net.demand.LinearDemandFunction.from_npz">(paminco.net.demand.LinearDemandFunction class method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Edges.from_npz.html#paminco.net.Edges.from_npz">(paminco.net.Edges class method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.from_npz.html#paminco.net.Network.from_npz">(paminco.net.Network class method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Nodes.from_npz.html#paminco.net.Nodes.from_npz">(paminco.net.Nodes class method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Shared.from_npz.html#paminco.net.Shared.from_npz">(paminco.net.Shared class method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.from_tuple.html#paminco.net.demand.CommoditySingleSourceSink.from_tuple">from_tuple() (paminco.net.demand.CommoditySingleSourceSink class method)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.from_xml.html#paminco.net.demand.AffineDemandFunction.from_xml">from_xml() (paminco.net.demand.AffineDemandFunction class method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.from_xml.html#paminco.net.demand.DemandFunction.from_xml">(paminco.net.demand.DemandFunction class method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.from_xml.html#paminco.net.demand.DemandVector.from_xml">(paminco.net.demand.DemandVector class method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.from_xml.html#paminco.net.demand.DemandVectorSP.from_xml">(paminco.net.demand.DemandVectorSP class method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.from_xml.html#paminco.net.demand.LinearDemandFunction.from_xml">(paminco.net.demand.LinearDemandFunction class method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Edges.from_xml.html#paminco.net.Edges.from_xml">(paminco.net.Edges class method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.from_xml.html#paminco.net.Network.from_xml">(paminco.net.Network class method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Nodes.from_xml.html#paminco.net.Nodes.from_xml">(paminco.net.Nodes class method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Shared.from_xml.html#paminco.net.Shared.from_xml">(paminco.net.Shared class method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/optim/fw.html#paminco.optim.fw.FW">FW (class in paminco.optim.fw)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.fw.FWBreakFlag.html#paminco.optim.fw.FWBreakFlag">FWBreakFlag (class in paminco.optim.fw)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.fw.FWConfig.html#paminco.optim.fw.FWConfig">FWConfig (class in paminco.optim.fw)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.fw.FWMode.html#paminco.optim.fw.FWMode">FWMode (class in paminco.optim.fw)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.fw.FWX.html#paminco.optim.fw.FWX">FWX (class in paminco.optim.fw)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/generated/paminco.net.Network.Gamma.html#paminco.net.Network.Gamma">Gamma() (paminco.net.Network method)</a>
+
+      <ul>
+        <li><a href="api/net/generated/paminco.net.Shared.Gamma.html#paminco.net.Shared.Gamma">(paminco.net.Shared method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/generated/paminco.net.Network.gamma_times.html#paminco.net.Network.gamma_times">gamma_times() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Edges.get_directed.html#paminco.net.Edges.get_directed">get_directed() (paminco.net.Edges method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Edges.get_duplicate_edges.html#paminco.net.Edges.get_duplicate_edges">get_duplicate_edges() (paminco.net.Edges method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Shared.get_edge_id.html#paminco.net.Shared.get_edge_id">get_edge_id() (paminco.net.Shared method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Edges.get_flow_df.html#paminco.net.Edges.get_flow_df">get_flow_df() (paminco.net.Edges method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Shared.get_node_id.html#paminco.net.Shared.get_node_id">get_node_id() (paminco.net.Shared method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/generated/paminco.net.Shared.get_node_label.html#paminco.net.Shared.get_node_label">get_node_label() (paminco.net.Shared method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Nodes.get_pos.html#paminco.net.Nodes.get_pos">get_pos() (paminco.net.Nodes method)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.get_scaled_copy.html#paminco.net.demand.CommodityMultiSourceSink.get_scaled_copy">get_scaled_copy() (paminco.net.demand.CommodityMultiSourceSink method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.get_scaled_copy.html#paminco.net.demand.CommoditySingleSourceSink.get_scaled_copy">(paminco.net.demand.CommoditySingleSourceSink method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand._DV.get_source_sink_rate.html#paminco.net.demand._DV.get_source_sink_rate">get_source_sink_rate() (paminco.net.demand._DV method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.get_source_sink_rate.html#paminco.net.demand.AffineDemandFunction.get_source_sink_rate">(paminco.net.demand.AffineDemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.get_source_sink_rate.html#paminco.net.demand.LinearDemandFunction.get_source_sink_rate">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.get_sparse_elements.html#paminco.net.demand.CommodityMultiSourceSink.get_sparse_elements">get_sparse_elements() (paminco.net.demand.CommodityMultiSourceSink method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.get_sparse_elements.html#paminco.net.demand.CommoditySingleSourceSink.get_sparse_elements">(paminco.net.demand.CommoditySingleSourceSink method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.has_costs.html#paminco._base.ParametricSolution.has_costs">has_costs (paminco._base.ParametricSolution property)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.has_potentials.html#paminco._base.ParametricSolution.has_potentials">has_potentials (paminco._base.ParametricSolution property)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.has_valid_indices.html#paminco.net.demand.CommodityMultiSourceSink.has_valid_indices">has_valid_indices (paminco.net.demand.CommodityMultiSourceSink property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.has_valid_indices.html#paminco.net.demand.CommoditySingleSourceSink.has_valid_indices">(paminco.net.demand.CommoditySingleSourceSink property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.has_valid_labels.html#paminco.net.demand.CommodityMultiSourceSink.has_valid_labels">has_valid_labels (paminco.net.demand.CommodityMultiSourceSink property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.has_valid_labels.html#paminco.net.demand.CommoditySingleSourceSink.has_valid_labels">(paminco.net.demand.CommoditySingleSourceSink property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/algo/generated/paminco.algo.mca.MCA.i.html#paminco.algo.mca.MCA.i">i (paminco.algo.mca.MCA property)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.incidence_matrix.html#paminco.net.Network.incidence_matrix">incidence_matrix() (paminco.net.Network method)</a>
+
+      <ul>
+        <li><a href="api/net/generated/paminco.net.Shared.incidence_matrix.html#paminco.net.Shared.incidence_matrix">(paminco.net.Shared method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.inflow.html#paminco.net.demand.AffineDemandFunction.inflow">inflow() (paminco.net.demand.AffineDemandFunction method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.inflow.html#paminco.net.demand.DemandFunction.inflow">(paminco.net.demand.DemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.inflow.html#paminco.net.demand.LinearDemandFunction.inflow">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/generated/paminco.net.Network.integrate_cost.html#paminco.net.Network.integrate_cost">integrate_cost() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/generated/paminco.utils.typing.IntEnum2.html#paminco.utils.typing.IntEnum2">IntEnum2 (class in paminco.utils.typing)</a>
+</li>
+      <li><a href="api/net/cost/generated/paminco.net.cost.InterpolationRule.html#paminco.net.cost.InterpolationRule">InterpolationRule (class in paminco.net.cost)</a>
+</li>
+      <li><a href="api/generated/paminco.linalg.InverseMethod.html#paminco.linalg.InverseMethod">InverseMethod (class in paminco.linalg)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.is_connected.html#paminco.net.Network.is_connected">is_connected() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.is_directed.html#paminco.net.Network.is_directed">is_directed (paminco.net.Network property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/paminco.utils.typing.is_int.html#paminco.utils.typing.is_int">is_int() (in module paminco.utils.typing)</a>
+</li>
+      <li><a href="api/generated/paminco.utils.typing.is_iterable.html#paminco.utils.typing.is_iterable">is_iterable() (in module paminco.utils.typing)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.is_multi_commodity.html#paminco.net.demand.AffineDemandFunction.is_multi_commodity">is_multi_commodity (paminco.net.demand.AffineDemandFunction property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.is_multi_commodity.html#paminco.net.demand.DemandFunction.is_multi_commodity">(paminco.net.demand.DemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.is_multi_commodity.html#paminco.net.demand.LinearDemandFunction.is_multi_commodity">(paminco.net.demand.LinearDemandFunction property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.is_multi_commodity.html#paminco.net.Network.is_multi_commodity">(paminco.net.Network property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.is_single.html#paminco.net.demand.CommodityMultiSourceSink.is_single">is_single (paminco.net.demand.CommodityMultiSourceSink property)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.is_single_commodity.html#paminco.net.demand.AffineDemandFunction.is_single_commodity">is_single_commodity (paminco.net.demand.AffineDemandFunction property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.is_single_commodity.html#paminco.net.demand.DemandFunction.is_single_commodity">(paminco.net.demand.DemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.is_single_commodity.html#paminco.net.demand.LinearDemandFunction.is_single_commodity">(paminco.net.demand.LinearDemandFunction property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.is_single_commodity.html#paminco.net.Network.is_single_commodity">(paminco.net.Network property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.is_sink.html#paminco.net.demand.CommodityMultiSourceSink.is_sink">is_sink (paminco.net.demand.CommodityMultiSourceSink property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/generated/paminco.net.demand._DV.k.html#paminco.net.demand._DV.k">k (paminco.net.demand._DV property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.k.html#paminco.net.demand.DemandVector.k">(paminco.net.demand.DemandVector property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.k.html#paminco.net.demand.DemandVectorSP.k">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.k.html#paminco.net.Network.k">(paminco.net.Network property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/generated/paminco.net.Network.L.html#paminco.net.Network.L">L() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/algo/generated/paminco.algo.efa.EFA.L0.html#paminco.algo.efa.EFA.L0">L0 (paminco.algo.efa.EFA property)</a>
+
+      <ul>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.L0.html#paminco.algo.mca.MCA.L0">(paminco.algo.mca.MCA property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/algo/generated/paminco.algo.mca.MCA.lambda_max.html#paminco.algo.mca.MCA.lambda_max">lambda_max (paminco.algo.mca.MCA property)</a>
+</li>
+      <li><a href="api/algo/generated/paminco.algo.mca.MCA.lambda_min.html#paminco.algo.mca.MCA.lambda_min">lambda_min (paminco.algo.mca.MCA property)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.laplacian.html#paminco.net.Network.laplacian">laplacian() (paminco.net.Network method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/generated/paminco.net.Edges.lb.html#paminco.net.Edges.lb">lb (paminco.net.Edges property)</a>
+
+      <ul>
+        <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFW.lb.html#paminco.optim.fw_net.NetworkFW.lb">(paminco.optim.fw_net.NetworkFW property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/func-lin.html#paminco.net.demand.LinearDemandFunction">LinearDemandFunction (class in paminco.net.demand)</a>
+</li>
+      <li><a href="api/generated/paminco.utils.io.load_object.html#paminco.utils.io.load_object">load_object() (in module paminco.utils.io)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.subproblem.LPSubproblemSolver.html#paminco.optim.subproblem.LPSubproblemSolver">LPSubproblemSolver (class in paminco.optim.subproblem)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.Lstar.html#paminco.net.Network.Lstar">Lstar() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.Lstar_update.html#paminco.net.Network.Lstar_update">Lstar_update() (paminco.net.Network method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/generated/paminco.net.Network.m.html#paminco.net.Network.m">m (paminco.net.Network property)</a>
+
+      <ul>
+        <li><a href="api/net/generated/paminco.net.Shared.m.html#paminco.net.Shared.m">(paminco.net.Shared property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.make_save_dict.html#paminco._base.ParametricSolution.make_save_dict">make_save_dict() (paminco._base.ParametricSolution method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.make_save_dict.html#paminco.net.demand.AffineDemandFunction.make_save_dict">(paminco.net.demand.AffineDemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.make_save_dict.html#paminco.net.demand.DemandFunction.make_save_dict">(paminco.net.demand.DemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.make_save_dict.html#paminco.net.demand.DemandVector.make_save_dict">(paminco.net.demand.DemandVector method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.make_save_dict.html#paminco.net.demand.DemandVectorSP.make_save_dict">(paminco.net.demand.DemandVectorSP method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.make_save_dict.html#paminco.net.demand.LinearDemandFunction.make_save_dict">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Edges.make_save_dict.html#paminco.net.Edges.make_save_dict">(paminco.net.Edges method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Nodes.make_save_dict.html#paminco.net.Nodes.make_save_dict">(paminco.net.Nodes method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Shared.make_save_dict.html#paminco.net.Shared.make_save_dict">(paminco.net.Shared method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/generated/paminco.net.Edges.map_labels.html#paminco.net.Edges.map_labels">map_labels() (paminco.net.Edges method)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.map_node_id_to_label.html#paminco.net.demand.AffineDemandFunction.map_node_id_to_label">map_node_id_to_label() (paminco.net.demand.AffineDemandFunction method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.map_node_id_to_label.html#paminco.net.demand.DemandFunction.map_node_id_to_label">(paminco.net.demand.DemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.map_node_id_to_label.html#paminco.net.demand.DemandVector.map_node_id_to_label">(paminco.net.demand.DemandVector method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.map_node_id_to_label.html#paminco.net.demand.DemandVectorSP.map_node_id_to_label">(paminco.net.demand.DemandVectorSP method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.map_node_id_to_label.html#paminco.net.demand.LinearDemandFunction.map_node_id_to_label">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.map_node_ids.html#paminco.net.demand.CommodityMultiSourceSink.map_node_ids">map_node_ids() (paminco.net.demand.CommodityMultiSourceSink method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.map_node_ids.html#paminco.net.demand.CommoditySingleSourceSink.map_node_ids">(paminco.net.demand.CommoditySingleSourceSink method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.map_node_label_to_id.html#paminco.net.demand.AffineDemandFunction.map_node_label_to_id">map_node_label_to_id() (paminco.net.demand.AffineDemandFunction method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.map_node_label_to_id.html#paminco.net.demand.DemandFunction.map_node_label_to_id">(paminco.net.demand.DemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.map_node_label_to_id.html#paminco.net.demand.DemandVector.map_node_label_to_id">(paminco.net.demand.DemandVector method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.map_node_label_to_id.html#paminco.net.demand.DemandVectorSP.map_node_label_to_id">(paminco.net.demand.DemandVectorSP method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.map_node_label_to_id.html#paminco.net.demand.LinearDemandFunction.map_node_label_to_id">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.map_node_labels.html#paminco.net.demand.CommodityMultiSourceSink.map_node_labels">map_node_labels() (paminco.net.demand.CommodityMultiSourceSink method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.map_node_labels.html#paminco.net.demand.CommoditySingleSourceSink.map_node_labels">(paminco.net.demand.CommoditySingleSourceSink method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.max_inflow.html#paminco.net.demand.AffineDemandFunction.max_inflow">max_inflow() (paminco.net.demand.AffineDemandFunction method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.max_inflow.html#paminco.net.demand.DemandFunction.max_inflow">(paminco.net.demand.DemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.max_inflow.html#paminco.net.demand.LinearDemandFunction.max_inflow">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/algo/mca.html#paminco.algo.mca.MCA">MCA (class in paminco.algo.mca)</a>
+</li>
+      <li><a href="api/algo/generated/paminco.algo.mca.MCAConfig.html#paminco.algo.mca.MCAConfig">MCAConfig (class in paminco.algo.mca)</a>
+</li>
+      <li><a href="api/algo/generated/paminco.algo.mca.MCAInterpolationRule.html#paminco.algo.mca.MCAInterpolationRule">MCAInterpolationRule (class in paminco.algo.mca)</a>
+</li>
+      <li><a href="api/algo/mcfi.html#paminco.algo.mcfi.MCFI">MCFI (class in paminco.algo.mcfi)</a>
+</li>
+      <li><a href="api/algo/generated/paminco.algo.mcfi.MCFIConfig.html#paminco.algo.mcfi.MCFIConfig">MCFIConfig (class in paminco.algo.mcfi)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="api/base/index.html#module-paminco._base">paminco._base</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/generated/paminco.net.demand._DV.n.html#paminco.net.demand._DV.n">n (paminco.net.demand._DV property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.n.html#paminco.net.demand.AffineDemandFunction.n">(paminco.net.demand.AffineDemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.n.html#paminco.net.demand.DemandFunction.n">(paminco.net.demand.DemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.n.html#paminco.net.demand.DemandVector.n">(paminco.net.demand.DemandVector property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.n.html#paminco.net.demand.DemandVectorSP.n">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.n.html#paminco.net.demand.LinearDemandFunction.n">(paminco.net.demand.LinearDemandFunction property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.n.html#paminco.net.Network.n">(paminco.net.Network property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Shared.n.html#paminco.net.Shared.n">(paminco.net.Shared property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.N_in.html#paminco.net.demand.CommodityMultiSourceSink.N_in">N_in (paminco.net.demand.CommodityMultiSourceSink property)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.N_out.html#paminco.net.demand.CommodityMultiSourceSink.N_out">N_out (paminco.net.demand.CommodityMultiSourceSink property)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.N_tot.html#paminco.net.demand.CommodityMultiSourceSink.N_tot">N_tot (paminco.net.demand.CommodityMultiSourceSink property)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.AlphaBetaApproximativeSolver.name.html#paminco._base.AlphaBetaApproximativeSolver.name">name (paminco._base.AlphaBetaApproximativeSolver property)</a>
+
+      <ul>
+        <li><a href="api/base/generated/paminco._base.ParametricSolver.name.html#paminco._base.ParametricSolver.name">(paminco._base.ParametricSolver property)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.efa.EFA.name.html#paminco.algo.efa.EFA.name">(paminco.algo.efa.EFA property)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.name.html#paminco.algo.mca.MCA.name">(paminco.algo.mca.MCA property)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mcfi.MCFI.name.html#paminco.algo.mcfi.MCFI.name">(paminco.algo.mcfi.MCFI property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/network.html#paminco.net.Network">Network (class in paminco.net)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.AlphaBetaApproximativeSolver.network.html#paminco._base.AlphaBetaApproximativeSolver.network">network (paminco._base.AlphaBetaApproximativeSolver property)</a>
+
+      <ul>
+        <li><a href="api/base/generated/paminco._base.ParametricSolver.network.html#paminco._base.ParametricSolver.network">(paminco._base.ParametricSolver property)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.efa.EFA.network.html#paminco.algo.efa.EFA.network">(paminco.algo.efa.EFA property)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.network.html#paminco.algo.mca.MCA.network">(paminco.algo.mca.MCA property)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mcfi.MCFI.network.html#paminco.algo.mcfi.MCFI.network">(paminco.algo.mcfi.MCFI property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/cost/generated/paminco.net.cost.NetworkCost.html#paminco.net.cost.NetworkCost">NetworkCost (class in paminco.net.cost)</a>
+</li>
+      <li><a href="api/net/cost/generated/paminco.net.cost.NetworkCostInterpolation.html#paminco.net.cost.NetworkCostInterpolation">NetworkCostInterpolation (class in paminco.net.cost)</a>
+</li>
+      <li><a href="api/optim/fw_net.html#paminco.optim.fw_net.NetworkFW">NetworkFW (class in paminco.optim.fw_net)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFWConfig.html#paminco.optim.fw_net.NetworkFWConfig">NetworkFWConfig (class in paminco.optim.fw_net)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Shared.node2id.html#paminco.net.Shared.node2id">node2id (paminco.net.Shared property)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.node_ids.html#paminco.net.demand.CommodityMultiSourceSink.node_ids">node_ids (paminco.net.demand.CommodityMultiSourceSink property)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.node_in_comm.html#paminco.net.demand.CommodityMultiSourceSink.node_in_comm">node_in_comm() (paminco.net.demand.CommodityMultiSourceSink method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.node_in_comm.html#paminco.net.demand.CommoditySingleSourceSink.node_in_comm">(paminco.net.demand.CommoditySingleSourceSink method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.node_labels.html#paminco.net.demand.CommodityMultiSourceSink.node_labels">node_labels (paminco.net.demand.CommodityMultiSourceSink property)</a>
+</li>
+      <li><a href="api/algo/generated/paminco.algo.efa.EFA.node_potentials.html#paminco.algo.efa.EFA.node_potentials">node_potentials (paminco.algo.efa.EFA property)</a>
+
+      <ul>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.node_potentials.html#paminco.algo.mca.MCA.node_potentials">(paminco.algo.mca.MCA property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/algo/generated/paminco.algo.efa.NodePotentials.html#paminco.algo.efa.NodePotentials">NodePotentials (class in paminco.algo.efa)</a>
+</li>
+      <li><a href="api/net/nodes.html#paminco.net.Nodes">Nodes (class in paminco.net)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.nodes.html#paminco.net.Network.nodes">nodes (paminco.net.Network property)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Shared.nodes2edge.html#paminco.net.Shared.nodes2edge">nodes2edge (paminco.net.Shared property)</a>
+</li>
+      <li><a href="api/generated/paminco.utils.math.np_divide_a_by_b.html#paminco.utils.math.np_divide_a_by_b">np_divide_a_by_b() (in module paminco.utils.math)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    paminco._base
+
+      <ul>
+        <li><a href="api/base/index.html#module-paminco._base">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/base/generated/paminco._base.AlphaBetaApproximativeSolver.param_solution.html#paminco._base.AlphaBetaApproximativeSolver.param_solution">param_solution (paminco._base.AlphaBetaApproximativeSolver property)</a>
+
+      <ul>
+        <li><a href="api/base/generated/paminco._base.ParametricSolver.param_solution.html#paminco._base.ParametricSolver.param_solution">(paminco._base.ParametricSolver property)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.param_solution.html#paminco.algo.mca.MCA.param_solution">(paminco.algo.mca.MCA property)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mcfi.MCFI.param_solution.html#paminco.algo.mcfi.MCFI.param_solution">(paminco.algo.mcfi.MCFI property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/base/solution.html#paminco._base.ParametricSolution">ParametricSolution (class in paminco._base)</a>
+</li>
+      <li><a href="api/base/solver.html#paminco._base.ParametricSolver">ParametricSolver (class in paminco._base)</a>
+</li>
+      <li><a href="api/generated/paminco.utils.readin.parse_number.html#paminco.utils.readin.parse_number">parse_number() (in module paminco.utils.readin)</a>
+</li>
+      <li><a href="api/generated/paminco.utils.readin.parse_polynomial.html#paminco.utils.readin.parse_polynomial">parse_polynomial() (in module paminco.utils.readin)</a>
+</li>
+      <li><a href="api/net/cost/generated/paminco.net.cost.PiecewiseQuadraticCoefficients.html#paminco.net.cost.PiecewiseQuadraticCoefficients">PiecewiseQuadraticCoefficients (class in paminco.net.cost)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/cost/generated/paminco.net.cost.PiecewiseQuadraticCost.html#paminco.net.cost.PiecewiseQuadraticCost">PiecewiseQuadraticCost (class in paminco.net.cost)</a>
+</li>
+      <li><a href="api/net/cost/generated/paminco.net.cost.PiecewiseQuadraticFunction.html#paminco.net.cost.PiecewiseQuadraticFunction">PiecewiseQuadraticFunction (class in paminco.net.cost)</a>
+</li>
+      <li><a href="api/algo/generated/paminco.algo.efa.PivotStepMode.html#paminco.algo.efa.PivotStepMode">PivotStepMode (class in paminco.algo.efa)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.AlphaBetaApproximativeSolver.plot_flow_on_edge.html#paminco._base.AlphaBetaApproximativeSolver.plot_flow_on_edge">plot_flow_on_edge() (paminco._base.AlphaBetaApproximativeSolver method)</a>
+
+      <ul>
+        <li><a href="api/base/generated/paminco._base.ParametricSolution.plot_flow_on_edge.html#paminco._base.ParametricSolution.plot_flow_on_edge">(paminco._base.ParametricSolution method)</a>
+</li>
+        <li><a href="api/base/generated/paminco._base.ParametricSolver.plot_flow_on_edge.html#paminco._base.ParametricSolver.plot_flow_on_edge">(paminco._base.ParametricSolver method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/cost/generated/paminco.net.cost.PolynomialCost.html#paminco.net.cost.PolynomialCost">PolynomialCost (class in paminco.net.cost)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.potential.html#paminco.net.Network.potential">potential() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.AlphaBetaApproximativeSolver.potential_at.html#paminco._base.AlphaBetaApproximativeSolver.potential_at">potential_at() (paminco._base.AlphaBetaApproximativeSolver method)</a>
+
+      <ul>
+        <li><a href="api/base/generated/paminco._base.ParametricSolution.potential_at.html#paminco._base.ParametricSolution.potential_at">(paminco._base.ParametricSolution method)</a>
+</li>
+        <li><a href="api/base/generated/paminco._base.ParametricSolver.potential_at.html#paminco._base.ParametricSolver.potential_at">(paminco._base.ParametricSolver method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/generated/paminco.utils.io.prettify_xml.html#paminco.utils.io.prettify_xml">prettify_xml() (in module paminco.utils.io)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.rate.html#paminco.net.demand.CommodityMultiSourceSink.rate">rate (paminco.net.demand.CommodityMultiSourceSink property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.rate.html#paminco.net.demand.CommoditySingleSourceSink.rate">(paminco.net.demand.CommoditySingleSourceSink property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.rate.html#paminco.net.demand.DemandVector.rate">(paminco.net.demand.DemandVector property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.rate.html#paminco.net.demand.DemandVectorSP.rate">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/algo/generated/paminco.algo.efa.EFA.region.html#paminco.algo.efa.EFA.region">region (paminco.algo.efa.EFA property)</a>
+
+      <ul>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.region.html#paminco.algo.mca.MCA.region">(paminco.algo.mca.MCA property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/algo/generated/paminco.algo.efa.EFA.region_zero.html#paminco.algo.efa.EFA.region_zero">region_zero (paminco.algo.efa.EFA property)</a>
+
+      <ul>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.region_zero.html#paminco.algo.mca.MCA.region_zero">(paminco.algo.mca.MCA property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.reset_cache.html#paminco.net.demand.AffineDemandFunction.reset_cache">reset_cache() (paminco.net.demand.AffineDemandFunction method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.reset_cache.html#paminco.net.demand.DemandFunction.reset_cache">(paminco.net.demand.DemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.reset_cache.html#paminco.net.demand.DemandVector.reset_cache">(paminco.net.demand.DemandVector method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.reset_cache.html#paminco.net.demand.DemandVectorSP.reset_cache">(paminco.net.demand.DemandVectorSP method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.reset_cache.html#paminco.net.demand.LinearDemandFunction.reset_cache">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Shared.reset_cache.html#paminco.net.Shared.reset_cache">(paminco.net.Shared method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/algo/generated/paminco.algo.efa.EFA.run.html#paminco.algo.efa.EFA.run">run() (paminco.algo.efa.EFA method)</a>
+
+      <ul>
+        <li><a href="api/algo/generated/paminco.algo.mca.MCA.run.html#paminco.algo.mca.MCA.run">(paminco.algo.mca.MCA method)</a>
+</li>
+        <li><a href="api/algo/generated/paminco.algo.mcfi.MCFI.run.html#paminco.algo.mcfi.MCFI.run">(paminco.algo.mcfi.MCFI method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.fw.FW.run.html#paminco.optim.fw.FW.run">(paminco.optim.fw.FW method)</a>
+</li>
+        <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFW.run.html#paminco.optim.fw_net.NetworkFW.run">(paminco.optim.fw_net.NetworkFW method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/generated/paminco.net.Edges.s.html#paminco.net.Edges.s">s (paminco.net.Edges property)</a>
+</li>
+      <li><a href="api/generated/paminco.utils.io.save_object.html#paminco.utils.io.save_object">save_object() (in module paminco.utils.io)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.save_to_numpy.html#paminco._base.ParametricSolution.save_to_numpy">save_to_numpy() (paminco._base.ParametricSolution method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.save_to_numpy.html#paminco.net.demand.AffineDemandFunction.save_to_numpy">(paminco.net.demand.AffineDemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.save_to_numpy.html#paminco.net.demand.DemandFunction.save_to_numpy">(paminco.net.demand.DemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.save_to_numpy.html#paminco.net.demand.DemandVector.save_to_numpy">(paminco.net.demand.DemandVector method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.save_to_numpy.html#paminco.net.demand.DemandVectorSP.save_to_numpy">(paminco.net.demand.DemandVectorSP method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.save_to_numpy.html#paminco.net.demand.LinearDemandFunction.save_to_numpy">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Edges.save_to_numpy.html#paminco.net.Edges.save_to_numpy">(paminco.net.Edges method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Nodes.save_to_numpy.html#paminco.net.Nodes.save_to_numpy">(paminco.net.Nodes method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Shared.save_to_numpy.html#paminco.net.Shared.save_to_numpy">(paminco.net.Shared method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.scaled_copy.html#paminco.net.demand.DemandVector.scaled_copy">scaled_copy() (paminco.net.demand.DemandVector method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.scaled_copy.html#paminco.net.demand.DemandVectorSP.scaled_copy">(paminco.net.demand.DemandVectorSP method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/generated/paminco.net.Network.set_cost.html#paminco.net.Network.set_cost">set_cost() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.set_demand.html#paminco.net.Network.set_demand">set_demand() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Nodes.set_mappings.html#paminco.net.Nodes.set_mappings">set_mappings() (paminco.net.Nodes method)</a>
+</li>
+      <li><a href="api/net/shared.html#paminco.net.Shared">Shared (class in paminco.net)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand._DV.shared.html#paminco.net.demand._DV.shared">shared (paminco.net.demand._DV property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.shared.html#paminco.net.demand.AffineDemandFunction.shared">(paminco.net.demand.AffineDemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.shared.html#paminco.net.demand.DemandFunction.shared">(paminco.net.demand.DemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.shared.html#paminco.net.demand.DemandVector.shared">(paminco.net.demand.DemandVector property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.shared.html#paminco.net.demand.DemandVectorSP.shared">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.shared.html#paminco.net.demand.LinearDemandFunction.shared">(paminco.net.demand.LinearDemandFunction property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Network.shared.html#paminco.net.Network.shared">(paminco.net.Network property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/generated/paminco.net.Network.shortest_path.html#paminco.net.Network.shortest_path">shortest_path() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/generated/paminco.callback.SimpleDebuggerIterativeModel.html#paminco.callback.SimpleDebuggerIterativeModel">SimpleDebuggerIterativeModel (class in paminco.callback)</a>
+</li>
+      <li><a href="api/net/cost/generated/paminco.net.cost.SimplePolynomial.html#paminco.net.cost.SimplePolynomial">SimplePolynomial (class in paminco.net.cost)</a>
+</li>
+      <li><a href="api/generated/paminco.callback.SimpleTimer.html#paminco.callback.SimpleTimer">SimpleTimer (class in paminco.callback)</a>
+</li>
+      <li><a href="api/generated/paminco.linalg.SingularLaplaceError.html#paminco.linalg.SingularLaplaceError">SingularLaplaceError</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.sink_id.html#paminco.net.demand.CommodityMultiSourceSink.sink_id">sink_id (paminco.net.demand.CommodityMultiSourceSink property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.sink_id.html#paminco.net.demand.CommoditySingleSourceSink.sink_id">(paminco.net.demand.CommoditySingleSourceSink property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.sink_id.html#paminco.net.demand.DemandVector.sink_id">(paminco.net.demand.DemandVector property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.sink_id.html#paminco.net.demand.DemandVectorSP.sink_id">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.sink_lbl.html#paminco.net.demand.CommodityMultiSourceSink.sink_lbl">sink_lbl (paminco.net.demand.CommodityMultiSourceSink property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.sink_lbl.html#paminco.net.demand.CommoditySingleSourceSink.sink_lbl">(paminco.net.demand.CommoditySingleSourceSink property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.sink_lbl.html#paminco.net.demand.DemandVector.sink_lbl">(paminco.net.demand.DemandVector property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.sink_lbl.html#paminco.net.demand.DemandVectorSP.sink_lbl">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/generated/paminco.net.Network.size.html#paminco.net.Network.size">size (paminco.net.Network property)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.source_id.html#paminco.net.demand.CommodityMultiSourceSink.source_id">source_id (paminco.net.demand.CommodityMultiSourceSink property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.source_id.html#paminco.net.demand.CommoditySingleSourceSink.source_id">(paminco.net.demand.CommoditySingleSourceSink property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.source_id.html#paminco.net.demand.DemandVector.source_id">(paminco.net.demand.DemandVector property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.source_id.html#paminco.net.demand.DemandVectorSP.source_id">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.source_lbl.html#paminco.net.demand.CommodityMultiSourceSink.source_lbl">source_lbl (paminco.net.demand.CommodityMultiSourceSink property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.source_lbl.html#paminco.net.demand.CommoditySingleSourceSink.source_lbl">(paminco.net.demand.CommoditySingleSourceSink property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.source_lbl.html#paminco.net.demand.DemandVector.source_lbl">(paminco.net.demand.DemandVector property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.source_lbl.html#paminco.net.demand.DemandVectorSP.source_lbl">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Edges.source_lbl.html#paminco.net.Edges.source_lbl">(paminco.net.Edges property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.sparse.html#paminco.net.demand.DemandVector.sparse">sparse() (paminco.net.demand.DemandVector method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.sparse.html#paminco.net.demand.DemandVectorSP.sparse">(paminco.net.demand.DemandVectorSP method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/generated/paminco.utils.typing.sparse_format.html#paminco.utils.typing.sparse_format">sparse_format() (in module paminco.utils.typing)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.subproblem.SPSubproblemSolver.html#paminco.optim.subproblem.SPSubproblemSolver">SPSubproblemSolver (class in paminco.optim.subproblem)</a>
+</li>
+      <li><a href="api/generated/paminco.linalg.star_inv.html#paminco.linalg.star_inv">star_inv() (in module paminco.linalg)</a>
+</li>
+      <li><a href="api/generated/paminco.linalg.star_update_by_edge.html#paminco.linalg.star_update_by_edge">star_update_by_edge() (in module paminco.linalg)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.subproblem.subproblem_solver.html#paminco.optim.subproblem.subproblem_solver">subproblem_solver() (in module paminco.optim.subproblem)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.subproblem.SubproblemMethod.html#paminco.optim.subproblem.SubproblemMethod">SubproblemMethod (class in paminco.optim.subproblem)</a>
+</li>
+      <li><a href="api/optim/generated/paminco.optim.subproblem.SubproblemSolver.html#paminco.optim.subproblem.SubproblemSolver">SubproblemSolver (class in paminco.optim.subproblem)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.support_of.html#paminco.net.Network.support_of">support_of() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/net/cost/generated/paminco.net.cost.SymbolicCost.html#paminco.net.cost.SymbolicCost">SymbolicCost (class in paminco.net.cost)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/generated/paminco.net.Edges.t.html#paminco.net.Edges.t">t (paminco.net.Edges property)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Edges.target_lbl.html#paminco.net.Edges.target_lbl">target_lbl (paminco.net.Edges property)</a>
+</li>
+      <li><a href="api/net/generated/paminco.net.Network.times_gamma.html#paminco.net.Network.times_gamma">times_gamma() (paminco.net.Network method)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.to_csv.html#paminco._base.ParametricSolution.to_csv">to_csv() (paminco._base.ParametricSolution method)</a>
+</li>
+      <li><a href="api/base/generated/paminco._base.ParametricSolution.to_df.html#paminco._base.ParametricSolution.to_df">to_df() (paminco._base.ParametricSolution method)</a>
+
+      <ul>
+        <li><a href="api/net/generated/paminco.net.Edges.to_df.html#paminco.net.Edges.to_df">(paminco.net.Edges method)</a>
+</li>
+        <li><a href="api/net/generated/paminco.net.Nodes.to_df.html#paminco.net.Nodes.to_df">(paminco.net.Nodes method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.to_dict.html#paminco.net.demand.CommodityMultiSourceSink.to_dict">to_dict() (paminco.net.demand.CommodityMultiSourceSink method)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.to_single_pairs.html#paminco.net.demand.AffineDemandFunction.to_single_pairs">to_single_pairs() (paminco.net.demand.AffineDemandFunction method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.to_single_pairs.html#paminco.net.demand.DemandFunction.to_single_pairs">(paminco.net.demand.DemandFunction method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.to_single_pairs.html#paminco.net.demand.DemandVector.to_single_pairs">(paminco.net.demand.DemandVector method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.to_single_pairs.html#paminco.net.demand.DemandVectorSP.to_single_pairs">(paminco.net.demand.DemandVectorSP method)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.to_single_pairs.html#paminco.net.demand.LinearDemandFunction.to_single_pairs">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.to_tuple.html#paminco.net.demand.CommoditySingleSourceSink.to_tuple">to_tuple() (paminco.net.demand.CommoditySingleSourceSink method)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.CommodityMultiSourceSink.total_rate.html#paminco.net.demand.CommodityMultiSourceSink.total_rate">total_rate (paminco.net.demand.CommodityMultiSourceSink property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.CommoditySingleSourceSink.total_rate.html#paminco.net.demand.CommoditySingleSourceSink.total_rate">(paminco.net.demand.CommoditySingleSourceSink property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVector.total_rate.html#paminco.net.demand.DemandVector.total_rate">(paminco.net.demand.DemandVector property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandVectorSP.total_rate.html#paminco.net.demand.DemandVectorSP.total_rate">(paminco.net.demand.DemandVectorSP property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/generated/paminco.net.Edges.ub.html#paminco.net.Edges.ub">ub (paminco.net.Edges property)</a>
+</li>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.unique_sources.html#paminco.net.demand.AffineDemandFunction.unique_sources">unique_sources (paminco.net.demand.AffineDemandFunction property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.unique_sources.html#paminco.net.demand.DemandFunction.unique_sources">(paminco.net.demand.DemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.unique_sources.html#paminco.net.demand.LinearDemandFunction.unique_sources">(paminco.net.demand.LinearDemandFunction property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/generated/paminco.net.Shared.update.html#paminco.net.Shared.update">update() (paminco.net.Shared method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.value.html#paminco.net.demand.AffineDemandFunction.value">value() (paminco.net.demand.AffineDemandFunction method)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.value.html#paminco.net.demand.LinearDemandFunction.value">(paminco.net.demand.LinearDemandFunction method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/net/demand/generated/paminco.net.demand.AffineDemandFunction.value_at_1.html#paminco.net.demand.AffineDemandFunction.value_at_1">value_at_1 (paminco.net.demand.AffineDemandFunction property)</a>
+
+      <ul>
+        <li><a href="api/net/demand/generated/paminco.net.demand.DemandFunction.value_at_1.html#paminco.net.demand.DemandFunction.value_at_1">(paminco.net.demand.DemandFunction property)</a>
+</li>
+        <li><a href="api/net/demand/generated/paminco.net.demand.LinearDemandFunction.value_at_1.html#paminco.net.demand.LinearDemandFunction.value_at_1">(paminco.net.demand.LinearDemandFunction property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/optim/generated/paminco.optim.fw.FW.x.html#paminco.optim.fw.FW.x">x (paminco.optim.fw.FW property)</a>
+
+      <ul>
+        <li><a href="api/optim/generated/paminco.optim.fw_net.NetworkFW.x.html#paminco.optim.fw_net.NetworkFW.x">(paminco.optim.fw_net.NetworkFW property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/generated/paminco.utils.readin.xml_add_element.html#paminco.utils.readin.xml_add_element">xml_add_element() (in module paminco.utils.readin)</a>
+</li>
+      <li><a href="api/generated/paminco.utils.readin.xml_find_root.html#paminco.utils.readin.xml_find_root">xml_find_root() (in module paminco.utils.readin)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

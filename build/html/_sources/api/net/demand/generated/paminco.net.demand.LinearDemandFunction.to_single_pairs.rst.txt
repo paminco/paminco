@@ -1,0 +1,6 @@
+﻿paminco.net.demand.LinearDemandFunction.to\_single\_pairs
+=========================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: LinearDemandFunction.to_single_pairs

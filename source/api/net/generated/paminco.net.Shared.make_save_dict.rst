@@ -1,0 +1,6 @@
+﻿paminco.net.Shared.make\_save\_dict
+===================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Shared.make_save_dict

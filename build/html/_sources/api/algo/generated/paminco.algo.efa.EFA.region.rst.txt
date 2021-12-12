@@ -1,0 +1,6 @@
+﻿paminco.algo.efa.EFA.region
+===========================
+
+.. currentmodule:: paminco.algo.efa
+
+.. autoproperty:: EFA.region

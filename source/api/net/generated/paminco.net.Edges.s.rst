@@ -1,0 +1,6 @@
+﻿paminco.net.Edges.s
+===================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Edges.s

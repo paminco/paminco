@@ -1,0 +1,6 @@
+﻿paminco.net.Nodes.\_\_init\_\_
+==============================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Nodes.__init__

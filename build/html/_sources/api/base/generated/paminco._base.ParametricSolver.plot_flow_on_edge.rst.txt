@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolver.plot\_flow\_on\_edge
+====================================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: ParametricSolver.plot_flow_on_edge

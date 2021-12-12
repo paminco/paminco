@@ -1,0 +1,6 @@
+﻿paminco.net.demand.AffineDemandFunction.max\_inflow
+===================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: AffineDemandFunction.max_inflow

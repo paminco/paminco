@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolution.save\_to\_numpy
+=================================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: ParametricSolution.save_to_numpy

@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVector.k
+=================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandVector.k

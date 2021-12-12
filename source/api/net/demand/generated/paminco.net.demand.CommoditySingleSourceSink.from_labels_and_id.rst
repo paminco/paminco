@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommoditySingleSourceSink.from\_labels\_and\_id
+==================================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: CommoditySingleSourceSink.from_labels_and_id

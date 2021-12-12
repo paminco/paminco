@@ -1,0 +1,6 @@
+﻿paminco.net.Network.clean
+=========================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.clean

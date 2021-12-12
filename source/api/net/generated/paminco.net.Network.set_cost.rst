@@ -1,0 +1,6 @@
+﻿paminco.net.Network.set\_cost
+=============================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.set_cost

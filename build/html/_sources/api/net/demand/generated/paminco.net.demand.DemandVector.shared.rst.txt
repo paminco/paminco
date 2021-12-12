@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVector.shared
+======================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandVector.shared

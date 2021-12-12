@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolver.config
+======================================
+
+.. currentmodule:: paminco._base
+
+.. autoproperty:: ParametricSolver.config

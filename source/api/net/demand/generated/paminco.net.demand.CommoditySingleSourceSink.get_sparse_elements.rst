@@ -1,0 +1,6 @@
+﻿paminco.net.demand.CommoditySingleSourceSink.get\_sparse\_elements
+==================================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: CommoditySingleSourceSink.get_sparse_elements

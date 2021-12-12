@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolver.cost\_at
+========================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: ParametricSolver.cost_at

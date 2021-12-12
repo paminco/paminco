@@ -1,0 +1,6 @@
+﻿paminco.net.Shared.save\_to\_numpy
+==================================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Shared.save_to_numpy

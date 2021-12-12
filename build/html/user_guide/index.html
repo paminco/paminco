@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>User Guide &#8212; paminco 0.1 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/contentui.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Applications" href="applications/index.html" />
+    <link rel="prev" title="Getting Started" href="../getting_started.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo1.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../theory/index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="applications/index.html">
+   Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="applications/traffic/index.html">
+     Traffic Networks
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="applications/traffic/background.html">
+       Background
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="applications/traffic/braess_paradox.html">
+       Braess Paradox
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="applications/traffic/pigou_example.html">
+       Pigou's Example
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="applications/traffic/sioux_fixed_ue.html">
+       SiouxFalls - User Eqiulibrium
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="applications/traffic/sioux_par_poa.html">
+       SiouxFalls - Parametric Price of Anarchy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="applications/traffic/barcelona_poa.html">
+       Barcelona - Price of Anarchy
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="applications/gas/index.html">
+     Gaslib
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="applications/gas/stub.html">
+       Stub
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="network_setup/index.html">
+   How to Set Up a Network
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="network_setup/howto_graph_setup.html">
+     How to set up directed and undirected graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="network_setup/howto_set_cost.html">
+     How to equip a network with cost functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="network_setup/howto_set_demand.html">
+     How to specify the demand function for a network
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="network_setup/howto_read_from_xml.html">
+     How to readin network data from XML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="network_setup/howto_shortest_path.html">
+     How to calculate shortest path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="network_setup/howto_plot_network.html">
+     How to plot a network
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="user-guide">
+<span id="ug-index"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<div class="tabbed-set docutils">
+<input checked="checked" id="deff98f8-65a2-400a-9115-4728878a67cd" name="3ac10840-c598-47d4-b6b9-d975473d19eb" type="radio">
+</input><label class="tabbed-label" for="deff98f8-65a2-400a-9115-4728878a67cd">
+Traffic Networks</label><div class="tabbed-content docutils">
+<div class="admonition-motivation admonition">
+<p class="admonition-title">Motivation</p>
+<p><a class="reference internal" href="../theory/min_cost_flow.html#theory-mcf"><span class="std std-ref">Minimum cost flows</span></a> coincide with
+<a class="reference internal" href="applications/traffic/background.html#ug-traffic-ue"><span class="std std-ref">user equilibrium</span></a> and
+<a class="reference internal" href="applications/traffic/background.html#ug-traffic-so"><span class="std std-ref">system optimum</span></a> in
+<a class="reference internal" href="applications/traffic/index.html#ug-traffic-index"><span class="std std-ref">traffic network</span></a>
+if the edge cost are transformed by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\text{User equilibrium:} \quad F_e &amp;= \int_0^{x_e} l_e(s) ds \\
+\text{System optimum:} \quad F_e &amp;= x_e \cdot l_e \\
+\end{align}\end{split}\]</div>
+<div class="toggle-header docutils container">
+<p>The link travel time is defined as: <strong>show/hide</strong></p>
+</div>
+<div class="toggle-content docutils container">
+<div class="math notranslate nohighlight">
+\[l_e(x_e) = \text{fft}_e \cdot \left( 1 + B_e \cdot \left(\frac{x}{\text{cap}_e}\right) ^ {p_e} \right).\]</div>
+</div>
+</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<em>Braess Paradox</em>: Adding capacity to a network might decrease network efficiency due to selfish participants.<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<a class="reference internal image-reference" href="../_images/braess.jpg"><img alt="Parametric User Equilibria for Sioux Falls" class="align-center" src="../_images/braess.jpg" style="width: 700px;" /></a>
+<p class="card-text">Adding capacity to a network might decrease network efficiency due to selfish participants.</p>
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="applications/traffic/braess_paradox.html"><span>Go to user guide</span></a></p>
+<p class="card-text"><a class="sphinx-bs badge badge-success reference internal" href="../api/optim/fw_net.html#fw-net"><span class="std std-ref">NetworkFW</span></a></p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<em>Pigou’s Example</em>: An upper bound for the Price of Anarchy<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="applications/traffic/pigou_example.html"><span>Go to user guide</span></a></p>
+<p class="card-text"><a class="sphinx-bs badge badge-success reference internal" href="../api/optim/fw_net.html#fw-net"><span class="std std-ref">NetworkFW</span></a></p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<em>SiouxFalls</em>: calculating and plotting a fixed user equilibrium<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="applications/traffic/sioux_fixed_ue.html"><span>Go to user guide</span></a></p>
+<p class="card-text"><a class="sphinx-bs badge badge-success reference internal" href="../api/optim/fw_net.html#fw-net"><span class="std std-ref">NetworkFW</span></a></p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<em>SiouxFalls</em>: parametric Price of Anarchy<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="applications/traffic/sioux_par_poa.html"><span>Go to user guide</span></a></p>
+<p class="card-text"><a class="sphinx-bs badge badge-success reference internal" href="../api/algo/mca.html#mca"><span class="std std-ref">MCA</span></a></p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<em>Barcelona</em>: Price of Anarchy<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="applications/traffic/barcelona_poa.html"><span>Go to user guide</span></a></p>
+<p class="card-text"><a class="sphinx-bs badge badge-success reference internal" href="../api/optim/fw_net.html#fw-net"><span class="std std-ref">NetworkFW</span></a></p>
+</div>
+</details></div>
+<input id="6a837e02-bdfa-436e-be82-1b3ada0faea0" name="3ac10840-c598-47d4-b6b9-d975473d19eb" type="radio">
+</input><label class="tabbed-label" for="6a837e02-bdfa-436e-be82-1b3ada0faea0">
+Natural Gas</label><div class="tabbed-content docutils">
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<em>SiouxFalls</em>: calculating and plotting a fixed user equilibrium<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="applications/traffic/sioux_fixed_ue.html"><span>Go to user guide</span></a></p>
+<p class="card-text"><a class="sphinx-bs badge badge-success reference internal" href="../api/optim/fw_net.html#fw-net"><span class="std std-ref">NetworkFW</span></a></p>
+</div>
+</details></div>
+<input id="17a412f0-4c88-4f37-9d40-32e0db770599" name="3ac10840-c598-47d4-b6b9-d975473d19eb" type="radio">
+</input><label class="tabbed-label" for="17a412f0-4c88-4f37-9d40-32e0db770599">
+Network Setup</label><div class="tabbed-content docutils">
+<div class="admonition-motivation admonition">
+<p class="admonition-title">Motivation</p>
+<p>You want to set up a custom graph with <em>paminco</em>? Learn how to specify graphs,
+how to allow for negative flows (we treat all graphs as directed), and how to
+specify cost and demand functions.</p>
+</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<em>Graph Setup</em>: directed graphs (with negative flows)<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We set up directed graphs,
+learn about graph representations and how to set lower
+and upper boundaries for the edge flows in order to allow for negative edge flows
+(thus creating undirected graphs).</p>
+<a class="reference internal image-reference" href="../_images/dir_graph.jpg"><img alt="../_images/dir_graph.jpg" class="align-center" src="../_images/dir_graph.jpg" style="width: 300px;" /></a>
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="network_setup/howto_graph_setup.html"><span>Go to user guide</span></a></p>
+<p class="card-text"><a class="sphinx-bs badge badge-info reference internal" href="../api/net/edges.html#edges"><span class="std std-ref">Edges</span></a>
+<a class="sphinx-bs badge badge-info reference internal" href="../api/net/nodes.html#nodes"><span class="std std-ref">Nodes</span></a></p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<em>Edge Cost</em>: polynomial, piecewise quadratic, or symbolic<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We show how to equip a network with cost functions,
+i.e., how the cost <span class="math notranslate nohighlight">\(F_e\)</span> of an edge <span class="math notranslate nohighlight">\(e\)</span> vary by the flow on that edge.</p>
+<a class="reference internal image-reference" href="../_images/fig2a_graph_with_marginal_cost.png"><img alt="../_images/fig2a_graph_with_marginal_cost.png" class="align-center" src="../_images/fig2a_graph_with_marginal_cost.png" style="width: 300px;" /></a>
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="network_setup/howto_set_cost.html"><span>Go to user guide</span></a></p>
+<p class="card-text"><span class="xref any sphinx-bs badge badge-light">NetworkCost (abstract)</span>
+<span class="xref any sphinx-bs badge badge-info">PolynomialCost</span>
+<span class="xref any sphinx-bs badge badge-info">PiecewiseQuadraticCost</span>
+<span class="xref any sphinx-bs badge badge-info">SymbolicCost</span></p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<em>Demand Function</em>: linear and affine demand functions<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We illustrate how to specify the demand function for a network.
+Typically this is a linear demand funtion that scales the node rates (encoded with a demand vector <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>)
+by a demand multiplier <span class="math notranslate nohighlight">\(\lambda\)</span>: <span class="math notranslate nohighlight">\(\mathbf{h}_\text{linear}(\lambda) = \lambda \mathbf{b}\)</span>
+or an affine demand function that adds a base demand
+<span class="math notranslate nohighlight">\(\mathbf{h}_\text{affine}(\lambda) = \mathbf{b}_0  + \lambda \mathbf{b}\)</span>.</p>
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="/notebooks/howto_set_demand.html"><span>Go to user guide</span></a></p>
+<p class="card-text"><a class="sphinx-bs badge badge-light reference internal" href="../api/net/demand/func.html#demandfunc"><span class="std std-ref">DemandFunction (abstract)</span></a>
+<a class="sphinx-bs badge badge-info reference internal" href="../api/net/demand/func-lin.html#demandfunc-lin"><span class="std std-ref">LinearDemandFunction</span></a>
+<a class="sphinx-bs badge badge-info reference internal" href="../api/net/demand/func-aff.html#demandfunc-aff"><span class="std std-ref">AffineDemandFunction</span></a></p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<em>Read-in from XML</em>: How to read in network from XML<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="network_setup/howto_read_from_xml.html"><span>Go to user guide</span></a></p>
+<p class="card-text"><a class="sphinx-bs badge badge-info reference internal" href="../api/net/network.html#network"><span class="std std-ref">Network</span></a></p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<em>Plotting</em>: How to specify node positions and plot with NetworkX<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We specify node positions and used them to plot a network
+with <a class="reference external" href="https://networkx.org/">NetworkX</a>.</p>
+<a class="reference internal image-reference" href="../_images/sioux_ue.gif"><img alt="../_images/sioux_ue.gif" class="align-center" src="../_images/sioux_ue.gif" style="width: 400px;" /></a>
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="network_setup/howto_plot_network.html"><span>Go to user guide</span></a></p>
+<p class="card-text"><a class="sphinx-bs badge badge-info reference internal" href="../api/net/network.html#network"><span class="std std-ref">Network</span></a>
+<a class="sphinx-bs badge badge-info reference internal" href="../api/net/nodes.html#nodes"><span class="std std-ref">Nodes</span></a></p>
+</div>
+</details></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

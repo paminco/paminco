@@ -1,0 +1,6 @@
+﻿paminco.net.demand.\_DV.add\_to\_etree
+======================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: _DV.add_to_etree

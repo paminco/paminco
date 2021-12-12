@@ -1,0 +1,6 @@
+﻿paminco.\_base.ParametricSolution.make\_save\_dict
+==================================================
+
+.. currentmodule:: paminco._base
+
+.. automethod:: ParametricSolution.make_save_dict

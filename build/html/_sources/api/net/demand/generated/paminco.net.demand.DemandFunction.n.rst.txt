@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandFunction.n
+===================================
+
+.. currentmodule:: paminco.net.demand
+
+.. autoproperty:: DemandFunction.n

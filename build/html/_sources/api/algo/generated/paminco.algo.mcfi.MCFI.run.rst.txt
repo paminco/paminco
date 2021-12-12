@@ -1,0 +1,6 @@
+﻿paminco.algo.mcfi.MCFI.run
+==========================
+
+.. currentmodule:: paminco.algo.mcfi
+
+.. automethod:: MCFI.run

@@ -1,0 +1,6 @@
+﻿paminco.net.Shared.from\_npz
+============================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Shared.from_npz

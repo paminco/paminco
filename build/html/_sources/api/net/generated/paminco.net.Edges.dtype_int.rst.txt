@@ -1,0 +1,6 @@
+﻿paminco.net.Edges.dtype\_int
+============================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Edges.dtype_int

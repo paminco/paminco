@@ -1,0 +1,6 @@
+﻿paminco.net.Network.laplacian
+=============================
+
+.. currentmodule:: paminco.net
+
+.. automethod:: Network.laplacian

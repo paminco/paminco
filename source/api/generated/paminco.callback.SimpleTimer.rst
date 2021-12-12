@@ -1,0 +1,31 @@
+﻿paminco.callback.SimpleTimer
+============================
+
+.. currentmodule:: paminco.callback
+
+.. autoclass:: SimpleTimer
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SimpleTimer.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SimpleTimer.initialization
+      ~SimpleTimer.iteration
+      ~SimpleTimer.time_run
+      ~SimpleTimer.total_time
+   
+   

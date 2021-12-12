@@ -1,0 +1,6 @@
+﻿paminco.utils.readin.parse\_number
+==================================
+
+.. currentmodule:: paminco.utils.readin
+
+.. autofunction:: parse_number

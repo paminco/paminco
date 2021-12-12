@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVectorSP.save\_to\_numpy
+=================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandVectorSP.save_to_numpy

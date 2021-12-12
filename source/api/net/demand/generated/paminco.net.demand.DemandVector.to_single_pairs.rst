@@ -1,0 +1,6 @@
+﻿paminco.net.demand.DemandVector.to\_single\_pairs
+=================================================
+
+.. currentmodule:: paminco.net.demand
+
+.. automethod:: DemandVector.to_single_pairs

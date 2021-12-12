@@ -1,0 +1,6 @@
+﻿paminco.net.Shared.n
+====================
+
+.. currentmodule:: paminco.net
+
+.. autoproperty:: Shared.n
