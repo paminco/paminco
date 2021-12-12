@@ -1,0 +1,30 @@
+name: pip_install_and_test
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: install paminco via pip and run pytest
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      
+      - name: install paminco, dependecies and test packages
+        run: |
+          python3 -m pip install --upgrade pip
+          pip3 install .
+          pip3 install pytest
+          pip3 install pytest-cov
+          pip3 install pytest-github-actions-annotate-failures
+        
+      - name: run pytest
+        run: |
+          pytest --exitfirst --verbose --failed-first --cov=. --cov-report html -m "not slow" --ignore=paminco
