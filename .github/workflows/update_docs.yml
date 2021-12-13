@@ -19,11 +19,14 @@ jobs:
         with:
           python-version: 3.8
       
-      - name: install dependecies, ghp-import and all sphinx packages
+      - name: install dependencies and package
         run: |
           python3 -m pip install --upgrade pip
           pip3 install -r requirements.txt
-          pip3 install ghp-import
+          pip3 install .
+      
+      - name: install sphinx, shpinx packages and dependencies for doc
+        run: |
           pip3 install -U sphinx
           pip3 install numpydoc
           pip3 install myst_nb
@@ -32,12 +35,13 @@ jobs:
           pip3 install sphinx-togglebutton
           pip3 install sphinxcontrib-contentui
           pip3 install pydata-sphinx-theme
-        
+          pip3 install networkx
+      
       - name: build docs
         run: |
           cd docs
           make html
-          
-      - name: push to gh-pages branch
+      
+      - name: install and run ghp-import to push to gh-pages branch
         run: |
-          python3 scripts/docs_to_pages.py    
+          python3 scripts/docs_to_pages.py  
