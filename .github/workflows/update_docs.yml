@@ -44,4 +44,5 @@ jobs:
       
       - name: install and run ghp-import to push to gh-pages branch
         run: |
+          pip3 install ghp_import
           python3 scripts/docs_to_pages.py  
