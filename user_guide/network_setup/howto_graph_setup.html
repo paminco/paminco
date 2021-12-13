@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Graph Setup and Representations &#8212; paminco 0.1 documentation</title>
+    <title>Directed Graphs: Setup and Representations &#8212; paminco 0.1 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -278,96 +278,33 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#directed-graphs">
-   1 Directed graphs
+  <a class="reference internal nav-link" href="#setup">
+   1 Setup
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup">
-     1.1 Setup
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#representations">
-     1.2 Representations
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#adjacency-matrix">
-       1.2.1 Adjacency matrix
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#incidence-matrix">
-       1.2.2 Incidence matrix
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#laplacian-matrix">
-       1.2.3 Laplacian matrix
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#edge-bounds">
-     1.3 Edge bounds
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#undirected-graphs">
-   2 Undirected graphs
+  <a class="reference internal nav-link" href="#representations">
+   2 Representations
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     2.1 Setup
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     2.2 Representations
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       2.2.1 Adjacency matrix
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       2.2.2 Incidence matrix
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       2.2.3 Laplacian matrix
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     2.3 Edge bounds
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edge-bounds">
+   3 Edge bounds
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#labels-to-indices-mapping">
-   3. Labels to indices mapping
+   4 Labels to indices mapping
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#pass-indices-in-node-data">
-     3.1 Pass indices in node data
+     4.1 Pass indices in node data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#specifing-label-mapping-in-edges">
-     3.2 Specifing label mapping in edges
+     4.2 Specifing label mapping in edges
     </a>
    </li>
   </ul>
@@ -393,13 +330,11 @@
               
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="graph-setup-and-representations">
-<h1>Graph Setup and Representations<a class="headerlink" href="#graph-setup-and-representations" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="directed-graphs-setup-and-representations">
+<h1>Directed Graphs: Setup and Representations<a class="headerlink" href="#directed-graphs-setup-and-representations" title="Permalink to this headline">¶</a></h1>
 <p>Denote <span class="math notranslate nohighlight">\(G = (V, E)\)</span> a <code class="docutils literal notranslate"><span class="pre">graph</span></code>, where <span class="math notranslate nohighlight">\(V\)</span> are the vertices or nodes and <span class="math notranslate nohighlight">\(E\)</span> are the links or edges.
-This notebook shows how to setup directed and undirected graphs, how to access different graph respresentations
+This notebook shows how to setup directed graphs, how to access different graph respresentations
 and how to specify labels to indices mappings.</p>
-<section id="directed-graphs">
-<h2>1 Directed graphs<a class="headerlink" href="#directed-graphs" title="Permalink to this headline">¶</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">directed</span> <span class="pre">graph</span></code> is characterized by the direction of the edge flow, i.e., units can only travel along the edge in one direction.
 Consider the following directed graph:</p>
 <figure class="align-default" id="dir-graph">
@@ -410,15 +345,11 @@ Consider the following directed graph:</p>
 </figure>
 <p>that connectects the four vertices <span class="math notranslate nohighlight">\(A, B, C, D\)</span> with the five directed links <span class="math notranslate nohighlight">\(e_1, e_2, e_3, e_4\)</span> and <span class="math notranslate nohighlight">\(e_5\)</span>.</p>
 <section id="setup">
-<h3>1.1 Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<h2>1 Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>We can setup the above graph with paminco:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">REL_DIR</span>  <span class="o">=</span> <span class="s2">&quot;../../../..&quot;</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">REL_DIR</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">paminco</span>
 
 <span class="n">edge_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
@@ -429,7 +360,7 @@ Consider the following directed graph:</p>
     <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">],</span>
 <span class="p">])</span>
 
-<span class="n">graph</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="n">edge_data</span><span class="p">,</span> <span class="n">kw_edge</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;directed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="n">edge_data</span><span class="p">)</span>
 <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -468,7 +399,7 @@ Consider the following directed graph:</p>
       <td>B</td>
       <td>0</td>
       <td>1</td>
-      <td>-inf</td>
+      <td>0.0</td>
       <td>inf</td>
     </tr>
     <tr>
@@ -477,7 +408,7 @@ Consider the following directed graph:</p>
       <td>C</td>
       <td>0</td>
       <td>2</td>
-      <td>-inf</td>
+      <td>0.0</td>
       <td>inf</td>
     </tr>
     <tr>
@@ -486,7 +417,7 @@ Consider the following directed graph:</p>
       <td>C</td>
       <td>1</td>
       <td>2</td>
-      <td>-inf</td>
+      <td>0.0</td>
       <td>inf</td>
     </tr>
     <tr>
@@ -495,7 +426,7 @@ Consider the following directed graph:</p>
       <td>D</td>
       <td>1</td>
       <td>3</td>
-      <td>-inf</td>
+      <td>0.0</td>
       <td>inf</td>
     </tr>
     <tr>
@@ -504,7 +435,7 @@ Consider the following directed graph:</p>
       <td>D</td>
       <td>2</td>
       <td>3</td>
-      <td>-inf</td>
+      <td>0.0</td>
       <td>inf</td>
     </tr>
   </tbody>
@@ -513,7 +444,7 @@ Consider the following directed graph:</p>
 </div>
 </section>
 <section id="representations">
-<h3>1.2 Representations<a class="headerlink" href="#representations" title="Permalink to this headline">¶</a></h3>
+<h2>2 Representations<a class="headerlink" href="#representations" title="Permalink to this headline">¶</a></h2>
 <p>A graph can be represented by its <span class="math notranslate nohighlight">\(n \times n\)</span> adjacency matrix, which store as a sparse matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -546,18 +477,9 @@ Consider the following directed graph:</p>
 </div>
 </div>
 </div>
-<section id="adjacency-matrix">
-<h4>1.2.1 Adjacency matrix<a class="headerlink" href="#adjacency-matrix" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="incidence-matrix">
-<h4>1.2.2 Incidence matrix<a class="headerlink" href="#incidence-matrix" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="laplacian-matrix">
-<h4>1.2.3 Laplacian matrix<a class="headerlink" href="#laplacian-matrix" title="Permalink to this headline">¶</a></h4>
-</section>
 </section>
 <section id="edge-bounds">
-<h3>1.3 Edge bounds<a class="headerlink" href="#edge-bounds" title="Permalink to this headline">¶</a></h3>
+<h2>3 Edge bounds<a class="headerlink" href="#edge-bounds" title="Permalink to this headline">¶</a></h2>
 <p>Depending on the specific problem, each edge may only allow a certain maximum of flow on the edge, i.e., it has an <code class="docutils literal notranslate"><span class="pre">upper</span> <span class="pre">bound</span></code>. By default these bounds are <span class="math notranslate nohighlight">\((0, \infty)\)</span> for directed edges. However, it is possible to pass individual flow bounds for each edge:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -660,60 +582,8 @@ Consider the following directed graph:</p>
 </div></div></div>
 </div>
 </section>
-</section>
-<section id="undirected-graphs">
-<h2>2 Undirected graphs<a class="headerlink" href="#undirected-graphs" title="Permalink to this headline">¶</a></h2>
-<section id="id1">
-<h3>2.1 Setup<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-</section>
-<section id="id2">
-<h3>2.2 Representations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<section id="id3">
-<h4>2.2.1 Adjacency matrix<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="id4">
-<h4>2.2.2 Incidence matrix<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="id5">
-<h4>2.2.3 Laplacian matrix<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-</section>
-</section>
-<section id="id6">
-<h3>2.3 Edge bounds<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">csgraph</span><span class="p">(</span><span class="n">respect_bounds</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 1., 1., 0.],
-       [0., 0., 1., 1.],
-       [0., 0., 0., 1.],
-       [0., 0., 0., 0.]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">csgraph</span><span class="p">(</span><span class="n">respect_bounds</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 1., 1., 0.],
-       [0., 0., 1., 1.],
-       [0., 0., 0., 1.],
-       [0., 0., 0., 0.]])
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
 <section id="labels-to-indices-mapping">
-<h2>3. Labels to indices mapping<a class="headerlink" href="#labels-to-indices-mapping" title="Permalink to this headline">¶</a></h2>
+<h2>4 Labels to indices mapping<a class="headerlink" href="#labels-to-indices-mapping" title="Permalink to this headline">¶</a></h2>
 <p>In a network, the <code class="docutils literal notranslate"><span class="pre">nodes</span></code> objects handles the mapping of labels to indices, which influences the graph representation.
 The mapping is accessed by:</p>
 <div class="cell docutils container">
@@ -734,7 +604,7 @@ The mapping is accessed by:</p>
 <li><p>specfiy mapping for edge constructor</p></li>
 </ol>
 <section id="pass-indices-in-node-data">
-<h3>3.1 Pass indices in node data<a class="headerlink" href="#pass-indices-in-node-data" title="Permalink to this headline">¶</a></h3>
+<h3>4.1 Pass indices in node data<a class="headerlink" href="#pass-indices-in-node-data" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">]</span>
@@ -820,7 +690,7 @@ The mapping is accessed by:</p>
 </div>
 </section>
 <section id="specifing-label-mapping-in-edges">
-<h3>3.2 Specifing label mapping in edges<a class="headerlink" href="#specifing-label-mapping-in-edges" title="Permalink to this headline">¶</a></h3>
+<h3>4.2 Specifing label mapping in edges<a class="headerlink" href="#specifing-label-mapping-in-edges" title="Permalink to this headline">¶</a></h3>
 <p>We can achieve the same by specfying a <code class="docutils literal notranslate"><span class="pre">map_labels_to_indices</span></code> mapping in edges:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

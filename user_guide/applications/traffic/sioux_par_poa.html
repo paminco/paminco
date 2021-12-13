@@ -313,16 +313,7 @@
               
               <div>
                 
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">REL_DIR</span>  <span class="o">=</span> <span class="s2">&quot;../../../../&quot;</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">REL_DIR</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="siouxfalls-parametric-price-of-anarchy">
+  <section class="tex2jax_ignore mathjax_ignore" id="siouxfalls-parametric-price-of-anarchy">
 <h1>SiouxFalls - (Parametric) Price of Anarchy<a class="headerlink" href="#siouxfalls-parametric-price-of-anarchy" title="Permalink to this headline">¶</a></h1>
 <section id="imports-and-data-readin">
 <h2>1. Imports and data readin<a class="headerlink" href="#imports-and-data-readin" title="Permalink to this headline">¶</a></h2>
@@ -339,18 +330,24 @@ The data for SiouxFalls comes with paminco and can be easily loaded:</p>
 </div>
 </div>
 <p>By default the edge cost equal the link travel time: <span class="math notranslate nohighlight">\(F_e = l_e\)</span>.
-The link travel time is defined as
+The link travel time is defined as</p>
+<div class="math notranslate nohighlight">
+\[
 \begin{equation*}
 l_e(x_e) = \text{fft}_e \cdot \left( 1 + B_e \cdot \left(\frac{x}{\text{cap}_e}\right) ^ {p_e} \right)
-\end{equation*}</p>
+\end{equation*}
+\]</div>
 </section>
 <section id="fixed-price-of-anarchy-with-frank-wolfe">
 <h2>2. Fixed Price of Anarchy with Frank-Wolfe<a class="headerlink" href="#fixed-price-of-anarchy-with-frank-wolfe" title="Permalink to this headline">¶</a></h2>
-<p>We find minimum cost flows that coincide with user equilibrium and system optimum if we transform the edge cost by:
+<p>We find minimum cost flows that coincide with user equilibrium and system optimum if we transform the edge cost by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align}
-\text{User equilibrium:} \quad F_e &amp;= \int_0^{x_e} l_e(s) ds \
-\text{System optimum:} \quad F_e &amp;= x_e \cdot l_e \
-\end{align}</p>
+    \text{User equilibrium:} \quad F_e &amp;= \int_0^{x_e} l_e(s) ds \\ 
+    \text{System optimum:} \quad F_e &amp;= x_e \cdot l_e \\ 
+\end{align}
+\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span>
@@ -372,18 +369,24 @@ l_e(x_e) = \text{fft}_e \cdot \left( 1 + B_e \cdot \left(\frac{x}{\text{cap}_e}\
 </div>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Price_of_anarchy">Price of Annarchy</a> (PoA) measures the inefficency of the network utilization due to selfish behaviour of the participants.
 It is calculated as the ratio of the total (or equivalently average) travel time for all particpants in the user equilbrium to that of the system optimum:</p>
-<p>\begin{equation*}
-\text{PoA} = \frac{C(\text{UE})}{C(\text{SO})},
-\end{equation*}</p>
-<p>where <span class="math notranslate nohighlight">\(C\)</span> is the total system travel time (TSTT):
+<div class="math notranslate nohighlight">
+\[
 \begin{equation*}
-\text{TTST}(\mathbf{x}) = x_e \cdot l_e,
+    \text{PoA} = \frac{C(\text{UE})}{C(\text{SO})},
 \end{equation*}
-i.e., the objective function of the system optimal minimum cost flow.</p>
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(C\)</span> is the total system travel time (TSTT):</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+    \text{TTST}(\mathbf{x}) = x_e \cdot l_e,
+\end{equation*}
+\]</div>
+<p>i.e., the objective function of the system optimal minimum cost flow.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">TTST</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">sioux_so</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">F</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">sioux</span><span class="o">.</span><span class="n">cost</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -397,7 +400,7 @@ i.e., the objective function of the system optimal minimum cost flow.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0388035657861385
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0388035657861383
 </pre></div>
 </div>
 </div>
@@ -456,7 +459,7 @@ We can achieve this with the <code class="docutils literal notranslate"><span cl
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Parametric Price of Anarchy&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/sioux_par_poa_18_1.png" src="../../../_images/sioux_par_poa_18_1.png" />
+<img alt="../../../_images/sioux_par_poa_17_1.png" src="../../../_images/sioux_par_poa_17_1.png" />
 </div>
 </div>
 </section>
