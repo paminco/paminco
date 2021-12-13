@@ -12,7 +12,7 @@ Class Description
 Settings and Subclasses
 =======================
 .. autosummary::
-   :toctree: generated/
+   :toctree: generated/ 
    
    EFAConfig
    NodePotentials

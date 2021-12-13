@@ -9,8 +9,7 @@ Algorithms
 The following main algorithms are implemented in paminco.
 While EFA computes an exact parametric minimum cost flow function for piecewise quadratic edge 
 cost, MCA and MCFI both output a 
-TODO
-.. :ref:`alpha-beta-approximate <theory-mcf-abapprox>`
+:ref:`alpha-beta-approximate <theory-mcf-abapprox>`
 minimum cost flow function.
 
 .. list-table:: Algorithms for parametric mincost flows

@@ -364,13 +364,6 @@ class EFA(ParametricSolver):
     kwargs : keyword arguments, optional
         Further options for EFA, see MCFIConfig.
     
-    Attributes
-    ----------
-    region
-    edges
-    edge_coeffs
-    node_potentials
-    
     See Also
     --------
     EFAConfig : Settings for EFA.
