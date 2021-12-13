@@ -39,7 +39,7 @@ and system optimum -- with paminco:
 
   Braess Paradox <braess_paradox.ipynb>
   Pigou's Example <pigou_example.ipynb>
-  SiouxFalls - User Eqiulibrium <sioux_fixed_ue.ipynb>
+  SiouxFalls - User Equilibrium <sioux_fixed_ue.ipynb>
   SiouxFalls - Parametric Price of Anarchy <sioux_par_poa.ipynb>
   Barcelona - Price of Anarchy <barcelona_poa.ipynb>
 

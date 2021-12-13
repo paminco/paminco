@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/contentui.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/paminco.css" />
@@ -186,7 +186,7 @@
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applications/traffic/sioux_fixed_ue.html">
-       SiouxFalls - User Eqiulibrium
+       SiouxFalls - User Equilibrium
       </a>
      </li>
      <li class="toctree-l3">
@@ -248,11 +248,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="howto_read_from_xml.html">
      How to readin network data from XML
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="howto_shortest_path.html">
-     How to calculate shortest path
     </a>
    </li>
    <li class="toctree-l2">
@@ -407,10 +402,13 @@ and how to specify labels to indices mappings.</p>
 <h2>1 Directed graphs<a class="headerlink" href="#directed-graphs" title="Permalink to this headline">¶</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">directed</span> <span class="pre">graph</span></code> is characterized by the direction of the edge flow, i.e., units can only travel along the edge in one direction.
 Consider the following directed graph:</p>
-<center> 
-<img src="img/dir_graph.jpg" width="500">
-</center>
-<p>that connectects the four vertices <span class="math notranslate nohighlight">\(A, B, C, D\)</span> with the five directed links <span class="math notranslate nohighlight">\(e_1, e_2, e_3, e_4\)</span> and  <span class="math notranslate nohighlight">\(e_5\)</span>.</p>
+<figure class="align-default" id="dir-graph">
+<a class="reference internal image-reference" href="../../_images/dir_graph1.jpg"><img alt="../../_images/dir_graph1.jpg" src="../../_images/dir_graph1.jpg" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">Simple directed graph.</span><a class="headerlink" href="#dir-graph" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>that connectects the four vertices <span class="math notranslate nohighlight">\(A, B, C, D\)</span> with the five directed links <span class="math notranslate nohighlight">\(e_1, e_2, e_3, e_4\)</span> and <span class="math notranslate nohighlight">\(e_5\)</span>.</p>
 <section id="setup">
 <h3>1.1 Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
 <p>We can setup the above graph with paminco:</p>

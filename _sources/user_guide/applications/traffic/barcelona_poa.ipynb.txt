@@ -1,17 +1,6 @@
 {
  "cells": [
   {
-   "cell_type": "code",
-   "execution_count": 1,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "import sys\n",
-    "REL_DIR  = \"../../../../../\"\n",
-    "sys.path.append(REL_DIR)"
-   ]
-  },
-  {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
@@ -29,62 +18,53 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "First, we import the *paminco* and some other packages:"
+    "First, we import the *paminco* and some other packages and download the traffic data for Barcelona from [GitHub](https://github.com/bstabler/TransportationNetworks/tree/master/Barcelona)."
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 52,
    "metadata": {},
    "outputs": [],
    "source": [
-    "import pandas as pd\n",
-    "import numpy as np\n",
+    "import os\n",
+    "import requests\n",
     "\n",
-    "import paminco"
+    "import paminco\n",
+    "\n",
+    "URL = \"https://raw.githubusercontent.com/bstabler/TransportationNetworks/master/Barcelona/\"\n",
+    "netfile = \"Barcelona_net.tntp\"\n",
+    "tripsfile = \"Barcelona_trips.tntp\"\n",
+    "\n",
+    "# Load from GitHub and save locally\n",
+    "for f in [netfile, tripsfile]:\n",
+    "    url = os.path.join(URL, f)\n",
+    "    response = requests.get(url)\n",
+    "    with open(f, 'wb') as fh:\n",
+    "        fh.write(response.content)"
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "Note that the power factor $p_e$ for the link travel time $l_e(x_e) = \\text{fft}_e \\cdot \\left( 1 + B_e \\cdot \\left(\\frac{x}{\\text{cap}_e}\\right) ^ {p_e} \\right)$ is ``not`` an integer for the Barcelona network, where we find power factors such  ``4.446, 4.924, ...``.\n",
     "\n",
-    "We load the Barcelona network from our converted .xml file. "
+    "However, we can equip a network with custom cost functions by setting ``cost_type=symbolic``:"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 53,
    "metadata": {},
    "outputs": [],
    "source": [
-    "barcelona = paminco.net.Network.from_xml(REL_DIR + \"data/traffic/Barcelona.xml\")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "Note that we assume that the power factor $p_e$ for the link travel time $l_e(x_e) = \\text{fft}_e \\cdot \\left( 1 + B_e \\cdot \\left(\\frac{x}{\\text{cap}_e}\\right) ^ {p_e} \\right)$ is an integer. This is not the case for the Barcelona network, where we find power factors such  ``4.446, 4.924, ...``.\n",
+    "# Setup network\n",
+    "net = paminco.Network.from_tntp(netfile, tripsfile=tripsfile, cost_type=\"symbolic\")\n",
     "\n",
-    "However, this allows us to see how we can equip our network with custom cost functions. For this, we first get the link travel time coefficients from the *Barcelona_net.tntp* [[download from here]](https://github.com/bstabler/TransportationNetworks/tree/master/Barcelona) file:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 4,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# https://github.com/bstabler/TransportationNetworks/blob/master/_scripts/parsing%20networks%20in%20Python.ipynb\n",
-    "net = pd.read_csv(\"data/Barcelona_net.tntp\", skiprows=8, sep='\\t')\n",
-    "net.columns = [s.strip().lower() for s in net.columns]   \n",
-    "net.drop(['~', ';'], axis=1, inplace=True)\n",
-    "\n",
-    "# Get cost coefficients as dict (str -> np.ndarray)\n",
-    "coeffs = net[[\"free_flow_time\", \"b\", \"power\", \"capacity\"]]\n",
-    "coeffs.columns = [\"fft\", \"b\", \"p\", \"c\"]\n",
-    "coeffs = {k: coeffs[k].values for k in coeffs.columns}"
+    "# Cleanup\n",
+    "for f in [netfile, tripsfile]:\n",
+    "    os.remove(f)"
    ]
   },
   {
@@ -100,10 +80,13 @@
    "source": [
     "Second, we set up SymbolicCost, defining the edge cost $F_e$ and thus the objective function to calculate both user equilibrium (UE) and system optimum (SO).\n",
     "We find minimum cost flows for user equilibrium and system optimum if we transform the edge cost by:\n",
+    "\n",
+    "$$\n",
     "\\begin{align}\n",
-    "\\text{User equilibrium:} \\quad F_e &= \\int_0^{x_e} l_e(s) ds \\\\ \n",
-    "\\text{System optimum:} \\quad F_e &= x_e \\cdot l_e \\\\ \n",
+    "    \\text{User equilibrium:} \\quad F_e &= \\int_0^{x_e} l_e(s) ds \\\\ \n",
+    "    \\text{System optimum:} \\quad F_e &= x_e \\cdot l_e \\\\ \n",
     "\\end{align}\n",
+    "$$\n",
     "\n",
     "Note that [Frank-Wolfe](https://en.wikipedia.org/wiki/Frank%E2%80%93Wolfe_algorithm) requires the first derivative of the objective function.\n",
     "Thus, we have to specfiy edge cost $F_e$ and marginal edge cost $f_e$.\n"
@@ -111,29 +94,21 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 58,
    "metadata": {},
    "outputs": [],
    "source": [
     "# User equilibrium cost funcs (egde cost and marginal edge cost)\n",
     "ue_F = \"fft * (x + b * x / (p + 1) * (x / c)**p)\"\n",
     "ue_f = \"fft * (1 + b * (x / c)**p)\"\n",
-    "ue_cost = paminco.net.cost.SymbolicCost(\n",
-    "    coeffs,\n",
-    "    F = ue_F,\n",
-    "    f = ue_f,\n",
-    "    shared=barcelona.shared,\n",
-    ")\n",
     "\n",
     "# System optimum cost funcs (egde cost and marginal edge cost)\n",
     "so_F = \"x * fft * (1 + b * x**p * c**(-p))\"\n",
     "so_f = \"fft + fft * b * (p + 1) * c**(-p) * x**(p)\"\n",
-    "so_cost = paminco.net.cost.SymbolicCost(\n",
-    "    coeffs,\n",
-    "    F = so_F,\n",
-    "    f = so_f,\n",
-    "    shared=barcelona.shared,\n",
-    ")"
+    "\n",
+    "net.cost.coeffs[\"fft\"] = net.cost.coeffs[\"free_flow_time\"]\n",
+    "net.cost.coeffs[\"c\"] = net.cost.coeffs[\"capacity\"]\n",
+    "net.cost.coeffs[\"p\"] = net.cost.coeffs[\"power\"]"
    ]
   },
   {
@@ -147,30 +122,31 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Finally, we equip our network with each cost instances and run Frank-Wolfe to find a minimum cost flow:"
+    "Finally, we equip our network with both cost functions instances and run Frank-Wolfe to find a minimum cost flow:"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 71,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "1285164.7080005545"
-      ]
-     },
-     "execution_count": 12,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
-    "barcelona.set_cost(so_cost)\n",
-    "fw_so = paminco.NetworkFW(barcelona)\n",
-    "fw_so.run(max_iter=10, print=False)\n",
-    "fw_so.cost"
+    "# copy networks\n",
+    "from copy import deepcopy\n",
+    "\n",
+    "# user equilibrium\n",
+    "net_ue = deepcopy(net)\n",
+    "net_ue.cost.funcs[\"F\"] = ue_F\n",
+    "net_ue.cost.funcs[\"f\"] = ue_f\n",
+    "fw_ue = paminco.NetworkFW(net_ue)\n",
+    "fw_ue.run(max_iter=10, print=False)\n",
+    "\n",
+    "# system optimum\n",
+    "net_so = deepcopy(net)\n",
+    "net_so.cost.funcs[\"F\"] = so_F\n",
+    "net_so.cost.funcs[\"f\"] = so_f\n",
+    "fw_so = paminco.NetworkFW(net_so)\n",
+    "fw_so.run(max_iter=10, print=False)"
    ]
   },
   {
@@ -182,105 +158,23 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "so_cost.cost.save_to_numpy(f)\n",
-    "cost2 = paminco.net.cost.SymbolicCost.from_npz(f)\n",
-    "\n",
-    "\n",
-    "barcelona.set_cost(so_cost)\n",
-    "fw_so = paminco.NetworkFW(barcelona)\n",
-    "fw_so.run(max_iter=10, print=False)\n",
-    "fw_so.cost"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 72,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "['cost_type',\n",
-       " 'coeffs_fft',\n",
-       " 'coeffs_b',\n",
-       " 'coeffs_p',\n",
-       " 'coeffs_c',\n",
-       " 'costfuncs_F',\n",
-       " 'costfuncs_f']"
+       "array([1062.3604087 , 1183.7485913 ,    0.        , ..., 1061.32166004,\n",
+       "          0.        , 4203.83150619])"
       ]
      },
-     "execution_count": 7,
+     "execution_count": 72,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    "import tempfile\n",
-    "\n",
-    "f = tempfile.mkstemp(suffix=\".npz\")[1]\n",
-    "barcelona.cost.save_to_numpy(f)\n",
-    "cost2 = paminco.net.cost.SymbolicCost.from_npz(f)\n",
-    "\n",
-    "data = np.load(f)\n",
-    "list(data.keys())"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 8,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "cost_type\n",
-      "coeffs_fft\n",
-      "coeffs_b\n",
-      "coeffs_p\n",
-      "coeffs_c\n",
-      "costfuncs_F\n",
-      "costfuncs_f\n"
-     ]
-    }
-   ],
-   "source": [
-    "for k,v in data.items():\n",
-    "    print(k)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 9,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "cost2 = paminco.net.cost.SymbolicCost.from_npz(f)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 10,
-   "metadata": {},
-   "outputs": [
-    {
-     "ename": "TypeError",
-     "evalue": "save_to_numpy() missing 1 required positional argument: 'file'",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[1;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
-      "\u001b[1;32m<ipython-input-10-a817b66495f0>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[1;32m----> 1\u001b[1;33m \u001b[0mbarcelona\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mcost\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0msave_to_numpy\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
-      "\u001b[1;31mTypeError\u001b[0m: save_to_numpy() missing 1 required positional argument: 'file'"
-     ]
-    }
-   ],
-   "source": [
-    "barcelona.cost.save_to_numpy()"
+    "fw_ue.x"
    ]
   },
   {
@@ -295,40 +189,43 @@
    "metadata": {},
    "source": [
     "The objective function to calculate the system optimum is the total system travel time (TSTT):\n",
+    "\n",
+    "$$\n",
     "\\begin{equation*}\n",
-    "\\text{TSTT}(\\mathbf{x}) = \\sum_{e \\in E} x_{e} \\cdot l_{e}(x_e)\n",
-    "\\end{equation*}"
+    "    \\text{TSTT}(\\mathbf{x}) = \\sum_{e \\in E} x_{e} \\cdot l_{e}(x_e)\n",
+    "\\end{equation*}\n",
+    "$$"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 75,
    "metadata": {},
    "outputs": [],
    "source": [
     "def TTST(x):\n",
-    "    return so_cost.F(x).sum()"
+    "    return net_so.cost(x).sum()"
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "We find that the total system travel time for Barcelona is increased by about ``2.3 percent`` if users behave selfishly:"
+    "We find that the total system travel time for Barcelona is increased by about ``0.9 percent`` if users behave selfishly:"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 79,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "1.0211888925812171"
+       "1.0088344480937708"
       ]
      },
-     "execution_count": 9,
+     "execution_count": 79,
      "metadata": {},
      "output_type": "execute_result"
     }

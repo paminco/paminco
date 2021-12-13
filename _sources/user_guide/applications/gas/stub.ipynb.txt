@@ -4,14 +4,14 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# STUB"
+    "# TODO"
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "blabla"
+    "todo"
    ]
   },
   {
