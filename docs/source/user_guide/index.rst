@@ -31,8 +31,8 @@ User Guide
   .. dropdown:: *Braess Paradox*: Adding capacity to a network might decrease network efficiency due to selfish participants.
     
     .. image:: applications/traffic/img/braess.jpg
-        :width: 700
-        :alt: Parametric User Equilibria for Sioux Falls
+        :width: 500
+        :alt: Braess network
         :align: center
 
     Adding capacity to a network might decrease network efficiency due to selfish participants.
@@ -45,6 +45,13 @@ User Guide
   
   .. dropdown:: *Pigou's Example*: An upper bound for the Price of Anarchy
 
+    .. image:: applications/traffic/img/pigou.png
+        :width: 500
+        :alt: Pigou network
+        :align: center
+
+    Simple network with a price of anarchy of :math:`\text{PoA} = \frac{4}{3}`.
+
     .. link-button:: applications/traffic/pigou_example.html
         :text: Go to user guide
         :classes: btn-outline-primary
@@ -52,6 +59,13 @@ User Guide
     :link-badge:`fw-net,NetworkFW,ref,badge-success`
   
   .. dropdown:: *SiouxFalls*: calculating and plotting a fixed user equilibrium
+
+    .. image:: applications/traffic/img/sioux_ue.png
+        :height: 500
+        :alt: Pigou network
+        :align: center
+
+    We compute a user equilibrium and plot it using NetworkX.
 
     .. link-button:: applications/traffic/sioux_fixed_ue.html
         :text: Go to user guide
@@ -61,9 +75,17 @@ User Guide
   
   .. dropdown:: *SiouxFalls*: parametric Price of Anarchy
 
+    .. image:: applications/traffic/img/sioux_poa.png
+        :width: 500
+        :alt: Pigou network
+        :align: center
+
+    We compute a parametric price of anarchy for SiouxFalls and a single commodity.
+
     .. link-button:: applications/traffic/sioux_par_poa.html
         :text: Go to user guide
         :classes: btn-outline-primary
+
     
     :link-badge:`mca,MCA,ref,badge-success`
   
@@ -72,13 +94,16 @@ User Guide
     .. link-button:: applications/traffic/barcelona_poa.html
         :text: Go to user guide
         :classes: btn-outline-primary
+
+    We calculate user equilibrium and system optimum for Barcelona 
+    with :class:`SymbolicCost <paminco.net.cost.SymbolicCost>` due to non-integer power factors.
     
     :link-badge:`fw-net,NetworkFW,ref,badge-success`
+    :link-badge:`cost-symbolic,SymbolicCost,ref,badge-light`
 
 .. tabbed:: Natural Gas
 
-  .. dropdown:: *SiouxFalls*: calculating and plotting a fixed user equilibrium
-
+  .. dropdown:: Bla
     .. link-button:: applications/traffic/sioux_fixed_ue.html
         :text: Go to user guide
         :classes: btn-outline-primary
@@ -96,14 +121,14 @@ User Guide
 
   .. dropdown:: *Graph Setup*: directed graphs (with negative flows)
 
+    .. image:: ../_static/img/dir_graph.jpg
+      :width: 400
+      :align: center
+
     We set up directed graphs,
     learn about graph representations and how to set lower
-    and upper boundaries for the edge flows in order to allow for negative edge flows 
+    and upper boundaries for the edge flow in order to allow for negative edge flows 
     (thus creating undirected graphs).
-
-    .. image:: ../_static/img/dir_graph.jpg
-      :width: 300
-      :align: center
 
     .. link-button:: network_setup/howto_graph_setup.html
         :text: Go to user guide
@@ -113,13 +138,13 @@ User Guide
     :link-badge:`~nodes,Nodes,"ref",badge-info`
 
   .. dropdown:: *Edge Cost*: polynomial, piecewise quadratic, or symbolic
-    
+  
+      .. image:: /_static/img/tikz/fig2a_graph_with_marginal_cost.png
+      :width: 400
+      :align: center
+
     We show how to equip a network with cost functions, 
     i.e., how the cost :math:`F_e` of an edge :math:`e` vary by the flow on that edge. 
-
-    .. image:: /_static/img/tikz/fig2a_graph_with_marginal_cost.png
-      :width: 300
-      :align: center
 
     .. link-button:: network_setup/howto_set_cost.html
         :text: Go to user guide
@@ -159,10 +184,6 @@ User Guide
     We specify node positions and used them to plot a network
     with `NetworkX <https://networkx.org/>`_.
 
-    .. image:: /_static/img/sioux_ue.gif
-      :width: 400
-      :align: center
-    
     .. link-button:: network_setup/howto_plot_network.html
         :text: Go to user guide
         :classes: btn-outline-primary

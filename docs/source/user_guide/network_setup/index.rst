@@ -12,5 +12,4 @@ For further details about how to set up a graph (directed or undirected) or spec
   How to equip a network with cost functions <howto_set_cost.ipynb>
   How to specify the demand function for a network <howto_set_demand.ipynb>
   How to readin network data from XML <howto_read_from_xml.ipynb>
-  How to calculate shortest path <howto_shortest_path.ipynb>
   How to plot a network <howto_plot_network.ipynb>
