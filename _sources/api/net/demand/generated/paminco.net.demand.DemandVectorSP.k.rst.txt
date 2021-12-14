@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVectorSP.k
-===================================
+﻿DemandVectorSP.k
+================
 
 .. currentmodule:: paminco.net.demand
 

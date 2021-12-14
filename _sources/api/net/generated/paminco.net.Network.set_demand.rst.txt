@@ -1,5 +1,5 @@
-﻿paminco.net.Network.set\_demand
-===============================
+﻿Network.set\_demand
+===================
 
 .. currentmodule:: paminco.net
 

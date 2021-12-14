@@ -1,5 +1,5 @@
-﻿paminco.net.demand.AffineDemandFunction.value\_at\_1
-====================================================
+﻿AffineDemandFunction.value\_at\_1
+=================================
 
 .. currentmodule:: paminco.net.demand
 

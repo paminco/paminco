@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.dtype\_float
-===============================
+﻿Shared.dtype\_float
+===================
 
 .. currentmodule:: paminco.net
 

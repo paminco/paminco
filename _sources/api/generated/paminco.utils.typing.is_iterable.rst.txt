@@ -1,5 +1,5 @@
-﻿paminco.utils.typing.is\_iterable
-=================================
+﻿is\_iterable
+============
 
 .. currentmodule:: paminco.utils.typing
 

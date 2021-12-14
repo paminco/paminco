@@ -1,5 +1,5 @@
-﻿paminco.net.Nodes.set\_mappings
-===============================
+﻿Nodes.set\_mappings
+===================
 
 .. currentmodule:: paminco.net
 

@@ -1,5 +1,5 @@
-﻿paminco.optim.subproblem.subproblem\_solver
-===========================================
+﻿subproblem\_solver
+==================
 
 .. currentmodule:: paminco.optim.subproblem
 

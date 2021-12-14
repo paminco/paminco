@@ -1,5 +1,5 @@
-﻿paminco.net.demand.\_DV.dtype\_int
-==================================
+﻿\_DV.dtype\_int
+===============
 
 .. currentmodule:: paminco.net.demand
 

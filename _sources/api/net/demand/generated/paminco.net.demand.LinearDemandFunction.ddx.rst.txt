@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.ddx
-===========================================
+﻿LinearDemandFunction.ddx
+========================
 
 .. currentmodule:: paminco.net.demand
 

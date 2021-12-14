@@ -1,5 +1,5 @@
-﻿paminco.algo.mca.MCA.lambda\_max
-================================
+﻿MCA.lambda\_max
+===============
 
 .. currentmodule:: paminco.algo.mca
 

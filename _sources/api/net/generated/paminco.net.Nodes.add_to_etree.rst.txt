@@ -1,5 +1,5 @@
-﻿paminco.net.Nodes.add\_to\_etree
-================================
+﻿Nodes.add\_to\_etree
+====================
 
 .. currentmodule:: paminco.net
 

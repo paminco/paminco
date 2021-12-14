@@ -1,5 +1,5 @@
-﻿paminco.callback.SimpleTimer
-============================
+﻿SimpleTimer
+===========
 
 .. currentmodule:: paminco.callback
 

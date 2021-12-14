@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVectorSP.reset\_cache
-==============================================
+﻿DemandVectorSP.reset\_cache
+===========================
 
 .. currentmodule:: paminco.net.demand
 

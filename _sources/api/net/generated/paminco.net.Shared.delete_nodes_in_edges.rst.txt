@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.delete\_nodes\_in\_edges
-===========================================
+﻿Shared.delete\_nodes\_in\_edges
+===============================
 
 .. currentmodule:: paminco.net
 

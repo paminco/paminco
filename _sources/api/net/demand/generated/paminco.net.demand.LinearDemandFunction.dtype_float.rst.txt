@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.dtype\_float
-====================================================
+﻿LinearDemandFunction.dtype\_float
+=================================
 
 .. currentmodule:: paminco.net.demand
 

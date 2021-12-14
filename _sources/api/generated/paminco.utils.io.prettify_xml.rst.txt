@@ -1,5 +1,5 @@
-﻿paminco.utils.io.prettify\_xml
-==============================
+﻿prettify\_xml
+=============
 
 .. currentmodule:: paminco.utils.io
 

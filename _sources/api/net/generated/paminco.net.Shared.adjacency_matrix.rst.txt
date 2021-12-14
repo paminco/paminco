@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.adjacency\_matrix
-====================================
+﻿Shared.adjacency\_matrix
+========================
 
 .. currentmodule:: paminco.net
 

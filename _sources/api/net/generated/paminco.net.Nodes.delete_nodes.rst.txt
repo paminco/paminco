@@ -1,5 +1,5 @@
-﻿paminco.net.Nodes.delete\_nodes
-===============================
+﻿Nodes.delete\_nodes
+===================
 
 .. currentmodule:: paminco.net
 

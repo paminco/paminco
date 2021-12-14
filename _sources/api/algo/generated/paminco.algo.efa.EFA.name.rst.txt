@@ -1,5 +1,5 @@
-﻿paminco.algo.efa.EFA.name
-=========================
+﻿EFA.name
+========
 
 .. currentmodule:: paminco.algo.efa
 

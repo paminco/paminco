@@ -15,9 +15,9 @@ Methods
 Constructors
 ------------
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
-   Network.__init__
    Network.from_xml
    Network.from_npz
 
@@ -25,6 +25,7 @@ Constructors
 Specifying demand and cost
 --------------------------
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    Network.set_demand
@@ -37,6 +38,7 @@ Specifying demand and cost
 Math  
 ----
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    Network.adjacency_matrix
@@ -55,6 +57,7 @@ Math
 Path and Connectedness
 ----------------------
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    Network.shortest_path
@@ -67,6 +70,7 @@ Path and Connectedness
 Cleaning
 --------
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    Network.delete_edges
@@ -77,6 +81,7 @@ Cleaning
 Attributes
 ==========
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    Network.cost

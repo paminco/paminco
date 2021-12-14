@@ -13,6 +13,7 @@ Attributes
 ==========
 .. autosummary::
    :toctree: generated/
+   :template: base_short.rst
 
    AffineDemandFunction._dv0
    AffineDemandFunction.all_single_pairs
@@ -31,6 +32,7 @@ Methods
 
 .. autosummary::
    :toctree: generated/
+   :template: base_short.rst
 
    AffineDemandFunction.value
    AffineDemandFunction.ddx

@@ -1,5 +1,5 @@
-﻿paminco.linalg.star\_inv
-========================
+﻿star\_inv
+=========
 
 .. currentmodule:: paminco.linalg
 

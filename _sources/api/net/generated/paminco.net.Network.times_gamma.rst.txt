@@ -1,5 +1,5 @@
-﻿paminco.net.Network.times\_gamma
-================================
+﻿Network.times\_gamma
+====================
 
 .. currentmodule:: paminco.net
 

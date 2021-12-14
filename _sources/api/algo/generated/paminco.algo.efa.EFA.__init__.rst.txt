@@ -1,5 +1,5 @@
-﻿paminco.algo.efa.EFA.\_\_init\_\_
-=================================
+﻿EFA.\_\_init\_\_
+================
 
 .. currentmodule:: paminco.algo.efa
 

@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVector.\_\_call\_\_
-============================================
+﻿DemandVector.\_\_call\_\_
+=========================
 
 .. currentmodule:: paminco.net.demand
 

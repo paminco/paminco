@@ -1,5 +1,5 @@
-﻿paminco.\_base.ParametricSolution.from\_arrays
-==============================================
+﻿ParametricSolution.from\_arrays
+===============================
 
 .. currentmodule:: paminco._base
 

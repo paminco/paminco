@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.to\_single\_pairs
-=========================================================
+﻿LinearDemandFunction.to\_single\_pairs
+======================================
 
 .. currentmodule:: paminco.net.demand
 

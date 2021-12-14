@@ -13,6 +13,7 @@ Class Description
 Settings
 ========
 .. autosummary::
+   :template: autoclass.rst
    :toctree: generated/
    
    NetworkFWConfig
@@ -20,6 +21,7 @@ Settings
 Attributes
 ==========
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    NetworkFW.config
@@ -34,6 +36,7 @@ Attributes
 Methods
 =======
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    NetworkFW.__init__

@@ -236,7 +236,7 @@
         <span class="s2">&quot;print&quot;</span><span class="p">,</span>
     <span class="p">]</span>
     
-<div class="viewcode-block" id="MCFIConfig.__init__"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.mcfi.MCFIConfig.html#paminco.algo.mcfi.MCFIConfig.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lambda_min</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lambda_max</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_adaptive_method</span> <span class="o">=</span> <span class="n">AdaptiveMethod</span><span class="o">.</span><span class="n">BASIC</span>
@@ -246,7 +246,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">warmstart</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">print</span> <span class="o">=</span> <span class="kc">False</span>
         
-        <span class="bp">self</span><span class="o">.</span><span class="n">map_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">map_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">map_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">kw</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -326,7 +326,7 @@
 <span class="sd">        array([ 638722.63, 1673514.68, 2062773.13])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MCFI.__init__"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.mcfi.MCFI.__init__.html#paminco.algo.mcfi.MCFI.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">net</span><span class="p">:</span> <span class="n">Network</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -359,7 +359,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_param_solution</span> <span class="o">=</span> <span class="n">ParametricSolution</span><span class="p">()</span>
         
         <span class="c1"># Flag end of iteration to listeners</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">INIT_END</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">INIT_END</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_preprocess</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">pass</span>
@@ -442,7 +442,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_add_param_solution</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">flow</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
             
             <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">ITER_END</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_print_iteration</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_print_iteration_summary</span><span class="p">()</span>
         
         <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">RUN_END</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
         
@@ -517,7 +517,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_add_param_solution</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">flow</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
             
             <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">ITER_END</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_print_iteration</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_print_iteration_summary</span><span class="p">()</span>
             
             <span class="c1"># Stop if param exceeds lambda_max</span>
             <span class="k">if</span> <span class="n">param</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">lambda_max</span><span class="p">:</span>
@@ -644,10 +644,10 @@
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Function solve did not converge&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">_print_iteration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># TODO</span>
+    <span class="k">def</span> <span class="nf">_print_iteration_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">print</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param_solution</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">param</span><span class="p">)</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Iteration </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">i</span><span class="si">:</span><span class="s2">4d</span><span class="si">}</span><span class="s2"> | λ = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">param_solution</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">param</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MCFIConfig</span><span class="p">:</span>

@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommoditySingleSourceSink.get\_scaled\_copy
-==============================================================
+﻿CommoditySingleSourceSink.get\_scaled\_copy
+===========================================
 
 .. currentmodule:: paminco.net.demand
 

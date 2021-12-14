@@ -177,7 +177,7 @@
 <div class="viewcode-block" id="SingularLaplaceError"><a class="viewcode-back" href="../../api/generated/paminco.linalg.SingularLaplaceError.html#paminco.linalg.SingularLaplaceError">[docs]</a><span class="k">class</span> <span class="nc">SingularLaplaceError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Error that occured while computing the Laplace matrix.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="SingularLaplaceError.__init__"><a class="viewcode-back" href="../../api/generated/paminco.linalg.SingularLaplaceError.html#paminco.linalg.SingularLaplaceError.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">network</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -194,7 +194,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">cc</span> <span class="o">=</span> <span class="n">cc</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_cc</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">cc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_info_from_network</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_info_from_network</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">_info_from_network</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>

@@ -1,5 +1,5 @@
-﻿paminco.\_base.ParametricSolution.has\_costs
-============================================
+﻿ParametricSolution.has\_costs
+=============================
 
 .. currentmodule:: paminco._base
 

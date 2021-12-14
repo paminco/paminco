@@ -1,5 +1,5 @@
-﻿paminco.net.Network.delete\_edges
-=================================
+﻿Network.delete\_edges
+=====================
 
 .. currentmodule:: paminco.net
 

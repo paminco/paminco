@@ -1,5 +1,5 @@
-﻿paminco.optim.fw\_net.NetworkFW.cost
-====================================
+﻿NetworkFW.cost
+==============
 
 .. currentmodule:: paminco.optim.fw_net
 

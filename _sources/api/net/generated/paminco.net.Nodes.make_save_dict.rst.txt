@@ -1,5 +1,5 @@
-﻿paminco.net.Nodes.make\_save\_dict
-==================================
+﻿Nodes.make\_save\_dict
+======================
 
 .. currentmodule:: paminco.net
 

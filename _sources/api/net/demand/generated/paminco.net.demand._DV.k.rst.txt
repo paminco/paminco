@@ -1,5 +1,5 @@
-﻿paminco.net.demand.\_DV.k
-=========================
+﻿\_DV.k
+======
 
 .. currentmodule:: paminco.net.demand
 

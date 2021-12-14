@@ -1,5 +1,5 @@
-﻿paminco.linalg.star\_update\_by\_edge
-=====================================
+﻿star\_update\_by\_edge
+======================
 
 .. currentmodule:: paminco.linalg
 

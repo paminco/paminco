@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.shared
-==============================================
+﻿LinearDemandFunction.shared
+===========================
 
 .. currentmodule:: paminco.net.demand
 

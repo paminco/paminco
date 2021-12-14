@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVectorSP.sink\_id
-==========================================
+﻿DemandVectorSP.sink\_id
+=======================
 
 .. currentmodule:: paminco.net.demand
 

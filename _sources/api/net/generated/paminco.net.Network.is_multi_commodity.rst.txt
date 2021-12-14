@@ -1,5 +1,5 @@
-﻿paminco.net.Network.is\_multi\_commodity
-========================================
+﻿Network.is\_multi\_commodity
+============================
 
 .. currentmodule:: paminco.net
 

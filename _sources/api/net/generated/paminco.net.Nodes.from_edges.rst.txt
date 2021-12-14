@@ -1,5 +1,5 @@
-﻿paminco.net.Nodes.from\_edges
-=============================
+﻿Nodes.from\_edges
+=================
 
 .. currentmodule:: paminco.net
 

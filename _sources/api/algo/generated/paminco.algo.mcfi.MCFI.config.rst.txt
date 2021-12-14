@@ -1,5 +1,5 @@
-﻿paminco.algo.mcfi.MCFI.config
-=============================
+﻿MCFI.config
+===========
 
 .. currentmodule:: paminco.algo.mcfi
 

@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommodityMultiSourceSink.rate
-================================================
+﻿CommodityMultiSourceSink.rate
+=============================
 
 .. currentmodule:: paminco.net.demand
 

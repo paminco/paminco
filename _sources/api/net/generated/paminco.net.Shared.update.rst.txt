@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.update
-=========================
+﻿Shared.update
+=============
 
 .. currentmodule:: paminco.net
 

@@ -1,5 +1,5 @@
-﻿paminco.\_base.ParametricSolver.potential\_at
-=============================================
+﻿ParametricSolver.potential\_at
+==============================
 
 .. currentmodule:: paminco._base
 

@@ -1,5 +1,5 @@
-﻿paminco.net.Network.Lstar
-=========================
+﻿Network.Lstar
+=============
 
 .. currentmodule:: paminco.net
 

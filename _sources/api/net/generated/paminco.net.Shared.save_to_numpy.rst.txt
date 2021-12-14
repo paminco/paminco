@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.save\_to\_numpy
-==================================
+﻿Shared.save\_to\_numpy
+======================
 
 .. currentmodule:: paminco.net
 

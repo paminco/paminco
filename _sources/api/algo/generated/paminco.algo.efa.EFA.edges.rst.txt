@@ -1,5 +1,5 @@
-﻿paminco.algo.efa.EFA.edges
-==========================
+﻿EFA.edges
+=========
 
 .. currentmodule:: paminco.algo.efa
 

@@ -1,5 +1,5 @@
-﻿paminco.utils.readin.parse\_number
-==================================
+﻿parse\_number
+=============
 
 .. currentmodule:: paminco.utils.readin
 

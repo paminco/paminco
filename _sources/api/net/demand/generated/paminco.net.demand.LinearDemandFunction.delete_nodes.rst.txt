@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.delete\_nodes
-=====================================================
+﻿LinearDemandFunction.delete\_nodes
+==================================
 
 .. currentmodule:: paminco.net.demand
 

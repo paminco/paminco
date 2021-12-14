@@ -15,6 +15,7 @@ Value
 -----
 .. autosummary::
    :toctree: generated/
+   :template: base_short.rst
 
    DemandVector.__call__
    DemandVector.sparse
@@ -23,6 +24,7 @@ Load / Save
 -----------
 .. autosummary::
    :toctree: generated/
+   :template: base_short.rst
 
    DemandVector.make_save_dict
    DemandVector.save_to_numpy
@@ -34,6 +36,7 @@ Misc
 ----
 .. autosummary::
    :toctree: generated/
+   :template: base_short.rst
 
    DemandVector.delete_nodes
    DemandVector.to_single_pairs
@@ -46,6 +49,7 @@ Attributes
 ==========
 .. autosummary::
    :toctree: generated/
+   :template: base_short.rst
 
    DemandVector.k
    DemandVector.n

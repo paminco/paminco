@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommoditySingleSourceSink.from\_tuple
-========================================================
+﻿CommoditySingleSourceSink.from\_tuple
+=====================================
 
 .. currentmodule:: paminco.net.demand
 

@@ -1,5 +1,5 @@
-﻿paminco.net.Network.n
-=====================
+﻿Network.n
+=========
 
 .. currentmodule:: paminco.net
 

@@ -1,5 +1,5 @@
-﻿paminco.\_base.ParametricSolver.plot\_flow\_on\_edge
-====================================================
+﻿ParametricSolver.plot\_flow\_on\_edge
+=====================================
 
 .. currentmodule:: paminco._base
 

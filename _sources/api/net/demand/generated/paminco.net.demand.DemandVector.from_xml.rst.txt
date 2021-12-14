@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVector.from\_xml
-=========================================
+﻿DemandVector.from\_xml
+======================
 
 .. currentmodule:: paminco.net.demand
 

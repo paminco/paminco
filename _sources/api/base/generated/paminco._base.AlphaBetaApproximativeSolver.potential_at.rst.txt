@@ -1,5 +1,5 @@
-﻿paminco.\_base.AlphaBetaApproximativeSolver.potential\_at
-=========================================================
+﻿AlphaBetaApproximativeSolver.potential\_at
+==========================================
 
 .. currentmodule:: paminco._base
 

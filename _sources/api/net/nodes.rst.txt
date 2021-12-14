@@ -13,9 +13,9 @@ Methods
 =======
 
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
-   Nodes.__init__
    Nodes.from_edges
    Nodes.from_xml
    Nodes.from_npz

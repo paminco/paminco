@@ -1,5 +1,5 @@
-﻿paminco.net.Network.dtype\_float
-================================
+﻿Network.dtype\_float
+====================
 
 .. currentmodule:: paminco.net
 

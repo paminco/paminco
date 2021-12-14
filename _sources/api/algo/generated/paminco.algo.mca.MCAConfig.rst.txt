@@ -1,5 +1,5 @@
-﻿paminco.algo.mca.MCAConfig
-==========================
+﻿MCAConfig
+=========
 
 .. currentmodule:: paminco.algo.mca
 

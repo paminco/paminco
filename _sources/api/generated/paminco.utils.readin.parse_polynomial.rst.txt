@@ -1,5 +1,5 @@
-﻿paminco.utils.readin.parse\_polynomial
-======================================
+﻿parse\_polynomial
+=================
 
 .. currentmodule:: paminco.utils.readin
 

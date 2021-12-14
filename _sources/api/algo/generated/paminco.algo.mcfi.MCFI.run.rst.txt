@@ -1,5 +1,5 @@
-﻿paminco.algo.mcfi.MCFI.run
-==========================
+﻿MCFI.run
+========
 
 .. currentmodule:: paminco.algo.mcfi
 

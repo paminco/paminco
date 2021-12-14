@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandFunction.save\_to\_numpy
-=================================================
+﻿DemandFunction.save\_to\_numpy
+==============================
 
 .. currentmodule:: paminco.net.demand
 

@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandFunction.is\_single\_commodity
-=======================================================
+﻿DemandFunction.is\_single\_commodity
+====================================
 
 .. currentmodule:: paminco.net.demand
 

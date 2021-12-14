@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommodityMultiSourceSink.node\_ids
-=====================================================
+﻿CommodityMultiSourceSink.node\_ids
+==================================
 
 .. currentmodule:: paminco.net.demand
 

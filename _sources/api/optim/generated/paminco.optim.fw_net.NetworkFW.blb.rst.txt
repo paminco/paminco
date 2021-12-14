@@ -1,5 +1,5 @@
-﻿paminco.optim.fw\_net.NetworkFW.blb
-===================================
+﻿NetworkFW.blb
+=============
 
 .. currentmodule:: paminco.optim.fw_net
 

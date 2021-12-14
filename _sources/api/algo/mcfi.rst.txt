@@ -12,6 +12,7 @@ Class Description
 Settings
 ========
 .. autosummary::
+   :template: autoclass.rst
    :toctree: generated/
    
    MCFIConfig
@@ -20,6 +21,7 @@ Settings
 Attributes
 ==========
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    MCFI.network
@@ -30,7 +32,7 @@ Attributes
 Methods
 =======
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
-   MCFI.__init__
    MCFI.run

@@ -1,5 +1,5 @@
-﻿paminco.net.Edges.flow\_undirected
-==================================
+﻿Edges.flow\_undirected
+======================
 
 .. currentmodule:: paminco.net
 

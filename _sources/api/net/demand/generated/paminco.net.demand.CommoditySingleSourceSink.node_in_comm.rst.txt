@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommoditySingleSourceSink.node\_in\_comm
-===========================================================
+﻿CommoditySingleSourceSink.node\_in\_comm
+========================================
 
 .. currentmodule:: paminco.net.demand
 

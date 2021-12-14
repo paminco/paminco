@@ -1,5 +1,5 @@
-﻿paminco.net.Network.from\_xml
-=============================
+﻿Network.from\_xml
+=================
 
 .. currentmodule:: paminco.net
 

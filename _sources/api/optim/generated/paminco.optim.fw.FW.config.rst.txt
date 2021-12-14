@@ -1,5 +1,5 @@
-﻿paminco.optim.fw.FW.config
-==========================
+﻿FW.config
+=========
 
 .. currentmodule:: paminco.optim.fw
 

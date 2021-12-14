@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.make\_save\_dict
-===================================
+﻿Shared.make\_save\_dict
+=======================
 
 .. currentmodule:: paminco.net
 

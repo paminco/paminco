@@ -1,5 +1,5 @@
-﻿paminco.net.Edges.from\_npz
-===========================
+﻿Edges.from\_npz
+===============
 
 .. currentmodule:: paminco.net
 

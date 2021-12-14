@@ -1,5 +1,5 @@
-﻿paminco.algo.efa.EFA.edge\_coeffs
-=================================
+﻿EFA.edge\_coeffs
+================
 
 .. currentmodule:: paminco.algo.efa
 

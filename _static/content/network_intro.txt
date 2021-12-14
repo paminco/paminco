@@ -3,7 +3,7 @@
 In paminco, a network (or graph) essentially wraps the network elements
 :ref:`Edges <~edges>`, 
 :ref:`Nodes <~nodes>`, 
-:ref:`NetworkCost <cost>` and
+:class:`NetworkCost <paminco.net.cost.NetworkCost>` and
 :ref:`DemandFunction <demandfunc>`
 as illustrated in image below:
 

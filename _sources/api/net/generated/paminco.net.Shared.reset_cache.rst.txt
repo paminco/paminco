@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.reset\_cache
-===============================
+﻿Shared.reset\_cache
+===================
 
 .. currentmodule:: paminco.net
 

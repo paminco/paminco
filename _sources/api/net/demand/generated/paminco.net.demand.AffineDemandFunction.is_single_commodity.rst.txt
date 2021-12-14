@@ -1,5 +1,5 @@
-﻿paminco.net.demand.AffineDemandFunction.is\_single\_commodity
-=============================================================
+﻿AffineDemandFunction.is\_single\_commodity
+==========================================
 
 .. currentmodule:: paminco.net.demand
 

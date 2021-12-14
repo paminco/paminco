@@ -1,5 +1,5 @@
-﻿paminco.net.demand.\_DV.from\_npz
-=================================
+﻿\_DV.from\_npz
+==============
 
 .. currentmodule:: paminco.net.demand
 

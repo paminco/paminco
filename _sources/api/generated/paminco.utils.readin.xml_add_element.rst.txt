@@ -1,5 +1,5 @@
-﻿paminco.utils.readin.xml\_add\_element
-======================================
+﻿xml\_add\_element
+=================
 
 .. currentmodule:: paminco.utils.readin
 

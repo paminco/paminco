@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommodityMultiSourceSink.map\_node\_labels
-=============================================================
+﻿CommodityMultiSourceSink.map\_node\_labels
+==========================================
 
 .. currentmodule:: paminco.net.demand
 

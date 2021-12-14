@@ -1,5 +1,5 @@
-﻿paminco.\_base.AlphaBetaApproximativeSolver.cost\_at
-====================================================
+﻿AlphaBetaApproximativeSolver.cost\_at
+=====================================
 
 .. currentmodule:: paminco._base
 

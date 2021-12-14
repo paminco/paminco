@@ -1,5 +1,5 @@
-﻿paminco.algo.mca.MCA.edges
-==========================
+﻿MCA.edges
+=========
 
 .. currentmodule:: paminco.algo.mca
 

@@ -1,5 +1,5 @@
-﻿paminco.net.Network.is\_connected
-=================================
+﻿Network.is\_connected
+=====================
 
 .. currentmodule:: paminco.net
 

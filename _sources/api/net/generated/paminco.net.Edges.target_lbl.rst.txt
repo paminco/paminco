@@ -1,5 +1,5 @@
-﻿paminco.net.Edges.target\_lbl
-=============================
+﻿Edges.target\_lbl
+=================
 
 .. currentmodule:: paminco.net
 

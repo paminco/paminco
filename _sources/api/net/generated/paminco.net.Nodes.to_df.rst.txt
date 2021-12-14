@@ -1,5 +1,5 @@
-﻿paminco.net.Nodes.to\_df
-========================
+﻿Nodes.to\_df
+============
 
 .. currentmodule:: paminco.net
 

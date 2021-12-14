@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommodityMultiSourceSink.sink\_lbl
-=====================================================
+﻿CommodityMultiSourceSink.sink\_lbl
+==================================
 
 .. currentmodule:: paminco.net.demand
 

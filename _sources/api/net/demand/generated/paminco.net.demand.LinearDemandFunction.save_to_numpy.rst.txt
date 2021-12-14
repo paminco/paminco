@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.save\_to\_numpy
-=======================================================
+﻿LinearDemandFunction.save\_to\_numpy
+====================================
 
 .. currentmodule:: paminco.net.demand
 

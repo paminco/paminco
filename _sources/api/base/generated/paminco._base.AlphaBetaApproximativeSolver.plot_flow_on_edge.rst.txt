@@ -1,5 +1,5 @@
-﻿paminco.\_base.AlphaBetaApproximativeSolver.plot\_flow\_on\_edge
-================================================================
+﻿AlphaBetaApproximativeSolver.plot\_flow\_on\_edge
+=================================================
 
 .. currentmodule:: paminco._base
 

@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandFunction.inflow
-========================================
+﻿DemandFunction.inflow
+=====================
 
 .. currentmodule:: paminco.net.demand
 

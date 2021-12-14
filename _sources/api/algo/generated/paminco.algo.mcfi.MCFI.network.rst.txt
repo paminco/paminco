@@ -1,5 +1,5 @@
-﻿paminco.algo.mcfi.MCFI.network
-==============================
+﻿MCFI.network
+============
 
 .. currentmodule:: paminco.algo.mcfi
 

@@ -1,5 +1,5 @@
-﻿paminco.net.Edges.map\_labels
-=============================
+﻿Edges.map\_labels
+=================
 
 .. currentmodule:: paminco.net
 

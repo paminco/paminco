@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVector.sink\_lbl
-=========================================
+﻿DemandVector.sink\_lbl
+======================
 
 .. currentmodule:: paminco.net.demand
 

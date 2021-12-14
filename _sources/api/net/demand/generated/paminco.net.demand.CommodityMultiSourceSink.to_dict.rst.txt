@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommodityMultiSourceSink.to\_dict
-====================================================
+﻿CommodityMultiSourceSink.to\_dict
+=================================
 
 .. currentmodule:: paminco.net.demand
 

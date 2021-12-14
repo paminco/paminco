@@ -1,5 +1,5 @@
-﻿paminco.net.Edges.to\_df
-========================
+﻿Edges.to\_df
+============
 
 .. currentmodule:: paminco.net
 

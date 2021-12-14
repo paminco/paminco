@@ -1,5 +1,5 @@
-﻿paminco.net.Network.support\_of
-===============================
+﻿Network.support\_of
+===================
 
 .. currentmodule:: paminco.net
 

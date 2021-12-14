@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVector.add\_to\_etree
-==============================================
+﻿DemandVector.add\_to\_etree
+===========================
 
 .. currentmodule:: paminco.net.demand
 

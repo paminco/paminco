@@ -1,5 +1,5 @@
-﻿paminco.algo.mca.MCA.network
-============================
+﻿MCA.network
+===========
 
 .. currentmodule:: paminco.algo.mca
 

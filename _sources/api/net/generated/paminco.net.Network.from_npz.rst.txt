@@ -1,5 +1,5 @@
-﻿paminco.net.Network.from\_npz
-=============================
+﻿Network.from\_npz
+=================
 
 .. currentmodule:: paminco.net
 

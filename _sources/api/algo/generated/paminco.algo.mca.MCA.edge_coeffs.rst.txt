@@ -1,5 +1,5 @@
-﻿paminco.algo.mca.MCA.edge\_coeffs
-=================================
+﻿MCA.edge\_coeffs
+================
 
 .. currentmodule:: paminco.algo.mca
 

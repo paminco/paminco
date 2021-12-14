@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVector.delete\_nodes
-=============================================
+﻿DemandVector.delete\_nodes
+==========================
 
 .. currentmodule:: paminco.net.demand
 

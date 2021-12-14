@@ -13,6 +13,7 @@ Attributes
 ==========
 .. autosummary::
    :toctree: generated/
+   :template: base_short.rst
 
    LinearDemandFunction._dv0
    LinearDemandFunction.all_single_pairs
@@ -31,6 +32,7 @@ Methods
 
 .. autosummary::
    :toctree: generated/
+   :template: base_short.rst
 
    LinearDemandFunction.value
    LinearDemandFunction.ddx

@@ -1,5 +1,5 @@
-﻿paminco.utils.bisec.bisec\_fast
-===============================
+﻿bisec\_fast
+===========
 
 .. currentmodule:: paminco.utils.bisec
 

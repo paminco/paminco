@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.unique\_sources
-=======================================================
+﻿LinearDemandFunction.unique\_sources
+====================================
 
 .. currentmodule:: paminco.net.demand
 

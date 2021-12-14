@@ -1,5 +1,5 @@
-﻿paminco.net.demand.AffineDemandFunction.dtype\_int
-==================================================
+﻿AffineDemandFunction.dtype\_int
+===============================
 
 .. currentmodule:: paminco.net.demand
 

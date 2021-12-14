@@ -1,5 +1,5 @@
-﻿paminco.\_base.AlphaBetaApproximativeSolver.param\_solution
-===========================================================
+﻿AlphaBetaApproximativeSolver.param\_solution
+============================================
 
 .. currentmodule:: paminco._base
 

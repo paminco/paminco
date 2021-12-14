@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.incidence\_matrix
-====================================
+﻿Shared.incidence\_matrix
+========================
 
 .. currentmodule:: paminco.net
 

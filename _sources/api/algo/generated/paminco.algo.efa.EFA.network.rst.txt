@@ -1,5 +1,5 @@
-﻿paminco.algo.efa.EFA.network
-============================
+﻿EFA.network
+===========
 
 .. currentmodule:: paminco.algo.efa
 

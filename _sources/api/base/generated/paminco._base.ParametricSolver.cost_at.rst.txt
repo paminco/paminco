@@ -1,5 +1,5 @@
-﻿paminco.\_base.ParametricSolver.cost\_at
-========================================
+﻿ParametricSolver.cost\_at
+=========================
 
 .. currentmodule:: paminco._base
 

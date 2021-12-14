@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.csgraph
-==========================
+﻿Shared.csgraph
+==============
 
 .. currentmodule:: paminco.net
 

@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.from\_npz
-=================================================
+﻿LinearDemandFunction.from\_npz
+==============================
 
 .. currentmodule:: paminco.net.demand
 

@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVector.make\_save\_dict
-================================================
+﻿DemandVector.make\_save\_dict
+=============================
 
 .. currentmodule:: paminco.net.demand
 

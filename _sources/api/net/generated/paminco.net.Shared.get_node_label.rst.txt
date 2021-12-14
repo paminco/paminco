@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.get\_node\_label
-===================================
+﻿Shared.get\_node\_label
+=======================
 
 .. currentmodule:: paminco.net
 

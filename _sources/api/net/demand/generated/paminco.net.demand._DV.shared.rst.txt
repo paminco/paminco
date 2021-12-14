@@ -1,5 +1,5 @@
-﻿paminco.net.demand.\_DV.shared
-==============================
+﻿\_DV.shared
+===========
 
 .. currentmodule:: paminco.net.demand
 

@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.reset\_cache
-====================================================
+﻿LinearDemandFunction.reset\_cache
+=================================
 
 .. currentmodule:: paminco.net.demand
 

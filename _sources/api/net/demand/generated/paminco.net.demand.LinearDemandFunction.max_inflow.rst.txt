@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.max\_inflow
-===================================================
+﻿LinearDemandFunction.max\_inflow
+================================
 
 .. currentmodule:: paminco.net.demand
 

@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommodityMultiSourceSink.decompose
-=====================================================
+﻿CommodityMultiSourceSink.decompose
+==================================
 
 .. currentmodule:: paminco.net.demand
 

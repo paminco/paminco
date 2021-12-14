@@ -1,5 +1,5 @@
-﻿paminco.net.Edges.lb
-====================
+﻿Edges.lb
+========
 
 .. currentmodule:: paminco.net
 

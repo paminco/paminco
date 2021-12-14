@@ -1,5 +1,5 @@
-﻿paminco.net.Nodes.from\_xml
-===========================
+﻿Nodes.from\_xml
+===============
 
 .. currentmodule:: paminco.net
 

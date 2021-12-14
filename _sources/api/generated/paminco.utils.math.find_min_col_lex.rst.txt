@@ -1,5 +1,5 @@
-﻿paminco.utils.math.find\_min\_col\_lex
-======================================
+﻿find\_min\_col\_lex
+===================
 
 .. currentmodule:: paminco.utils.math
 

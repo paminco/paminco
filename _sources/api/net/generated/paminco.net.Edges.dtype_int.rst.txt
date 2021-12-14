@@ -1,5 +1,5 @@
-﻿paminco.net.Edges.dtype\_int
-============================
+﻿Edges.dtype\_int
+================
 
 .. currentmodule:: paminco.net
 

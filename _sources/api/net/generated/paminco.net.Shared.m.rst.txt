@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.m
-====================
+﻿Shared.m
+========
 
 .. currentmodule:: paminco.net
 

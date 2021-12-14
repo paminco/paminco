@@ -1,5 +1,5 @@
-﻿paminco.algo.mca.MCA.region
-===========================
+﻿MCA.region
+==========
 
 .. currentmodule:: paminco.algo.mca
 

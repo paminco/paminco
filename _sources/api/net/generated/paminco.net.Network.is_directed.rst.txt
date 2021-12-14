@@ -1,5 +1,5 @@
-﻿paminco.net.Network.is\_directed
-================================
+﻿Network.is\_directed
+====================
 
 .. currentmodule:: paminco.net
 

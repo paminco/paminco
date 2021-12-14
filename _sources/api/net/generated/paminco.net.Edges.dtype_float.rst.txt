@@ -1,5 +1,5 @@
-﻿paminco.net.Edges.dtype\_float
-==============================
+﻿Edges.dtype\_float
+==================
 
 .. currentmodule:: paminco.net
 

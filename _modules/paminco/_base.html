@@ -210,7 +210,7 @@
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Base.__init__"><a class="viewcode-back" href="../../api/base/generated/paminco._base.Base.html#paminco._base.Base.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">network</span><span class="p">:</span> <span class="n">Network</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -234,7 +234,7 @@
         <span class="k">if</span> <span class="n">copy_network</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_net</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">network</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_net</span> <span class="o">=</span> <span class="n">network</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_net</span> <span class="o">=</span> <span class="n">network</span>
 
     <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">:</span> <span class="n">CallBackFlag</span><span class="p">,</span> <span class="n">aux_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">aux_callback</span><span class="p">:</span>
@@ -282,7 +282,7 @@
         <span class="k">return</span> <span class="n">out</span></div>
 
 
-<div class="viewcode-block" id="BreakpointSolution"><a class="viewcode-back" href="../../api/base/generated/paminco._base.BreakpointSolution.html#paminco._base.BreakpointSolution">[docs]</a><span class="k">class</span> <span class="nc">BreakpointSolution</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">BreakpointSolution</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Class that stores breakpoint solutions.</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters</span>
@@ -308,7 +308,7 @@
 <span class="sd">        Optimal node potential vector that induces ``flow``.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="BreakpointSolution.__init__"><a class="viewcode-back" href="../../api/base/generated/paminco._base.BreakpointSolution.html#paminco._base.BreakpointSolution.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">param</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
             <span class="n">flow</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
@@ -318,7 +318,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">=</span> <span class="n">param</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">flow</span> <span class="o">=</span> <span class="n">flow</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">potential</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">potential</span>
 
 
 <span class="k">class</span> <span class="nc">TypedList</span><span class="p">(</span><span class="n">MutableSequence</span><span class="p">):</span>

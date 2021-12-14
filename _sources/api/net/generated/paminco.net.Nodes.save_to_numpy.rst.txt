@@ -1,5 +1,5 @@
-﻿paminco.net.Nodes.save\_to\_numpy
-=================================
+﻿Nodes.save\_to\_numpy
+=====================
 
 .. currentmodule:: paminco.net
 

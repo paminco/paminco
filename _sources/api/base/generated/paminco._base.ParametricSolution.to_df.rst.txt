@@ -1,5 +1,5 @@
-﻿paminco.\_base.ParametricSolution.to\_df
-========================================
+﻿ParametricSolution.to\_df
+=========================
 
 .. currentmodule:: paminco._base
 

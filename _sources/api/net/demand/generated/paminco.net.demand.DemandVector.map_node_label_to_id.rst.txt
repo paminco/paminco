@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVector.map\_node\_label\_to\_id
-========================================================
+﻿DemandVector.map\_node\_label\_to\_id
+=====================================
 
 .. currentmodule:: paminco.net.demand
 

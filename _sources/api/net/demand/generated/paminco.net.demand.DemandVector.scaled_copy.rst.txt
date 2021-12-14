@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVector.scaled\_copy
-============================================
+﻿DemandVector.scaled\_copy
+=========================
 
 .. currentmodule:: paminco.net.demand
 

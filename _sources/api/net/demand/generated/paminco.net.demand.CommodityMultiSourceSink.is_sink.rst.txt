@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommodityMultiSourceSink.is\_sink
-====================================================
+﻿CommodityMultiSourceSink.is\_sink
+=================================
 
 .. currentmodule:: paminco.net.demand
 

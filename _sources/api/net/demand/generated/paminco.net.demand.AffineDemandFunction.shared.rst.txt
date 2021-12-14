@@ -1,5 +1,5 @@
-﻿paminco.net.demand.AffineDemandFunction.shared
-==============================================
+﻿AffineDemandFunction.shared
+===========================
 
 .. currentmodule:: paminco.net.demand
 

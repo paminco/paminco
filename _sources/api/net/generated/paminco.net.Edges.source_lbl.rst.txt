@@ -1,5 +1,5 @@
-﻿paminco.net.Edges.source\_lbl
-=============================
+﻿Edges.source\_lbl
+=================
 
 .. currentmodule:: paminco.net
 

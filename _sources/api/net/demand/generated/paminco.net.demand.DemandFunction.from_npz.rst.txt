@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandFunction.from\_npz
-===========================================
+﻿DemandFunction.from\_npz
+========================
 
 .. currentmodule:: paminco.net.demand
 

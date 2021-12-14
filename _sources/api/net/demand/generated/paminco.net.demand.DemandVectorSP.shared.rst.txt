@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVectorSP.shared
-========================================
+﻿DemandVectorSP.shared
+=====================
 
 .. currentmodule:: paminco.net.demand
 

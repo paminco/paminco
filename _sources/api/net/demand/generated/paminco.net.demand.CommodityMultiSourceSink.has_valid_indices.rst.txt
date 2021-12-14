@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommodityMultiSourceSink.has\_valid\_indices
-===============================================================
+﻿CommodityMultiSourceSink.has\_valid\_indices
+============================================
 
 .. currentmodule:: paminco.net.demand
 

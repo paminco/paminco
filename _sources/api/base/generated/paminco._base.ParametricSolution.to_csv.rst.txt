@@ -1,5 +1,5 @@
-﻿paminco.\_base.ParametricSolution.to\_csv
-=========================================
+﻿ParametricSolution.to\_csv
+==========================
 
 .. currentmodule:: paminco._base
 

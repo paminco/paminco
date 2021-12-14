@@ -1,5 +1,5 @@
-﻿paminco.callback.SimpleDebuggerIterativeModel
-=============================================
+﻿SimpleDebuggerIterativeModel
+============================
 
 .. currentmodule:: paminco.callback
 

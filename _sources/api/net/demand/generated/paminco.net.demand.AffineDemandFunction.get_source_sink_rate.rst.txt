@@ -1,5 +1,5 @@
-﻿paminco.net.demand.AffineDemandFunction.get\_source\_sink\_rate
-===============================================================
+﻿AffineDemandFunction.get\_source\_sink\_rate
+============================================
 
 .. currentmodule:: paminco.net.demand
 

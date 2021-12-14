@@ -1,5 +1,5 @@
-﻿paminco.net.demand.AffineDemandFunction.ddx
-===========================================
+﻿AffineDemandFunction.ddx
+========================
 
 .. currentmodule:: paminco.net.demand
 

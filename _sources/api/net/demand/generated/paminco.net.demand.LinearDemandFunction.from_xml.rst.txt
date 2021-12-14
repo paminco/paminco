@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.from\_xml
-=================================================
+﻿LinearDemandFunction.from\_xml
+==============================
 
 .. currentmodule:: paminco.net.demand
 

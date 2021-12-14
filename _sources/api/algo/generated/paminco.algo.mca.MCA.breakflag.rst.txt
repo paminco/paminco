@@ -1,5 +1,5 @@
-﻿paminco.algo.mca.MCA.breakflag
-==============================
+﻿MCA.breakflag
+=============
 
 .. currentmodule:: paminco.algo.mca
 

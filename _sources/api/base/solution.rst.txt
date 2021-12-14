@@ -12,6 +12,7 @@ Class Description
 Attributes
 ==========
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    ParametricSolution.has_potentials
@@ -29,6 +30,7 @@ Methods
 Value, Plot and Param
 ---------------------
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    ParametricSolution.flow_at
@@ -39,6 +41,7 @@ Value, Plot and Param
 Save and Load
 -------------
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    ParametricSolution.from_arrays

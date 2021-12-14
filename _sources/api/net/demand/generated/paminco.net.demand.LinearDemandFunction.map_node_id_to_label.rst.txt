@@ -1,5 +1,5 @@
-﻿paminco.net.demand.LinearDemandFunction.map\_node\_id\_to\_label
-================================================================
+﻿LinearDemandFunction.map\_node\_id\_to\_label
+=============================================
 
 .. currentmodule:: paminco.net.demand
 

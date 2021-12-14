@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommoditySingleSourceSink.total\_rate
-========================================================
+﻿CommoditySingleSourceSink.total\_rate
+=====================================
 
 .. currentmodule:: paminco.net.demand
 

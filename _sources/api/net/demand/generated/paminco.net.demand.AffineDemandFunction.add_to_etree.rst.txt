@@ -1,5 +1,5 @@
-﻿paminco.net.demand.AffineDemandFunction.add\_to\_etree
-======================================================
+﻿AffineDemandFunction.add\_to\_etree
+===================================
 
 .. currentmodule:: paminco.net.demand
 

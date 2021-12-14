@@ -1,5 +1,5 @@
-﻿paminco.net.Network.integrate\_cost
-===================================
+﻿Network.integrate\_cost
+=======================
 
 .. currentmodule:: paminco.net
 

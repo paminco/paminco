@@ -1,5 +1,5 @@
-﻿paminco.net.demand.AffineDemandFunction.to\_single\_pairs
-=========================================================
+﻿AffineDemandFunction.to\_single\_pairs
+======================================
 
 .. currentmodule:: paminco.net.demand
 

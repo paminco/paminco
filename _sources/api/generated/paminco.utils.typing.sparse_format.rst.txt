@@ -1,5 +1,5 @@
-﻿paminco.utils.typing.sparse\_format
-===================================
+﻿sparse\_format
+==============
 
 .. currentmodule:: paminco.utils.typing
 

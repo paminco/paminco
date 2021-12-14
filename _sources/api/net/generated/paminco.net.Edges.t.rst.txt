@@ -1,5 +1,5 @@
-﻿paminco.net.Edges.t
-===================
+﻿Edges.t
+=======
 
 .. currentmodule:: paminco.net
 

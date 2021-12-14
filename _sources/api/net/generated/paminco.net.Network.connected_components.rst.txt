@@ -1,5 +1,5 @@
-﻿paminco.net.Network.connected\_components
-=========================================
+﻿Network.connected\_components
+=============================
 
 .. currentmodule:: paminco.net
 

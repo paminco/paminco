@@ -1,5 +1,5 @@
-﻿paminco.algo.efa.EFA.region\_zero
-=================================
+﻿EFA.region\_zero
+================
 
 .. currentmodule:: paminco.algo.efa
 

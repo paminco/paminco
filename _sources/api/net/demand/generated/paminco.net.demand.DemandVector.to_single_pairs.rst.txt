@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVector.to\_single\_pairs
-=================================================
+﻿DemandVector.to\_single\_pairs
+==============================
 
 .. currentmodule:: paminco.net.demand
 

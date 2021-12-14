@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.dtype\_int
-=============================
+﻿Shared.dtype\_int
+=================
 
 .. currentmodule:: paminco.net
 

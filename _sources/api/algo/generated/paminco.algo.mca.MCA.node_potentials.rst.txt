@@ -1,5 +1,5 @@
-﻿paminco.algo.mca.MCA.node\_potentials
-=====================================
+﻿MCA.node\_potentials
+====================
 
 .. currentmodule:: paminco.algo.mca
 

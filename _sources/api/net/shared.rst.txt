@@ -13,9 +13,9 @@ Methods
 =======
 
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
-   Shared.__init__
    Shared.update
    Shared.reset_cache
    Shared.delete_edges
@@ -43,7 +43,7 @@ Attributes
 +-----------------+------------------------------------------------------------+
 
 .. autosummary::
-
+   :template: base_short.rst
    :toctree: generated/
 
    Shared.flow_direction

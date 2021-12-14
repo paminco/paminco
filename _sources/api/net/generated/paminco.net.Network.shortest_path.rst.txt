@@ -1,5 +1,5 @@
-﻿paminco.net.Network.shortest\_path
-==================================
+﻿Network.shortest\_path
+======================
 
 .. currentmodule:: paminco.net
 

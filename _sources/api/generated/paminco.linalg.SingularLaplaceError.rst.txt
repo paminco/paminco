@@ -1,6 +1,16 @@
-﻿paminco.linalg.SingularLaplaceError
-===================================
+﻿SingularLaplaceError
+====================
 
 .. currentmodule:: paminco.linalg
 
-.. autoexception:: SingularLaplaceError
+.. autoclass:: SingularLaplaceError
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

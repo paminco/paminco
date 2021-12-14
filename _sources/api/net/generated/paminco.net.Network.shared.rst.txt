@@ -1,5 +1,5 @@
-﻿paminco.net.Network.shared
-==========================
+﻿Network.shared
+==============
 
 .. currentmodule:: paminco.net
 

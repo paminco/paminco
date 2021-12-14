@@ -1,5 +1,5 @@
-﻿paminco.net.Network.clean
-=========================
+﻿Network.clean
+=============
 
 .. currentmodule:: paminco.net
 

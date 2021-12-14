@@ -1,5 +1,5 @@
-﻿paminco.net.Network.flow\_direction
-===================================
+﻿Network.flow\_direction
+=======================
 
 .. currentmodule:: paminco.net
 

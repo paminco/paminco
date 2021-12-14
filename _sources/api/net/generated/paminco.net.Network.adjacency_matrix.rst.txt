@@ -1,5 +1,5 @@
-﻿paminco.net.Network.adjacency\_matrix
-=====================================
+﻿Network.adjacency\_matrix
+=========================
 
 .. currentmodule:: paminco.net
 

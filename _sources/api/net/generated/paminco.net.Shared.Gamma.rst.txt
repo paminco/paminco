@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.Gamma
-========================
+﻿Shared.Gamma
+============
 
 .. currentmodule:: paminco.net
 

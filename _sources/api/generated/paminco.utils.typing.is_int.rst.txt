@@ -1,5 +1,5 @@
-﻿paminco.utils.typing.is\_int
-============================
+﻿is\_int
+=======
 
 .. currentmodule:: paminco.utils.typing
 

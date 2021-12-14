@@ -13,6 +13,7 @@ Methods
 =======
 .. autosummary::
     :toctree: generated/
+    :template: base_short.rst
 
     _DV.get_source_sink_rate
     _DV.add_to_etree
@@ -23,6 +24,7 @@ Attributes
 ==========
 .. autosummary::
    :toctree: generated/
+   :template: base_short.rst
 
     _DV.k
     _DV.n

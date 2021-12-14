@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.get\_edge\_id
-================================
+﻿Shared.get\_edge\_id
+====================
 
 .. currentmodule:: paminco.net
 

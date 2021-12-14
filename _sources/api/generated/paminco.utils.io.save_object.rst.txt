@@ -1,5 +1,5 @@
-﻿paminco.utils.io.save\_object
-=============================
+﻿save\_object
+============
 
 .. currentmodule:: paminco.utils.io
 

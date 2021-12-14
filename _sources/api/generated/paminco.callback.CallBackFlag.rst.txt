@@ -1,5 +1,5 @@
-﻿paminco.callback.CallBackFlag
-=============================
+﻿CallBackFlag
+============
 
 .. currentmodule:: paminco.callback
 

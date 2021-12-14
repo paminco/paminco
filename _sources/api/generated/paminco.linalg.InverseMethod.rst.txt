@@ -1,5 +1,5 @@
-﻿paminco.linalg.InverseMethod
-============================
+﻿InverseMethod
+=============
 
 .. currentmodule:: paminco.linalg
 

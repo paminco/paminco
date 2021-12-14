@@ -1,5 +1,5 @@
-﻿paminco.net.Network.potential
-=============================
+﻿Network.potential
+=================
 
 .. currentmodule:: paminco.net
 

@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandVectorSP.total\_rate
-=============================================
+﻿DemandVectorSP.total\_rate
+==========================
 
 .. currentmodule:: paminco.net.demand
 

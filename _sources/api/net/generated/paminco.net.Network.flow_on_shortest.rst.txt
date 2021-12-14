@@ -1,5 +1,5 @@
-﻿paminco.net.Network.flow\_on\_shortest
-======================================
+﻿Network.flow\_on\_shortest
+==========================
 
 .. currentmodule:: paminco.net
 

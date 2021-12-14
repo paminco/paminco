@@ -1,5 +1,5 @@
-﻿paminco.\_base.ParametricSolution.has\_potentials
-=================================================
+﻿ParametricSolution.has\_potentials
+==================================
 
 .. currentmodule:: paminco._base
 

@@ -1,5 +1,5 @@
-﻿paminco.net.Network.derivate\_cost
-==================================
+﻿Network.derivate\_cost
+======================
 
 .. currentmodule:: paminco.net
 

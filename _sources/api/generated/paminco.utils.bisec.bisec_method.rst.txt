@@ -1,5 +1,5 @@
-﻿paminco.utils.bisec.bisec\_method
-=================================
+﻿bisec\_method
+=============
 
 .. currentmodule:: paminco.utils.bisec
 

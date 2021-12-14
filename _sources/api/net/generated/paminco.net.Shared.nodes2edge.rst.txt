@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.nodes2edge
-=============================
+﻿Shared.nodes2edge
+=================
 
 .. currentmodule:: paminco.net
 

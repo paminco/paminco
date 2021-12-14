@@ -1,5 +1,5 @@
-﻿paminco.net.demand.DemandFunction.demand\_vectors
-=================================================
+﻿DemandFunction.demand\_vectors
+==============================
 
 .. currentmodule:: paminco.net.demand
 

@@ -1,5 +1,5 @@
-﻿paminco.net.Network.csgraph
-===========================
+﻿Network.csgraph
+===============
 
 .. currentmodule:: paminco.net
 

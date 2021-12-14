@@ -1,5 +1,5 @@
-﻿paminco.net.Shared.flow\_direction
-==================================
+﻿Shared.flow\_direction
+======================
 
 .. currentmodule:: paminco.net
 

@@ -1,5 +1,5 @@
-﻿paminco.optim.subproblem.LPSubproblemSolver
-===========================================
+﻿LPSubproblemSolver
+==================
 
 .. currentmodule:: paminco.optim.subproblem
 

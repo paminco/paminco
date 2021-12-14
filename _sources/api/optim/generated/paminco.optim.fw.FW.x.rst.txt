@@ -1,5 +1,5 @@
-﻿paminco.optim.fw.FW.x
-=====================
+﻿FW.x
+====
 
 .. currentmodule:: paminco.optim.fw
 

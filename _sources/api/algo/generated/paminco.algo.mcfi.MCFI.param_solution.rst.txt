@@ -1,5 +1,5 @@
-﻿paminco.algo.mcfi.MCFI.param\_solution
-======================================
+﻿MCFI.param\_solution
+====================
 
 .. currentmodule:: paminco.algo.mcfi
 

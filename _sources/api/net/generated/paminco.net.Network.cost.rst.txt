@@ -1,5 +1,5 @@
-﻿paminco.net.Network.cost
-========================
+﻿Network.cost
+============
 
 .. currentmodule:: paminco.net
 

@@ -1,5 +1,5 @@
-﻿paminco.\_base.ParametricSolution.make\_save\_dict
-==================================================
+﻿ParametricSolution.make\_save\_dict
+===================================
 
 .. currentmodule:: paminco._base
 

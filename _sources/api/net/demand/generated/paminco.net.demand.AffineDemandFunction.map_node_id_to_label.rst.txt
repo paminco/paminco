@@ -1,5 +1,5 @@
-﻿paminco.net.demand.AffineDemandFunction.map\_node\_id\_to\_label
-================================================================
+﻿AffineDemandFunction.map\_node\_id\_to\_label
+=============================================
 
 .. currentmodule:: paminco.net.demand
 

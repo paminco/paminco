@@ -1,5 +1,5 @@
-﻿paminco.\_base.ParametricSolver.all\_params
-===========================================
+﻿ParametricSolver.all\_params
+============================
 
 .. currentmodule:: paminco._base
 

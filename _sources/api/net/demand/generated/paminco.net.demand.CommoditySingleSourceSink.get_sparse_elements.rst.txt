@@ -1,5 +1,5 @@
-﻿paminco.net.demand.CommoditySingleSourceSink.get\_sparse\_elements
-==================================================================
+﻿CommoditySingleSourceSink.get\_sparse\_elements
+===============================================
 
 .. currentmodule:: paminco.net.demand
 

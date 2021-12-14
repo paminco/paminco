@@ -267,10 +267,10 @@
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
 <span class="sd">    NodePotentials : Definition of pi_t and dpi_t.</span>
-<span class="sd">    paminco.net.network.Network.Gamma : Definition of Gamma.</span>
+<span class="sd">    paminco.net.Network.Gamma : Definition of Gamma.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-<div class="viewcode-block" id="EFAEdges.__init__"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.EFAEdges.html#paminco.algo.efa.EFAEdges.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_target</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_target</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">source_target</span> <span class="o">=</span> <span class="n">source_target</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">flow</span> <span class="o">=</span> <span class="kc">None</span>
@@ -278,7 +278,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">lu</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">gamma_pi_t</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">gamma_dpi</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">round_gamma_dpi</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">round_gamma_dpi</span> <span class="o">=</span> <span class="kc">None</span>
         
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_target</span><span class="p">)</span>
@@ -352,13 +352,13 @@
 <span class="sd">    paminco.net.cost.PiecewiseQuadraticCoefficients</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-<div class="viewcode-block" id="NodePotentials.__init__"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.NodePotentials.html#paminco.algo.efa.NodePotentials.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">net_nodes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">net_nodes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">node_idx</span> <span class="o">=</span> <span class="n">net_nodes</span><span class="o">.</span><span class="n">indices</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">node_lbl</span> <span class="o">=</span> <span class="n">net_nodes</span><span class="o">.</span><span class="n">labels</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dtilde</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pi_t</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dpi_t</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dpi_t</span> <span class="o">=</span> <span class="kc">None</span>
     
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node_idx</span><span class="p">)</span>
@@ -449,7 +449,7 @@
     <span class="p">]</span>
     <span class="sd">&quot;&quot;&quot;Settings for EFA that can be passed only during initialization.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="EFAConfig.__init__"><a class="viewcode-back" href="../../../api/algo/generated/paminco.algo.efa.EFAConfig.html#paminco.algo.efa.EFAConfig.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         
         <span class="bp">self</span><span class="o">.</span><span class="n">_inverse_method</span> <span class="o">=</span> <span class="n">InverseMethod</span><span class="o">.</span><span class="n">CHOLESKY</span>
@@ -462,7 +462,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">rounding_margins_base</span> <span class="o">=</span> <span class="o">-</span><span class="mi">16</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rounding_margins_fac</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
         
-        <span class="bp">self</span><span class="o">.</span><span class="n">map_kwargs</span><span class="p">(</span><span class="n">run</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">map_kwargs</span><span class="p">(</span><span class="n">run</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">map_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">run</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>

@@ -1,5 +1,5 @@
-﻿paminco.\_base.ParametricSolution.dflow
-=======================================
+﻿ParametricSolution.dflow
+========================
 
 .. currentmodule:: paminco._base
 

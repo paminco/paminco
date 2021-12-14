@@ -1,5 +1,5 @@
-﻿paminco.net.Network.edges
-=========================
+﻿Network.edges
+=============
 
 .. currentmodule:: paminco.net
 
