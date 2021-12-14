@@ -275,7 +275,7 @@ class MCFI(AlphaBetaApproximativeSolver):
             self._add_param_solution(p, flow.copy())
             
             self.callback(CallBackFlag.ITER_END, run_cb)
-            self._print_iteration()
+            self._print_iteration_summary()
         
         self.callback(CallBackFlag.RUN_END, run_cb)
         
@@ -350,7 +350,7 @@ class MCFI(AlphaBetaApproximativeSolver):
             self._add_param_solution(param, flow.copy())
             
             self.callback(CallBackFlag.ITER_END, run_cb)
-            self._print_iteration()
+            self._print_iteration_summary()
             
             # Stop if param exceeds lambda_max
             if param > self.config.lambda_max:
@@ -477,10 +477,10 @@ class MCFI(AlphaBetaApproximativeSolver):
             raise Exception("Function solve did not converge")
         return res[0][0]
 
-    def _print_iteration(self):
-        # TODO
+    def _print_iteration_summary(self):
         if self.config.print is True:
-            print(self.param_solution[-1].param)
+            out = f"Iteration {self.i:4d} | λ = {self.param_solution[-1].param:.5f}"
+            print(out)
 
     @property
     def config(self) -> MCFIConfig:
