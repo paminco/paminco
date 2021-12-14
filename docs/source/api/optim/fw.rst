@@ -13,6 +13,7 @@ Class Description
 Settings and Subclasses
 =======================
 .. autosummary::
+   :template: autoclass.rst
    :toctree: generated/
    
    FWConfig
@@ -23,6 +24,7 @@ Settings and Subclasses
 Attributes
 ==========
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    FW.config
@@ -31,7 +33,7 @@ Attributes
 Methods
 =======
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
-   FW.__init__
    FW.run

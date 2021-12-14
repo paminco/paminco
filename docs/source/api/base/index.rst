@@ -7,7 +7,8 @@ Base Classes
 
 Basics
 ======
-.. autosummary:: 
+.. autosummary::
+    :template: autoclass.rst
     :toctree: generated/
 
     Base
@@ -16,15 +17,14 @@ Basics
 Solution Objects
 ================
 .. autosummary::
-    :toctree: generated/
     
     BreakpointSolution 
 
 .. autosummary::
     ParametricSolution
 
-ParametricSolver
-================
+Parametric Solvers
+==================
 .. autosummary::
 
     ParametricSolver

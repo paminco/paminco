@@ -13,9 +13,9 @@ Methods
 =======
 
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
-   Edges.__init__
    Edges.from_xml
    Edges.from_npz
    Edges.to_df
@@ -32,6 +32,7 @@ Attributes
 ==========
 
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    Edges.lb

@@ -28,6 +28,8 @@ cost flow.
 Settings and Interpolation
 ==========================
 .. autosummary::
+   .. :template: autoclass.rst
+   :template: class_shortname.rst
    :toctree: generated/
    
    MCAConfig
@@ -36,6 +38,7 @@ Settings and Interpolation
 Attributes
 ==========
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    MCA.network
@@ -56,7 +59,7 @@ Attributes
 Methods
 =======
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
-   MCA.__init__
    MCA.run

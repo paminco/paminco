@@ -13,6 +13,7 @@ Attributes
 ==========
 .. autosummary::
    :toctree: generated/
+   :template: base_short.rst
 
    DemandFunction._dv0
    DemandFunction.all_single_pairs
@@ -30,6 +31,7 @@ Methods
 =======
 .. autosummary::
    :toctree: generated/
+   :template: base_short.rst
 
    DemandFunction.reset_cache
    DemandFunction.inflow

@@ -12,6 +12,7 @@ Class Description
 Settings and Subclasses
 =======================
 .. autosummary::
+   :template: autoclass.rst
    :toctree: generated/ 
    
    EFAConfig
@@ -23,6 +24,7 @@ Settings and Subclasses
 Attributes
 ==========
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    EFA.network
@@ -38,6 +40,7 @@ Attributes
 Methods
 =======
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    EFA.__init__

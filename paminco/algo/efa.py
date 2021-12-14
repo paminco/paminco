@@ -100,7 +100,7 @@ class EFAEdges:
     See Also
     --------
     NodePotentials : Definition of pi_t and dpi_t.
-    paminco.net.network.Network.Gamma : Definition of Gamma.
+    paminco.net.Network.Gamma : Definition of Gamma.
     """
     
     def __init__(self, source_target):

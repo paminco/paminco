@@ -9,14 +9,21 @@ Subproblem
 Autodetect Method
 =================
 .. autosummary::
+   
+   :template: autoclass.rst
+   :toctree: generated/
+
+   SubproblemMethod
+
+   :template: base_short.rst
    :toctree: generated/
    
-   SubproblemMethod
    subproblem_solver
 
 Subproblem Solver
 =================
 .. autosummary::
+   :template: class_shortname.rst
    :toctree: generated/
    
    SubproblemSolver

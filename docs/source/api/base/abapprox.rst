@@ -12,6 +12,7 @@ Class Description
 Attributes
 ==========
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    AlphaBetaApproximativeSolver.network
@@ -23,6 +24,7 @@ Methods
 =======
 
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    AlphaBetaApproximativeSolver.__call__

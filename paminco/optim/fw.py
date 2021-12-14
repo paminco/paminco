@@ -57,8 +57,26 @@ def linesearch(
 
 
 class FWBreakFlag(IntEnum2):
-    """Enum defining the status of the FW optimizer."""
+    """Enum defining the status of the FW optimizer.
     
+    Possible breakflags:
+    
+    ``COST_INVALID``
+        Function value is smaller than specified lower bound.
+    
+    ``NOT_SET``
+        Undefined breakflag.
+    
+    ``CONVERGED``
+        Frank-Wolfe coverged successfuly for specified tolerance.
+    
+    ``MAX_ITER``
+        Reached maximum number of iterations.
+    
+    ``USER_INTERRUPT``
+        Interrupt by user.
+    
+    """
     COST_INVALID = -1
     """Function value is smaller than specified lower bound."""
 
@@ -192,16 +210,13 @@ class FW:
     ----------
     fun : callable
         The objective function to be minimized.
-        
-        ``fun(x) -> float``
-        
+        Signature: ``fun(x) -> float``,
         where ``x`` is an 1-D array with shape (n,).
     
     fprime : callable
-        Function that returns the gradient vector:.
-        
-        ``fprime(x) -> array_like``
-        
+        Function that returns the gradient vector.
+        Signature:
+        ``fprime(x) -> array_like``,
         where ``x`` and the return value are both 1-D arrays with shape
         (n,).
     
@@ -212,9 +227,7 @@ class FW:
             \underset{\mathbf{s} \in \mathcal{D}}{\mathrm{argmin}}
             \quad \mathbf{s}^T\nabla f(\mathbf{x}_i)
         
-        Is called with the signature:
-        
-        ``subproblem_solver(f'(x)) -> array_like``.
+        Is called with the signature ``subproblem_solver(f'(x)) -> array_like``.
     
     x0 : ndarray, shape (n,)
         Initial guess. Array of real elements of size (n,), where n
@@ -225,14 +238,14 @@ class FW:
     See Also
     --------
     FWConfig : Options accepted by the solver.
-    paminco.optim.fw_net.NetworkFW : Use FW to find a min cost flow.
+    paminco.optim.fw_net.NetworkFW : Use FW to find a minimum cost flow.
     
     References
     ----------
     .. [1] https://en.wikipedia.org/wiki/Frank%E2%80%93Wolfe_algorithm
     
     .. [2] Florian, Michael, J Guálat, and H Spiess. "An efficient
-           implementation of the “Partan” variant of the linear approximation
+           implementation of the “partan” variant of the linear approximation
            method for the network equilibrium problem." Networks 17.3 (1987):
            319-339.
     """
@@ -276,11 +289,8 @@ class FW:
         Parameters
         ----------
         callback : callable, optional
-            Called after each iteration with the signature:
-            
-                ``callback(res)``
-            
-            where ``res`` is a OptimizeResult.
+            Called after each iteration with the signature ``callback(res)``,
+            where ``res`` is a :class:`OptimizeResult <scipy.optimize.OptimizeResult>`.
         
         kw : keyword arguments
             Further options, see FWConfig.

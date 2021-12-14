@@ -13,6 +13,7 @@ Methods
 =======
 
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    Commodity.from_data

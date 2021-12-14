@@ -13,6 +13,7 @@ Methods
 =======
 
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    CommoditySingleSourceSink.from_tuple
@@ -28,6 +29,7 @@ Methods
 =======
 
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    CommoditySingleSourceSink.has_valid_indices

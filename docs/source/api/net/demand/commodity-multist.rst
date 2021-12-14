@@ -12,6 +12,7 @@ Class Description
 Methods
 =======
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    CommodityMultiSourceSink.from_data
@@ -28,6 +29,7 @@ Methods
 Attributes
 ==========
 .. autosummary::
+   :template: base_short.rst
    :toctree: generated/
 
    CommodityMultiSourceSink.N_tot
