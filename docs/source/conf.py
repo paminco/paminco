@@ -92,7 +92,7 @@ exclude_patterns = []
 #
 # html_theme = 'alabaster'
 html_theme = "pydata_sphinx_theme"
-html_logo = "_static/logo1.svg"
+# html_logo = "_static/logo1.svg"
 html_theme_options = {
     "logo_link": "index",
     "icon_links": [
@@ -104,6 +104,7 @@ html_theme_options = {
     ],
     "show_prev_next": False,
     "collapse_navigation": False,
+    "navigation_depth": 2,
 }
 
 # Add any paths that contain custom stat    ic files (such as style sheets) here,

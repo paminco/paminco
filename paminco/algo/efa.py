@@ -349,6 +349,10 @@ class EFAConfig(Config):
 class EFA(ParametricSolver):
     r"""Electrical flow algorithm.
     
+    Computes a piecewise linear optimal potential function that induces a 
+    piecewise linear minimum cost flow function. The underlying network must
+    have piecewiese quadratic edge costs. 
+    
     Parameters
     ----------
     net : Network
@@ -362,7 +366,7 @@ class EFA(ParametricSolver):
         Whether to time EFA. If ``True``, timestamps for intializtion
         and every iteration will be saved to attribute ``timer``.
     kwargs : keyword arguments, optional
-        Further options for EFA, see MCFIConfig.
+        For further options of EFA, see EFAConfig.
     
     See Also
     --------
