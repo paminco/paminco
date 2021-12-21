@@ -65,11 +65,9 @@
   <div id="navbar-start">
     
     
-
 <a class="navbar-brand" href="../../../index.html">
-  <img src="../../../_static/logo1.svg" class="logo" alt="logo">
-</a>      
-
+<p class="title">paminco</p>
+</a>
 
     
   </div>
@@ -516,6 +514,10 @@
 <div class="viewcode-block" id="EFA"><a class="viewcode-back" href="../../../api/algo/efa.html#paminco.algo.efa.EFA">[docs]</a><span class="k">class</span> <span class="nc">EFA</span><span class="p">(</span><span class="n">ParametricSolver</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Electrical flow algorithm.</span>
 <span class="sd">    </span>
+<span class="sd">    Computes a piecewise linear optimal potential function that induces a </span>
+<span class="sd">    piecewise linear minimum cost flow function. The underlying network must</span>
+<span class="sd">    have piecewiese quadratic edge costs. </span>
+<span class="sd">    </span>
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    net : Network</span>
@@ -529,7 +531,7 @@
 <span class="sd">        Whether to time EFA. If ``True``, timestamps for intializtion</span>
 <span class="sd">        and every iteration will be saved to attribute ``timer``.</span>
 <span class="sd">    kwargs : keyword arguments, optional</span>
-<span class="sd">        Further options for EFA, see MCFIConfig.</span>
+<span class="sd">        For further options of EFA, see EFAConfig.</span>
 <span class="sd">    </span>
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
@@ -1140,7 +1142,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
 </p>
     </div>
     
