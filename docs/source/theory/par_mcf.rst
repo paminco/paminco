@@ -213,4 +213,4 @@ Hence, MCA calculates an :ref:`alpha-beta-approximate <theory-mcf-abapprox>` min
 .. rubric:: References
 
 .. [WK21] Klimm M, Warode P (2021) "Parametric Computation of Minimum Cost Flows with Piecewise Quadratic Costs." *Mathematics of Operations Research*. Available at https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf
-.. [Roc84] Rockafellar, RT (1984) *Network Flows and M  
+.. [Roc84] Rockafellar, RT (1984) *Network Flows and Monotropic Optimization* (John Wiley and Sons, Hoboken, NJ)
