@@ -103,12 +103,16 @@ User Guide
 
 .. tabbed:: Natural Gas
 
-  .. dropdown:: Bla
-    .. link-button:: applications/traffic/sioux_fixed_ue.html
+  .. dropdown:: GasLib: Gas24
+
+    We compute the parametric edge flows for an affine demand function with MCA.
+
+    .. link-button:: applications/gas/gas24.html
         :text: Go to user guide
         :classes: btn-outline-primary
     
-    :link-badge:`fw-net,NetworkFW,ref,badge-success`
+    :link-badge:`mca,MCA,ref,badge-success`
+    :link-badge:`demandfunc-aff,"AffineDemandFunction",ref,badge-info`
 
   
 .. tabbed:: Network Setup

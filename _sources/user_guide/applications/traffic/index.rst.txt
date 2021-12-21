@@ -8,15 +8,15 @@ The modelling of traffic networks is of profound importance in view of reducing 
 However, It is no trivial task to model complex networks with a large number selfish of selfish 
 participants. 
 One approach is to caclulate a game theoretical equilibrium, i.e., a state in the game where no
-participant can improve his/her position by unilateral action. In the case of traffic networks this
-means that all routes a driver might use, take the same amount of time. This is also called user
+participant can improve his/her position by unilateral action [NM44]_. In the case of traffic networks this
+means that all routes a driver might use, take the same amount of time [War52]_. This is also called user
 equilbrium or Wardrop’s first principle developed by 
 `John Glen Wardrop <https://en.wikipedia.org/wiki/John_Glen_Wardrop>`_.
 
-The computation of the user equilibrium can be reduced to the computation of a minimum cost flow.
+The computation of the user equilibrium can be reduced to the computation of a minimum cost flow [BMW56]_.
 Thus, paminco can be used to find functions that map a demand multiplier :math:`\lambda` to 
 user equilibria :math:`x_{UE}`. The
-`GitHub repository for transportation research <https://github.com/bstabler/TransportationNetworks>`_ [1]_
+`GitHub repository for transportation research <https://github.com/bstabler/TransportationNetworks>`_ [Tra21]_
 provides data for over 20 traffic networks. This includes toy examples such as the 
 `Braess network <https://github.com/bstabler/TransportationNetworks/tree/master/Braess-Example>`_
 or `SiouxFalls <https://github.com/bstabler/TransportationNetworks/tree/master/SiouxFalls>`_ which 
@@ -46,5 +46,8 @@ and system optimum -- with paminco:
 
 .. rubric:: References
 
-.. [1] Transportation Networks for Research Core Team. *Transportation Networks for Research*.
+.. [BMW56] Beckmann MJ, McGuire CB, Winsten CB (1956) *Studies in the Economics of Transportation*. Yale University Press, New Haven, CT.
+.. [NM44] Von Neumann J, Morgenstern O (1944). *Theory of Games and Economic Behaviour*. Princeton University Press, Princeton.
+.. [Tra21] Transportation Networks for Research Core Team. *Transportation Networks for Research*.
        Available at https://github.com/bstabler/TransportationNetworks. Accessed 11, 18, 2021.
+.. [War52] Wardrop JG (1952). "Some theoretical aspects of road traffic research." In: *Proc. Inst. Civil Engrg. 1.3*, pp. 325–378.

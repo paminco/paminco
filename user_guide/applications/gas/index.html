@@ -47,9 +47,11 @@
     <script src="../../../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/contentui.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="TODO" href="stub.html" />
+    <link rel="next" title="Gaslib: Gas24" href="gas24.html" />
     <link rel="prev" title="Price of Anarchy - Barcelona" href="../traffic/barcelona_poa.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -241,15 +243,45 @@
               <div>
                 
   <section id="gaslib">
-<span id="ug-gas-index"></span><h1>Gaslib<a class="headerlink" href="#gaslib" title="Permalink to this headline">¶</a></h1>
-<p>Download data from [here](<a class="reference external" href="https://gaslib.zib.de/">https://gaslib.zib.de/</a>) <a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
+<h1>Gaslib<a class="headerlink" href="#gaslib" title="Permalink to this headline">¶</a></h1>
+<p>GasLib <a class="reference internal" href="#sch17" id="id1"><span>[Sch17]</span></a> is a library for instances of gas networks. Each network from GasLib includes various XML files such as a network XML file and a nomination XML file. The former contains the edge data, and the latter specifies the flow that is supplied or consumed for each network node.
+The gas network is modeled as a <em>directed graph</em> <span class="math notranslate nohighlight">\(G = (V, E)\)</span> where <span class="math notranslate nohighlight">\(E\)</span> consists of the <em>active</em> and <em>passive</em> edges. Active edges are compressor groups, valves, and control valves. Passive edges are comprised of pipes and resistors.
+For the gas networks, all edges are <em>undirected</em>, i.e., flow can traverse a pipe in both ways. Thus, <span class="math notranslate nohighlight">\(x_e &gt; 0\)</span> indicates to a gas flow in the direction of the edge and <span class="math notranslate nohighlight">\(x_e &lt; 0\)</span> against the specified direction.</p>
+<p>The gas flow for a pipe <span class="math notranslate nohighlight">\(e\)</span> can be modeled with the Weymouth equations <a class="reference internal" href="#wey12" id="id2"><span>[Wey12]</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    p_w^2 -p_v^2  = \beta_e x |x|,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_v\)</span> denotes the gas pressure for a node <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(\beta_e\)</span> is factor that models the resistance of <span class="math notranslate nohighlight">\(e\)</span> <a class="reference internal" href="#pfe15" id="id3"><span>[Pfe15]</span></a> <a class="reference internal" href="#war21" id="id4"><span>[War21]</span></a>.
+We only consider a network consisting of pipes, i.e., network elements such as compressors and valves are collapsed.
+The coefficient <span class="math notranslate nohighlight">\(\beta_e\)</span> can then be calculated using physical specifications such as length and diameter. See <a class="reference internal" href="#pfe15" id="id5"><span>[Pfe15]</span></a> for further details on this conversion.</p>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gas24.html">Gas24</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gas24.html#load-data">Load data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gas24.html#preparing-the-network">Preparing the network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gas24.html#set-edge-cost">Set edge cost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gas24.html#set-affine-demand-function">Set affine demand function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gas24.html#run-mca">Run MCA</a></li>
+</ul>
+</li>
+</ul>
 </div>
 <p class="rubric">References</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Pfetsch, ME, et al. (2015) Validation of nominations in gas network optimization: models, methods, and solutions.
-<em>Optimization Methods and Software</em> 30.1: 15-53.</p>
+<dl class="citation">
+<dt class="label" id="pfe15"><span class="brackets">Pfe15</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>)</span></dt>
+<dd><p>Pfetsch ME, et al. (2015) “Validation of nominations in gas network optimization: models, methods, and solutions.” <em>Optimization Methods and Software</em> 30.1: 15-53.</p>
+</dd>
+<dt class="label" id="sch17"><span class="brackets"><a class="fn-backref" href="#id1">Sch17</a></span></dt>
+<dd><p>Schmidt M, Aßmann D, Burlacu R, Humpola J, Joormann I, Kanelakis N, … &amp; Sirvent M (2017). “Gaslib—A library of gas network instances.” <em>Data</em>, 2(4), 40.</p>
+</dd>
+<dt class="label" id="war21"><span class="brackets"><a class="fn-backref" href="#id4">War21</a></span></dt>
+<dd><p>Warode P (2021). <em>Parametric Computation of Equilibria and Flows.</em> PhD thesis. TU Berlin, Berlin, Germany.</p>
+</dd>
+<dt class="label" id="wey12"><span class="brackets"><a class="fn-backref" href="#id2">Wey12</a></span></dt>
+<dd><p>Weymouth RF (1912). “Problems in natural gas engineering.” In: <em>Trans. Am. Soc. Mech. Eng.</em> 34.1349, pp. 185–231.</p>
 </dd>
 </dl>
 </section>

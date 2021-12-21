@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Gaslib: Gas24 &#8212; paminco 0.1 documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/contentui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/paminco.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/user_guide.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/api.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/contentui.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="How to Set Up a Network" href="../../network_setup/index.html" />
+    <link rel="prev" title="Gaslib" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../../index.html">
+<p class="title">paminco</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getting_started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../theory/index.html">
+  Theoretical Background
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Applications
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../traffic/index.html">
+     Traffic Networks
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="reference internal" href="index.html">
+     Gaslib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../network_setup/index.html">
+   How to Set Up a Network
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../network_setup/howto_graph_setup.html">
+     How to set up directed and undirected graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../network_setup/howto_set_cost.html">
+     How to equip a network with cost functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../network_setup/howto_set_demand.html">
+     How to specify the demand function for a network
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../network_setup/howto_read_from_xml.html">
+     How to readin network data from XML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../network_setup/howto_plot_network.html">
+     How to plot a network
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-data">
+   Load data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-the-network">
+   Preparing the network
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-edge-cost">
+     Set edge cost
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-affine-demand-function">
+     Set affine demand function
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-mca">
+   Run MCA
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="gaslib-gas24">
+<h1>Gaslib: Gas24<a class="headerlink" href="#gaslib-gas24" title="Permalink to this headline">¶</a></h1>
+<section id="load-data">
+<h2>Load data<a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a></h2>
+<p>We can initialize a gas network using the network and nomination XML files:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paminco</span> <span class="kn">import</span> <span class="n">Network</span> 
+<span class="kn">from</span> <span class="nn">paminco.net</span> <span class="kn">import</span> <span class="n">load_gas</span>
+
+<span class="n">net</span> <span class="o">=</span> <span class="n">load_gas</span><span class="p">(</span><span class="s2">&quot;gas24&quot;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(18, 19, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>where the network consists of 18 nodes and 19 edges.</p>
+</section>
+<section id="preparing-the-network">
+<h2>Preparing the network<a class="headerlink" href="#preparing-the-network" title="Permalink to this headline">¶</a></h2>
+<section id="set-edge-cost">
+<h3>Set edge cost<a class="headerlink" href="#set-edge-cost" title="Permalink to this headline">¶</a></h3>
+<p>So far, the network cost are <span class="math notranslate nohighlight">\(F_e(x) = \beta_e x |x|\)</span>. However, as specified above, we require <strong>marginal cost</strong> <span class="math notranslate nohighlight">\(f_e(x) = \beta_e x |x|\)</span> to solve the minimum cost problem.
+Thus, before running the MCA algorithm, we have to integrate the network cost.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="set-affine-demand-function">
+<h3>Set affine demand function<a class="headerlink" href="#set-affine-demand-function" title="Permalink to this headline">¶</a></h3>
+<p>In the following example, we consider affine demand functions of the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+    \mathbf{h}_{\text{affine}}(\lambda) = \mathbf{b}_0 + \lambda \mathbf{b},
+\end{equation*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{b}_0\)</span> is a demand offset.
+I.e., for a demand multiplier <span class="math notranslate nohighlight">\(\lambda=0\)</span>, the resulting demand is not zero: <span class="math notranslate nohighlight">\(\mathbf{h}(0) \neq \mathbf{0}\)</span>.
+Solving this problem with MCA (and thus EFA) requires an <em>initial phase</em> where EFA starts in the final region of the solution of the linear problem <span class="math notranslate nohighlight">\(\mathbf{h}(\lambda_0) = \lambda_0 \mathbf{b}_0\)</span> with <span class="math notranslate nohighlight">\(\lambda_0^{\text{max}} = 1\)</span>.
+The offset is specified by the nomination file and we set the demand direction as a commodity with single source and sink with half the rate of the offset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demand_dir</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;entry03&quot;</span><span class="p">,</span> <span class="s2">&quot;exit05&quot;</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">demand</span><span class="p">())</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="n">net</span><span class="o">.</span><span class="n">set_demand</span><span class="p">((</span><span class="n">net</span><span class="o">.</span><span class="n">demand</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="n">demand_dir</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;affine&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="run-mca">
+<h2>Run MCA<a class="headerlink" href="#run-mca" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we run the MCA algorithm to compute parametric network flows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paminco</span> <span class="kn">import</span> <span class="n">MCA</span>
+<span class="n">mca</span> <span class="o">=</span> <span class="n">MCA</span><span class="p">(</span><span class="n">net</span><span class="p">)</span>
+<span class="n">mca</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and plot the resulting parametric gas flow in the network for individual edges:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">:</span> <span class="n">ax0</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span><span class="n">ax1</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">edge</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="n">mca</span><span class="o">.</span><span class="n">plot_flow_on_edge</span><span class="p">(</span><span class="n">edge</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$\lambda$&quot;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;flow&quot;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parametric gasflow for edge </span><span class="si">{</span><span class="n">edge</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/gas24_13_0.png" src="../../../_images/gas24_13_0.png" />
+</div>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Philipp Warode, Per Joachims.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -354,18 +354,18 @@ The objective function simplifies to <span class="math notranslate nohighlight">
 <p>The assumption of linear marginal cost restricts the applicability of the algorithm.
 We now discuss problems with <em>piecewise linear marginal costs</em>:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="f502a119-73a0-4486-ad55-d1f4bbe0f330" name="0a18961c-0071-4c1c-bd7a-3d3a5522cd0e" type="radio">
-</input><label class="tabbed-label" for="f502a119-73a0-4486-ad55-d1f4bbe0f330">
+<input checked="checked" id="9eb53b9f-554b-4010-a86f-b97cc8a3fd75" name="4e7230ac-1276-4ab1-ba8b-03f33ff6a528" type="radio">
+</input><label class="tabbed-label" for="9eb53b9f-554b-4010-a86f-b97cc8a3fd75">
 Graph</label><div class="tabbed-content docutils">
 <a class="reference internal image-reference" href="../_images/fig2a_graph_with_marginal_cost.png"><img alt="../_images/fig2a_graph_with_marginal_cost.png" class="align-center" src="../_images/fig2a_graph_with_marginal_cost.png" style="height: 250px;" /></a>
 </div>
-<input id="a40a53b4-6881-4c34-9494-2806e41be362" name="0a18961c-0071-4c1c-bd7a-3d3a5522cd0e" type="radio">
-</input><label class="tabbed-label" for="a40a53b4-6881-4c34-9494-2806e41be362">
+<input id="5a1ccc9f-fd07-429a-9e71-3b43140d62b0" name="4e7230ac-1276-4ab1-ba8b-03f33ff6a528" type="radio">
+</input><label class="tabbed-label" for="5a1ccc9f-fd07-429a-9e71-3b43140d62b0">
 Regions in <span class="math notranslate nohighlight">\(\Pi\)</span> and solution curve</label><div class="tabbed-content docutils">
 <a class="reference internal image-reference" href="../_images/fig3a_potential_space_and_solution_curve.png"><img alt="../_images/fig3a_potential_space_and_solution_curve.png" class="align-center" src="../_images/fig3a_potential_space_and_solution_curve.png" style="height: 250px;" /></a>
 </div>
-<input id="68d203dc-fc39-41cb-a00b-6359db9a865b" name="0a18961c-0071-4c1c-bd7a-3d3a5522cd0e" type="radio">
-</input><label class="tabbed-label" for="68d203dc-fc39-41cb-a00b-6359db9a865b">
+<input id="dd766a9e-187f-466d-9e59-2046e3e31946" name="4e7230ac-1276-4ab1-ba8b-03f33ff6a528" type="radio">
+</input><label class="tabbed-label" for="dd766a9e-187f-466d-9e59-2046e3e31946">
 Induced edge flows</label><div class="tabbed-content docutils">
 <a class="reference internal image-reference" href="../_images/fig3b_induced_flow.png"><img alt="../_images/fig3b_induced_flow.png" class="align-center" src="../_images/fig3b_induced_flow.png" style="height: 250px;" /></a>
 </div>
@@ -394,7 +394,7 @@ thus a piecewise linear function:</p>
 \right\}
 .\]</div>
 <p>Hence, the main challenge lies in finding the correct regions <span class="math notranslate nohighlight">\(R_{\mathbf{t}}\)</span>.
-The <a class="reference internal" href="../api/algo/efa.html#efa"><span class="std std-ref">Electrial Flow Algorithm (EFA)</span></a> <a class="footnote-reference brackets" href="#id3" id="id1">1</a> provides a solution for this problem.</p>
+The <a class="reference internal" href="../api/algo/efa.html#efa"><span class="std std-ref">Electrial Flow Algorithm (EFA)</span></a> <a class="reference internal" href="#wk21" id="id1"><span>[WK21]</span></a> provides a solution for this problem.</p>
 <div class="admonition-idea-behind-the-electrial-flow-algorithm admonition">
 <p class="admonition-title">Idea behind the Electrial Flow Algorithm</p>
 <p><em>Piecewise linear</em> marginal cost result in a subdivision of the potential space <span class="math notranslate nohighlight">\(\Pi\)</span>.
@@ -408,7 +408,7 @@ The difficulty thus lies in finding the correct sequence of regions.</p>
 <p>The EFA algorithm is restricted to piecewise linear marginal cost functions <span class="math notranslate nohighlight">\(f_e\)</span> and thus
 minimum cost flow problems with piecewise quadratic cost functions.
 However, it is possible to approximate continous convex cost functions <span class="math notranslate nohighlight">\(F_e\)</span> with
-piecewise quadratic convex cost functions <span class="math notranslate nohighlight">\(\tilde{F}_e\)</span> <a class="footnote-reference brackets" href="#id4" id="id2">2</a>.
+piecewise quadratic convex cost functions <span class="math notranslate nohighlight">\(\tilde{F}_e\)</span> <a class="reference internal" href="#roc84" id="id2"><span>[Roc84]</span></a>.
 The <a class="reference internal" href="../api/algo/mca.html#mca"><span class="std std-ref">Marginal Cost Approximation (MCA)</span></a> algorithm builds on that idea and “feeds”
 the EFA with approximated piecewise linear marginal cost.
 Hence, MCA calculates an <a class="reference internal" href="#theory-mcf-abapprox"><span class="std std-ref">alpha-beta-approximate</span></a> minimum cost flow function.</p>
@@ -417,14 +417,12 @@ Hence, MCA calculates an <a class="reference internal" href="#theory-mcf-abappro
 <p><a class="reference internal" href="../api/algo/generated/paminco.algo.mca.MCAInterpolationRule.html#paminco.algo.mca.MCAInterpolationRule" title="paminco.algo.mca.MCAInterpolationRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">MCAInterpolationRule</span></code></a> : Criteria for proper approximation of cost functions.</p>
 </div>
 <p class="rubric">References</p>
-<dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Klimm M, Warode P (2021) Parametric Computation of Minimum Cost
-Flows with Piecewise Quadratic Costs. <em>Mathematics of Operations
-Research</em>. Available at <a class="reference external" href="https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf">https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf</a></p>
+<dl class="citation">
+<dt class="label" id="wk21"><span class="brackets"><a class="fn-backref" href="#id1">WK21</a></span></dt>
+<dd><p>Klimm M, Warode P (2021) “Parametric Computation of Minimum Cost Flows with Piecewise Quadratic Costs.” <em>Mathematics of Operations Research</em>. Available at <a class="reference external" href="https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf">https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf</a></p>
 </dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Rockafellar, RT (1984) <em>Network Flows and Monotropic Optimization</em> (John Wiley and Sons, Hoboken, NJ)</p>
+<dt class="label" id="roc84"><span class="brackets"><a class="fn-backref" href="#id2">Roc84</a></span></dt>
+<dd><p>Rockafellar, RT (1984) <a href="#id3"><span class="problematic" id="id4">*</span></a>Network Flows and M</p>
 </dd>
 </dl>
 </section>

@@ -186,7 +186,7 @@ Furhter, for all regions, there exist numbers :math:`\lambda_t^{\text{min}}` and
     .
 
 Hence, the main challenge lies in finding the correct regions :math:`R_{\mathbf{t}}`.
-The :ref:`Electrial Flow Algorithm (EFA) <efa>` [1]_ provides a solution for this problem.
+The :ref:`Electrial Flow Algorithm (EFA) <efa>` [WK21]_ provides a solution for this problem.
   
 .. admonition:: Idea behind the Electrial Flow Algorithm
 
@@ -200,7 +200,7 @@ The :ref:`Electrial Flow Algorithm (EFA) <efa>` [1]_ provides a solution for thi
 The EFA algorithm is restricted to piecewise linear marginal cost functions :math:`f_e` and thus
 minimum cost flow problems with piecewise quadratic cost functions.
 However, it is possible to approximate continous convex cost functions :math:`F_e` with 
-piecewise quadratic convex cost functions :math:`\tilde{F}_e` [2]_.
+piecewise quadratic convex cost functions :math:`\tilde{F}_e` [Roc84]_.
 The :ref:`Marginal Cost Approximation (MCA) <mca>` algorithm builds on that idea and "feeds"
 the EFA with approximated piecewise linear marginal cost.
 Hence, MCA calculates an :ref:`alpha-beta-approximate <theory-mcf-abapprox>` minimum cost flow function.
@@ -212,7 +212,5 @@ Hence, MCA calculates an :ref:`alpha-beta-approximate <theory-mcf-abapprox>` min
 
 .. rubric:: References
 
-.. [1] Klimm M, Warode P (2021) Parametric Computation of Minimum Cost
-       Flows with Piecewise Quadratic Costs. *Mathematics of Operations
-       Research*. Available at https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf
-.. [2] Rockafellar, RT (1984) *Network Flows and Monotropic Optimization* (John Wiley and Sons, Hoboken, NJ)
+.. [WK21] Klimm M, Warode P (2021) "Parametric Computation of Minimum Cost Flows with Piecewise Quadratic Costs." *Mathematics of Operations Research*. Available at https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf
+.. [Roc84] Rockafellar, RT (1984) *Network Flows and M  
