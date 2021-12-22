@@ -186,3 +186,27 @@ class TestMCFI:
             # Check if flows are similar [with much more tolerance]
             # (not guaranteed by alpha-beta-property, but holds in these examples)
             assert np.allclose(x_mcfi, x_mca, rtol=(alpha-1)*10, atol=beta*10)
+
+    def test_exceptions(self):
+        net = load_sioux()
+        # Test for 'not single commodity' exception
+        mcfi = MCFI(net)
+        with pytest.raises(ValueError):
+            mcfi.run()
+
+        # Test for 'alpha < epsilon + 1' exception
+        net.set_demand(('1', '24', 1000), mode='linear')
+        # Case alpha = epsilon + 1
+        mcfi = MCFI(net, alpha=1.1, epsilon=.1)
+        with pytest.raises(ValueError):
+            mcfi.run()
+        # Must raise an exception
+        mcfi = MCFI(net, alpha=1.01, epsilon=.1)
+        with pytest.raises(ValueError):
+            mcfi.run()
+        # No exception
+        mcfi = MCFI(net, alpha=1.1, epsilon=.01)
+        mcfi.run()
+
+
+    

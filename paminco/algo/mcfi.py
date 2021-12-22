@@ -244,6 +244,7 @@ class MCFI(AlphaBetaApproximativeSolver):
         
         self.i = 0
         if param is None:
+            self._check_adaptive_conditions()
             self._run_adaptive(callback)
         elif is_iterable(param):
             self._run_with_params(param, callback)
@@ -280,6 +281,25 @@ class MCFI(AlphaBetaApproximativeSolver):
         self.callback(CallBackFlag.RUN_END, run_cb)
         
         self.close_run()
+
+    def _check_adaptive_conditions(self):
+        """Check if configuration matches conditions for adaptive run"""
+
+        # Check if instance is a single commodity instance
+        if (self.network.is_single_commodity is False
+                or len(self.network.demand) == 0):
+            raise ValueError(
+                "Network must have demand function that consists of single "
+                f"demand. Network demand is: {type(self.network.demand)} "
+                f"consisting of {len(self.network.demand)} commodities."
+            )
+        
+        # Check, if parameters alpha and epsilon are consistent
+        if self._c.epsilon + 1>= self._c.alpha:
+            msg = f"Invalid parameters alpha = {self._c.alpha} and "
+            msg += f"{self._c.epsilon} for MCFI. Algorithm requires "
+            msg += "epsilon < alpha - 1."
+            raise ValueError(msg)
 
     def _run_adaptive(self, callback=None) -> None:
         # handle callback
