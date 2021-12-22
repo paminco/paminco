@@ -3,7 +3,7 @@
 <p align="center">
  <a href="https://github.com/paminco/paminco/blob/main/LICENSE"><img src="https://img.shields.io/github/license/paminco/paminco" alt="MIT License"/></a>
  <img src="https://img.shields.io/github/workflow/status/paminco/paminco/pip_install_and_test" alt="build status"/>
- <a href="https://paminco.github.io"><img src="https://readthedocs.org/projects/docs/badge/?version=latest" alt="docs"/></a>
+ <a href="https://paminco.github.io/paminco"><img src="https://readthedocs.org/projects/docs/badge/?version=latest" alt="docs"/></a>
  
 </p>
 
