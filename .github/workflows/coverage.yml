@@ -16,11 +16,10 @@ jobs:
         with:
           python-version: 3.8
       
-      - name: install dependencies and package
+      - name: install dependencies and pytest
         run: |
           python3 -m pip install --upgrade pip
           pip3 install -r requirements.txt
-          pip3 install .
           pip3 install pytest
           pip3 install pytest-cov
           
