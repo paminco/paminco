@@ -114,14 +114,14 @@ if no such potential exsits, it is not.
   potential increases in the direction of flow. This may not be intuitive for physical applications where 
   quantities usually "flow" from higher to lower potential.
 
-.. _theory-mcf-characterization-sppot:
+.. .. _theory-mcf-characterization-sppot:
 
-3.2 Shortest path potentials
-----------------------------
+.. 3.2 Shortest path potentials
+.. ----------------------------
 
-The above verification of minimial cost flows can be carried out by calculating *shortest paths*.
+.. The above verification of minimial cost flows can be carried out by calculating *shortest paths*.
 
-.. _theory-mcf-characterization-supp:
+.. .. _theory-mcf-characterization-supp:
 
-3.3 Support of minimum cost flows
----------------------------------
+.. 3.3 Support of minimum cost flows
+.. ---------------------------------

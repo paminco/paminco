@@ -141,23 +141,23 @@ User Guide
     :link-badge:`~edges,Edges,"ref",badge-info`
     :link-badge:`~nodes,Nodes,"ref",badge-info`
 
-  .. dropdown:: *Edge Cost*: polynomial, piecewise quadratic, or symbolic
+  .. .. dropdown:: *Edge Cost*: polynomial, piecewise quadratic, or symbolic
   
-      .. image:: /_static/img/tikz/fig2a_graph_with_marginal_cost.png
-      :width: 400
-      :align: center
+  ..     .. image:: /_static/img/tikz/fig2a_graph_with_marginal_cost.png
+  ..     :width: 400
+  ..     :align: center
 
-    We show how to equip a network with cost functions, 
-    i.e., how the cost :math:`F_e` of an edge :math:`e` vary by the flow on that edge. 
+  ..   We show how to equip a network with cost functions, 
+  ..   i.e., how the cost :math:`F_e` of an edge :math:`e` vary by the flow on that edge. 
 
-    .. link-button:: network_setup/howto_set_cost.html
-        :text: Go to user guide
-        :classes: btn-outline-primary
+  ..   .. link-button:: network_setup/howto_set_cost.html
+  ..       :text: Go to user guide
+  ..       :classes: btn-outline-primary
     
-    :link-badge:`cost-abstract,"NetworkCost (abstract)",ref,badge-light`
-    :link-badge:`cost-poly,"PolynomialCost",ref,badge-info`
-    :link-badge:`cost-piecewise,"PiecewiseQuadraticCost",ref,badge-info`
-    :link-badge:`cost-symbolic,"SymbolicCost",ref,badge-info`
+  ..   :link-badge:`cost-abstract,"NetworkCost (abstract)",ref,badge-light`
+  ..   :link-badge:`cost-poly,"PolynomialCost",ref,badge-info`
+  ..   :link-badge:`cost-piecewise,"PiecewiseQuadraticCost",ref,badge-info`
+  ..   :link-badge:`cost-symbolic,"SymbolicCost",ref,badge-info`
   
   .. dropdown:: *Demand Function*: linear and affine demand functions
     
