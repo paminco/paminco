@@ -625,7 +625,7 @@ class EFA(ParametricSolver):
             # revert to the previous region that contains the
             # flow for lambda = 1
             r0[self.efa_phase1.min_edge] -= self.efa_phase1.region_activate
-            
+        
         return r0
 
     def _update_region(self) -> None:
