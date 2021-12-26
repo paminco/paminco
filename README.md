@@ -6,6 +6,8 @@
 [![codecov](https://codecov.io/gh/paminco/paminco/branch/main/graph/badge.svg?token=C0YUQJTWSE)](https://codecov.io/gh/paminco/paminco)
 [![Paper 1](https://img.shields.io/badge/DOI-10.1287%2Fmoor.2021.1151-blue)](https://pubsonline.informs.org/doi/10.1287/moor.2021.1151)
 
+- **Documentation** https://paminco.github.io/paminco/
+
 ## What is paminco?
 The paminco package enables the parametric computation of minimum cost flows.
 
