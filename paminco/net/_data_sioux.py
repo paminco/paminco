@@ -95,6 +95,8 @@ TNTP_SIOUX_NET = \
 
 TNTP_SIOUX_NODE = \
 """Node	X	Y	;
+~ this is a comment line
+# this is also a comment line
 1	-96.77041974	43.61282792	;
 2	-96.71125063	43.60581298	;
 3	-96.77430341	43.5729616	;
@@ -125,6 +127,9 @@ TNTP_SIOUX_TRIPS = \
 """<NUMBER OF ZONES> 24
 <TOTAL OD FLOW> 360600.0
 <END OF METADATA>
+
+~ this is a comment line
+# this is also a comment line
 
 
 Origin 	1 

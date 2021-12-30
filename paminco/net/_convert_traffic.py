@@ -6,12 +6,18 @@ import pandas as pd
 
 
 LINK_TRAVEL_TIME = "free_flow_time * (1 + b * (x / capacity)**power)"
+COMMENT_SYMBOLS = ("~", "#")
 
 
 def dummy_file_handler(file):
     if not hasattr(file, 'read'):
         file = open(file, 'r')
     return file
+
+
+def is_comment_line(line):
+    line = line.strip()
+    return line.startswith(COMMENT_SYMBOLS)
 
 
 def clever_split(line: str) -> list:
@@ -64,6 +70,10 @@ def load_trips(trips) -> list:
             
             # skip emtpy lines
             if len(line) == 0:
+                continue
+
+            # skip comment lines
+            if is_comment_line(line):
                 continue
             
             # read metadata from line if availabe
@@ -126,14 +136,18 @@ def load_nodes(tntp_nodes, ftn=None):
     f = dummy_file_handler(tntp_nodes)
     try:
         for line in f:
-            line = line.strip()
+            line = line.strip().lower()
 
             # skip emtpy lines
             if len(line) == 0:
                 continue
 
+            # skip comment lines
+            if is_comment_line(line):
+                continue
+
             # skip header line
-            if line.startswith("Node"):
+            if line.startswith("node"):
                 continue
 
             cols = clever_split(line)
