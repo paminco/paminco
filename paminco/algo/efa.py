@@ -252,7 +252,8 @@ class EFAConfig(Config):
     print : bool, default=False
         Whether to print a summary of each iteration.
     recomp_interval : int, default=1
-        If <= 1, recompute inverse laplacian in every iteration. Else
+        If == 1, recompute inverse laplacian in every iteration. 
+        If < 1, never recompute the laplacian. Else
         update and recompute every `recomp_interval`. The higher the
         value, the less accurate the inverse laplacian.
     round_lambda : int, default=3
@@ -676,7 +677,12 @@ class EFA(ParametricSolver):
             force_recomputation: bool = False,
             ) -> None:
         try:
-            if force_recomputation or self.i % self._c.recomp_interval == 0:
+            recompute = force_recomputation
+            # Recompute, if recomputation interval is reached
+            if self._c.recomp_interval > 0:
+                if self.i % self._c.recomp_interval == 0:
+                    recompute = True
+            if recompute:
                 # recompute inverse
                 self.Lstar = self._net.Lstar(region=self.region,
                                              method=self._c.inverse_method)

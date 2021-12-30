@@ -71,3 +71,19 @@ def test_compare_fw(max_flow, thres, rng, inverse_method, recomp_interval, pivot
         assert rel_diff < thres
     
     assert len(mcfi.param_solution.arr_param) == len(params)
+
+
+def test_laplace_recomputation_vs_update():
+    net = load_sioux()
+    net.set_demand(('1', '20', 10000), mode='linear')
+
+    # Compute solution with recomputation in every step
+    mca_re = MCA(net, recomp_interval=1)
+    mca_re.run()
+
+    # Compute solution with Laplace updates only
+    mca_up = MCA(net, recomp_interval=0)
+    mca_up.run()
+
+    # Ensure solutions are the same
+    assert np.allclose(mca_re.flow_at(1), mca_up.flow_at(1))
