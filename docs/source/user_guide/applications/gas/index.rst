@@ -19,6 +19,7 @@ We only consider a network consisting of pipes, i.e., network elements such as c
 The coefficient :math:`\beta_e` can then be calculated using physical specifications such as length and diameter. See [Pfe15]_ for further details on this conversion.
 
 .. toctree::
+    :hidden:
 
     Gas24 <gas24.ipynb>
 

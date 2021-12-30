@@ -20,8 +20,8 @@ import paminco
 # -- Project information -----------------------------------------------------
 
 project = 'paminco'
-copyright = '2021, Philipp Warode, Per Joachims'
-author = 'Philipp Warode, Per Joachims'
+copyright = '2021, Per Joachims, Max Klimm, Philipp Warode'
+author = 'Per Joachims, Max Klimm, Philipp Warode'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'

@@ -4,20 +4,36 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# STUB"
+    "# Network Cost"
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "blabla"
+    "## PolynomialCost"
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
-   "source": []
+   "source": [
+    "## PiecewiseQuadraticCost"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## SymbolicCost"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Interpolation"
+   ]
   }
  ],
  "metadata": {
