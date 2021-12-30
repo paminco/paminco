@@ -6,6 +6,7 @@ from paminco.algo.efa import EFA
 from paminco.net._data_examples import (NET_ELECTRICAL_BRAESS,
                                        NET_ELECTRICAL_PIECEWISE,
                                        NET_DISCONTINUOUS_COST)
+from paminco.callback import CallBackFlag
 
 
 @pytest.fixture
@@ -159,3 +160,49 @@ def test_start_in_ambiguous_region():
     breakpoints = efa.all_params(filter_same=False)
     target_breakpoints = np.array([0, 0.5])
     assert np.allclose(breakpoints, target_breakpoints, rtol=1e-05, atol=1e-08)
+
+def test_efa_callbacks(simple_electrical_network):
+
+    expected_callbacks = [
+        (CallBackFlag.INIT_START, False),
+        (CallBackFlag.INIT_END, False),
+        (CallBackFlag.RUN_START, False),
+        (CallBackFlag.INIT_START, True),
+        (CallBackFlag.INIT_END, True),
+        (CallBackFlag.RUN_START, True),
+        (CallBackFlag.ITER_PRE, True, None),
+        (CallBackFlag.ITER_START, True, None),
+        (CallBackFlag.ITER_END, True, .75),
+        (CallBackFlag.ITER_START, True, .75),
+        (CallBackFlag.ITER_END, True, .75),
+        (CallBackFlag.ITER_START, True, .75),
+        (CallBackFlag.ITER_END, True, 2),
+        (CallBackFlag.RUN_END, True, np.inf),
+        (CallBackFlag.ITER_PRE, False, None),
+        (CallBackFlag.ITER_START, False, None),
+        (CallBackFlag.ITER_END, False, .5),
+        (CallBackFlag.ITER_START, False, .5),
+        (CallBackFlag.ITER_END, False, .5),
+        (CallBackFlag.ITER_START, False, .5),
+        (CallBackFlag.ITER_END, False, 2),
+        (CallBackFlag.RUN_END, False, np.inf)
+    ]
+
+    net = simple_electrical_network
+    net.set_demand((('s', 't', 4),('t', 's', 2)), mode='affine')
+
+    def check_callback(inst, flag):
+        # Get next expected callback flagg
+        expected = expected_callbacks[0]
+        del expected_callbacks[0]
+
+        # Assert that flag and phase1-flag are ok
+        assert flag == expected[0]
+        assert inst.is_phase1 == expected[1]
+        # If given, check lambda max as well
+        if len(expected) > 2:
+            assert inst.lambda_max == expected[2]
+
+    efa = EFA(net, callback=check_callback)
+    efa.run()
+    

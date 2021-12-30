@@ -365,6 +365,12 @@ class EFA(ParametricSolver):
     use_simple_timer : bool, default=True
         Whether to time EFA. If ``True``, timestamps for intializtion
         and every iteration will be saved to attribute ``timer``.
+    phase1_of : EFA, default=None
+        The main EFA object of a 2-phase EFA run. If set to something
+        other than ``None``, it is assumed that this EFA object is
+        used to compute the initial solution for the EFA run of the
+        ``phase1_of`` object. If set, the ``is_phase1`` property of
+        this object will be set to ``True``.
     kwargs : keyword arguments, optional
         For further options of EFA, see EFAConfig.
     
@@ -386,9 +392,14 @@ class EFA(ParametricSolver):
             callback=None,
             use_simple_timer: bool = True,
             preprocess_network: bool = True,
+            phase1_of: EFA = None,
             copy_network: bool = True,
             **kwargs
             ) -> None:
+
+        # Store the original EFA object if this is only a phase 1 run
+        self.phase1_of = phase1_of
+
         # init network and configs
         super().__init__(network,
                          name=name,
@@ -493,6 +504,8 @@ class EFA(ParametricSolver):
         self.config.map_kwargs(run=True, **kwargs)
         
         run_cb = callback_to_list(callback)
+        # Store run callbacks (for possible phase-1-callbacks)
+        self._run_cb = run_cb
         self.callback(CallBackFlag.RUN_START, run_cb)
         
         # Set initial values for run
@@ -609,7 +622,13 @@ class EFA(ParametricSolver):
     def _initial_region_affine(self):
         network = deepcopy(self.network)
         network._d = LinearDemandFunction(network.demand.b0, shared=network.shared)
-        self.efa_phase1 = EFA(network, preprocess_network=False, lambda_max=1)
+
+        self.efa_phase1 = EFA(
+            network,
+            preprocess_network=False, 
+            lambda_max=1,
+            callback=self._map_phase1_callback,
+            phase1_of=self)
         
         if self._c.print is True:
             print("=" * 11 + " START OF PHASE 1 " + "=" * 11)
@@ -627,6 +646,15 @@ class EFA(ParametricSolver):
             r0[self.efa_phase1.min_edge] -= self.efa_phase1.region_activate
             
         return r0
+
+    def _map_phase1_callback(self, instance, flag):
+        """Pass callbacks from Phase1 EFA to callbacks"""
+        if not hasattr(self, '_phase1_cb'):
+            self._phase1_cb = [cb for cb in self.callbacks]
+            if hasattr(self, '_run_cb'):
+                self._phase1_cb += self._run_cb
+        for cb in self._phase1_cb:
+            cb(instance, flag)
 
     def _update_region(self) -> None:
         if self.min_edge is not None:
@@ -954,3 +982,8 @@ class EFA(ParametricSolver):
     def region_zero(self) -> np.ndarray:
         """ndarray of int: initial region in piecewise cost funcs."""
         return self._region_zero
+
+    @property
+    def is_phase1(self) -> bool:
+        """Returns ``True`` if this is a phase 1 EFA run."""
+        return self.phase1_of is not None
