@@ -167,8 +167,6 @@ def test_efa_callbacks(simple_electrical_network):
         (CallBackFlag.INIT_START, False),
         (CallBackFlag.INIT_END, False),
         (CallBackFlag.RUN_START, False),
-        (CallBackFlag.INIT_START, True),
-        (CallBackFlag.INIT_END, True),
         (CallBackFlag.RUN_START, True),
         (CallBackFlag.ITER_PRE, True, None),
         (CallBackFlag.ITER_START, True, None),

@@ -32,7 +32,7 @@ Specifying demand and cost
    Network.set_cost
    Network.integrate_cost
    .. TODO: remove from network?
-   Network.derivate_cost
+   Network.differentiate_cost
 
 
 Math  

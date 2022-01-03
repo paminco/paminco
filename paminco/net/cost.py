@@ -289,17 +289,25 @@ class NetworkCost(abc.ABC):
         """Return the edge cost of the edge with index edge."""
         ...
     @abc.abstractmethod
-    def derivate(self) -> None: ...
+    def differentiate(self) -> None: 
+        """Return a new NetworkCost object with derivative cost functions."""
+        ...
     @abc.abstractmethod
-    def integrate(self) -> None: ...
+    def integrate(self) -> None:
+        """Return a new NetworkCost object with integrated cost functions."""
+        ...
     @abc.abstractmethod
-    def is_smooth(self, k=1) -> bool: ...
+    def is_smooth(self, k=1) -> bool:
+        """Return `True` if the function is `k`-times differentiable."""
+        ...
     @abc.abstractmethod
     def delete_edges(self) -> None: ...
     @abc.abstractmethod
     def save_to_numpy(self) -> None: ...
     @abc.abstractmethod
-    def value(self): ...
+    def value(self, *args, **kwargs):
+        """Abstract Method for function evaluation."""
+        ...
 
 
 class EdgeCost(abc.ABC):
@@ -553,7 +561,7 @@ class SymbolicCost(NetworkCost):
     def times_X(self) -> None:
         raise NotImplementedError()
 
-    def derivate(self) -> None:
+    def differentiate(self) -> None:
         raise NotImplementedError()
 
     def integrate(self) -> None:
@@ -793,7 +801,7 @@ class PolynomialCost(NetworkCost):
         f = np.r_[[1 / (f + d_) for d_ in range(d)]].prod(axis=0)
         return self._shift(d=d, inplace=inplace, factor=f)
 
-    def derivate(self, d: int = 1, inplace: bool = False):
+    def differentiate(self, d: int = 1, inplace: bool = False):
         f = np.arange(self.degree + 1)[d:]
         f = np.r_[[f - d_ for d_ in range(d)]].prod(axis=0)
         return self._shift(d=-d, inplace=inplace, factor=f)
@@ -1617,7 +1625,7 @@ class PiecewiseQuadraticCost(NetworkCost):
     def __len__(self):
         return self._ec.edge[-1] + 1
 
-    def derivate(self):
+    def differentiate(self):
         raise NotImplementedError("not implemented for pwqc")
 
     def integrate(self):

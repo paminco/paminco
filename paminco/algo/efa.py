@@ -628,13 +628,14 @@ class EFA(ParametricSolver):
             network,
             preprocess_network=False, 
             lambda_max=1,
-            callback=self._map_phase1_callback,
             phase1_of=self)
         
         if self._c.print is True:
             print("=" * 11 + " START OF PHASE 1 " + "=" * 11)
         
-        self.efa_phase1.run(print=self._c.print)
+        self.efa_phase1.run(
+            print=self._c.print, 
+            callback=self._map_phase1_callback)
         
         if self._c.print is True:
             print("=" * 12 + " END OF PHASE 1 " + "=" * 12)

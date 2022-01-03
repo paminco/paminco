@@ -73,7 +73,7 @@ def test_costfunc_gas():
 def test_derivation_integration(d):
     net = load_sioux()
     c2 = net.cost.integrate(d=d)
-    c3 = c2.derivate(d=d)
+    c3 = c2.differentiate(d=d)
     f = np.random.random(net.m) * 10000
     assert np.allclose(c3(f), net.cost(f))
     assert np.allclose(c3(f, d=1), net.cost(f, d=1))

@@ -439,16 +439,16 @@ class Network:
         """
         self.cost.integrate(*args, inplace=True, **kw)
 
-    def derivate_cost(self, *args, **kw) -> None:
-        """Derivate edge costs.
+    def differentiate_cost(self, *args, **kw) -> None:
+        """differentiate edge costs.
         
         See Also
         --------
-        paminco.net.cost.PolynomialCost.derivate
-        paminco.net.cost.PiecewiseQuadraticCost.derivate
+        paminco.net.cost.PolynomialCost.differentiate
+        paminco.net.cost.PiecewiseQuadraticCost.differentiate
         """
         if isinstance(self.cost, PolynomialCost):
-            self.cost.derivate(d=1, inplace=True)
+            self.cost.differentiate(d=1, inplace=True)
 
     def adjacency_matrix(self, *args, **kw) -> sps.csr_matrix:
         """Alias for :func:`~Network.csgraph`."""
