@@ -471,7 +471,8 @@ identified.</p>
 </dd>
 <dt><strong>print</strong><span class="classifier">bool, default=False</span></dt><dd><p>Whether to print a summary of each iteration.</p>
 </dd>
-<dt><strong>recomp_interval</strong><span class="classifier">int, default=1</span></dt><dd><p>If &lt;= 1, recompute inverse laplacian in every iteration. Else
+<dt><strong>recomp_interval</strong><span class="classifier">int, default=1</span></dt><dd><p>If == 1, recompute inverse laplacian in every iteration. 
+If &lt; 1, never recompute the laplacian. Else
 update and recompute every <cite>recomp_interval</cite>. The higher the
 value, the less accurate the inverse laplacian.</p>
 </dd>

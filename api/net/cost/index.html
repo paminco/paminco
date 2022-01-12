@@ -49,7 +49,7 @@
     <script src="../../../_static/contentui.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="paminco.net.cost.NetworkCost" href="generated/paminco.net.cost.NetworkCost.html" />
+    <link rel="next" title="Optimizer" href="../../optim/index.html" />
     <link rel="prev" title="AffineDemandFunction.from_npz" href="../demand/generated/paminco.net.demand.AffineDemandFunction.from_npz.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -436,28 +436,8 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#abstract">
-   Abstract
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#polynomial-cost">
-   Polynomial Cost
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#piecewise-quadratic-cost">
-   Piecewise Quadratic Cost
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#symbolic-cost">
-   Symbolic Cost
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interpolation">
-   Interpolation
+  <a class="reference internal nav-link" href="#abstract-classes">
+   Abstract Classes
   </a>
  </li>
 </ul>
@@ -484,99 +464,10 @@
   <p id="net-cost"><code class="xref py py-mod docutils literal notranslate"><span class="pre">paminco.net.cost</span></code></p>
 <section id="cost">
 <h1>Cost<a class="headerlink" href="#cost" title="Permalink to this headline">¶</a></h1>
-<section id="abstract">
-<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
-<table class="longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.cost.NetworkCost.html#paminco.net.cost.NetworkCost" title="paminco.net.cost.NetworkCost"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NetworkCost</span></code></a>([shared])</p></td>
-<td><p>Abstract class representing all cost functions of a network.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/paminco.net.cost.EdgeCost.html#paminco.net.cost.EdgeCost" title="paminco.net.cost.EdgeCost"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EdgeCost</span></code></a>([edge])</p></td>
-<td><p>Abstract class that represent the cost of a single edge.</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="polynomial-cost">
-<h2>Polynomial Cost<a class="headerlink" href="#polynomial-cost" title="Permalink to this headline">¶</a></h2>
-<table class="longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.cost.PolynomialCost.html#paminco.net.cost.PolynomialCost" title="paminco.net.cost.PolynomialCost"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PolynomialCost</span></code></a>(data[, shared, dtype_float, ...])</p></td>
-<td><p>Polynomial network costs.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/paminco.net.cost.SimplePolynomial.html#paminco.net.cost.SimplePolynomial" title="paminco.net.cost.SimplePolynomial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SimplePolynomial</span></code></a>(coeff[, signed, edge])</p></td>
-<td><p>Class representing a simple polynomial cost function.</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="piecewise-quadratic-cost">
-<h2>Piecewise Quadratic Cost<a class="headerlink" href="#piecewise-quadratic-cost" title="Permalink to this headline">¶</a></h2>
-<table class="longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.cost.PiecewiseQuadraticCost.html#paminco.net.cost.PiecewiseQuadraticCost" title="paminco.net.cost.PiecewiseQuadraticCost"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PiecewiseQuadraticCost</span></code></a>(data[, shared, ...])</p></td>
-<td><p>Piecewise quadratic network costs.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/paminco.net.cost.PiecewiseQuadraticCoefficients.html#paminco.net.cost.PiecewiseQuadraticCoefficients" title="paminco.net.cost.PiecewiseQuadraticCoefficients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PiecewiseQuadraticCoefficients</span></code></a>(data[, ...])</p></td>
-<td><p>A class representing coefficients of piecewise quadratic functions.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.cost.PiecewiseQuadraticFunction.html#paminco.net.cost.PiecewiseQuadraticFunction" title="paminco.net.cost.PiecewiseQuadraticFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PiecewiseQuadraticFunction</span></code></a>(a, b, offset, tau)</p></td>
-<td><p>A class representing the piecewise quadratic function of a single edge.</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="symbolic-cost">
-<h2>Symbolic Cost<a class="headerlink" href="#symbolic-cost" title="Permalink to this headline">¶</a></h2>
-<table class="longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.cost.SymbolicCost.html#paminco.net.cost.SymbolicCost" title="paminco.net.cost.SymbolicCost"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SymbolicCost</span></code></a>(coeffs[, F, f, f1, f2, shared, m])</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="interpolation">
-<h2>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">¶</a></h2>
-<table class="longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.cost.NetworkCostInterpolation.html#paminco.net.cost.NetworkCostInterpolation" title="paminco.net.cost.NetworkCostInterpolation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NetworkCostInterpolation</span></code></a>(cost, rule[, ...])</p></td>
-<td><p>A class managing the piecewise quadratic interpolation of the NetworkCost.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/paminco.net.cost.EdgeCostInterpolation.html#paminco.net.cost.EdgeCostInterpolation" title="paminco.net.cost.EdgeCostInterpolation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EdgeCostInterpolation</span></code></a>(edge, edge_cost, rule, ...)</p></td>
-<td><p>A class managing the piecwise quadratic interpolation of the cost function of a single edge.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.cost.InterpolationRule.html#paminco.net.cost.InterpolationRule" title="paminco.net.cost.InterpolationRule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InterpolationRule</span></code></a>()</p></td>
-<td><p>Abstract class for a breakpoint computation rule for the interpolation.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/paminco.net.cost.BreakpointsInterpolationRule.html#paminco.net.cost.BreakpointsInterpolationRule" title="paminco.net.cost.BreakpointsInterpolationRule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BreakpointsInterpolationRule</span></code></a>(breakpoints)</p></td>
-<td><p>Interpolation rule based on a given list of breakpoints.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/paminco.net.cost.EquidistantInterpolationRule.html#paminco.net.cost.EquidistantInterpolationRule" title="paminco.net.cost.EquidistantInterpolationRule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EquidistantInterpolationRule</span></code></a>(delta_x)</p></td>
-<td><p>Equidistant breakpoint rule for interpolation.</p></td>
-</tr>
-</tbody>
-</table>
+<section id="abstract-classes">
+<h2>Abstract Classes<a class="headerlink" href="#abstract-classes" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 </section>
 

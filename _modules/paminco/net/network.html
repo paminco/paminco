@@ -604,16 +604,16 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Network.derivate_cost"><a class="viewcode-back" href="../../../api/net/generated/paminco.net.Network.derivate_cost.html#paminco.net.Network.derivate_cost">[docs]</a>    <span class="k">def</span> <span class="nf">derivate_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Derivate edge costs.</span>
+<div class="viewcode-block" id="Network.differentiate_cost"><a class="viewcode-back" href="../../../api/net/generated/paminco.net.Network.differentiate_cost.html#paminco.net.Network.differentiate_cost">[docs]</a>    <span class="k">def</span> <span class="nf">differentiate_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;differentiate edge costs.</span>
 <span class="sd">        </span>
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
-<span class="sd">        paminco.net.cost.PolynomialCost.derivate</span>
-<span class="sd">        paminco.net.cost.PiecewiseQuadraticCost.derivate</span>
+<span class="sd">        paminco.net.cost.PolynomialCost.differentiate</span>
+<span class="sd">        paminco.net.cost.PiecewiseQuadraticCost.differentiate</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span> <span class="n">PolynomialCost</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">derivate</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Network.adjacency_matrix"><a class="viewcode-back" href="../../../api/net/generated/paminco.net.Network.adjacency_matrix.html#paminco.net.Network.adjacency_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">adjacency_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sps</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Alias for :func:`~Network.csgraph`.&quot;&quot;&quot;</span>

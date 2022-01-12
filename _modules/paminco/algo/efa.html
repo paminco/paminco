@@ -417,7 +417,8 @@
 <span class="sd">    print : bool, default=False</span>
 <span class="sd">        Whether to print a summary of each iteration.</span>
 <span class="sd">    recomp_interval : int, default=1</span>
-<span class="sd">        If &lt;= 1, recompute inverse laplacian in every iteration. Else</span>
+<span class="sd">        If == 1, recompute inverse laplacian in every iteration. </span>
+<span class="sd">        If &lt; 1, never recompute the laplacian. Else</span>
 <span class="sd">        update and recompute every `recomp_interval`. The higher the</span>
 <span class="sd">        value, the less accurate the inverse laplacian.</span>
 <span class="sd">    round_lambda : int, default=3</span>
@@ -530,6 +531,12 @@
 <span class="sd">    use_simple_timer : bool, default=True</span>
 <span class="sd">        Whether to time EFA. If ``True``, timestamps for intializtion</span>
 <span class="sd">        and every iteration will be saved to attribute ``timer``.</span>
+<span class="sd">    phase1_of : EFA, default=None</span>
+<span class="sd">        The main EFA object of a 2-phase EFA run. If set to something</span>
+<span class="sd">        other than ``None``, it is assumed that this EFA object is</span>
+<span class="sd">        used to compute the initial solution for the EFA run of the</span>
+<span class="sd">        ``phase1_of`` object. If set, the ``is_phase1`` property of</span>
+<span class="sd">        this object will be set to ``True``.</span>
 <span class="sd">    kwargs : keyword arguments, optional</span>
 <span class="sd">        For further options of EFA, see EFAConfig.</span>
 <span class="sd">    </span>
@@ -551,9 +558,14 @@
             <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">use_simple_timer</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
             <span class="n">preprocess_network</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="n">phase1_of</span><span class="p">:</span> <span class="n">EFA</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">copy_network</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
             <span class="o">**</span><span class="n">kwargs</span>
             <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="c1"># Store the original EFA object if this is only a phase 1 run</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phase1_of</span> <span class="o">=</span> <span class="n">phase1_of</span>
+
         <span class="c1"># init network and configs</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">network</span><span class="p">,</span>
                          <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
@@ -658,6 +670,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">map_kwargs</span><span class="p">(</span><span class="n">run</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         
         <span class="n">run_cb</span> <span class="o">=</span> <span class="n">callback_to_list</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
+        <span class="c1"># Store run callbacks (for possible phase-1-callbacks)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_run_cb</span> <span class="o">=</span> <span class="n">run_cb</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">RUN_START</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
         
         <span class="c1"># Set initial values for run</span>
@@ -774,12 +788,19 @@
     <span class="k">def</span> <span class="nf">_initial_region_affine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">network</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="p">)</span>
         <span class="n">network</span><span class="o">.</span><span class="n">_d</span> <span class="o">=</span> <span class="n">LinearDemandFunction</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="o">.</span><span class="n">b0</span><span class="p">,</span> <span class="n">shared</span><span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">shared</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span> <span class="o">=</span> <span class="n">EFA</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">preprocess_network</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">lambda_max</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span> <span class="o">=</span> <span class="n">EFA</span><span class="p">(</span>
+            <span class="n">network</span><span class="p">,</span>
+            <span class="n">preprocess_network</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+            <span class="n">lambda_max</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">phase1_of</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
         
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">print</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">11</span> <span class="o">+</span> <span class="s2">&quot; START OF PHASE 1 &quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">11</span><span class="p">)</span>
         
-        <span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="nb">print</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">print</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="nb">print</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">print</span><span class="p">,</span> 
+            <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_map_phase1_callback</span><span class="p">)</span>
         
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">print</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">12</span> <span class="o">+</span> <span class="s2">&quot; END OF PHASE 1 &quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
@@ -792,6 +813,15 @@
             <span class="n">r0</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span><span class="o">.</span><span class="n">min_edge</span><span class="p">]</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">efa_phase1</span><span class="o">.</span><span class="n">region_activate</span>
         
         <span class="k">return</span> <span class="n">r0</span>
+
+    <span class="k">def</span> <span class="nf">_map_phase1_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">flag</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Pass callbacks from Phase1 EFA to callbacks&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_phase1_cb&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_phase1_cb</span> <span class="o">=</span> <span class="p">[</span><span class="n">cb</span> <span class="k">for</span> <span class="n">cb</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">callbacks</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_run_cb&#39;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_phase1_cb</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_cb</span>
+        <span class="k">for</span> <span class="n">cb</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_phase1_cb</span><span class="p">:</span>
+            <span class="n">cb</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_update_region</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_edge</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -813,7 +843,12 @@
             <span class="n">force_recomputation</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
             <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">force_recomputation</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">recomp_interval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">recompute</span> <span class="o">=</span> <span class="n">force_recomputation</span>
+            <span class="c1"># Recompute, if recomputation interval is reached</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">recomp_interval</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">recomp_interval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">recompute</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">recompute</span><span class="p">:</span>
                 <span class="c1"># recompute inverse</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">Lstar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">Lstar</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="p">,</span>
                                              <span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">inverse_method</span><span class="p">)</span>
@@ -1118,7 +1153,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">region_zero</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;ndarray of int: initial region in piecewise cost funcs.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_region_zero</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_region_zero</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_phase1</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns ``True`` if this is a phase 1 EFA run.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase1_of</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
 </pre></div>
 
               </div>

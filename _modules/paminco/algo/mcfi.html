@@ -409,6 +409,7 @@
         
         <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">if</span> <span class="n">param</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_check_adaptive_conditions</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_run_adaptive</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">is_iterable</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_run_with_params</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">callback</span><span class="p">)</span>
@@ -445,6 +446,25 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">CallBackFlag</span><span class="o">.</span><span class="n">RUN_END</span><span class="p">,</span> <span class="n">run_cb</span><span class="p">)</span>
         
         <span class="bp">self</span><span class="o">.</span><span class="n">close_run</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_check_adaptive_conditions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if configuration matches conditions for adaptive run&quot;&quot;&quot;</span>
+
+        <span class="c1"># Check if instance is a single commodity instance</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">is_single_commodity</span> <span class="ow">is</span> <span class="kc">False</span>
+                <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Network must have demand function that consists of single &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;demand. Network demand is: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">)</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;consisting of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">demand</span><span class="p">)</span><span class="si">}</span><span class="s2"> commodities.&quot;</span>
+            <span class="p">)</span>
+        
+        <span class="c1"># Check, if parameters alpha and epsilon are consistent</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">epsilon</span> <span class="o">+</span> <span class="mi">1</span><span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">alpha</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Invalid parameters alpha = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">alpha</span><span class="si">}</span><span class="s2"> and &quot;</span>
+            <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">epsilon</span><span class="si">}</span><span class="s2"> for MCFI. Algorithm requires &quot;</span>
+            <span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;epsilon &lt; alpha - 1.&quot;</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_run_adaptive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># handle callback</span>
