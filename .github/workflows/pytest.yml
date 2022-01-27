@@ -27,4 +27,4 @@ jobs:
         
       - name: run pytest
         run: |
-          pytest --exitfirst --verbose --failed-first --cov=. --cov-report html -m "not very_slow"
+          pytest --exitfirst --verbose --failed-first -m "not very_slow"
