@@ -113,10 +113,10 @@ class NetworkFW(FlowOptimizer):
         >>> sioux.integrate_cost()
         >>> fw = paminco.NetworkFW(sioux)
         >>> fw.run(max_iter=200)
-        >>> print(fw.flow[:5].round(2))
-        [4498.78 8117.76 4520.88 5963.65 8095.65]
-        >>> print(fw.cost.round(2))
-        4233823.54
+        >>> print(fw.flow[:5].round(1))
+        [4498.8 8117.8 4520.9 5963.7 8095.7]
+        >>> print(fw.cost.round(1))
+        4233823.5
     
     Braess Paradox: Additional edges may lead to worse travel times in quilibrium::
     
