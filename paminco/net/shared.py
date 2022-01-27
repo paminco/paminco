@@ -1147,10 +1147,10 @@ class Shared:
         >>> net = paminco.net.load_sioux()
         >>> net.Gamma().toarray()[:5, :5]
         array([[-1, -1,  1,  0,  1],
-                -[ 1,  0, -1, -1,  0],
-                -[ 0,  1,  0,  0, -1],
-                -[ 0,  0,  0,  0,  0],
-                -[ 0,  0,  0,  0,  0]], dtype=int32)
+               [ 1,  0, -1, -1,  0],
+               [ 0,  1,  0,  0, -1],
+               [ 0,  0,  0,  0,  0],
+               [ 0,  0,  0,  0,  0]], dtype=int32)
         """
         # Rebuild gamma if neccessary
         if self.cache.is_valid("gamma") is False:
