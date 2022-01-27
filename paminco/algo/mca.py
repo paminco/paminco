@@ -252,45 +252,68 @@ class MCA(AlphaBetaApproximativeSolver):
 
     References
     ----------
-    .. [1] Klimm, Max, and P. Warode. "Parametric Computation of Minimum Cost
+    .. [Kli21] Klimm, Max, and P. Warode. "Parametric Computation of Minimum Cost
            Flows with Piecewise Quadratic Costs." Mathematics of Operations
            Research (2021). Available 10/25/2021 at https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf
     
     Examples
-    --------
-    Compute the **price of anarchy** for Sioux Falls::
+    --------   
+    SiouxFalls: a parametric Price of Anarchy::
     
-        import numpy as np
-        import copy
-        import paminco
-        net = paminco.net.load_sioux()
-        net.set_demand(("7", "13", 100000))
-        # ----------------------------------------------------------------
-        # Calculate system optimum
-        mca_so = MCA(net)
-        mca_so.run()
-        # ----------------------------------------------------------------
-        # Calculate user equilibrium -> integrate costs
-        net_ue = copy.deepcopy(net)
-        net_ue.integrate_cost()
-        mca_ue = MCA(net_ue)
-        mca_ue.run()
-        # ----------------------------------------------------------------
-        # Calculate price of anarchy (PoA)
-        x = np.linspace(0, 1, 100)
-        cost_so = np.array([net.cost(mca_so.flow_at(p)).sum() for p in x])
-        cost_ue = np.array([net.cost(mca_ue.flow_at(p)).sum() for p in x])
-        PoA = cost_ue / cost_so
+        >>> import copy
+        >>> import numpy as np
+        >>> import matplotlib.pyplot as plt
+        >>> import paminco
+        >>> sioux = paminco.load_sioux()
+        >>> sioux.set_demand(("20", "3", 100000))
+        >>> # --- Run MCA for user equilibrium
+        >>> sioux_ue = copy.deepcopy(sioux)
+        >>> sioux_ue.cost.integrate(inplace=True)
+        >>> mca_ue = paminco.MCA(sioux_ue)
+        >>> mca_ue.run()
+        >>> # --- Run MCA for system optimum
+        >>> sioux_so = copy.deepcopy(sioux) 
+        >>> sioux_so.cost.times_x(inplace=True)
+        >>> mca_so = paminco.MCA(sioux_so)
+        >>> mca_so.run()
+        >>> # compute POA
+        >>> def TTST(x):
+        ...   return sioux_so.cost.F(x).sum()
+        >>> lambdas = np.linspace(1e-5, 1, 100)
+        >>> cost_ue = np.array([TTST(mca_ue.flow_at(l)) for l in lambdas])
+        >>> cost_so = np.array([TTST(mca_so.flow_at(l)) for l in lambdas])
+        >>> poa = cost_ue / cost_so
     
     Determine edge flow in user equilibrium as a function of demand factor::
     
-        import paminco
-        net = paminco.net.load_sioux()
-        net.integrate_cost()
-        net.set_demand(("2", "21", 100000))
-        mca = MCA(net)
-        mca.run()
-        mca.plot_flow_on_edge(55)
+        >>> import matplotlib.pyplot as plt
+        >>> import paminco
+        >>> net = paminco.net.load_sioux()
+        >>> net.integrate_cost()
+        >>> net.set_demand(("2", "21", 100000))
+        >>> mca = paminco.MCA(net)
+        >>> mca.run()
+        >>> mca.plot_flow_on_edge(55): #doctest: +SKIP
+        
+    Parametric natural gas flows::
+    
+        >>> import matplotlib.pyplot as plt
+        >>> import paminco
+        >>> net = paminco.net.load_gas("gas24")
+        >>> net.size
+        (18, 19, 1)
+        >>> net.cost.integrate(inplace=True)
+        >>> demand_dir = ("entry03", "exit05", abs(net.demand()).sum())
+        >>> net.set_demand((net.demand.b, demand_dir), mode="affine")
+        >>> mca = paminco.MCA(net)
+        >>> mca.run()
+        >>> fig, (ax0, ax1) = plt.subplots(nrows=1, ncols=2, sharex=True, figsize=(12, 4))
+        >>> d = {5: ax0, 8:ax1}
+        >>> for edge, ax in d.items():
+        ...     mca.plot_flow_on_edge(edge, ax=ax) #doctest: +SKIP
+        ...     ax.set_xlabel("$\lambda$")
+        ...     ax.set_ylabel("flow")
+        ...     ax.set_title(f"Parametric gasflow for edge {edge}")
     
     """
     def __init__(

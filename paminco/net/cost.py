@@ -338,6 +338,34 @@ class EdgeCost(abc.ABC):
 
 
 class SymbolicCost(NetworkCost):
+    """Symbolic network cost.
+    
+    Parameters
+    ----------
+    coeff : dict
+        Values of function parameters, keys are expected to be numpy arrays.
+    F : str, optional
+        Integrated cost function.
+    f : str, optional
+        Cost function.
+    f1 : str, optional
+        First derivative of ``f``.
+    f2 : str, optional
+        Second derivative of ``f``.
+    shared : Shared, optional
+        Shared network object.
+    m : int, optional
+        Number of edges
+    
+    Examples
+    --------
+    >>> import paminco
+    >>> coeffs = {"a": [1, 2, 3], "b": [2, 2, 4]}
+    >>> cost = paminco.net.cost.SymbolicCost(coeffs, F="2*a*x**3 + x/b")
+    >>> cost(10)
+    array([2005. , 4005. , 6002.5])
+    """
+    
     dtofunc = {0: "F", 1: "f", 2: "f1", 3: "f2"}
 
     def __init__(
@@ -844,14 +872,12 @@ class PolynomialCost(NetworkCost):
 
         Examples
         --------
+        Traffic networks are intialized with link travel time as default and are close to
+        the link travel time for small networks.
+        
+        >>> import paminco
         >>> net = paminco.net.load_sioux()
-        >>> net.cost.value(100000 + np.zeros(net.m), d=0)[:5]
-        array([4.6000e+06, 4.4000e+06, 4.6000e+06, 2.4825e+09, 4.4000e+06])
-
-        Derivative of cost for small flows is mainly influenced by free
-        flow time for traffic networks.
-        >>> net = paminco.net.load_sioux()
-        >>> net.cost.value(1000, d=1)[:5]
+        >>> net.cost.value(1000)[:5]
         array([6.000002, 4.000002, 6.000002, 5.001241, 4.000002])
         """
         if d > self.degree:
