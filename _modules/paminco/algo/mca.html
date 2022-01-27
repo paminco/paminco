@@ -7,23 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>paminco.algo.mca &#8212; paminco 0.1 documentation</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
-
+    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
     
-  <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
+    <link rel="stylesheet"
+      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
     
       
-
+  
     
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -35,8 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/css/user_guide.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/api.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
+    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
@@ -117,10 +117,8 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
       </div>
@@ -136,7 +134,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -144,6 +143,9 @@
     
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -417,45 +419,68 @@
 
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
-<span class="sd">    .. [1] Klimm, Max, and P. Warode. &quot;Parametric Computation of Minimum Cost</span>
+<span class="sd">    .. [Kli21] Klimm, Max, and P. Warode. &quot;Parametric Computation of Minimum Cost</span>
 <span class="sd">           Flows with Piecewise Quadratic Costs.&quot; Mathematics of Operations</span>
 <span class="sd">           Research (2021). Available 10/25/2021 at https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf</span>
 <span class="sd">    </span>
 <span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    Compute the **price of anarchy** for Sioux Falls::</span>
+<span class="sd">    --------   </span>
+<span class="sd">    SiouxFalls: a parametric Price of Anarchy::</span>
 <span class="sd">    </span>
-<span class="sd">        import numpy as np</span>
-<span class="sd">        import copy</span>
-<span class="sd">        import paminco</span>
-<span class="sd">        net = paminco.net.load_sioux()</span>
-<span class="sd">        net.set_demand((&quot;7&quot;, &quot;13&quot;, 100000))</span>
-<span class="sd">        # ----------------------------------------------------------------</span>
-<span class="sd">        # Calculate system optimum</span>
-<span class="sd">        mca_so = MCA(net)</span>
-<span class="sd">        mca_so.run()</span>
-<span class="sd">        # ----------------------------------------------------------------</span>
-<span class="sd">        # Calculate user equilibrium -&gt; integrate costs</span>
-<span class="sd">        net_ue = copy.deepcopy(net)</span>
-<span class="sd">        net_ue.integrate_cost()</span>
-<span class="sd">        mca_ue = MCA(net_ue)</span>
-<span class="sd">        mca_ue.run()</span>
-<span class="sd">        # ----------------------------------------------------------------</span>
-<span class="sd">        # Calculate price of anarchy (PoA)</span>
-<span class="sd">        x = np.linspace(0, 1, 100)</span>
-<span class="sd">        cost_so = np.array([net.cost(mca_so.flow_at(p)).sum() for p in x])</span>
-<span class="sd">        cost_ue = np.array([net.cost(mca_ue.flow_at(p)).sum() for p in x])</span>
-<span class="sd">        PoA = cost_ue / cost_so</span>
+<span class="sd">        &gt;&gt;&gt; import copy</span>
+<span class="sd">        &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">        &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">        &gt;&gt;&gt; import paminco</span>
+<span class="sd">        &gt;&gt;&gt; sioux = paminco.load_sioux()</span>
+<span class="sd">        &gt;&gt;&gt; sioux.set_demand((&quot;20&quot;, &quot;3&quot;, 100000))</span>
+<span class="sd">        &gt;&gt;&gt; # --- Run MCA for user equilibrium</span>
+<span class="sd">        &gt;&gt;&gt; sioux_ue = copy.deepcopy(sioux)</span>
+<span class="sd">        &gt;&gt;&gt; sioux_ue.cost.integrate(inplace=True)</span>
+<span class="sd">        &gt;&gt;&gt; mca_ue = paminco.MCA(sioux_ue)</span>
+<span class="sd">        &gt;&gt;&gt; mca_ue.run()</span>
+<span class="sd">        &gt;&gt;&gt; # --- Run MCA for system optimum</span>
+<span class="sd">        &gt;&gt;&gt; sioux_so = copy.deepcopy(sioux) </span>
+<span class="sd">        &gt;&gt;&gt; sioux_so.cost.times_x(inplace=True)</span>
+<span class="sd">        &gt;&gt;&gt; mca_so = paminco.MCA(sioux_so)</span>
+<span class="sd">        &gt;&gt;&gt; mca_so.run()</span>
+<span class="sd">        &gt;&gt;&gt; # compute POA</span>
+<span class="sd">        &gt;&gt;&gt; def TTST(x):</span>
+<span class="sd">        ...   return sioux_so.cost.F(x).sum()</span>
+<span class="sd">        &gt;&gt;&gt; lambdas = np.linspace(1e-5, 1, 100)</span>
+<span class="sd">        &gt;&gt;&gt; cost_ue = np.array([TTST(mca_ue.flow_at(l)) for l in lambdas])</span>
+<span class="sd">        &gt;&gt;&gt; cost_so = np.array([TTST(mca_so.flow_at(l)) for l in lambdas])</span>
+<span class="sd">        &gt;&gt;&gt; poa = cost_ue / cost_so</span>
 <span class="sd">    </span>
 <span class="sd">    Determine edge flow in user equilibrium as a function of demand factor::</span>
 <span class="sd">    </span>
-<span class="sd">        import paminco</span>
-<span class="sd">        net = paminco.net.load_sioux()</span>
-<span class="sd">        net.integrate_cost()</span>
-<span class="sd">        net.set_demand((&quot;2&quot;, &quot;21&quot;, 100000))</span>
-<span class="sd">        mca = MCA(net)</span>
-<span class="sd">        mca.run()</span>
-<span class="sd">        mca.plot_flow_on_edge(55)</span>
+<span class="sd">        &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">        &gt;&gt;&gt; import paminco</span>
+<span class="sd">        &gt;&gt;&gt; net = paminco.net.load_sioux()</span>
+<span class="sd">        &gt;&gt;&gt; net.integrate_cost()</span>
+<span class="sd">        &gt;&gt;&gt; net.set_demand((&quot;2&quot;, &quot;21&quot;, 100000))</span>
+<span class="sd">        &gt;&gt;&gt; mca = paminco.MCA(net)</span>
+<span class="sd">        &gt;&gt;&gt; mca.run()</span>
+<span class="sd">        &gt;&gt;&gt; mca.plot_flow_on_edge(55): #doctest: +SKIP</span>
+<span class="sd">        </span>
+<span class="sd">    Parametric natural gas flows::</span>
+<span class="sd">    </span>
+<span class="sd">        &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">        &gt;&gt;&gt; import paminco</span>
+<span class="sd">        &gt;&gt;&gt; net = paminco.net.load_gas(&quot;gas24&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; net.size</span>
+<span class="sd">        (18, 19, 1)</span>
+<span class="sd">        &gt;&gt;&gt; net.cost.integrate(inplace=True)</span>
+<span class="sd">        &gt;&gt;&gt; demand_dir = (&quot;entry03&quot;, &quot;exit05&quot;, abs(net.demand()).sum())</span>
+<span class="sd">        &gt;&gt;&gt; net.set_demand((net.demand.b, demand_dir), mode=&quot;affine&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; mca = paminco.MCA(net)</span>
+<span class="sd">        &gt;&gt;&gt; mca.run()</span>
+<span class="sd">        &gt;&gt;&gt; fig, (ax0, ax1) = plt.subplots(nrows=1, ncols=2, sharex=True, figsize=(12, 4))</span>
+<span class="sd">        &gt;&gt;&gt; d = {5: ax0, 8:ax1}</span>
+<span class="sd">        &gt;&gt;&gt; for edge, ax in d.items():</span>
+<span class="sd">        ...     mca.plot_flow_on_edge(edge, ax=ax) #doctest: +SKIP</span>
+<span class="sd">        ...     ax.set_xlabel(&quot;$\lambda$&quot;)</span>
+<span class="sd">        ...     ax.set_ylabel(&quot;flow&quot;)</span>
+<span class="sd">        ...     ax.set_title(f&quot;Parametric gasflow for edge {edge}&quot;)</span>
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -585,8 +610,8 @@
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
+    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -597,7 +622,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

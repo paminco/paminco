@@ -7,23 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>paminco.optim.fw_net &#8212; paminco 0.1 documentation</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
-
+    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
     
-  <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
+    <link rel="stylesheet"
+      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
     
       
-
+  
     
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -35,8 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/css/user_guide.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/api.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
+    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
@@ -117,10 +117,8 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
       </div>
@@ -136,7 +134,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -144,6 +143,9 @@
     
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -231,7 +233,7 @@
 
 
 <div class="viewcode-block" id="NetworkFW"><a class="viewcode-back" href="../../../api/optim/fw_net.html#paminco.optim.fw_net.NetworkFW">[docs]</a><span class="k">class</span> <span class="nc">NetworkFW</span><span class="p">(</span><span class="n">FlowOptimizer</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Frank-Wolfe algorithm to find minimum cost flow.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Frank-Wolfe algorithm to find minimum cost flow.</span>
 <span class="sd">    </span>
 <span class="sd">    Holds an instance of :class:`paminco.optim.fw.FW` (attribute ``fw``), which </span>
 <span class="sd">    is supplied with proper parameters to return a minimum cost flow.</span>
@@ -271,19 +273,95 @@
 <span class="sd">    </span>
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    Braess Paradox: Additional edges may lead to worse travel times in</span>
-<span class="sd">    equilibrium.</span>
+<span class="sd">    Sioux-Falls: user equilibrium::</span>
 <span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; import paminco</span>
-<span class="sd">    &gt;&gt;&gt; braess = paminco.net.load_braess()</span>
-<span class="sd">    &gt;&gt;&gt; fw = NetworkFW(braess)</span>
-<span class="sd">    &gt;&gt;&gt; fw.run(max_iter=100)</span>
-<span class="sd">    &gt;&gt;&gt; # Delete zero-cost connection between v1 and v2</span>
-<span class="sd">    &gt;&gt;&gt; braess.delete_edges(4)</span>
-<span class="sd">    &gt;&gt;&gt; fw2 = NetworkFW(braess)</span>
-<span class="sd">    &gt;&gt;&gt; fw2.run(max_iter=100)</span>
-<span class="sd">    &gt;&gt;&gt; print(fw.cost.round(2), fw2.cost.round(2))</span>
-<span class="sd">    35.49 35.0</span>
+<span class="sd">        &gt;&gt;&gt; import paminco</span>
+<span class="sd">        &gt;&gt;&gt; sioux = paminco.load_sioux()</span>
+<span class="sd">        &gt;&gt;&gt; sioux.integrate_cost()</span>
+<span class="sd">        &gt;&gt;&gt; fw = paminco.NetworkFW(sioux)</span>
+<span class="sd">        &gt;&gt;&gt; fw.run(max_iter=200)</span>
+<span class="sd">        &gt;&gt;&gt; print(fw.flow[:5])</span>
+<span class="sd">        [4498.7821898  8117.75583672 4520.88340381 5963.65188895 8095.65462271]</span>
+<span class="sd">        &gt;&gt;&gt; print(fw.cost)</span>
+<span class="sd">        4233823.535987506</span>
+<span class="sd">    </span>
+<span class="sd">    Braess Paradox: Additional edges may lead to worse travel times in quilibrium::</span>
+<span class="sd">    </span>
+<span class="sd">        &gt;&gt;&gt; import paminco</span>
+<span class="sd">        &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">        &gt;&gt;&gt; edge_data = np.array([</span>
+<span class="sd">        ...     [&quot;A&quot;, &quot;v1&quot;],</span>
+<span class="sd">        ...     [&quot;A&quot;, &quot;v2&quot;],</span>
+<span class="sd">        ...     [&quot;v1&quot;, &quot;B&quot;],</span>
+<span class="sd">        ...     [&quot;v2&quot;, &quot;B&quot;],</span>
+<span class="sd">        ...     [&quot;v1&quot;, &quot;v2&quot;],</span>
+<span class="sd">        ... ])</span>
+<span class="sd">        &gt;&gt;&gt; marginal_cost = np.array([</span>
+<span class="sd">        ...     [0, 1/100], # Bridge A -&gt; flow/100 minutes</span>
+<span class="sd">        ...     [15, 0], # Route R -&gt; 15 minutes</span>
+<span class="sd">        ...     [15, 0], # Route L -&gt; 15 minutes</span>
+<span class="sd">        ...     [0, 1/100], # Bridge B -&gt; flow/100 minutes</span>
+<span class="sd">        ...     [7.5, 0] # Super Road -&gt; 7.5 minutes</span>
+<span class="sd">        ... ])</span>
+<span class="sd">        &gt;&gt;&gt; demand_data = (&quot;A&quot;, &quot;B&quot;, 1000)</span>
+<span class="sd">        &gt;&gt;&gt; braess = paminco.Network(edge_data=edge_data, cost_data=marginal_cost, demand_data=demand_data)</span>
+<span class="sd">        &gt;&gt;&gt; braess.integrate_cost() # user equilibrium</span>
+<span class="sd">        &gt;&gt;&gt; fw = paminco.NetworkFW(braess)</span>
+<span class="sd">        &gt;&gt;&gt; fw.run(print=False, epsilon=1e-6)</span>
+<span class="sd">        &gt;&gt;&gt; def route1(x):  # A -&gt; V1 -&gt; B</span>
+<span class="sd">        ...   return braess.cost.f(x)[[0, 1]].sum()</span>
+<span class="sd">        &gt;&gt;&gt; def route2(x):  # A -&gt; V2 -&gt; B</span>
+<span class="sd">        ...   return braess.cost.f(x)[[2, 3]].sum()</span>
+<span class="sd">        &gt;&gt;&gt; def route3(x):  # A -&gt; V1 -&gt; V2 -&gt; B</span>
+<span class="sd">        ...   return braess.cost.f(x)[[0, 3, 4]].sum()</span>
+<span class="sd">        &gt;&gt;&gt; print(</span>
+<span class="sd">        ...    f&quot;route 1: {route1(fw.x).round(2)} minutes&quot;,</span>
+<span class="sd">        ...    f&quot;\nroute 2: {route2(fw.x).round(2)} minutes&quot;,</span>
+<span class="sd">        ...    f&quot;\nroute 3: {route3(fw.x).round(2)} minutes&quot;</span>
+<span class="sd">        ... )</span>
+<span class="sd">        route 1: 22.5 minutes </span>
+<span class="sd">        route 2: 22.5 minutes </span>
+<span class="sd">        route 3: 22.5 minutes</span>
+<span class="sd">    </span>
+<span class="sd">    Pigou&#39;s example::</span>
+<span class="sd">    </span>
+<span class="sd">        &gt;&gt;&gt; import copy</span>
+<span class="sd">        &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">        &gt;&gt;&gt; import paminco</span>
+<span class="sd">        &gt;&gt;&gt; # We add artifical vertices v and w to bypass parallel edges problem</span>
+<span class="sd">        &gt;&gt;&gt; edge_data = np.array([[&quot;s&quot;, &quot;v&quot;], [&quot;v&quot;, &quot;t&quot;], [&quot;s&quot;, &quot;w&quot;], [&quot;w&quot;, &quot;t&quot;]])</span>
+<span class="sd">        &gt;&gt;&gt; cost = np.array([[1, 0], [1, 0], [0, 1], [0, 1]])</span>
+<span class="sd">        &gt;&gt;&gt; demand_data = (&quot;s&quot;, &quot;t&quot;, 1)</span>
+<span class="sd">        &gt;&gt;&gt; lbl2id = {&quot;s&quot;: 0, &quot;v&quot;: 1, &quot;w&quot;: 2, &quot;t&quot;: 3}</span>
+<span class="sd">        &gt;&gt;&gt; pigou = paminco.Network(</span>
+<span class="sd">        ...   edge_data=edge_data, </span>
+<span class="sd">        ...   cost_data=cost, </span>
+<span class="sd">        ...   demand_data=demand_data, </span>
+<span class="sd">        ...   kw_edge={&quot;map_labels_to_indices&quot;: lbl2id}</span>
+<span class="sd">        ... )</span>
+<span class="sd">        &gt;&gt;&gt; # Calculate user equilibrium -&gt; F_e = integral_0^(x_e) l_e(s)ds</span>
+<span class="sd">        &gt;&gt;&gt; pigou_ue = copy.deepcopy(pigou)</span>
+<span class="sd">        &gt;&gt;&gt; pigou_ue.cost.integrate(inplace=True)</span>
+<span class="sd">        &gt;&gt;&gt; fw_ue = paminco.NetworkFW(pigou_ue)</span>
+<span class="sd">        &gt;&gt;&gt; fw_ue.run()</span>
+<span class="sd">        &gt;&gt;&gt; # Calculate system optimum -&gt; F_e = x_e * l_e</span>
+<span class="sd">        &gt;&gt;&gt; pigou_so = copy.deepcopy(pigou) </span>
+<span class="sd">        &gt;&gt;&gt; pigou_so.cost.times_x(inplace=True)</span>
+<span class="sd">        &gt;&gt;&gt; fw_so = paminco.NetworkFW(pigou_so)</span>
+<span class="sd">        &gt;&gt;&gt; fw_so.run()</span>
+<span class="sd">        &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">        &gt;&gt;&gt; flows_ue = fw_ue.flows[[&quot;s&quot;, &quot;t&quot;, &quot;x&quot;]]</span>
+<span class="sd">        &gt;&gt;&gt; flows_so = fw_so.flows[[&quot;s&quot;, &quot;t&quot;, &quot;x&quot;]]</span>
+<span class="sd">        &gt;&gt;&gt; flows = pd.merge(flows_ue, flows_so, on=[&quot;s&quot;, &quot;t&quot;])</span>
+<span class="sd">        &gt;&gt;&gt; flows[[&quot;s&quot;, &quot;t&quot;]] = pigou.shared.get_node_label(flows[[&quot;s&quot;, &quot;t&quot;]].values)</span>
+<span class="sd">        &gt;&gt;&gt; flows.columns = [&quot;from&quot;, &quot;to&quot;, &quot;flow user eq&quot;, &quot;flow sys opt&quot;]</span>
+<span class="sd">        &gt;&gt;&gt; print(flows)</span>
+<span class="sd">          from to  flow user eq  flow sys opt</span>
+<span class="sd">        0    s  v           0.0           0.5</span>
+<span class="sd">        1    v  t           0.0           0.5</span>
+<span class="sd">        2    s  w           1.0           0.5</span>
+<span class="sd">        3    w  t           1.0           0.5</span>
+<span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="NetworkFW.__init__"><a class="viewcode-back" href="../../../api/optim/generated/paminco.optim.fw_net.NetworkFW.__init__.html#paminco.optim.fw_net.NetworkFW.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -449,8 +527,8 @@
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
+    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -461,7 +539,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

@@ -7,23 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>paminco.net.network &#8212; paminco 0.1 documentation</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
-
+    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
     
-  <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
+    <link rel="stylesheet"
+      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
     
       
-
+  
     
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -35,8 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/css/user_guide.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/api.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
+    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
@@ -117,10 +117,8 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
       </div>
@@ -136,7 +134,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -144,6 +143,9 @@
     
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -477,6 +479,7 @@
 <span class="sd">        target, rate) or a dict {source: -rate, target1: rate/2,</span>
 <span class="sd">        target2: rate/2}.</span>
 <span class="sd">        </span>
+<span class="sd">        &gt;&gt;&gt; import paminco</span>
 <span class="sd">        &gt;&gt;&gt; net = paminco.net.load_sioux()</span>
 <span class="sd">        &gt;&gt;&gt; net.set_demand([(1, 2, 400), {7: -100, 4: 100}], is_label=False)</span>
 <span class="sd">        &gt;&gt;&gt; net.demand(1.5).toarray()[:8]</span>
@@ -491,6 +494,7 @@
 <span class="sd">               </span>
 <span class="sd">        Setting an affine demand function.</span>
 <span class="sd">        </span>
+<span class="sd">        &gt;&gt;&gt; import paminco</span>
 <span class="sd">        &gt;&gt;&gt; net = paminco.net.load_sioux()</span>
 <span class="sd">        &gt;&gt;&gt; net.set_demand(((1, 2, 400), (7, 4, 100)), is_label=False, mode=&quot;affine&quot;)</span>
 <span class="sd">        &gt;&gt;&gt; net.demand(3).toarray()[:8]</span>
@@ -708,7 +712,7 @@
             <span class="c1"># Standard computation via dot product</span>
             <span class="n">out</span> <span class="o">=</span> <span class="n">x</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">Gamma</span><span class="p">(</span><span class="n">return_as</span><span class="o">=</span><span class="s1">&#39;csr&#39;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># Use sparsity of Gamma</span>
+            <span class="c1"># Use sparseness of Gamma</span>
             <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="n">out</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
@@ -1088,11 +1092,14 @@
 <span class="sd">        </span>
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">            &gt;&gt;&gt; import paminco</span>
-<span class="sd">            &gt;&gt;&gt; net = paminco.net.load_sioux()</span>
-<span class="sd">            &gt;&gt;&gt; net.delete_nodes([&quot;6&quot;, &quot;9&quot;, &quot;11&quot;, &quot;13&quot;], is_label=True)</span>
-<span class="sd">            &gt;&gt;&gt; net.connected_components(return_labels=False)</span>
-<span class="sd">            2</span>
+<span class="sd">        Separating Sioux-Falls:</span>
+<span class="sd">        </span>
+<span class="sd">        &gt;&gt;&gt; import paminco</span>
+<span class="sd">        &gt;&gt;&gt; net = paminco.net.load_sioux()</span>
+<span class="sd">        &gt;&gt;&gt; net.delete_nodes([&quot;6&quot;, &quot;9&quot;, &quot;11&quot;, &quot;13&quot;], is_label=True)</span>
+<span class="sd">        (4, 24, 172)</span>
+<span class="sd">        &gt;&gt;&gt; net.connected_components(return_labels=False)</span>
+<span class="sd">        2</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">edges</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="s2">&quot;csgraph_unitweight&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
@@ -1131,11 +1138,14 @@
 <span class="sd">        </span>
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">            &gt;&gt;&gt; import paminco</span>
-<span class="sd">            &gt;&gt;&gt; net = paminco.net.load_sioux()</span>
-<span class="sd">            &gt;&gt;&gt; net.delete_nodes([&quot;6&quot;, &quot;9&quot;, &quot;11&quot;, &quot;13&quot;], is_label=True)</span>
-<span class="sd">            &gt;&gt;&gt; net.is_connected()</span>
-<span class="sd">            False</span>
+<span class="sd">        Separating Sioux-Falls:</span>
+<span class="sd">        </span>
+<span class="sd">        &gt;&gt;&gt; import paminco</span>
+<span class="sd">        &gt;&gt;&gt; net = paminco.net.load_sioux()</span>
+<span class="sd">        &gt;&gt;&gt; net.delete_nodes([&quot;6&quot;, &quot;9&quot;, &quot;11&quot;, &quot;13&quot;], is_label=True)</span>
+<span class="sd">        (4, 24, 172)</span>
+<span class="sd">        &gt;&gt;&gt; net.is_connected()</span>
+<span class="sd">        False</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">num_cc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">return_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">num_cc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span></div>
@@ -1953,8 +1963,8 @@
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
+    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -1965,7 +1975,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

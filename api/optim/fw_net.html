@@ -8,23 +8,23 @@
 
     <title>Network Frank-Wolfe &#8212; paminco 0.1 documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
-
+    <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
     
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
+    <link rel="stylesheet"
+      href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
     
       
-
+  
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -36,8 +36,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/user_guide.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/api.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
+    <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
@@ -120,10 +120,8 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/paminco/paminco" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
       </div>
@@ -139,7 +137,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -419,6 +418,9 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -526,18 +528,93 @@ else an auto subproblem solver is used.</p>
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<p>Braess Paradox: Additional edges may lead to worse travel times in
-equilibrium.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">paminco</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">braess</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">load_braess</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fw</span> <span class="o">=</span> <span class="n">NetworkFW</span><span class="p">(</span><span class="n">braess</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fw</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Delete zero-cost connection between v1 and v2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">braess</span><span class="o">.</span><span class="n">delete_edges</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fw2</span> <span class="o">=</span> <span class="n">NetworkFW</span><span class="p">(</span><span class="n">braess</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fw2</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">fw</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">fw2</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-<span class="go">35.49 35.0</span>
+<p>Sioux-Falls: user equilibrium:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">paminco</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sioux</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">load_sioux</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sioux</span><span class="o">.</span><span class="n">integrate_cost</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fw</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">NetworkFW</span><span class="p">(</span><span class="n">sioux</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fw</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">fw</span><span class="o">.</span><span class="n">flow</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<span class="go">[4498.7821898  8117.75583672 4520.88340381 5963.65188895 8095.65462271]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">fw</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+<span class="go">4233823.535987506</span>
+</pre></div>
+</div>
+<p>Braess Paradox: Additional edges may lead to worse travel times in quilibrium:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">paminco</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">edge_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;v1&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;v2&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="s2">&quot;v1&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="s2">&quot;v2&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="s2">&quot;v1&quot;</span><span class="p">,</span> <span class="s2">&quot;v2&quot;</span><span class="p">],</span>
+<span class="gp">... </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">marginal_cost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">100</span><span class="p">],</span> <span class="c1"># Bridge A -&gt; flow/100 minutes</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="c1"># Route R -&gt; 15 minutes</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="c1"># Route L -&gt; 15 minutes</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">100</span><span class="p">],</span> <span class="c1"># Bridge B -&gt; flow/100 minutes</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mf">7.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># Super Road -&gt; 7.5 minutes</span>
+<span class="gp">... </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demand_data</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">braess</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="n">edge_data</span><span class="o">=</span><span class="n">edge_data</span><span class="p">,</span> <span class="n">cost_data</span><span class="o">=</span><span class="n">marginal_cost</span><span class="p">,</span> <span class="n">demand_data</span><span class="o">=</span><span class="n">demand_data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">braess</span><span class="o">.</span><span class="n">integrate_cost</span><span class="p">()</span> <span class="c1"># user equilibrium</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fw</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">NetworkFW</span><span class="p">(</span><span class="n">braess</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fw</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="nb">print</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">route1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>  <span class="c1"># A -&gt; V1 -&gt; B</span>
+<span class="gp">... </span>  <span class="k">return</span> <span class="n">braess</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">route2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>  <span class="c1"># A -&gt; V2 -&gt; B</span>
+<span class="gp">... </span>  <span class="k">return</span> <span class="n">braess</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">route3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>  <span class="c1"># A -&gt; V1 -&gt; V2 -&gt; B</span>
+<span class="gp">... </span>  <span class="k">return</span> <span class="n">braess</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span>
+<span class="gp">... </span>   <span class="sa">f</span><span class="s2">&quot;route 1: </span><span class="si">{</span><span class="n">route1</span><span class="p">(</span><span class="n">fw</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> minutes&quot;</span><span class="p">,</span>
+<span class="gp">... </span>   <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">route 2: </span><span class="si">{</span><span class="n">route2</span><span class="p">(</span><span class="n">fw</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> minutes&quot;</span><span class="p">,</span>
+<span class="gp">... </span>   <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">route 3: </span><span class="si">{</span><span class="n">route3</span><span class="p">(</span><span class="n">fw</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> minutes&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">route 1: 22.5 minutes </span>
+<span class="go">route 2: 22.5 minutes </span>
+<span class="go">route 3: 22.5 minutes</span>
+</pre></div>
+</div>
+<p>Pigou’s example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">copy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">paminco</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># We add artifical vertices v and w to bypass parallel edges problem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">edge_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demand_data</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lbl2id</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pigou</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span>
+<span class="gp">... </span>  <span class="n">edge_data</span><span class="o">=</span><span class="n">edge_data</span><span class="p">,</span> 
+<span class="gp">... </span>  <span class="n">cost_data</span><span class="o">=</span><span class="n">cost</span><span class="p">,</span> 
+<span class="gp">... </span>  <span class="n">demand_data</span><span class="o">=</span><span class="n">demand_data</span><span class="p">,</span> 
+<span class="gp">... </span>  <span class="n">kw_edge</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;map_labels_to_indices&quot;</span><span class="p">:</span> <span class="n">lbl2id</span><span class="p">}</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Calculate user equilibrium -&gt; F_e = integral_0^(x_e) l_e(s)ds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pigou_ue</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">pigou</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pigou_ue</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fw_ue</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">NetworkFW</span><span class="p">(</span><span class="n">pigou_ue</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fw_ue</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Calculate system optimum -&gt; F_e = x_e * l_e</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pigou_so</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">pigou</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pigou_so</span><span class="o">.</span><span class="n">cost</span><span class="o">.</span><span class="n">times_x</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fw_so</span> <span class="o">=</span> <span class="n">paminco</span><span class="o">.</span><span class="n">NetworkFW</span><span class="p">(</span><span class="n">pigou_so</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fw_so</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flows_ue</span> <span class="o">=</span> <span class="n">fw_ue</span><span class="o">.</span><span class="n">flows</span><span class="p">[[</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flows_so</span> <span class="o">=</span> <span class="n">fw_so</span><span class="o">.</span><span class="n">flows</span><span class="p">[[</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flows</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">flows_ue</span><span class="p">,</span> <span class="n">flows_so</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flows</span><span class="p">[[</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pigou</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">get_node_label</span><span class="p">(</span><span class="n">flows</span><span class="p">[[</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flows</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;from&quot;</span><span class="p">,</span> <span class="s2">&quot;to&quot;</span><span class="p">,</span> <span class="s2">&quot;flow user eq&quot;</span><span class="p">,</span> <span class="s2">&quot;flow sys opt&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flows</span><span class="p">)</span>
+<span class="go">  from to  flow user eq  flow sys opt</span>
+<span class="go">0    s  v           0.0           0.5</span>
+<span class="go">1    v  t           0.0           0.5</span>
+<span class="go">2    s  w           1.0           0.5</span>
+<span class="go">3    w  t           1.0           0.5</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -621,8 +698,8 @@ equilibrium.</p>
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
+    <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -633,7 +710,7 @@ equilibrium.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     
