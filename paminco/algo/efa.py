@@ -381,9 +381,28 @@ class EFA(ParametricSolver):
     
     References
     ----------
-    .. [1] Klimm, Max, and P. Warode. "Parametric Computation of Minimum Cost
+    .. [Kli21] Klimm, Max, and P. Warode. "Parametric Computation of Minimum Cost
            Flows with Piecewise Quadratic Costs." Mathematics of Operations
            Research (2021). Available 10/25/2021 at https://www3.math.tu-berlin.de/disco/research/publications/pdf/KlimmWarode2021.pdf   
+           
+    Examples
+    --------
+    Example 2 from [Kli21]_:
+    
+    >>> import numpy as np
+    >>> import matplotlib.pyplot as plt
+    >>> import paminco
+    >>> ex2 = paminco.net.load_example(2)
+    >>> efa = paminco.EFA(ex2, lambda_max=10)
+    >>> efa.run()
+    >>> fig, (ax0, ax1, ax2) = plt.subplots(nrows=1, ncols=3, sharex=True, sharey=True, figsize=(12, 3))
+    >>> d = {0: ax0, 1: ax1, 2: ax2}
+    >>> ls = np.linspace(0, 10, 100)
+    >>> for edge, ax in d.items():
+    ...   efa.plot_flow_on_edge(edge, x=ls, ax=ax) #doctest: +SKIP
+    ...   ax.set_title(f"Edge {edge}") #doctest: +SKIP
+    ...   ax.set_xlabel("$\lambda$") #doctest: +SKIP
+    ...   ax.set_ylabel("flow") #doctest: +SKIP
     """
 
     def __init__(

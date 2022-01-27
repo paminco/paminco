@@ -66,7 +66,7 @@ class NetworkFWConfig(FWConfig):
 
 
 class NetworkFW(FlowOptimizer):
-    """Frank-Wolfe algorithm to find minimum cost flow.
+    r"""Frank-Wolfe algorithm to find minimum cost flow.
     
     Holds an instance of :class:`paminco.optim.fw.FW` (attribute ``fw``), which 
     is supplied with proper parameters to return a minimum cost flow.
@@ -106,19 +106,95 @@ class NetworkFW(FlowOptimizer):
     
     Examples
     --------
-    Braess Paradox: Additional edges may lead to worse travel times in
-    equilibrium.
+    Sioux-Falls: user equilibrium::
     
-    >>> import paminco
-    >>> braess = paminco.net.load_braess()
-    >>> fw = NetworkFW(braess)
-    >>> fw.run(max_iter=100)
-    >>> # Delete zero-cost connection between v1 and v2
-    >>> braess.delete_edges(4)
-    >>> fw2 = NetworkFW(braess)
-    >>> fw2.run(max_iter=100)
-    >>> print(fw.cost.round(2), fw2.cost.round(2))
-    35.49 35.0
+        >>> import paminco
+        >>> sioux = paminco.load_sioux()
+        >>> sioux.integrate_cost()
+        >>> fw = paminco.NetworkFW(sioux)
+        >>> fw.run(max_iter=200)
+        >>> print(fw.flow[:5])
+        [4498.7821898  8117.75583672 4520.88340381 5963.65188895 8095.65462271]
+        >>> print(fw.cost)
+        4233823.535987506
+    
+    Braess Paradox: Additional edges may lead to worse travel times in quilibrium::
+    
+        >>> import paminco
+        >>> import numpy as np
+        >>> edge_data = np.array([
+        ...     ["A", "v1"],
+        ...     ["A", "v2"],
+        ...     ["v1", "B"],
+        ...     ["v2", "B"],
+        ...     ["v1", "v2"],
+        ... ])
+        >>> marginal_cost = np.array([
+        ...     [0, 1/100], # Bridge A -> flow/100 minutes
+        ...     [15, 0], # Route R -> 15 minutes
+        ...     [15, 0], # Route L -> 15 minutes
+        ...     [0, 1/100], # Bridge B -> flow/100 minutes
+        ...     [7.5, 0] # Super Road -> 7.5 minutes
+        ... ])
+        >>> demand_data = ("A", "B", 1000)
+        >>> braess = paminco.Network(edge_data=edge_data, cost_data=marginal_cost, demand_data=demand_data)
+        >>> braess.integrate_cost() # user equilibrium
+        >>> fw = paminco.NetworkFW(braess)
+        >>> fw.run(print=False, epsilon=1e-6)
+        >>> def route1(x):  # A -> V1 -> B
+        ...   return braess.cost.f(x)[[0, 1]].sum()
+        >>> def route2(x):  # A -> V2 -> B
+        ...   return braess.cost.f(x)[[2, 3]].sum()
+        >>> def route3(x):  # A -> V1 -> V2 -> B
+        ...   return braess.cost.f(x)[[0, 3, 4]].sum()
+        >>> print(
+        ...    f"route 1: {route1(fw.x).round(2)} minutes",
+        ...    f"\nroute 2: {route2(fw.x).round(2)} minutes",
+        ...    f"\nroute 3: {route3(fw.x).round(2)} minutes"
+        ... )
+        route 1: 22.5 minutes 
+        route 2: 22.5 minutes 
+        route 3: 22.5 minutes
+    
+    Pigou's example::
+    
+        >>> import copy
+        >>> import pandas as pd
+        >>> import paminco
+        >>> # We add artifical vertices v and w to bypass parallel edges problem
+        >>> edge_data = np.array([["s", "v"], ["v", "t"], ["s", "w"], ["w", "t"]])
+        >>> cost = np.array([[1, 0], [1, 0], [0, 1], [0, 1]])
+        >>> demand_data = ("s", "t", 1)
+        >>> lbl2id = {"s": 0, "v": 1, "w": 2, "t": 3}
+        >>> pigou = paminco.Network(
+        ...   edge_data=edge_data, 
+        ...   cost_data=cost, 
+        ...   demand_data=demand_data, 
+        ...   kw_edge={"map_labels_to_indices": lbl2id}
+        ... )
+        >>> # Calculate user equilibrium -> F_e = integral_0^(x_e) l_e(s)ds
+        >>> pigou_ue = copy.deepcopy(pigou)
+        >>> pigou_ue.cost.integrate(inplace=True)
+        >>> fw_ue = paminco.NetworkFW(pigou_ue)
+        >>> fw_ue.run()
+        >>> # Calculate system optimum -> F_e = x_e * l_e
+        >>> pigou_so = copy.deepcopy(pigou) 
+        >>> pigou_so.cost.times_x(inplace=True)
+        >>> fw_so = paminco.NetworkFW(pigou_so)
+        >>> fw_so.run()
+        >>> import pandas as pd
+        >>> flows_ue = fw_ue.flows[["s", "t", "x"]]
+        >>> flows_so = fw_so.flows[["s", "t", "x"]]
+        >>> flows = pd.merge(flows_ue, flows_so, on=["s", "t"])
+        >>> flows[["s", "t"]] = pigou.shared.get_node_label(flows[["s", "t"]].values)
+        >>> flows.columns = ["from", "to", "flow user eq", "flow sys opt"]
+        >>> print(flows)
+          from to  flow user eq  flow sys opt
+        0    s  v           0.0           0.5
+        1    v  t           0.0           0.5
+        2    s  w           1.0           0.5
+        3    w  t           1.0           0.5
+    
     """
 
     def __init__(

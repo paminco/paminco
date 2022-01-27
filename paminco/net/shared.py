@@ -1141,13 +1141,16 @@ class Shared:
         
         Examples
         --------
+        Sioux-Falls:
+        
+        >>> import paminco
         >>> net = paminco.net.load_sioux()
         >>> net.Gamma().toarray()[:5, :5]
         array([[-1, -1,  1,  0,  1],
-               [ 1,  0, -1, -1,  0],
-               [ 0,  1,  0,  0, -1],
-               [ 0,  0,  0,  0,  0],
-               [ 0,  0,  0,  0,  0]])
+                -[ 1,  0, -1, -1,  0],
+                -[ 0,  1,  0,  0, -1],
+                -[ 0,  0,  0,  0,  0],
+                -[ 0,  0,  0,  0,  0]], dtype=int32)
         """
         # Rebuild gamma if neccessary
         if self.cache.is_valid("gamma") is False:
@@ -1205,6 +1208,9 @@ class Shared:
         
         Examples
         --------
+        SiouxFalls:
+        
+        >>> import paminco
         >>> net = paminco.net.load_sioux()
         >>> H = net.shared.csgraph(np.arange(net.m) + 1)
         >>> H[:5, :5].toarray()

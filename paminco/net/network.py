@@ -312,6 +312,7 @@ class Network:
         target, rate) or a dict {source: -rate, target1: rate/2,
         target2: rate/2}.
         
+        >>> import paminco
         >>> net = paminco.net.load_sioux()
         >>> net.set_demand([(1, 2, 400), {7: -100, 4: 100}], is_label=False)
         >>> net.demand(1.5).toarray()[:8]
@@ -326,6 +327,7 @@ class Network:
                
         Setting an affine demand function.
         
+        >>> import paminco
         >>> net = paminco.net.load_sioux()
         >>> net.set_demand(((1, 2, 400), (7, 4, 100)), is_label=False, mode="affine")
         >>> net.demand(3).toarray()[:8]
@@ -543,7 +545,7 @@ class Network:
             # Standard computation via dot product
             out = x @ self.Gamma(return_as='csr')
         else:
-            # Use sparsity of Gamma
+            # Use sparseness of Gamma
             s, t = self.edges.indices[edge].T
             if len(x.shape) == 1:
                 out = x[t] - x[s]
@@ -923,11 +925,14 @@ class Network:
         
         Examples
         --------
-            >>> import paminco
-            >>> net = paminco.net.load_sioux()
-            >>> net.delete_nodes(["6", "9", "11", "13"], is_label=True)
-            >>> net.connected_components(return_labels=False)
-            2
+        Separating Sioux-Falls:
+        
+        >>> import paminco
+        >>> net = paminco.net.load_sioux()
+        >>> net.delete_nodes(["6", "9", "11", "13"], is_label=True)
+        (4, 24, 172)
+        >>> net.connected_components(return_labels=False)
+        2
         """
         if edges is None:
             if self.cache.is_valid("csgraph_unitweight") is False:
@@ -966,11 +971,14 @@ class Network:
         
         Examples
         --------
-            >>> import paminco
-            >>> net = paminco.net.load_sioux()
-            >>> net.delete_nodes(["6", "9", "11", "13"], is_label=True)
-            >>> net.is_connected()
-            False
+        Separating Sioux-Falls:
+        
+        >>> import paminco
+        >>> net = paminco.net.load_sioux()
+        >>> net.delete_nodes(["6", "9", "11", "13"], is_label=True)
+        (4, 24, 172)
+        >>> net.is_connected()
+        False
         """
         num_cc = self.connected_components(edges, return_labels=False)
         return (num_cc == 1)
