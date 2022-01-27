@@ -27,4 +27,4 @@ jobs:
         
       - name: run pytest
         run: |
-          pytest --exitfirst --verbose --failed-first --cov=. --cov-report html -m "not slow" --ignore=paminco
+          pytest --exitfirst --verbose --failed-first -m "not slow" --ignore=paminco
