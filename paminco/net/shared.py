@@ -1150,7 +1150,7 @@ class Shared:
                [ 1,  0, -1, -1,  0],
                [ 0,  1,  0,  0, -1],
                [ 0,  0,  0,  0,  0],
-               [ 0,  0,  0,  0,  0]], dtype=int32)
+               [ 0,  0,  0,  0,  0]])
         """
         # Rebuild gamma if neccessary
         if self.cache.is_valid("gamma") is False:
