@@ -25,7 +25,7 @@ jobs:
           
       - name: Generate coverage report
         run: |
-          pytest --cov=paminco --cov-report xml
+          pytest --doctest-modules paminco --cov-report term --cov=paminco
       
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
