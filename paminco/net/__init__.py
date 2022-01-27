@@ -11,9 +11,18 @@ from .shared import Shared, Nodes, Edges
 from .cost import NetworkCost, PolynomialCost, PiecewiseQuadraticCost, SymbolicCost
 from .demand import demand_vector, DemandFunction, LinearDemandFunction, AffineDemandFunction
 from ._data import DATA_BRAESS
+from ._data_examples import NET_ELECTRICAL_PIECEWISE, NET_ELECTRICAL_BRAESS, NET_DISCONTINUOUS_COST, NET_SIMPLE_POLYNOMIAL
 from ._data_sioux import TNTP_SIOUX_NET, TNTP_SIOUX_NODE, TNTP_SIOUX_TRIPS
 from ._data_gas import temporary_gas_files
 from paminco.utils.readin import FileLineIterator
+
+
+def load_example(num, **kw):
+    mapper = {
+        2: NET_ELECTRICAL_PIECEWISE,
+        "2": NET_ELECTRICAL_PIECEWISE,
+    }
+    return Network.from_xml(mapper[num], **kw)
 
 
 def load_sioux(**kw):

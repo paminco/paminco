@@ -16,7 +16,7 @@ markers = [
 # Do not run dependencies test
 norecursedirs = "env/*"
 # Filter out warnings while running tests
-addopts = "-p no:warnings"
+addopts = "-p no:warnings --doctest-modules"
 
 # --- coverage ---------------------------------------------
 [tool.coverage.report]
