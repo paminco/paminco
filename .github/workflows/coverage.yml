@@ -11,10 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: set up Python 3.8
+      - name: set up Python 3.13
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.13
       
       - name: install dependencies and pytest
         run: |
