@@ -8,7 +8,7 @@ import scipy.sparse as sps
 
 from paminco.utils.readin import parse_number, xml_find_root
 from paminco.utils.misc import Cache
-from paminco.utils.typing import sparse_format, is_int, is_iterable, IntEnum2
+from paminco.utils.typing import sparse_format, is_int, is_iterable, IntEnum2, safe_array
 import paminco._doc as _doc
 
 
@@ -179,8 +179,8 @@ class Edges:
         
         # Unpack data
         labels, indices, bounds = data
-        self.labels = np.array(labels, dtype=str, copy=copy)
-        self.indices = np.array(indices, dtype=dtype_int, copy=copy)
+        self.labels = safe_array(labels, dtype=str, copy=copy)
+        self.indices = safe_array(indices, dtype=dtype_int, copy=copy)
         
         # Broadcast bounds if lower, upper for all edges given
         if not isinstance(bounds, np.ndarray):
@@ -191,7 +191,7 @@ class Edges:
                 
         # Handle 'None' bounds
         bkw = {"posinf": np.inf, "neginf": -np.inf}
-        self.bounds = np.array(bounds, dtype=dtype_float, copy=copy)
+        self.bounds = safe_array(bounds, dtype=dtype_float, copy=copy)
         self.bounds[:, 1] = np.nan_to_num(self.bounds[:, 1],
                                           copy=False,
                                           nan=np.inf,
@@ -650,7 +650,7 @@ class Nodes:
                 raise ValueError("TODO")
         else:
             # Only labels or Id's specified
-            data = np.array(data, copy=False)
+            data = np.asarray(data)
             return self.__init__((data, None), **kw)
         
         # Handle datatypes
@@ -663,16 +663,16 @@ class Nodes:
         
         labels, indices, xy, zone = data
         indices = np.argsort(indices)
-        self.labels = np.array(labels, dtype=str, copy=copy)[indices]
+        self.labels = safe_array(labels, dtype=str, copy=copy)[indices]
         if isinstance(zone, bool):
             zone = [zone] * len(self.labels)
-        self.zone = np.array(zone, dtype=bool, copy=copy)[indices]
+        self.zone = safe_array(zone, dtype=bool, copy=copy)[indices]
 
         if xy is not None:
             xy = np.array(xy)
             if xy.shape != (len(self.labels), 2):
                 raise ValueError(f"Coordinates have wrong shape: {xy.shape}, should be {len(labels), 2}.")
-            self.xy = np.array(xy, dtype=dtype_float, copy=copy)[indices]
+            self.xy = safe_array(xy, dtype=dtype_float, copy=copy)[indices]
         else:
             self.xy = None
             
@@ -933,7 +933,7 @@ class Shared:
             self,
             edge_data,
             node_data=None,
-            dtype_float=np.float_,
+            dtype_float=np.float64,
             dtype_int=int,
             **kwargs
             ) -> None:

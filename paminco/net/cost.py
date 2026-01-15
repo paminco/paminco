@@ -3,7 +3,6 @@ from __future__ import annotations
 import abc
 import copy
 import xml.etree.ElementTree as et
-from numpy.lib.shape_base import vsplit
 import psutil
 
 import numpy as np
@@ -13,7 +12,7 @@ import multiprocessing as mp
 from itertools import zip_longest
 
 from .shared import Shared
-from paminco.utils.typing import is_int
+from paminco.utils.typing import is_int, safe_array
 from paminco.utils.misc import Cache
 from paminco.utils.readin import (
     xml_find_root,
@@ -1228,8 +1227,8 @@ class PiecewiseQuadraticCoefficients:
             self._init_coefficients(coefficients, edge_indices, copy=copy)
         else:
             # data is array of all additionally precomputed coefficents
-            self.coefficients = np.array(coefficients, copy=copy)
-            self._edge_indices = np.array(edge_indices, copy=copy)
+            self.coefficients = safe_array(coefficients, copy=copy)
+            self._edge_indices = safe_array(edge_indices, copy=copy)
 
         self._init_position_offsets()
 
@@ -1267,8 +1266,8 @@ class PiecewiseQuadraticCoefficients:
             copy: bool = True
             ) -> None:
         # Create (copy of) coefficent array and store (copy of) edge index array
-        self.coefficients = np.array(coefficients, copy=copy)
-        self._edge_indices = np.array(edge_indices, copy=copy)
+        self.coefficients = safe_array(coefficients, copy=copy)
+        self._edge_indices = safe_array(edge_indices, copy=copy)
         self._finite_rows = np.isfinite(coefficients[:, 0])
 
         self._init_lap_weights()
@@ -2018,7 +2017,7 @@ class PiecewiseQuadraticCost(NetworkCost):
                 a1, b1, off1 = c1
                 a2, b2, off2, tau = c2
                 # If all coefficients are finite, compare values at breakpoint
-                if np.alltrue(np.isfinite(c1)) and np.alltrue(np.isfinite(c2)):
+                if np.all(np.isfinite(c1)) and np.all(np.isfinite(c2)):
                     # Case: Function -> compare a tau^2 + b * tau + offset
                     if k == 0:
                         x = a1 * tau ** 2 + b1 * tau + off1
@@ -2039,13 +2038,13 @@ class PiecewiseQuadraticCost(NetworkCost):
                     # breakpoint IS finite, then the function must be
                     # discondinuous
                     t1 = self._ec.coefficients[i, 3]
-                    if (not np.alltrue(np.isfinite(c1)) and np.isfinite(t1)):
+                    if (not np.all(np.isfinite(c1)) and np.isfinite(t1)):
                         return False
                     # If the last coefficient row is infinite _and_ the
                     # breakpoint IS finite and it is not the last breakpoint,
                     # then the function must be discontinuous
                     if (
-                        not np.alltrue(np.isfinite(c2))
+                        not np.all(np.isfinite(c2))
                         and np.isfinite(tau)
                         and lp != i + 1
                     ):

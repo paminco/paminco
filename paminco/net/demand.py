@@ -9,7 +9,7 @@ import scipy.sparse as sps
 
 from .shared import Shared, ID_UNMAPPED, LBL_UNMAPPED
 from paminco.utils.readin import xml_find_root, xml_add_element
-from paminco.utils.typing import is_int
+from paminco.utils.typing import is_int, safe_array
 from paminco.utils.misc import Cache
 from paminco import _doc
 
@@ -240,7 +240,7 @@ class CommoditySingleSourceSink(Commodity):
         else:
             search_arr = [self.source_id, self.sink_id]
 
-        node = np.array(node, copy=False)
+        node = np.asarray(node)
         if len(np.intersect1d(node, search_arr)) > 0:
             return True
         return False
@@ -375,7 +375,7 @@ class CommodityMultiSourceSink(Commodity):
             data: dict,
             is_label=True,
             check_validity=False,
-            dtype_float=np.float_
+            dtype_float=np.float64
             ) -> None:
         # get nodes and rates from dict
         node, self._rate = np.array(list(data.items())).T
@@ -500,7 +500,7 @@ class CommodityMultiSourceSink(Commodity):
         else:
             search_arr = self._node_ids
 
-        node = np.array(node, copy=False)
+        node = np.asarray(node)
         if len(np.intersect1d(node, search_arr)) > 0:
             return True
         return False
@@ -1327,11 +1327,11 @@ class DemandVectorSP(_DV):
             dtype_float=dtype_float,
         )
         if isinstance(data, DemandVectorSP):
-            self._node_labels = np.array(data._node_labels, copy=copy)
-            self._node_ids = np.array(data._node_ids, copy=copy)
-            self._rates = np.array(data._rates, copy=copy)
+            self._node_labels = safe_array(data._node_labels, copy=copy)
+            self._node_ids = safe_array(data._node_ids, copy=copy)
+            self._rates = safe_array(data._rates, copy=copy)
         elif isinstance(data, (list, np.ndarray)):
-            data = np.array(data, copy=False)
+            data = np.asarray(data)
             if is_label is True:
                 self._node_labels = data[:, :2].astype(str)
                 self._node_ids = np.ones_like(self._node_labels, dtype=int) * ID_UNMAPPED
@@ -1767,7 +1767,7 @@ class DemandFunction(abc.ABC):
             Total inflow of all commodities.
         """
         b = self.value(param)
-        return np.array(b.multiply(b > 0).sum(axis=0), copy=False).ravel()
+        return np.asarray(b.multiply(b > 0).sum(axis=0)).ravel()
 
     def ddx_inflow(self, param: float) -> np.ndarray:
         """Get the total inflow of all commodities for demand'(param).
@@ -1782,7 +1782,7 @@ class DemandFunction(abc.ABC):
             Total inflow of all commodities.
         """
         b = self.ddx(param)
-        return np.array(b.multiply(b > 0).sum(axis=0), copy=False).ravel()
+        return np.asarray(b.multiply(b > 0).sum(axis=0)).ravel()
 
     def max_inflow(
             self,
@@ -1804,8 +1804,8 @@ class DemandFunction(abc.ABC):
         """
         b_min = self.value(min_param)
         b_max = self.value(max_param)
-        inflow_min = np.array(b_min.multiply(b_min > 0).sum(axis=0), copy=False).ravel()
-        inflow_max = np.array(b_max.multiply(b_max > 0).sum(axis=0), copy=False).ravel()
+        inflow_min = np.asarray(b_min.multiply(b_min > 0).sum(axis=0)).ravel()
+        inflow_max = np.asarray(b_max.multiply(b_max > 0).sum(axis=0)).ravel()
         return np.max(np.vstack((inflow_min, inflow_max)).T, axis=1)
 
     def delete_nodes(self, *args, **kwargs) -> int:

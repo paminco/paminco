@@ -1,6 +1,6 @@
 import abc
 import warnings
-from distutils.version import StrictVersion
+from packaging.version import parse
 
 import scipy as sp
 import scipy.sparse as sps
@@ -201,9 +201,15 @@ class LPSubproblemSolver(SubproblemSolver):
             bounds = np.maximum(bounds, -x_max) * self.bound_factor
             bounds = np.minimum(bounds, x_max) * self.bound_factor
 
+        
+        scipy_version = parse(sp.__version__)
+        min_version = parse('1.6.0')
+
         # Handle method setting
+        # Fallback to LP_SIMPLEX if HIGHS is selected 
+        # and scipy version is smaller than 1.60
         if (self.method in [SubproblemMethod.LP, SubproblemMethod.LP_HIGHS]
-                and StrictVersion(sp.__version__) < StrictVersion('1.6.0')):
+                and scipy_version < min_version):
             if self.method == SubproblemMethod.LP_HIGHS:
                 warnings.warn(
                     "Method 'highs' requires scipy version >= '1.6.0', system "

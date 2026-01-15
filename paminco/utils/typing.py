@@ -98,3 +98,14 @@ def sparse_format(
     if return_as == 'csr':
         return M.tocsr()
     raise ValueError(f"{return_as} is invalid return format")
+
+# Helper function that allows for numpy array creation
+# replaces the old numpy call np.array(arr, copy=copy)
+# that doe not allow for copy=False any more
+def safe_array(arr, dtype=None, copy=None, indices=None):
+    arr = np.asarray(arr, dtype=dtype)
+    if indices is not None:
+        arr = arr[indices]
+    if copy:
+        return arr.copy()
+    return arr

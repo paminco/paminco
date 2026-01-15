@@ -156,7 +156,7 @@ class MCFI(AlphaBetaApproximativeSolver):
         >>> demand_fac = [0.2, 0.5, 0.6]
         >>> mcfi.run(param=demand_fac)
         >>> mcfi.cost_at(demand_fac).round(0)
-        array([ 638723., 1673515., 2062773.])
+        array([ 638720., 1673561., 2062918.])
     """
 
     def __init__(

@@ -1,4 +1,3 @@
-from numpy.lib.npyio import load
 import pytest
 import numpy as np
 
